@@ -1,0 +1,61 @@
+Version: v1.0.0-rc.4
+Build Time: 2026.08.22
+Platform: windows (amd64)
+OpenGL 3.3
+RAM in Use: 596 MB / OS Reserved: 627 MB
+Active Goroutines: 2
+Timestamp: 2026-09-04 03:44:22
+
+Engine error
+
+Error: failed to preload stages/patio.def: stages/patio.def:
+stages/patio.sff
+png: invalid format: not a PNG file
+goroutine 1 [running, locked to thread]:
+github.com/yuin/gopher-lua.(*LState).PCall.func1()
+	github.com/yuin/gopher-lua@v1.1.0/state.go:1988 +0x212
+panic({0x7ff733e18940, 0xc02591b9b0})
+	runtime/panic.go:884 +0x213
+main.(*Select).AddStage(0x7ff733d8d838, {0xc025907820, 0x10})
+	github.com/ikemen-engine/Ikemen-GO/src/system.go:5506 +0x12a5
+main.systemScriptInit.func3(0xc00012cdc0)
+	github.com/ikemen-engine/Ikemen-GO/src/script.go:1024 +0x39
+github.com/yuin/gopher-lua.callGFunction(0xc00012cdc0, 0x0)
+	github.com/yuin/gopher-lua@v1.1.0/vm.go:202 +0x37
+github.com/yuin/gopher-lua.init.3.func26(0xc00012cdc0, 0x904c0400?, 0xc0000d2000?)
+	github.com/yuin/gopher-lua@v1.1.0/vm.go:821 +0x379
+github.com/yuin/gopher-lua.mainLoop(0xc00012cdc0, 0xc0008c66c0?)
+	github.com/yuin/gopher-lua@v1.1.0/vm.go:31 +0xfa
+github.com/yuin/gopher-lua.(*LState).callR(0xc00012cdc0, 0x0, 0xffffffffffffffff, 0xc0002ce1a0?)
+	github.com/yuin/gopher-lua@v1.1.0/state.go:1211 +0x1b4
+github.com/yuin/gopher-lua.(*LState).Call(...)
+	github.com/yuin/gopher-lua@v1.1.0/state.go:1967
+github.com/yuin/gopher-lua.(*LState).PCall(0xc00012cdc0, 0x0, 0xc0008c66c0?, 0x0)
+	github.com/yuin/gopher-lua@v1.1.0/state.go:2030 +0x145
+github.com/yuin/gopher-lua.(*LState).DoFile(0xc00012cdc0, {0xc0002ee121?, 0x0?})
+	github.com/yuin/gopher-lua@v1.1.0/auxlib.go:396 +0x6b
+main.realMain()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:201 +0x505
+main.main()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:59 +0x17
+
+stack traceback:
+	[G]: in function 'addStage'
+	external/script/main.lua:1461: in function 'f_addStage'
+	external/script/main.lua:1620: in main chunk
+	[G]: ?
+
+Go stack traceback:
+goroutine 1 [running, locked to thread]:
+runtime/debug.Stack()
+	runtime/debug/stack.go:24 +0x65
+main.handlePanic({0x7ff733e1a080?, 0xc025893740})
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:372 +0x408
+main.realMain.func1()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:66 +0x2a
+panic({0x7ff733e1a080, 0xc025893740})
+	runtime/panic.go:884 +0x213
+main.realMain()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:206 +0x58d
+main.main()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:59 +0x17

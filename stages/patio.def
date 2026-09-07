@@ -1,0 +1,109 @@
+;--------------------------------------------------------
+; Stage: Patio Universitario / Gradas (Ajuste Sin Bordes)
+; Creado para Ikemen GO
+;--------------------------------------------------------
+
+[Info]
+name = "Patio de la Universidad"
+displayname = "Patio / Gradas"
+versiondate = 09,04,2026
+mugenversion = 1.0
+author = "Universidad"
+
+;--------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+
+; Limites calculados para que la camara NUNCA supere los bordes de la foto
+boundleft = -180
+boundright = 180
+boundhigh = -120
+boundlow = 0
+
+; Movimiento suave y seguimiento de saltos
+verticalfollow = .5
+floortension = 100
+tension = 120
+
+overdrawhigh = 0
+overdrawlow = 0
+cuthigh = 0
+cutlow = 0
+
+; Zoom calibrado dentro del margen seguro
+startzoom = 0.85
+zoomout = 0.78
+zoomin = 1.00
+
+;--------------------------------------------------------
+[PlayerInfo]
+; Coordenadas de inicio de los luchadores
+p1startx = -240
+p1starty = 0
+p1facing = 1
+
+p2startx = 240
+p2starty = 0
+p2facing = -1
+
+p3startx = -360
+p3starty = 0
+p3facing = 1
+
+p4startx = 360
+p4starty = 0
+p4facing = -1
+
+leftbound  = -2200
+rightbound =  2200
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 50
+screenright = 50
+
+;--------------------------------------------------------
+[StageInfo]
+; Nivel de suelo alineado con la cancha roja
+zoffset = 580
+autoturn = 1
+resetBG = 1
+localcoord = 1280, 720
+xscale = 1
+yscale = 1
+portraitscale = 4
+
+;--------------------------------------------------------
+[Shadow]
+intensity = 110
+color = 0,0,0
+yscale = .3
+fade.range = 0,0
+
+;--------------------------------------------------------
+[Reflection]
+intensity = 0
+
+;--------------------------------------------------------
+[Music]
+bgmusic = 
+bgmvolume = 100
+
+;--------------------------------------------------------
+[BGdef]
+spr = patio.sff
+debugbg = 0
+
+; Vista previa para la pantalla de seleccion
+[Begin Action 9000]
+9000,1, 0,0,-1
+
+; Fondo en alta resolucion (2400x1542) con margenes de seguridad
+[BG 0]
+type  = normal
+spriteno = 0, 0
+layerno = 0
+start = 0, 650
+delta = 1, 1
+mask = 0

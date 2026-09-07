@@ -1,0 +1,24 @@
+{
+  "playtime": 413.75,
+  "modes": {
+    "arcade": {
+      "playtime": 413.75,
+      "clear": 0,
+      "ranking": [
+        {
+          "score": 32500,
+          "time": 413.75,
+          "win": 0,
+          "lose": 1,
+          "consecutive": 0,
+          "name": "",
+          "chars": [
+            "estudiante"
+          ],
+          "tmode": 0,
+          "ailevel": 5
+        }
+      ]
+    }
+  }
+}
