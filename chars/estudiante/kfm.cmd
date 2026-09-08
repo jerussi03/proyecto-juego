@@ -662,8 +662,6 @@ triggerall = command = "x"
 triggerall = command != "holddown"
 trigger1 = statetype = S
 trigger1 = ctrl
-trigger2 = stateno = 200
-trigger2 = time > 6
 
 ;---------------------------------------------------------------------------
 ;Stand Strong Punch
