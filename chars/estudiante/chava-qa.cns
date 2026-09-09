@@ -1,0 +1,192 @@
+; Test harness only. Not referenced by estudiante.def or the roster.
+[Statedef -2]
+
+[State -2, Clock]
+type = VarAdd
+trigger1 = RoundState = 2
+v = 58
+value = 1
+
+[State -2, Energy]
+type = PowerSet
+trigger1 = RoundState = 2
+value = 3000
+
+[State -2, Life]
+type = LifeSet
+trigger1 = RoundState = 2
+value = 1000
+
+[State -2, Report]
+type = DisplayToClipboard
+trigger1 = 1
+text = "CHAVA QA: state=%d tick=%d helpers=%d power=%d"
+params = StateNo, var(58), NumHelper, Power
+
+[State -2, Position 3000]
+type = PosSet
+trigger1 = var(58) % 1680 = 30
+x = (EnemyNear, Pos X) - Facing * 150
+y = 0
+
+[State -2, Run 3000]
+type = ChangeState
+trigger1 = var(58) % 1680 = 30
+value = 3000
+ctrl = 0
+
+[State -2, Position 200]
+type = PosSet
+trigger1 = var(58) % 1680 = 150
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 200]
+type = ChangeState
+trigger1 = var(58) % 1680 = 150
+value = 200
+ctrl = 0
+
+[State -2, Position 210]
+type = PosSet
+trigger1 = var(58) % 1680 = 270
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 210]
+type = ChangeState
+trigger1 = var(58) % 1680 = 270
+value = 210
+ctrl = 0
+
+[State -2, Position 230]
+type = PosSet
+trigger1 = var(58) % 1680 = 390
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 230]
+type = ChangeState
+trigger1 = var(58) % 1680 = 390
+value = 230
+ctrl = 0
+
+[State -2, Position 240]
+type = PosSet
+trigger1 = var(58) % 1680 = 510
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 240]
+type = ChangeState
+trigger1 = var(58) % 1680 = 510
+value = 240
+ctrl = 0
+
+[State -2, Position 400]
+type = PosSet
+trigger1 = var(58) % 1680 = 630
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 400]
+type = ChangeState
+trigger1 = var(58) % 1680 = 630
+value = 400
+ctrl = 0
+
+[State -2, Position 410]
+type = PosSet
+trigger1 = var(58) % 1680 = 750
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 410]
+type = ChangeState
+trigger1 = var(58) % 1680 = 750
+value = 410
+ctrl = 0
+
+[State -2, Position 430]
+type = PosSet
+trigger1 = var(58) % 1680 = 870
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 430]
+type = ChangeState
+trigger1 = var(58) % 1680 = 870
+value = 430
+ctrl = 0
+
+[State -2, Position 440]
+type = PosSet
+trigger1 = var(58) % 1680 = 990
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 440]
+type = ChangeState
+trigger1 = var(58) % 1680 = 990
+value = 440
+ctrl = 0
+
+[State -2, Position 600]
+type = PosSet
+trigger1 = var(58) % 1680 = 1110
+x = (EnemyNear, Pos X) - Facing * 46
+y = -45
+
+[State -2, Run 600]
+type = ChangeState
+trigger1 = var(58) % 1680 = 1110
+value = 600
+ctrl = 0
+
+[State -2, Position 610]
+type = PosSet
+trigger1 = var(58) % 1680 = 1230
+x = (EnemyNear, Pos X) - Facing * 46
+y = -45
+
+[State -2, Run 610]
+type = ChangeState
+trigger1 = var(58) % 1680 = 1230
+value = 610
+ctrl = 0
+
+[State -2, Position 630]
+type = PosSet
+trigger1 = var(58) % 1680 = 1350
+x = (EnemyNear, Pos X) - Facing * 46
+y = -45
+
+[State -2, Run 630]
+type = ChangeState
+trigger1 = var(58) % 1680 = 1350
+value = 630
+ctrl = 0
+
+[State -2, Position 640]
+type = PosSet
+trigger1 = var(58) % 1680 = 1470
+x = (EnemyNear, Pos X) - Facing * 46
+y = -45
+
+[State -2, Run 640]
+type = ChangeState
+trigger1 = var(58) % 1680 = 1470
+value = 640
+ctrl = 0
+
+[State -2, Position 3000]
+type = PosSet
+trigger1 = var(58) % 1680 = 1590
+x = (EnemyNear, Pos X) - Facing * 150
+y = 0
+
+[State -2, Run 3000]
+type = ChangeState
+trigger1 = var(58) % 1680 = 1590
+value = 3000
+ctrl = 0

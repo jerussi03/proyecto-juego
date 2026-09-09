@@ -1,0 +1,28 @@
+; Chava - protagonista de Ingenieria en Sistemas
+[Info]
+name = "Chava"
+displayname = "CHAVA"
+versiondate = 09,09,2026
+mugenversion = 1.1
+author = "Proyecto Universidad"
+pal.defaults = 1
+localcoord = 320,240
+
+[Files]
+cmd = chava.cmd
+cns = chava.cns
+st = chava.cns
+st1 = chava-qa.cns
+stcommon = common1.cns
+sprite = chava.sff
+anim = chava.air
+sound = kfm.snd
+movelist = chava-movelist.dat
+
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1

@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "packed_sprites": 175,
+  "animation_actions": 104,
+  "animation_frame_references": 282,
+  "binary_alpha": true,
+  "required_hit_sprites": true,
+  "original_files_preserved": true,
+  "attack_contacts": [
+    {
+      "state": 200,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 756,
+      "ticks": 16
+    },
+    {
+      "state": 210,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 1803,
+      "ticks": 28
+    },
+    {
+      "state": 230,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 1227,
+      "ticks": 18
+    },
+    {
+      "state": 240,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 1227,
+      "ticks": 25
+    },
+    {
+      "state": 400,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 886,
+      "ticks": 16
+    },
+    {
+      "state": 410,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 886,
+      "ticks": 21
+    },
+    {
+      "state": 430,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 1282,
+      "ticks": 18
+    },
+    {
+      "state": 440,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 1282,
+      "ticks": 25
+    },
+    {
+      "state": 600,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 945,
+      "ticks": 16
+    },
+    {
+      "state": 610,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 945,
+      "ticks": 21
+    },
+    {
+      "state": 630,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 1648,
+      "ticks": 18
+    },
+    {
+      "state": 640,
+      "active_element": 4,
+      "opaque_pixels_in_hitbox": 1648,
+      "ticks": 25
+    }
+  ]
+}

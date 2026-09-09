@@ -1,13 +1,13 @@
 ;--------------------------------------------------------
-; Stage: Patio Universitario / Gradas (Ajuste Sin Bordes)
-; Creado para Ikemen GO
+; Stage: Patio Universitario / Gradas
+; Formato Estandar 4:3 (320x240) para Ikemen GO
 ;--------------------------------------------------------
 
 [Info]
 name = "Patio de la Universidad"
 displayname = "Patio / Gradas"
-versiondate = 09,04,2026
-mugenversion = 1.0
+versiondate = 09,09,2026
+mugenversion = 1.1
 author = "Universidad"
 
 ;--------------------------------------------------------
@@ -15,70 +15,71 @@ author = "Universidad"
 startx = 0
 starty = 0
 
-; Limites calculados para que la camara NUNCA supere los bordes de la foto
-boundleft = -180
-boundright = 180
-boundhigh = -120
+; Limites calculados para ancho completo sin distorsion de zoom
+boundleft = -160
+boundright = 160
+boundhigh = -75
 boundlow = 0
 
-; Movimiento suave y seguimiento de saltos
-verticalfollow = .5
-floortension = 100
-tension = 120
+; Movimiento de camara fluido estandar
+verticalfollow = .2
+floortension = 0
+tension = 50
 
-overdrawhigh = 0
-overdrawlow = 0
+overdrawhigh = 20
+overdrawlow = 20
 cuthigh = 0
 cutlow = 0
 
-; Zoom calibrado dentro del margen seguro
-startzoom = 0.85
-zoomout = 0.78
-zoomin = 1.00
+; Zoom 1:1 estandar
+startzoom = 1.0
+zoomout = 1.0
+zoomin = 1.0
 
 ;--------------------------------------------------------
 [PlayerInfo]
-; Coordenadas de inicio de los luchadores
-p1startx = -240
+; Posiciones iniciales de combate estandar
+p1startx = -70
 p1starty = 0
 p1facing = 1
 
-p2startx = 240
+p2startx = 70
 p2starty = 0
 p2facing = -1
 
-p3startx = -360
+p3startx = -100
 p3starty = 0
 p3facing = 1
 
-p4startx = 360
+p4startx = 100
 p4starty = 0
 p4facing = -1
 
-leftbound  = -2200
-rightbound =  2200
+leftbound  = -1000
+rightbound =  1000
 
 ;--------------------------------------------------------
 [Bound]
-screenleft = 50
-screenright = 50
+screenleft = 15
+screenright = 15
 
 ;--------------------------------------------------------
 [StageInfo]
-; Nivel de suelo alineado con la cancha roja
-zoffset = 580
+; Altura de suelo calibrada para personajes (320x240)
+zoffset = 200
 autoturn = 1
 resetBG = 1
-localcoord = 1280, 720
+localcoord = 320, 240
 xscale = 1
 yscale = 1
-portraitscale = 4
+; Escala de portada 1:1 estandar
+portraitscale = 1.0
 
 ;--------------------------------------------------------
 [Shadow]
-intensity = 110
+intensity = 80
 color = 0,0,0
-yscale = .3
+yscale = .25
 fade.range = 0,0
 
 ;--------------------------------------------------------
@@ -95,15 +96,15 @@ bgmvolume = 100
 spr = patio.sff
 debugbg = 0
 
-; Vista previa para la pantalla de seleccion
+; Vista previa para la pantalla de seleccion (240x100)
 [Begin Action 9000]
 9000,1, 0,0,-1
 
-; Fondo en alta resolucion (2400x1542) con margenes de seguridad
+; Fondo en formato estandar (640x411) con eje alineado al suelo
 [BG 0]
 type  = normal
 spriteno = 0, 0
 layerno = 0
-start = 0, 650
+start = 0, 200
 delta = 1, 1
 mask = 0

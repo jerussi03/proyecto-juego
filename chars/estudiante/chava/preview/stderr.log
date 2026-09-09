@@ -1,0 +1,9 @@
+Ikemen, GO!
+Version: v1.0.0-rc.4 Build Time: 2026.08.22
+Using OpenGL 3.3.0 NVIDIA 616.64 (NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2)
+WARNING: Player Chava: command 'holdfwd' compatibility: buffer time forced to 1
+WARNING: Player Chava: command 'holdback' compatibility: buffer time forced to 1
+WARNING: Player Chava: command 'holdup' compatibility: buffer time forced to 1
+WARNING: Player Chava: command 'holddown' compatibility: buffer time forced to 1
+WARNING: Kung Fu Man's state 1027 in kfm.cns, line 1476: Unknown state controller parameter(s): x, y
+WARNING: Animation missing sprite 40,12 from data/fightfx.sff
