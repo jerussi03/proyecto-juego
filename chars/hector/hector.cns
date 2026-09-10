@@ -1,0 +1,2037 @@
+; Hector's constants and state file.
+; There are comments scattered through this file, so you may like to
+; take a look if would like to learn more about the cns.
+
+[Data]
+;Amount of life to start with
+life = 1000
+;attack power (more is stronger)
+attack = 100
+;defensive power (more is stronger)
+defence = 100
+;Percentage to increase defense everytime player is knocked down
+fall.defence_up = 50
+;Time which player lies down for, before getting up
+liedown.time = 60
+;Number of points for juggling
+airjuggle = 15
+;Default hit spark number for HitDefs
+sparkno = 2
+;Default guard spark number
+guard.sparkno = 40
+;1 to enable echo on KO
+KO.echo = 0
+;Volume offset (negative for softer)
+volume = 0
+;Variables with this index and above will not have their values
+;reset to 0 between rounds or matches. There are 60 int variables,
+;indexed from 0 to 59, and 40 float variables, indexed from 0 to 39.
+;If omitted, then it defaults to 60 and 40 for integer and float
+;variables repectively, meaning that none are persistent, i.e. all
+;are reset. If you want your variables to persist between matches,
+;you need to override state 5900 from common1.cns.
+IntPersistIndex = 60
+FloatPersistIndex = 40
+
+[Size]
+xscale = 1           ;Horizontal scaling factor.
+yscale = 1           ;Vertical scaling factor.
+ground.back = 15     ;Player width (back, ground)
+ground.front = 16    ;Player width (front, ground)
+air.back = 12        ;Player width (back, air)
+air.front = 12       ;Player width (front, air)
+height = 102          ;Height of player (for opponent to jump over)
+attack.dist = 100    ;Default attack distance
+proj.attack.dist = 90 ;Default attack distance for projectiles
+proj.doscale = 0     ;Set to 1 to scale projectiles too
+head.pos = 0, -98   ;Approximate position of head
+mid.pos = 0, -54    ;Approximate position of midsection
+shadowoffset = 0     ;Number of pixels to vertically offset the shadow
+draw.offset = 0,0    ;Player drawing offset in pixels (x, y). Recommended 0,0
+
+[Velocity]
+walk.fwd  = 1.5      ;Walk forward
+walk.back = -1.2     ;Walk backward
+run.fwd  = 3.6, 0    ;Run forward (x, y)
+run.back = -4.5,-3.8 ;Hop backward (x, y)
+jump.neu = 0,-8.4    ;Neutral jumping velocity (x, y)
+jump.back = -2.55    ;Jump back Speed (x, y)
+jump.fwd = 2.5       ;Jump forward Speed (x, y)
+runjump.back = -2.55,-8.1 ;Running jump speeds (opt)
+runjump.fwd = 4,-8.1      ;.
+airjump.neu = 0,-8.1      ;.
+airjump.back = -2.55      ;Air jump speeds (opt)
+airjump.fwd = 2.5         ;.
+air.gethit.groundrecover = -.15,-3.5  ;Velocity for ground recovery state (x, y) **MUGEN 1.0**
+air.gethit.airrecover.mul = .5,.2     ;Multiplier for air recovery velocity (x, y) **MUGEN 1.0**
+air.gethit.airrecover.add = 0,-4.5    ;Velocity offset for air recovery (x, y) **MUGEN 1.0**
+air.gethit.airrecover.back = -1       ;Extra x-velocity for holding back during air recovery **MUGEN 1.0**
+air.gethit.airrecover.fwd = 0         ;Extra x-velocity for holding forward during air recovery **MUGEN 1.0**
+air.gethit.airrecover.up = -2         ;Extra y-velocity for holding up during air recovery **MUGEN 1.0**
+air.gethit.airrecover.down = 1.5      ;Extra y-velocity for holding down during air recovery **MUGEN 1.0**
+
+[Movement]
+airjump.num = 0       ;Number of air jumps allowed (opt)
+airjump.height = 35   ;Minimum distance from ground before you can air jump (opt)
+yaccel = .44          ;Vertical acceleration
+stand.friction = .85  ;Friction coefficient when standing
+crouch.friction = .82 ;Friction coefficient when crouching
+stand.friction.threshold = 2          ;If player's speed drops below this threshold while standing, stop his movement **MUGEN 1.0**
+crouch.friction.threshold = .05       ;If player's speed drops below this threshold while crouching, stop his movement **MUGEN 1.0**
+air.gethit.groundlevel = 25           ;Y-position at which a falling player is considered to hit the ground **MUGEN 1.0**
+air.gethit.groundrecover.ground.threshold = -20 ;Y-position below which falling player can use the recovery command **MUGEN 1.0**
+air.gethit.groundrecover.groundlevel = 10   ;Y-position at which player in the ground recovery state touches the ground **MUGEN 1.0**
+air.gethit.airrecover.threshold = -1  ;Y-velocity above which player may use the air recovery command **MUGEN 1.0**
+air.gethit.airrecover.yaccel = .35    ;Vertical acceleration for player in the air recovery state **MUGEN 1.0**
+air.gethit.trip.groundlevel = 15      ;Y-position at which player in the tripped state touches the ground **MUGEN 1.0**
+down.bounce.offset = 0, 20            ;Offset for player bouncing off the ground (x, y) **MUGEN 1.0**
+down.bounce.yaccel = .4               ;Vertical acceleration for player bouncing off the ground **MUGEN 1.0**
+down.bounce.groundlevel = 12          ;Y-position at which player bouncing off the ground touches the ground again **MUGEN 1.0**
+down.friction.threshold = .05         ;If the player's speed drops below this threshold while lying down, stop his movement **MUGEN 1.0**
+
+;Default language victory quotes (optional).  **MUGEN 1.0**
+;If this section is included, the default language victory quotes must be in English.
+
+[Quotes]
+victory1 = "Dato curioso: Internet es una red de redes."
+victory2 = "Otro curso terminado. Otra certificacion."
+victory3 = "Ese error lo vimos en el curso de redes."
+victory4 = "Connection timed out."
+
+
+[Statedef 180]
+type = S
+movetype = I
+physics = S
+ctrl = 0
+anim = 181
+velset = 0,0
+
+
+
+[State 180, Network message]
+type = Explod
+trigger1 = Time = 0
+anim = 8001
+ID = 8001
+postype = left
+pos = 160,33
+bindtime = -1
+removetime = 90
+sprpriority = 9
+ownpal = 1
+
+
+[Statedef 191]
+type = S
+movetype = I
+physics = S
+ctrl = 0
+anim = 190
+velset = 0,0
+
+
+
+[State 191, Network message]
+type = Explod
+trigger1 = Time = 0
+anim = 8000
+ID = 8000
+postype = left
+pos = 160,33
+bindtime = -1
+removetime = 90
+sprpriority = 9
+ownpal = 1
+
+
+[State 191, Intro]
+type = AssertSpecial
+trigger1 = AnimTime != 0
+flag = Intro
+
+
+[State 191, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 195]
+type = S
+movetype = I
+physics = S
+ctrl = 0
+anim = 195
+velset = 0,0
+
+
+
+[State 195, Network message]
+type = Explod
+trigger1 = Time = 0
+anim = 8000
+ID = 8000
+postype = left
+pos = 160,33
+bindtime = -1
+removetime = 90
+sprpriority = 9
+ownpal = 1
+
+
+[State 195, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 200]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 200
+velset = 0,0
+poweradd = 15
+
+
+[State 200, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+
+[State 200, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 24,0
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 200, Clear combo buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 20
+value = 0
+
+
+[State 200, Queue next ping]
+type = VarSet
+trigger1 = Time >= 3 && command = "x"
+v = 20
+value = 1
+ignorehitpause = 1
+
+
+[State 200, Ping Ping Pong]
+type = ChangeState
+trigger1 = var(20) && AnimElemTime(5) >= 0
+value = 201
+ctrl = 0
+
+
+[State 200, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 201]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 201
+velset = 0,0
+poweradd = 15
+
+
+[State 201, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+
+[State 201, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 24,0
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 201, Clear combo buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 20
+value = 0
+
+
+[State 201, Queue next ping]
+type = VarSet
+trigger1 = Time >= 3 && command = "x"
+v = 20
+value = 1
+ignorehitpause = 1
+
+
+[State 201, Ping Ping Pong]
+type = ChangeState
+trigger1 = var(20) && AnimElemTime(5) >= 0
+value = 202
+ctrl = 0
+
+
+[State 201, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 202]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 202
+velset = 0,0
+poweradd = 15
+
+
+[State 202, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+
+[State 202, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 52,0
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -6
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 202, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 210]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 210
+velset = 0,0
+poweradd = 15
+
+
+[State 210, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+
+[State 210, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 72,0
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 210, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 230]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 230
+velset = 0,0
+poweradd = 15
+
+
+[State 230, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+
+[State 230, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 40,0
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -6
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 230, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 430]
+type = C
+movetype = A
+physics = C
+ctrl = 0
+anim = 430
+velset = 0,0
+poweradd = 15
+
+
+[State 430, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+
+[State 430, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = C, NA
+damage = 30,0
+animtype = Medium
+guardflag = L
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 430, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+
+[Statedef 600]
+type = A
+movetype = A
+physics = A
+ctrl = 0
+anim = 600
+poweradd = 15
+
+
+[State 600, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+
+[State 600, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = A, NA
+damage = 26,0
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 600, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+
+[Statedef 630]
+type = A
+movetype = A
+physics = A
+ctrl = 0
+anim = 630
+poweradd = 15
+
+
+[State 630, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+
+[State 630, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = A, NA
+damage = 38,0
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 630, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+
+[Statedef 700]
+type = S
+movetype = I
+physics = S
+ctrl = 0
+anim = 700
+velset = 0,0
+
+
+
+[State 700, Hologram]
+type = Explod
+trigger1 = Time = 0
+anim = 7000
+ID = 7000
+postype = p1
+pos = 25,-55
+bindtime = -1
+removetime = 16
+sprpriority = 4
+ownpal = 1
+
+
+[State 700, Parry window]
+type = ReversalDef
+trigger1 = Time = 0
+reversal.attr = SCA, AA
+pausetime = 0,12
+sparkno = 40
+p1stateno = 705
+p2stateno = 715
+
+
+[State 700, Close window]
+type = ReversalDef
+trigger1 = Time = 6
+reversal.attr = 
+
+
+[State 700, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 705]
+type = S
+movetype = I
+physics = S
+ctrl = 0
+anim = 700
+velset = 0,0
+
+
+
+[State 705, Network message]
+type = Explod
+trigger1 = Time = 0
+anim = 8002
+ID = 8002
+postype = left
+pos = 160,33
+bindtime = -1
+removetime = 65
+sprpriority = 9
+ownpal = 1
+
+
+[State 705, Hologram]
+type = Explod
+trigger1 = Time = 0
+anim = 7000
+ID = 7000
+postype = p1
+pos = 25,-55
+bindtime = -1
+removetime = 16
+sprpriority = 4
+ownpal = 1
+
+
+[State 705, Protection]
+type = NotHitBy
+trigger1 = Time < 12
+value = SCA
+time = 1
+
+
+[State 705, 403 response]
+type = ChangeState
+trigger1 = Time >= 2 && (command = "y" || AILevel > 0)
+value = 710
+ctrl = 0
+
+
+[State 705, Finish]
+type = ChangeState
+trigger1 = Time >= 16
+value = 0
+ctrl = 1
+
+
+[Statedef 710]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 710
+velset = 0,0
+
+
+
+[State 710, Network message]
+type = Explod
+trigger1 = Time = 0
+anim = 8002
+ID = 8002
+postype = left
+pos = 160,33
+bindtime = -1
+removetime = 65
+sprpriority = 9
+ownpal = 1
+
+
+[State 710, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 85,0
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -6
+air.velocity = -3,-5
+air.hittime = 18
+fall = 1
+fall.recover = 1
+
+
+[State 710, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 715]
+type = S
+movetype = H
+physics = N
+ctrl = 0
+velset = 0,0
+
+
+
+[State 715, Use victim sprite]
+type = ChangeAnim
+trigger1 = Time = 0
+value = 5000
+
+
+[State 715, Release opponent]
+type = SelfState
+trigger1 = Time >= 22
+value = ifelse(Pos Y < 0,50,0)
+ctrl = 1
+
+
+[Statedef 720]
+type = S
+movetype = I
+physics = S
+ctrl = 0
+anim = 720
+velset = 0,0
+
+
+
+[State 720, Glitch trail]
+type = AfterImage
+trigger1 = Time = 0
+time = 12
+length = 5
+timegap = 2
+framegap = 1
+trans = add
+palcolor = 0
+paladd = 0,50,80
+
+
+[State 720, Slip past attacks]
+type = NotHitBy
+trigger1 = Time >= 2 && Time < 10
+value = SCA, AA, AP
+time = 1
+
+
+[State 720, Dash]
+type = VelSet
+trigger1 = Time < 12
+x = 6
+
+
+[State 720, No push]
+type = PlayerPush
+trigger1 = Time < 12
+value = 0
+
+
+[State 720, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 800]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 800
+velset = 0,0
+
+
+
+[State 800, Handshake catch]
+type = HitDef
+trigger1 = AnimElem = 2
+attr = S, NT
+hitflag = M-
+priority = 1,Miss
+sparkno = -1
+p1stateno = 810
+p2stateno = 820
+fall = 1
+ground.hittime = 40
+
+
+[State 800, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 810]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 810
+velset = 0,0
+
+
+
+[State 810, Keep hold]
+type = TargetBind
+trigger1 = Time < 17
+pos = 32,-5
+time = 1
+
+
+[State 810, Throw damage]
+type = TargetLifeAdd
+trigger1 = Time = 17
+value = -82
+
+
+[State 810, Launch]
+type = TargetState
+trigger1 = Time = 17
+value = 821
+
+
+[State 810, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 820]
+type = A
+movetype = H
+physics = N
+ctrl = 0
+velset = 0,0
+
+
+
+[State 820, Victim hurt]
+type = ChangeAnim
+trigger1 = Time = 0
+value = 5000
+
+
+[State 820, Failsafe]
+type = SelfState
+trigger1 = Time >= 45
+value = 5050
+ctrl = 0
+
+
+[Statedef 821]
+type = A
+movetype = H
+physics = N
+ctrl = 0
+velset = 0,0
+
+
+
+[State 821, Victim airborne]
+type = ChangeAnim
+trigger1 = Time = 0
+value = 5050
+
+
+[State 821, Throw velocity]
+type = VelSet
+trigger1 = Time = 0
+x = -5
+y = -6
+
+
+[State 821, Gravity]
+type = VelAdd
+trigger1 = 1
+y = 0.44
+
+
+[State 821, Land]
+type = SelfState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 5100
+ctrl = 0
+
+
+[Statedef 3000]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 3000
+velset = 0,0
+poweradd = -500
+
+
+[State 3000, Network helper]
+type = Helper
+trigger1 = AnimElem = 3
+helpertype = normal
+name = "Network device"
+ID = 3015
+stateno = 3015
+postype = p1
+pos = -25,-88
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 3000, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 3100]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 3100
+velset = 0,0
+poweradd = -750
+
+
+[State 3100, Network helper]
+type = Helper
+trigger1 = AnimElem = 3
+helpertype = normal
+name = "Network device"
+ID = 7015
+stateno = 7015
+postype = p1
+pos = 35,-52
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 3100, Network message]
+type = Explod
+trigger1 = Time = 0
+anim = 8006
+ID = 8006
+postype = left
+pos = 160,33
+bindtime = -1
+removetime = 65
+sprpriority = 9
+ownpal = 1
+
+
+[State 3100, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 3200]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 3200
+velset = 0,0
+poweradd = -1000
+
+
+[State 3200, Network helper]
+type = Helper
+trigger1 = AnimElem = 3
+helpertype = normal
+name = "Network device"
+ID = 3010
+stateno = 3010
+postype = p1
+pos = -25,-88
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 3200, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 3300]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 3300
+velset = 0,0
+poweradd = -750
+
+
+[State 3300, Network helper]
+type = Helper
+trigger1 = AnimElem = 3
+helpertype = normal
+name = "Network device"
+ID = 3030
+stateno = 3030
+postype = p1
+pos = -25,-88
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 3300, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 4000]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 4000
+velset = 0,0
+poweradd = -3000
+
+
+[State 4000, Network message]
+type = Explod
+trigger1 = Time = 0
+anim = 8004
+ID = 8004
+postype = left
+pos = 160,33
+bindtime = -1
+removetime = 110
+sprpriority = 9
+ownpal = 1
+
+
+[State 4000, Ultimate freeze]
+type = SuperPause
+trigger1 = Time = 0
+time = 18
+movetime = 18
+anim = -1
+darken = 1
+p2defmul = 1
+
+
+[State 4000, Network helper]
+type = Helper
+trigger1 = Time = 18
+helpertype = normal
+name = "Network device"
+ID = 4010
+stateno = 4010
+postype = p2
+pos = -60,-102
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 4000, Network helper]
+type = Helper
+trigger1 = Time = 18
+helpertype = normal
+name = "Network device"
+ID = 4010
+stateno = 4010
+postype = p2
+pos = 0,-130
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 4000, Network helper]
+type = Helper
+trigger1 = Time = 18
+helpertype = normal
+name = "Network device"
+ID = 4010
+stateno = 4010
+postype = p2
+pos = 60,-102
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 4000, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 4100]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 4100
+velset = 0,0
+poweradd = -1000
+
+
+[State 4100, Network helper]
+type = Helper
+trigger1 = AnimElem = 3
+helpertype = normal
+name = "Network device"
+ID = 4030
+stateno = 4030
+postype = p1
+pos = -25,-88
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 4100, Finisher marker]
+type = VarSet
+trigger1 = Time = 0
+v = 31
+value = 240
+
+
+[State 4100, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 3500]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 3500
+velset = 0,0
+poweradd = -1500
+
+
+[State 3500, Network message]
+type = Explod
+trigger1 = Time = 0
+anim = 8005
+ID = 8005
+postype = left
+pos = 160,33
+bindtime = -1
+removetime = 65
+sprpriority = 9
+ownpal = 1
+
+
+[State 3500, Contact]
+type = HitDef
+trigger1 = AnimElem = 3
+attr = S, HA
+damage = 35,0
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 3,6
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 24
+ground.velocity = -1
+air.velocity = -1,-2
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 3500, Contact]
+type = HitDef
+trigger1 = AnimElem = 5
+attr = S, HA
+damage = 35,0
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 3,6
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 24
+ground.velocity = -1
+air.velocity = -1,-2
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+
+[State 3500, Contact]
+type = HitDef
+trigger1 = AnimElem = 7
+attr = S, HA
+damage = 85,0
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 3,6
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 24
+ground.velocity = -2,-9
+air.velocity = -2,-9
+air.hittime = 18
+fall = 1
+fall.recover = 1
+
+
+[State 3500, Finish]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+[Statedef 3010]
+type = A
+movetype = I
+physics = N
+ctrl = 0
+anim = 3010
+velset = 0,0
+
+
+
+[State 3010, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+
+[State 3010, Vulnerable drone]
+type = HitOverride
+trigger1 = 1
+attr = SCA, AA, AP
+stateno = 3099
+time = 1
+
+
+[State 3010, One hit health]
+type = LifeSet
+trigger1 = Time = 0
+value = 1
+
+
+[State 3010, Owner gone]
+type = DestroySelf
+trigger1 = Root, Life <= 0
+
+
+
+[State 3010, Round cleanup]
+type = DestroySelf
+trigger1 = RoundState != 2
+
+
+
+[State 3010, Follow professor]
+type = PosSet
+trigger1 = 1
+x = (Root, Pos X) - 27 * (Root, Facing)
+y = (Root, Pos Y) - 88 + 2*sin(Time*.15)
+
+
+[State 3010, Face opponent]
+type = Turn
+trigger1 = Facing != (Root, Facing)
+
+
+
+[State 3010, Network helper]
+type = Helper
+trigger1 = Time > 10 && Time % 60 = 15
+helpertype = normal
+name = "Network device"
+ID = 3020
+stateno = 3020
+postype = p1
+pos = 20,8
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 3010, Battery expired]
+type = DestroySelf
+trigger1 = Time >= 480
+
+
+
+[Statedef 3015]
+type = A
+movetype = I
+physics = N
+ctrl = 0
+anim = 3010
+velset = 0,0
+
+
+
+[State 3015, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+
+[State 3015, Vulnerable drone]
+type = HitOverride
+trigger1 = 1
+attr = SCA, AA, AP
+stateno = 3099
+time = 1
+
+
+[State 3015, One hit health]
+type = LifeSet
+trigger1 = Time = 0
+value = 1
+
+
+[State 3015, Owner gone]
+type = DestroySelf
+trigger1 = Root, Life <= 0
+
+
+
+[State 3015, Round cleanup]
+type = DestroySelf
+trigger1 = RoundState != 2
+
+
+
+[State 3015, Follow professor]
+type = PosSet
+trigger1 = 1
+x = (Root, Pos X) - 27 * (Root, Facing)
+y = (Root, Pos Y) - 88 + 2*sin(Time*.15)
+
+
+[State 3015, Face opponent]
+type = Turn
+trigger1 = Facing != (Root, Facing)
+
+
+
+[State 3015, Network helper]
+type = Helper
+trigger1 = Time >= 12 && Time <= 60 && Time % 8 = 4
+helpertype = normal
+name = "Network device"
+ID = 3020
+stateno = 3020
+postype = p1
+pos = 20,8
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 3015, Battery expired]
+type = DestroySelf
+trigger1 = Time >= 78
+
+
+
+[Statedef 3030]
+type = A
+movetype = A
+physics = N
+ctrl = 0
+anim = 3030
+velset = 0,0
+
+
+
+[State 3030, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+
+[State 3030, Vulnerable drone]
+type = HitOverride
+trigger1 = 1
+attr = SCA, AA, AP
+stateno = 3099
+time = 1
+
+
+[State 3030, One hit health]
+type = LifeSet
+trigger1 = Time = 0
+value = 1
+
+
+[State 3030, Owner gone]
+type = DestroySelf
+trigger1 = Root, Life <= 0
+
+
+
+[State 3030, Round cleanup]
+type = DestroySelf
+trigger1 = RoundState != 2
+
+
+
+[State 3030, FPV dash]
+type = VelSet
+trigger1 = 1
+x = 10
+
+
+[State 3030, Contact]
+type = HitDef
+trigger1 = Time = 0
+attr = A, SP
+damage = 85,0
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 5,8
+sparkno = 2
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -3
+air.velocity = -4,-5
+air.hittime = 18
+fall = 1
+fall.recover = 1
+
+
+[State 3030, FPV contact]
+type = ChangeState
+trigger1 = MoveContact
+value = 3099
+
+
+[State 3030, FPV expires]
+type = DestroySelf
+trigger1 = Time > 70 || FrontEdgeDist < -80
+
+
+
+[Statedef 4010]
+type = A
+movetype = I
+physics = N
+ctrl = 0
+anim = 3010
+velset = 0,0
+
+
+
+[State 4010, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+
+[State 4010, Vulnerable drone]
+type = HitOverride
+trigger1 = 1
+attr = SCA, AA, AP
+stateno = 3099
+time = 1
+
+
+[State 4010, One hit health]
+type = LifeSet
+trigger1 = Time = 0
+value = 1
+
+
+[State 4010, Owner gone]
+type = DestroySelf
+trigger1 = Root, Life <= 0
+
+
+
+[State 4010, Round cleanup]
+type = DestroySelf
+trigger1 = RoundState != 2
+
+
+
+[State 4010, Face target]
+type = Turn
+trigger1 = ((EnemyNear, Pos X) - Pos X) * Facing < 0
+
+
+
+[State 4010, Network helper]
+type = Helper
+trigger1 = Time >= 12 && Time <= 84 && Time % 18 = 12
+helpertype = normal
+name = "Network device"
+ID = 4020
+stateno = 4020
+postype = p1
+pos = 20,8
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 4010, Ultimate expires]
+type = DestroySelf
+trigger1 = Time >= 100
+
+
+
+[Statedef 4030]
+type = A
+movetype = I
+physics = N
+ctrl = 0
+anim = 3010
+velset = 0,0
+
+
+
+[State 4030, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+
+[State 4030, Vulnerable drone]
+type = HitOverride
+trigger1 = 1
+attr = SCA, AA, AP
+stateno = 3099
+time = 1
+
+
+[State 4030, One hit health]
+type = LifeSet
+trigger1 = Time = 0
+value = 1
+
+
+[State 4030, Owner gone]
+type = DestroySelf
+trigger1 = Root, Life <= 0
+
+
+
+[State 4030, Round cleanup]
+type = DestroySelf
+trigger1 = RoundState != 2
+
+
+
+[State 4030, Approach server]
+type = VelSet
+trigger1 = 1
+x = 5
+
+
+[State 4030, Network helper]
+type = Helper
+trigger1 = Time = 20
+helpertype = normal
+name = "Network device"
+ID = 4040
+stateno = 4040
+postype = p1
+pos = 20,8
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+
+[State 4030, Disconnect cleanup]
+type = DestroySelf
+trigger1 = Time >= 32
+
+
+
+[Statedef 3020]
+type = A
+movetype = A
+physics = N
+ctrl = 0
+anim = 3020
+velset = 0,0
+
+
+
+[State 3020, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+
+[State 3020, Projectile clash]
+type = HitOverride
+trigger1 = 1
+attr = SCA, AA, AP
+stateno = 3099
+time = 1
+
+
+[State 3020, Packet speed]
+type = VelSet
+trigger1 = Time = 0
+x = 6
+y = 0
+
+
+[State 3020, Contact]
+type = HitDef
+trigger1 = Time = 0
+attr = A, SP
+damage = 13,1
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 0,4
+sparkno = -1
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 9
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+guard.hittime = 6
+getpower = 0,0
+givepower = 8,4
+
+
+[State 3020, Packet impact]
+type = ChangeState
+trigger1 = MoveContact
+value = 3099
+
+
+[State 3020, Packet out of bounds]
+type = DestroySelf
+trigger1 = Time > 150 || FrontEdgeDist < -100 || RoundState != 2
+
+
+
+[Statedef 4020]
+type = A
+movetype = A
+physics = N
+ctrl = 0
+anim = 3020
+velset = 0,0
+
+
+
+[State 4020, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+
+[State 4020, Projectile clash]
+type = HitOverride
+trigger1 = 1
+attr = SCA, AA, AP
+stateno = 3099
+time = 1
+
+
+[State 4020, Packet speed]
+type = VelSet
+trigger1 = Time = 0
+x = ((EnemyNear, Pos X) - Pos X) * Facing / 22
+y = ((EnemyNear, Pos Y) - 48 - Pos Y) / 22
+
+
+[State 4020, Contact]
+type = HitDef
+trigger1 = Time = 0
+attr = A, HP
+damage = 12,1
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 0,4
+sparkno = -1
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 9
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+guard.hittime = 6
+getpower = 0,0
+givepower = 8,4
+
+
+[State 4020, Packet impact]
+type = ChangeState
+trigger1 = MoveContact
+value = 3099
+
+
+[State 4020, Packet out of bounds]
+type = DestroySelf
+trigger1 = Time > 150 || FrontEdgeDist < -100 || RoundState != 2
+
+
+
+[Statedef 4040]
+type = A
+movetype = A
+physics = N
+ctrl = 0
+anim = 3020
+velset = 0,0
+
+
+
+[State 4040, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+
+[State 4040, Projectile clash]
+type = HitOverride
+trigger1 = 1
+attr = SCA, AA, AP
+stateno = 3099
+time = 1
+
+
+[State 4040, Packet speed]
+type = VelSet
+trigger1 = Time = 0
+x = 6
+y = 0
+
+
+[State 4040, Contact]
+type = HitDef
+trigger1 = Time = 0
+attr = A, HP
+damage = 125,1
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 0,4
+sparkno = -1
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 9
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+guard.hittime = 6
+getpower = 0,0
+givepower = 8,4
+
+
+[State 4040, Packet impact]
+type = ChangeState
+trigger1 = MoveContact
+value = 3099
+
+
+[State 4040, Packet out of bounds]
+type = DestroySelf
+trigger1 = Time > 150 || FrontEdgeDist < -100 || RoundState != 2
+
+
+
+[Statedef 7015]
+type = A
+movetype = A
+physics = N
+ctrl = 0
+anim = 7010
+velset = 0,0
+
+
+
+[State 7015, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+
+[State 7015, Projectile clash]
+type = HitOverride
+trigger1 = 1
+attr = SCA, AA, AP
+stateno = 3099
+time = 1
+
+
+[State 7015, Contact]
+type = HitDef
+trigger1 = Time = 0
+attr = A, SP
+damage = 4,1
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 0,4
+sparkno = -1
+sparkxy = -8,-70
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 9
+ground.velocity = -3
+air.velocity = -2,-3
+air.hittime = 18
+fall = 0
+fall.recover = 1
+guard.hittime = 6
+getpower = 0,0
+givepower = 8,4
+
+
+[State 7015, Remember affected rival]
+type = VarSet
+trigger1 = MoveHit && NumTarget && var(10) = 0
+v = 10
+value = Target, ID
+
+
+[State 7015, Slow horizontal momentum]
+type = VelMul
+trigger1 = var(10) > 0 && PlayerIDExist(var(10)) && Time < 150
+RedirectID = var(10)
+x = 0.65
+
+
+[State 7015, Hide expired wave]
+type = AssertSpecial
+trigger1 = Time > 24
+flag = invisible
+
+
+[State 7015, Duration]
+type = DestroySelf
+trigger1 = Time >= 150
+
+
+
+[State 7015, Packet out of bounds]
+type = DestroySelf
+trigger1 = Time > 150 || FrontEdgeDist < -100 || RoundState != 2
+
+
+
+[Statedef 3099]
+type = A
+movetype = I
+physics = N
+ctrl = 0
+anim = 3021
+velset = 0,0
+
+
+
+[State 3099, No collision]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+
+[State 3099, Disappear]
+type = DestroySelf
+trigger1 = AnimTime = 0
+
+
+
+[Statedef -2]
+
+
+[State -2, Firewall guard flash]
+type = Explod
+trigger1 = StateNo >= 120 && StateNo <= 155 && NumExplod(7000) = 0
+anim = 7000
+ID = 7000
+postype = p1
+pos = 25,-55
+bindtime = -1
+removetime = 16
+sprpriority = 4
+ownpal = 1
+
+
+[State -2, Finisher timeout]
+type = VarAdd
+trigger1 = var(31) > 0
+v = 31
+value = -1
+
+
+[State -2, Network message]
+type = Explod
+trigger1 = WinKO && var(31) > 0 && NumExplod(8003) = 0
+anim = 8003
+ID = 8003
+postype = left
+pos = 160,33
+bindtime = -1
+removetime = 180
+sprpriority = 9
+ownpal = 1

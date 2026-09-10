@@ -1,0 +1,248 @@
+[Statedef -2]
+[State -2, Clock]
+type=VarAdd
+trigger1=RoundState=2
+v=58
+value=1
+[State -2, Life]
+type=LifeSet
+trigger1=1
+value=1000
+[State -2, Power]
+type=PowerSet
+trigger1=1
+value=3000
+[State -2, Report]
+type=DisplayToClipboard
+trigger1=1
+text="HECTOR QA state=%d tick=%d helpers=%d"
+params=StateNo,var(58),NumHelper
+
+[State -2, Position 200]
+type=PosSet
+trigger1=var(58)%2700=30
+x=(EnemyNear,Pos X)-Facing*45
+y=0
+[State -2, Move 200]
+type=ChangeState
+trigger1=var(58)%2700=30
+value=200
+ctrl=0
+
+[State -2, Position 201]
+type=PosSet
+trigger1=var(58)%2700=180
+x=(EnemyNear,Pos X)-Facing*45
+y=0
+[State -2, Move 201]
+type=ChangeState
+trigger1=var(58)%2700=180
+value=201
+ctrl=0
+
+[State -2, Position 202]
+type=PosSet
+trigger1=var(58)%2700=330
+x=(EnemyNear,Pos X)-Facing*45
+y=0
+[State -2, Move 202]
+type=ChangeState
+trigger1=var(58)%2700=330
+value=202
+ctrl=0
+
+[State -2, Position 210]
+type=PosSet
+trigger1=var(58)%2700=480
+x=(EnemyNear,Pos X)-Facing*45
+y=0
+[State -2, Move 210]
+type=ChangeState
+trigger1=var(58)%2700=480
+value=210
+ctrl=0
+
+[State -2, Position 230]
+type=PosSet
+trigger1=var(58)%2700=630
+x=(EnemyNear,Pos X)-Facing*45
+y=0
+[State -2, Move 230]
+type=ChangeState
+trigger1=var(58)%2700=630
+value=230
+ctrl=0
+
+[State -2, Position 430]
+type=PosSet
+trigger1=var(58)%2700=780
+x=(EnemyNear,Pos X)-Facing*45
+y=0
+[State -2, Move 430]
+type=ChangeState
+trigger1=var(58)%2700=780
+value=430
+ctrl=0
+
+[State -2, Position 600]
+type=PosSet
+trigger1=var(58)%2700=930
+x=(EnemyNear,Pos X)-Facing*45
+y=-40
+[State -2, Move 600]
+type=ChangeState
+trigger1=var(58)%2700=930
+value=600
+ctrl=0
+
+[State -2, Position 630]
+type=PosSet
+trigger1=var(58)%2700=1080
+x=(EnemyNear,Pos X)-Facing*45
+y=-40
+[State -2, Move 630]
+type=ChangeState
+trigger1=var(58)%2700=1080
+value=630
+ctrl=0
+
+[State -2, Position 800]
+type=PosSet
+trigger1=var(58)%2700=1230
+x=(EnemyNear,Pos X)-Facing*34
+y=0
+[State -2, Move 800]
+type=ChangeState
+trigger1=var(58)%2700=1230
+value=800
+ctrl=0
+
+[State -2, Position 700]
+type=PosSet
+trigger1=var(58)%2700=1380
+x=(EnemyNear,Pos X)-Facing*34
+y=0
+[State -2, Move 700]
+type=ChangeState
+trigger1=var(58)%2700=1380
+value=700
+ctrl=0
+
+[State -2, Position 720]
+type=PosSet
+trigger1=var(58)%2700=1530
+x=(EnemyNear,Pos X)-Facing*45
+y=0
+[State -2, Move 720]
+type=ChangeState
+trigger1=var(58)%2700=1530
+value=720
+ctrl=0
+
+[State -2, Position 3000]
+type=PosSet
+trigger1=var(58)%2700=1680
+x=(EnemyNear,Pos X)-Facing*110
+y=0
+[State -2, Move 3000]
+type=ChangeState
+trigger1=var(58)%2700=1680
+value=3000
+ctrl=0
+
+[State -2, Position 3100]
+type=PosSet
+trigger1=var(58)%2700=1830
+x=(EnemyNear,Pos X)-Facing*70
+y=0
+[State -2, Move 3100]
+type=ChangeState
+trigger1=var(58)%2700=1830
+value=3100
+ctrl=0
+
+[State -2, Position 3200]
+type=PosSet
+trigger1=var(58)%2700=1980
+x=(EnemyNear,Pos X)-Facing*110
+y=0
+[State -2, Move 3200]
+type=ChangeState
+trigger1=var(58)%2700=1980
+value=3200
+ctrl=0
+
+[State -2, Position 3300]
+type=PosSet
+trigger1=var(58)%2700=2130
+x=(EnemyNear,Pos X)-Facing*110
+y=0
+[State -2, Move 3300]
+type=ChangeState
+trigger1=var(58)%2700=2130
+value=3300
+ctrl=0
+
+[State -2, Position 3500]
+type=PosSet
+trigger1=var(58)%2700=2280
+x=(EnemyNear,Pos X)-Facing*70
+y=0
+[State -2, Move 3500]
+type=ChangeState
+trigger1=var(58)%2700=2280
+value=3500
+ctrl=0
+
+[State -2, Position 4000]
+type=PosSet
+trigger1=var(58)%2700=2430
+x=(EnemyNear,Pos X)-Facing*110
+y=0
+[State -2, Move 4000]
+type=ChangeState
+trigger1=var(58)%2700=2430
+value=4000
+ctrl=0
+
+[State -2, Position 4100]
+type=PosSet
+trigger1=var(58)%2700=2580
+x=(EnemyNear,Pos X)-Facing*110
+y=0
+[State -2, Move 4100]
+type=ChangeState
+trigger1=var(58)%2700=2580
+value=4100
+ctrl=0
+
+[State -2, Trace state entry]
+type=PrintToConsole
+trigger1=Time=1 && !IsHelper
+text="HECTOR_QA tick=%d state=%d anim=%d helpers=%d enemyLife=%d"
+params=var(58),StateNo,Anim,NumHelper,(EnemyNear,Life)
+[State -2, Trace hit]
+type=PrintToConsole
+trigger1=MoveHit=1 && !IsHelper
+text="HECTOR_HIT state=%d enemyLife=%d"
+params=StateNo,(EnemyNear,Life)
+[State -2, Test actual Ping command buffer]
+type=AssertCommand
+trigger1=(StateNo=200 || StateNo=201) && Time=4
+name="x"
+buffer.time=1
+[State -2, Prepare parry distance]
+type=PosSet
+trigger1=var(58)%2700=1375
+x=(EnemyNear,Pos X)-Facing*34
+y=0
+[State -2, Opponent tests parry]
+type=ChangeState
+trigger1=var(58)%2700=1376
+RedirectID=EnemyNear,ID
+value=200
+ctrl=0
+[State -2, Answer successful parry]
+type=ChangeState
+trigger1=StateNo=705 && Time=2
+value=710

@@ -1,118 +1,67 @@
-# Chava — Ingeniería en Sistemas
+# Chava — variantes de combate
 
-Chava ya sustituye al antiguo «Alex» en la casilla **estudiante** del selector.
-Su meta es vencer a los profesores para conseguir el título. Mantiene el rostro,
-la polo verde, los pantalones oscuros, los tenis y la pose con control de las
-referencias proporcionadas.
+Abre `Ikemen_GO.exe` y selecciona **CHAVA** (estudiante). Reinicia el juego si ya estaba abierto.
 
-## Jugar
+## Controles
 
-Abre `Ikemen_GO.exe` y selecciona **CHAVA**. No hace falta importar sprites.
-
-Con la configuración actual del jugador 1:
-
-| Tecla | Acción |
+| Tecla actual P1 | Acción |
 |---|---|
+| A | Puñetazo ligero: alterna derecho e izquierdo |
+| S | Mochila de pie: alterna subida y bajada |
+| Abajo + A / S | Puñetazos alternados / gancho |
+| A / S en el aire | Puñetazos alternados / martillo descendente |
+| Z / X | Patada ligera / patada alta fuerte |
+| Abajo + Z / X | Patada baja / barrida |
+| Z / X en el aire | Patada horizontal / patada de hacha |
+| D | Invocar IA, cuesta 1000 de energía |
 | Flechas | Moverse, agacharse y saltar |
-| A | Puñetazo ligero |
-| S | Mochilazo de pie / puñetazo fuerte agachado o en el aire |
-| Z | Patada ligera |
-| X | Patada fuerte; agachado hace barrida |
-| D | Invocar al asistente de IA; cuesta 1000 de energía |
-| Abajo, diagonal adelante, adelante + A y S | Entrada clásica del especial de IA |
-| Dos veces adelante | Correr |
-| Dos veces atrás | Salto corto hacia atrás |
-| Atrás / diagonal abajo-atrás | Guardia alta / baja |
-| Enter | Provocación |
 
-Las letras de la lista de movimientos interna son **botones MUGEN**, no teclas:
-`x=A`, `y=S`, `a=Z`, `b=X`, `z=D`. Si cambias la configuración del juego, las
-teclas físicas pueden ser distintas.
+Pulsa nuevamente el mismo botón durante el puñetazo ligero o la mochila para guardar una repetición que sale en recuperación. Cada nueva ejecución alterna la variante. Mantener el botón no dispara una cadena automática. Un ligero que conecta también puede continuar en uno fuerte.
 
-Un ataque ligero que **conecta** puede continuar en uno fuerte durante su
-recuperación. El golpe falla si el rival está fuera de alcance. La mochila solo
-hace daño en el cuadro de contacto, no durante toda la animación.
+La lista interna usa botones MUGEN: x=A, y=S, a=Z, b=X, z=D. Las teclas físicas dependen de tu configuración.
 
-La IA es un compañero holográfico del juego: aparece, dispara tres ráfagas de
-código bloqueables y desaparece. No conecta con servicios externos. El personaje
-debe reunir una barra de energía y no puede acumular varias invocaciones a la vez.
+## Cambios y conservación de tu trabajo
 
-## Contenido
+Se trabajó desde tus archivos manuales, conservando el gancho, la barrida, el martillo aéreo y la patada de hacha. Se restauraron dibujos diferentes para los ataques aéreos ligeros y se añadió una patada alta de pie. Se corrigieron los cuadros activos del jab agachado y de las patadas bajas.
 
-- Sprites nuevos de reposo, caminar, correr, agacharse, salto y aterrizaje.
-- Puñetazos, mochila, patadas, barrida y ataques aéreos.
-- Guardia alta, baja y aérea; daño, derribo, suelo, levantarse y recuperación.
-- Entrada, provocación, victoria y asistente de IA con proyectiles e impacto.
-- 104 acciones AIR y 175 entradas SFF, incluyendo retratos y alias de compatibilidad.
-- PNG exportados con transparencia binaria y escala fija por lámina.
-- Ejes de suelo estables y ejes de salto que conservan la altura del torso al recoger las piernas.
-- Los sonidos de combate siguen siendo los de la base existente `kfm.snd`.
-- Una paleta de traje. Los botones del selector usan esa misma paleta.
+La IA conserva tus cinco disparos, daño 32 y daño bloqueado 4, tiempos, posición y restricciones. Los controles, retratos y escenario se conservaron. El ayudante es ficticio y no conecta con servicios externos.
 
-Los ataques fuertes y ligeros comparten algunas secuencias dibujadas, con distintos
-tiempos, daño y recuperación. Las acciones de daño requeridas por el motor
-también reutilizan poses apropiadas; 104 acciones no significa 104 dibujos únicos.
-Los movimientos antiguos de Kung Fu Man que no pertenecen al concepto de Chava
-ya no forman parte de sus controles.
+El cuerpo se exportó un 12 % más pequeño: reposo de 120 a 106 píxeles. Se ajustaron ejes, colisiones y dimensiones físicas. Se limpiaron dos capas de borde claro expuesto y se hizo binaria la transparencia del cuerpo. Los PNG de efectos de IA y retratos se conservaron exactamente.
 
-## Revisar y editar
+El paquete contiene 229 entradas SFF, 108 acciones AIR y 318 referencias de cuadros. Conserva los sonidos kfm.snd. Algunas poses de reacción se reutilizan.
 
-- `chava/preview/chava-showcase.gif`: reposo, mochila e invocación juntos.
-- `chava/preview/0.gif`, `20.gif`, `100.gif`, `210.gif`, etc.: secuencias individuales.
-- `chava/preview/all-sprites.png`: hoja de revisión de los dibujos exportados.
-- `chava/source/`: cinco láminas originales, las dos referencias y `prompts.json`.
-- `chava/frames/`: sprites PNG independientes.
-- `chava/manifest.json`: origen, escala, ejes, tiempos y colisiones por cuadro.
-- `chava/validation.json`: resultado de la verificación automatizada.
-- `chava.air`, `chava.cns`, `chava.cmd`, `chava.sff`: archivos utilizados por el motor.
+## Revisión y mantenimiento
 
-Arte creado con la herramienta integrada **ImageGen**. Los prompts completos se
-conservan en `chava/source/prompts.json`. Las herramientas locales separan las
-siluetas, eliminan el fondo, exportan los píxeles y empaquetan el personaje.
+- chava/revision2/preview/chava-variants.gif: comparación animada.
+- chava/revision2/preview/variants.png: todos los cuadros de los ataques.
+- chava/revision2/source/: láminas ImageGen y prompts completos en prompts.json.
+- chava/revision2/manifest.json: dimensiones y ejes actuales.
+- chava/revision2/validation.json: comprobaciones del paquete final.
+- chava/frames/: PNG actuales.
+- chava.air, chava.cns, chava.cmd, chava.sff: archivos del motor.
+- estudiante.air y estudiante.sff: copias sincronizadas.
 
-Desde la raíz del juego, con Node y el paquete `sharp` disponibles:
+Los manifiestos y vistas de chava/preview/ anteriores a esta revisión son históricos.
+
+Desde la raíz del juego, con Node, sharp, Python y Pillow disponibles:
 
 ```powershell
-node tools/build_chava.cjs
-python tools/configure_chava.py
-python tools/validate_chava.py
-node tools/preview_chava.cjs
+node tools/revise_chava.cjs
+python tools/validate_chava_revision.py
+node tools/preview_chava_revision.cjs
 ```
 
-Los scripts de construcción regeneran los archivos `chava.*`. Si editas esos
-archivos a mano, respalda tus ajustes o trasládalos al generador antes de reconstruir.
-El validador usa Pillow y comprueba el SFF, las 282 referencias de cuadros AIR,
-las poses requeridas, la transparencia, los contactos y la conservación de los originales.
+La reconstrucción parte de backups/chava-manual-20260910/, que conserva tus cambios previos a esta revisión. Si vuelves a editar manualmente, respalda los archivos y actualiza el generador antes de reconstruir. Los generadores antiguos están bloqueados para evitar sobrescribir esta versión.
 
-Prueba opcional de los doce ataques y el especial, sin añadir otra casilla al selector:
+Prueba opcional fuera del selector normal:
 
 ```powershell
 python tools/chava_qa.py
-.\Ikemen_GO.exe -p1 estudiante/chava-qa.def -p2 kfm -s stages/patio.def -p2.life 10000 -p2.lifeMax 10000 -time 40
+.\Ikemen_GO.exe -debug -p1 estudiante/chava-qa.def -p2 kfm -s stages/patio.def -p2.life 10000 -p2.lifeMax 10000 -time 40
 ```
 
-`chava-qa.def` y `chava-qa.cns` son exclusivamente de prueba: reposicionan al
-personaje y rellenan su energía para recorrer los ataques. `estudiante.def`
-no los carga.
+Recorre 17 ataques, incluidos cuatro pares alternados, y comprueba la animación elegida. La definición normal no carga chava-qa.*. La validación estática comprueba referencias, transparencia, contacto con píxeles del sprite, variantes distintas y conservación exacta del código y secuencias de IA. Se comprobó la carga y los ataques en Ikemen. El balance y las cadenas con teclado o mando necesitan evaluación jugando.
 
-## Verificación y límites
+## Restaurar tu versión manual
 
-Se cargó el personaje en Ikemen GO v1.0.0-rc.4, se revisó su aspecto en el patio y
-se ejecutó combate automático. El especial consumió energía y dañó al adversario.
-Además se ejecutó la secuencia programada de ataques. Las comprobaciones estáticas
-verifican que cada ataque tenga colisión activa en su cuarto cuadro y que esa
-colisión coincida con píxeles del sprite.
-
-Esta es una revisión jugable; la fluidez visual y el balance aún admiten ajustes
-tras jugar con teclado o mando. No se ha hecho una prueba manual completa de todos
-los comandos ni una prueba extensiva contra personajes externos. La comprobación
-geométrica de las cajas no sustituye ese balance durante partidas.
-
-Documentación técnica consultada: [controladores de estado de Elecbyte](https://elecbyte.com/mugendocs/sctrls.html).
-
-## Volver a la versión anterior
-
-La carpeta `backups/chava-pre-20260909/`, en la raíz del juego, conserva los archivos
-anteriores, incluidos los cambios que ya había antes de esta revisión. Los
-`estudiante.air`, `estudiante.sff`, `kfm.cns` y `kfm.cmd` antiguos siguen intactos.
-Para reactivar esa versión basta con restaurar su `estudiante.def` desde la copia.
+Con el juego cerrado, restaura los archivos del personaje desde backups/chava-manual-20260910/. Esa copia contiene tu versión inmediatamente anterior a estas variantes.

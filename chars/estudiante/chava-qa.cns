@@ -20,173 +20,269 @@ value = 1000
 [State -2, Report]
 type = DisplayToClipboard
 trigger1 = 1
-text = "CHAVA QA: state=%d tick=%d helpers=%d power=%d"
-params = StateNo, var(58), NumHelper, Power
+text = "CHAVA QA: anim=%d checks=%d errors=%d tick=%d"
+params = Anim, var(56), var(57), var(58)
 
-[State -2, Position 3000]
-type = PosSet
-trigger1 = var(58) % 1680 = 30
-x = (EnemyNear, Pos X) - Facing * 150
-y = 0
+[State -2, Count variant 200]
+type = VarAdd
+trigger1 = StateNo = 200
+trigger1 = Time = 1
+v = 56
+value = 1
 
-[State -2, Run 3000]
-type = ChangeState
-trigger1 = var(58) % 1680 = 30
-value = 3000
-ctrl = 0
+[State -2, Verify variant 200]
+type = VarAdd
+trigger1 = StateNo = 200
+trigger1 = Time = 1
+trigger1 = Anim != ifelse(var(20), 200, 201)
+v = 57
+value = 1
+
+[State -2, Count variant 210]
+type = VarAdd
+trigger1 = StateNo = 210
+trigger1 = Time = 1
+v = 56
+value = 1
+
+[State -2, Verify variant 210]
+type = VarAdd
+trigger1 = StateNo = 210
+trigger1 = Time = 1
+trigger1 = Anim != ifelse(var(21), 210, 211)
+v = 57
+value = 1
+
+[State -2, Count variant 400]
+type = VarAdd
+trigger1 = StateNo = 400
+trigger1 = Time = 1
+v = 56
+value = 1
+
+[State -2, Verify variant 400]
+type = VarAdd
+trigger1 = StateNo = 400
+trigger1 = Time = 1
+trigger1 = Anim != ifelse(var(22), 400, 401)
+v = 57
+value = 1
+
+[State -2, Count variant 600]
+type = VarAdd
+trigger1 = StateNo = 600
+trigger1 = Time = 1
+v = 56
+value = 1
+
+[State -2, Verify variant 600]
+type = VarAdd
+trigger1 = StateNo = 600
+trigger1 = Time = 1
+trigger1 = Anim != ifelse(var(23), 600, 601)
+v = 57
+value = 1
 
 [State -2, Position 200]
 type = PosSet
-trigger1 = var(58) % 1680 = 150
+trigger1 = var(58) % 2040 = 30
 x = (EnemyNear, Pos X) - Facing * 46
 y = 0
 
 [State -2, Run 200]
 type = ChangeState
-trigger1 = var(58) % 1680 = 150
+trigger1 = var(58) % 2040 = 30
+value = 200
+ctrl = 0
+
+[State -2, Position 200]
+type = PosSet
+trigger1 = var(58) % 2040 = 150
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 200]
+type = ChangeState
+trigger1 = var(58) % 2040 = 150
 value = 200
 ctrl = 0
 
 [State -2, Position 210]
 type = PosSet
-trigger1 = var(58) % 1680 = 270
+trigger1 = var(58) % 2040 = 270
 x = (EnemyNear, Pos X) - Facing * 46
 y = 0
 
 [State -2, Run 210]
 type = ChangeState
-trigger1 = var(58) % 1680 = 270
+trigger1 = var(58) % 2040 = 270
 value = 210
 ctrl = 0
 
-[State -2, Position 230]
+[State -2, Position 210]
 type = PosSet
-trigger1 = var(58) % 1680 = 390
+trigger1 = var(58) % 2040 = 390
 x = (EnemyNear, Pos X) - Facing * 46
 y = 0
 
-[State -2, Run 230]
+[State -2, Run 210]
 type = ChangeState
-trigger1 = var(58) % 1680 = 390
-value = 230
-ctrl = 0
-
-[State -2, Position 240]
-type = PosSet
-trigger1 = var(58) % 1680 = 510
-x = (EnemyNear, Pos X) - Facing * 46
-y = 0
-
-[State -2, Run 240]
-type = ChangeState
-trigger1 = var(58) % 1680 = 510
-value = 240
+trigger1 = var(58) % 2040 = 390
+value = 210
 ctrl = 0
 
 [State -2, Position 400]
 type = PosSet
-trigger1 = var(58) % 1680 = 630
+trigger1 = var(58) % 2040 = 510
 x = (EnemyNear, Pos X) - Facing * 46
 y = 0
 
 [State -2, Run 400]
 type = ChangeState
-trigger1 = var(58) % 1680 = 630
+trigger1 = var(58) % 2040 = 510
 value = 400
 ctrl = 0
 
-[State -2, Position 410]
+[State -2, Position 400]
 type = PosSet
-trigger1 = var(58) % 1680 = 750
+trigger1 = var(58) % 2040 = 630
 x = (EnemyNear, Pos X) - Facing * 46
 y = 0
 
-[State -2, Run 410]
+[State -2, Run 400]
 type = ChangeState
-trigger1 = var(58) % 1680 = 750
-value = 410
-ctrl = 0
-
-[State -2, Position 430]
-type = PosSet
-trigger1 = var(58) % 1680 = 870
-x = (EnemyNear, Pos X) - Facing * 46
-y = 0
-
-[State -2, Run 430]
-type = ChangeState
-trigger1 = var(58) % 1680 = 870
-value = 430
-ctrl = 0
-
-[State -2, Position 440]
-type = PosSet
-trigger1 = var(58) % 1680 = 990
-x = (EnemyNear, Pos X) - Facing * 46
-y = 0
-
-[State -2, Run 440]
-type = ChangeState
-trigger1 = var(58) % 1680 = 990
-value = 440
+trigger1 = var(58) % 2040 = 630
+value = 400
 ctrl = 0
 
 [State -2, Position 600]
 type = PosSet
-trigger1 = var(58) % 1680 = 1110
+trigger1 = var(58) % 2040 = 750
 x = (EnemyNear, Pos X) - Facing * 46
 y = -45
 
 [State -2, Run 600]
 type = ChangeState
-trigger1 = var(58) % 1680 = 1110
+trigger1 = var(58) % 2040 = 750
 value = 600
+ctrl = 0
+
+[State -2, Position 600]
+type = PosSet
+trigger1 = var(58) % 2040 = 870
+x = (EnemyNear, Pos X) - Facing * 46
+y = -45
+
+[State -2, Run 600]
+type = ChangeState
+trigger1 = var(58) % 2040 = 870
+value = 600
+ctrl = 0
+
+[State -2, Position 230]
+type = PosSet
+trigger1 = var(58) % 2040 = 990
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 230]
+type = ChangeState
+trigger1 = var(58) % 2040 = 990
+value = 230
+ctrl = 0
+
+[State -2, Position 240]
+type = PosSet
+trigger1 = var(58) % 2040 = 1110
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 240]
+type = ChangeState
+trigger1 = var(58) % 2040 = 1110
+value = 240
+ctrl = 0
+
+[State -2, Position 410]
+type = PosSet
+trigger1 = var(58) % 2040 = 1230
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 410]
+type = ChangeState
+trigger1 = var(58) % 2040 = 1230
+value = 410
+ctrl = 0
+
+[State -2, Position 430]
+type = PosSet
+trigger1 = var(58) % 2040 = 1350
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 430]
+type = ChangeState
+trigger1 = var(58) % 2040 = 1350
+value = 430
+ctrl = 0
+
+[State -2, Position 440]
+type = PosSet
+trigger1 = var(58) % 2040 = 1470
+x = (EnemyNear, Pos X) - Facing * 46
+y = 0
+
+[State -2, Run 440]
+type = ChangeState
+trigger1 = var(58) % 2040 = 1470
+value = 440
 ctrl = 0
 
 [State -2, Position 610]
 type = PosSet
-trigger1 = var(58) % 1680 = 1230
+trigger1 = var(58) % 2040 = 1590
 x = (EnemyNear, Pos X) - Facing * 46
 y = -45
 
 [State -2, Run 610]
 type = ChangeState
-trigger1 = var(58) % 1680 = 1230
+trigger1 = var(58) % 2040 = 1590
 value = 610
 ctrl = 0
 
 [State -2, Position 630]
 type = PosSet
-trigger1 = var(58) % 1680 = 1350
+trigger1 = var(58) % 2040 = 1710
 x = (EnemyNear, Pos X) - Facing * 46
 y = -45
 
 [State -2, Run 630]
 type = ChangeState
-trigger1 = var(58) % 1680 = 1350
+trigger1 = var(58) % 2040 = 1710
 value = 630
 ctrl = 0
 
 [State -2, Position 640]
 type = PosSet
-trigger1 = var(58) % 1680 = 1470
+trigger1 = var(58) % 2040 = 1830
 x = (EnemyNear, Pos X) - Facing * 46
 y = -45
 
 [State -2, Run 640]
 type = ChangeState
-trigger1 = var(58) % 1680 = 1470
+trigger1 = var(58) % 2040 = 1830
 value = 640
 ctrl = 0
 
 [State -2, Position 3000]
 type = PosSet
-trigger1 = var(58) % 1680 = 1590
+trigger1 = var(58) % 2040 = 1950
 x = (EnemyNear, Pos X) - Facing * 150
 y = 0
 
 [State -2, Run 3000]
 type = ChangeState
-trigger1 = var(58) % 1680 = 1590
+trigger1 = var(58) % 2040 = 1950
 value = 3000
 ctrl = 0

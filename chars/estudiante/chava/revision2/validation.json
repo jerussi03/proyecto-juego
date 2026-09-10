@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "sprites": 229,
+  "actions": 108,
+  "references": 318,
+  "standing_height": 106,
+  "manual_IA_preserved": true,
+  "distinct_attack_pairs": 9
+}

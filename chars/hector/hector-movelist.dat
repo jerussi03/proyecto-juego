@@ -1,0 +1,27 @@
+<#abf2eb>:HECTOR / PROFESOR DE REDES:</>
+
+<#ead08e>:Basicos:</>
+Ping / Ping / Pong                    ^X ^X ^X
+RJ-45                                 ^Y
+Packet Kick                           ^A
+Capa Fisica                           _D_+^A
+Handshake (cerca)                      ^A_+^B
+Firewall                              _B / _DB
+Acceso Denegado                        ^C
+Error 403 (tras parry)                 ^Y
+Packet Loss                           _D_+^C
+
+<#ead08e>:Red y drones:</>
+DDoS (500)                            ^B
+Drone Deploy (1000)                    ^Z
+Sin conexion (750)                     _D_+^Z
+Modo FPV (750)                         _F_+^Z
+CTRL + ALT + SUPR (1500)               ^X_+^Y
+Denegacion de servicio (3000)          ^Y_+^Z
+Desconectado (1000, rival <=120)       _B_+^Z
+
+Parry: ventana de 6 cuadros. Pulsa Y despues para Error 403.
+Drone Deploy dura 8 segundos; el rival puede destruir el dron.
+Sin conexion reduce el impulso horizontal del rival alcanzado.
+El remate debe conectar: puede fallar o ser bloqueado.
+Provocacion: un dato curioso. Victoria: otro curso completado.

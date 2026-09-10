@@ -33,16 +33,16 @@ FloatPersistIndex = 40
 [Size]
 xscale = 1           ;Horizontal scaling factor.
 yscale = 1           ;Vertical scaling factor.
-ground.back = 15     ;Player width (back, ground)
-ground.front = 16    ;Player width (front, ground)
-air.back = 12        ;Player width (back, air)
-air.front = 12       ;Player width (front, air)
-height = 112          ;Height of player (for opponent to jump over)
+ground.back = 13 ;Player width (back, ground)
+ground.front = 14 ;Player width (front, ground)
+air.back = 11 ;Player width (back, air)
+air.front = 11 ;Player width (front, air)
+height = 99 ;Height of player (for opponent to jump over)
 attack.dist = 85    ;Default attack distance
 proj.attack.dist = 90 ;Default attack distance for projectiles
 proj.doscale = 0     ;Set to 1 to scale projectiles too
-head.pos = 0, -105   ;Approximate position of head
-mid.pos = 0, -60    ;Approximate position of midsection
+head.pos = 0, -92 ;Approximate position of head
+mid.pos = 0, -53 ;Approximate position of midsection
 shadowoffset = 0     ;Number of pixels to vertically offset the shadow
 draw.offset = 0,0    ;Player drawing offset in pixels (x, y). Recommended 0,0
 
@@ -143,11 +143,23 @@ type = S
 movetype = A
 physics = S
 ctrl = 0
-anim = 200
+anim = ifelse(var(20), 201, 200)
 velset = 0,0
 juggle = 1
 poweradd = 12
 sprpriority = 2
+
+[State 200, Alternate next attack]
+type = VarSet
+trigger1 = Time = 0
+v = 20
+value = 1 - var(20)
+
+[State 200, Clear repeat buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 24
+value = 0
 
 [State 200, Swing]
 type = PlaySnd
@@ -165,7 +177,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 6,7
 sparkno = 0
-sparkxy = -8,-77
+sparkxy = -7,-68
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
@@ -176,6 +188,22 @@ air.velocity = -3,-4.5
 air.hittime = 18
 fall = 0
 fall.recover = 1
+
+[State 200, Buffer another press]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 3
+trigger1 = command = "x"
+v = 24
+value = 1
+ignorehitpause = 1
+
+[State 200, Play buffered alternate]
+type = ChangeState
+trigger1 = var(24) = 1
+trigger1 = AnimElemTime(5) >= 0
+value = 200
+ctrl = 0
 
 [State 200, End]
 type = ChangeState
@@ -190,11 +218,23 @@ type = S
 movetype = A
 physics = S
 ctrl = 0
-anim = 210
+anim = ifelse(var(21), 211, 210)
 velset = 0,0
 juggle = 4
 poweradd = 30
 sprpriority = 2
+
+[State 210, Alternate next attack]
+type = VarSet
+trigger1 = Time = 0
+v = 21
+value = 1 - var(21)
+
+[State 210, Clear repeat buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 24
+value = 0
 
 [State 210, Swing]
 type = PlaySnd
@@ -212,7 +252,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 10,11
 sparkno = 2
-sparkxy = -8,-77
+sparkxy = -7,-68
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High
@@ -223,6 +263,22 @@ air.velocity = -3,-4.5
 air.hittime = 18
 fall = 0
 fall.recover = 1
+
+[State 210, Buffer another press]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 3
+trigger1 = command = "y"
+v = 24
+value = 1
+ignorehitpause = 1
+
+[State 210, Play buffered alternate]
+type = ChangeState
+trigger1 = var(24) = 1
+trigger1 = AnimElemTime(6) >= 0
+value = 210
+ctrl = 0
 
 [State 210, End]
 type = ChangeState
@@ -259,7 +315,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 6,7
 sparkno = 0
-sparkxy = -8,-77
+sparkxy = -7,-68
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
@@ -306,7 +362,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 10,11
 sparkno = 2
-sparkxy = -8,-77
+sparkxy = -7,-68
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High
@@ -331,11 +387,23 @@ type = C
 movetype = A
 physics = C
 ctrl = 0
-anim = 400
+anim = ifelse(var(22), 401, 400)
 velset = 0,0
 juggle = 1
 poweradd = 12
 sprpriority = 2
+
+[State 400, Alternate next attack]
+type = VarSet
+trigger1 = Time = 0
+v = 22
+value = 1 - var(22)
+
+[State 400, Clear repeat buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 24
+value = 0
 
 [State 400, Swing]
 type = PlaySnd
@@ -353,7 +421,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 6,7
 sparkno = 0
-sparkxy = -8,-51
+sparkxy = -7,-45
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
@@ -364,6 +432,22 @@ air.velocity = -3,-4.5
 air.hittime = 18
 fall = 0
 fall.recover = 1
+
+[State 400, Buffer another press]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 3
+trigger1 = command = "x"
+v = 24
+value = 1
+ignorehitpause = 1
+
+[State 400, Play buffered alternate]
+type = ChangeState
+trigger1 = var(24) = 1
+trigger1 = AnimElemTime(5) >= 0
+value = 400
+ctrl = 0
 
 [State 400, End]
 type = ChangeState
@@ -400,7 +484,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 10,11
 sparkno = 2
-sparkxy = -8,-51
+sparkxy = -7,-45
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High
@@ -447,7 +531,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 6,7
 sparkno = 0
-sparkxy = -8,-15
+sparkxy = -7,-13
 hitsound = 5,0
 guardsound = 6,0
 ground.type = Low
@@ -494,7 +578,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 10,11
 sparkno = 2
-sparkxy = -8,-15
+sparkxy = -7,-13
 hitsound = 5,2
 guardsound = 6,0
 ground.type = Trip
@@ -519,11 +603,23 @@ type = A
 movetype = A
 physics = A
 ctrl = 0
-anim = 600
+anim = ifelse(var(23), 601, 600)
 
 juggle = 1
 poweradd = 12
 sprpriority = 2
+
+[State 600, Alternate next attack]
+type = VarSet
+trigger1 = Time = 0
+v = 23
+value = 1 - var(23)
+
+[State 600, Clear repeat buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 24
+value = 0
 
 [State 600, Swing]
 type = PlaySnd
@@ -541,7 +637,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 6,7
 sparkno = 0
-sparkxy = -8,-77
+sparkxy = -7,-68
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
@@ -552,6 +648,22 @@ air.velocity = -3,-4.5
 air.hittime = 18
 fall = 0
 fall.recover = 1
+
+[State 600, Buffer another press]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 3
+trigger1 = command = "x"
+v = 24
+value = 1
+ignorehitpause = 1
+
+[State 600, Play buffered alternate]
+type = ChangeState
+trigger1 = var(24) = 1
+trigger1 = AnimElemTime(5) >= 0
+value = 600
+ctrl = 0
 
 [State 600, End]
 type = ChangeState
@@ -588,7 +700,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 10,11
 sparkno = 2
-sparkxy = -8,-77
+sparkxy = -7,-68
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High
@@ -635,7 +747,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 6,7
 sparkno = 0
-sparkxy = -8,-77
+sparkxy = -7,-68
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
@@ -682,7 +794,7 @@ hitflag = MAF
 priority = 3,Hit
 pausetime = 10,11
 sparkno = 2
-sparkxy = -8,-77
+sparkxy = -7,-68
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High

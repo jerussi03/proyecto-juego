@@ -1,0 +1,30 @@
+Ikemen, GO!
+Version: v1.0.0-rc.4 Build Time: 2026.08.22
+Using OpenGL 3.3.0 NVIDIA 616.64 (NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2)
+WARNING: Player Hector: command 'holdfwd' compatibility: buffer time forced to 1
+WARNING: Player Hector: command 'holdback' compatibility: buffer time forced to 1
+WARNING: Player Hector: command 'holddown' compatibility: buffer time forced to 1
+WARNING: Player Hector: command 'holdup' compatibility: buffer time forced to 1
+Panic: external/script/main.lua:1162: chars/hector/hector.cns:1950:
+Invalid state controller: TargetVelMul
+stack traceback:
+	[G]: in function 'game'
+	external/script/main.lua:1162: in function 'f_commandLine'
+	external/script/main.lua:1171: in main chunk
+	[G]: ?
+
+Go stack traceback:
+goroutine 1 [running, locked to thread]:
+runtime/debug.Stack()
+	runtime/debug/stack.go:24 +0x65
+main.handlePanic({0x7ff73e53a080?, 0xc000071c40})
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:372 +0x408
+main.realMain.func1()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:66 +0x2a
+panic({0x7ff73e53a080, 0xc000071c40})
+	runtime/panic.go:884 +0x213
+main.realMain()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:206 +0x58d
+main.main()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:59 +0x17
+

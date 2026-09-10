@@ -1,8 +1,8 @@
 <#63ded7>:CHAVA / INGENIERIA EN SISTEMAS:</>
 
 <#f0db91>:Ataques:</>
-Golpe rapido				^X
-Mochilazo				^Y
+Golpe derecho / izquierdo			^X
+Mochilazo sube / baja			^Y
 Patada				^A
 Patada fuerte				^B
 Golpes agachado			_D_+^X / ^Y
@@ -19,4 +19,5 @@ Invocar IA				_QDF^X_+^Y
 Atajo de IA				^Z
 
 Un golpe ligero que conecta puede continuar en uno fuerte.
-La IA aparece y dispara tres rafagas de codigo bloqueables.
+Pulsa otra vez el mismo boton para encadenar la variante.
+La IA aparece y dispara cinco rafagas de codigo bloqueables.

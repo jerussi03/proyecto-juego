@@ -1,0 +1,8 @@
+Ikemen, GO!
+Version: v1.0.0-rc.4 Build Time: 2026.08.22
+Using OpenGL 3.3.0 NVIDIA 616.64 (NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2)
+WARNING: Player Hector: command 'holdfwd' compatibility: buffer time forced to 1
+WARNING: Player Hector: command 'holdback' compatibility: buffer time forced to 1
+WARNING: Player Hector: command 'holddown' compatibility: buffer time forced to 1
+WARNING: Player Hector: command 'holdup' compatibility: buffer time forced to 1
+WARNING: Kung Fu Man's state 1027 in kfm.cns, line 1476: Unknown state controller parameter(s): y, x
