@@ -1,0 +1,33 @@
+Version: v1.0.0-rc.4
+Build Time: 2026.08.22
+Platform: windows (amd64)
+OpenGL 3.3
+RAM in Use: 41 MB / OS Reserved: 83 MB
+Active Goroutines: 2
+Timestamp: 2026-09-10 17:59:28
+
+Engine error
+
+Error: external/script/main.lua:1162: chars/chan/chan.def:
+chars/chan/chan.sff
+png: invalid format: not a PNG file
+stack traceback:
+	[G]: in function 'game'
+	external/script/main.lua:1162: in function 'f_commandLine'
+	external/script/main.lua:1171: in main chunk
+	[G]: ?
+
+Go stack traceback:
+goroutine 1 [running, locked to thread]:
+runtime/debug.Stack()
+	runtime/debug/stack.go:24 +0x65
+main.handlePanic({0x7ff696a0a080?, 0xc0004fee40})
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:372 +0x408
+main.realMain.func1()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:66 +0x2a
+panic({0x7ff696a0a080, 0xc0004fee40})
+	runtime/panic.go:884 +0x213
+main.realMain()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:206 +0x58d
+main.main()
+	github.com/ikemen-engine/Ikemen-GO/src/main.go:59 +0x17

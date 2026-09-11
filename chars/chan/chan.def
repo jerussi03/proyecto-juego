@@ -1,0 +1,25 @@
+[Info]
+name = "Chan"
+displayname = "CHAN"
+versiondate = 09,10,2026
+mugenversion = 1.1
+author = "Proyecto Universidad"
+pal.defaults = 1
+localcoord = 320,240
+
+[Files]
+cmd = ../kfm/kfm.cmd
+cns = chan.cns
+st = ../kfm/kfm.cns
+stcommon = common1.cns
+sprite = chan.sff
+anim = chan.air
+sound = ../kfm/kfm.snd
+
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1
