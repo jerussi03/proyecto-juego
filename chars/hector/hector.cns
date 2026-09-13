@@ -3,6 +3,7 @@
 ; take a look if would like to learn more about the cns.
 
 [Data]
+power = 5000
 ;Amount of life to start with
 life = 1000
 ;attack power (more is stronger)
@@ -963,7 +964,7 @@ physics = S
 ctrl = 0
 anim = 3000
 velset = 0,0
-poweradd = -500
+poweradd = -1000
 
 
 [State 3000, Network helper]
@@ -994,7 +995,7 @@ physics = S
 ctrl = 0
 anim = 3100
 velset = 0,0
-poweradd = -750
+poweradd = -1000
 
 
 [State 3100, Network helper]
@@ -1069,7 +1070,7 @@ physics = S
 ctrl = 0
 anim = 3300
 velset = 0,0
-poweradd = -750
+poweradd = -1000
 
 
 [State 3300, Network helper]
@@ -1100,7 +1101,7 @@ physics = S
 ctrl = 0
 anim = 4000
 velset = 0,0
-poweradd = -3000
+poweradd = ifelse(var(40) > 0,-2000,-3000)
 
 
 [State 4000, Network message]
@@ -1220,7 +1221,7 @@ physics = S
 ctrl = 0
 anim = 3500
 velset = 0,0
-poweradd = -1500
+poweradd = -1000
 
 
 [State 3500, Network message]

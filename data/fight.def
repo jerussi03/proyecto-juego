@@ -61,74 +61,67 @@ scale = 4
 [Lifebar]
 
 ;Player 1
-p1.pos    = 595,40
+p1.pos    = 590,22
 p1.bg0.spr = 10,0
 p1.bg0.offset = 0,0
-p1.bg0.xshear = 3
+p1.bg0.xshear = 0
 p1.top.spr = 11,0
-p1.top.xshear = 3
-p1.mid.spr = 12, 0
-p1.mid.offset = 0,0
-p1.mid.xshear = 3
-p1.mid.palfx.mul = 200, 200, 200
-p1.mid.palfx.sinmul = 32, 32, 32, 5
+p1.top.xshear = 0
+p1.mid.spr = 12,0
+p1.mid.offset = -10,26
+p1.mid.xshear = 0
+p1.mid.palfx.add = 255, 180, 0
+p1.mid.palfx.mul = 255, 200, 100
+p1.mid.palfx.sinmul = 64, 64, 32, 5
 p1.front100.spr = 13,0
-p1.front100.offset = 0,0
-p1.front100.xshear = 3
+p1.front100.offset = -10,26
+p1.front100.xshear = 0
 p1.front50.spr = 13,1
-p1.front50.offset = 0,0
-p1.front50.xshear = 3
+p1.front50.offset = -10,26
+p1.front50.xshear = 0
 p1.front25.spr = 13,2
-p1.front25.offset = 0,0
-p1.front25.xshear = 3
-p1.front.spr = 13, 3
-p1.front.offset = 0,0
-p1.front.palfx.sinmul = 128, 128, 128, 15
-p1.front.xshear = 3
-;p1.shift.spr = 13,2          
-;p1.shift.offset = 0,0       
-;p1.shift.xshear = 3
-p1.range.x  = 15,-460
-p1.scalefill = 1
+p1.front25.offset = -10,26
+p1.front25.xshear = 0
+p1.front.spr = 13,3
+p1.front.offset = -10,26
+p1.front.xshear = 0
+p1.range.x  = 0,-380
+p1.scalefill = 0
 
 ;Player 2
-p2.pos    = 684,40
-p2.bg0.spr = 10,0
+p2.pos    = 690,22
+p2.bg0.spr = 10,1
 p2.bg0.offset = 0,0
-p2.bg0.xshear = -3
-p2.bg0.facing = -1
-p2.top.spr = 11,0
-p2.top.facing = -1
-p2.top.xshear = -3
-p2.mid.spr = 12, 0
-p2.mid.offset = 0,0
-p2.mid.facing = -1
-p2.mid.xshear = -3
-p2.mid.palfx.mul = 200, 200, 200
-p2.mid.palfx.sinmul = 32, 32, 32, 5
-p2.front100.spr = 13,0
-p2.front100.offset = 0,0
-p2.front100.xshear = -3
-p2.front100.facing = -1
-p2.front50.spr = 13,1
-p2.front50.offset = 0,0
-p2.front50.xshear = -3
-p2.front50.facing = -1
-p2.front25.spr = 13,2
-p2.front25.offset = 0,0
-p2.front25.xshear = -3
-p2.front25.facing = -1
-p2.front.spr = 13, 3
-p2.front.offset = 0,0
-p2.front.palfx.sinmul = 128, 128, 128, 15
-p2.front.xshear = -3
-p2.front.facing = -1
-;p2.shift.spr = 13,2          
-;p2.shift.offset = 0,0        
-;p2.shift.xshear = -3
-;p2.shift.facing = -1         
-p2.range.x  = -15,460
-p2.scalefill = 1
+p2.bg0.facing = 1
+p2.bg0.xshear = 0
+p2.top.spr = 11,1
+p2.top.facing = 1
+p2.top.xshear = 0
+p2.mid.spr = 12,1
+p2.mid.offset = 10,26
+p2.mid.facing = 1
+p2.mid.xshear = 0
+p2.mid.palfx.add = 255, 180, 0
+p2.mid.palfx.mul = 255, 200, 100
+p2.mid.palfx.sinmul = 64, 64, 32, 5
+p2.front100.spr = 13,10
+p2.front100.offset = 10,26
+p2.front100.facing = 1
+p2.front100.xshear = 0
+p2.front50.spr = 13,11
+p2.front50.offset = 10,26
+p2.front50.facing = 1
+p2.front50.xshear = 0
+p2.front25.spr = 13,12
+p2.front25.offset = 10,26
+p2.front25.facing = 1
+p2.front25.xshear = 0
+p2.front.spr = 13,13
+p2.front.offset = 10,26
+p2.front.facing = 1
+p2.front.xshear = 0
+p2.range.x  = 0,380
+p2.scalefill = 0
 
 [Simul Lifebar]
 ;Player 1
@@ -1568,15 +1561,15 @@ p2.scalefill = 1
 ;-----------------------------------------------------------
 [Powerbar]
 ;Player 1
-p1.pos    = 568,83
+p1.pos    = 585,118
 p1.bg0.spr = 40,0
-p1.bg0.offset = 0,3
+p1.bg0.offset = 0,0
 p1.bg1.spr = 41,0
 ;p1.mid.spr = 42,0
 p1.front.spr = 43,0
-p1.front.offset = 0,4
-p1.front.palfx.mul = 178, 178, 178
-p1.range.x = -4,-206
+p1.front.offset = 0,5
+p1.front.palfx.mul = 255, 255, 255
+p1.range.x = -6,-158
 
 ; Multiple Front Elements can be added depending on the amount of power, including maximum power
 
@@ -1694,19 +1687,19 @@ p1.counter.font = 4, 0, 0
 p1.levelbars = 1             
 
 ;Player 2
-p2.pos    = 712,83
-p2.bg0.spr = 40,0
-p2.bg0.offset = 0,3
-p2.bg0.facing = -1
-p2.bg1.spr = 41,0
-p2.bg1.facing = -1
+p2.pos    = 695,118
+p2.bg0.spr = 40,1
+p2.bg0.offset = 0,0
+p2.bg0.facing = 1
+p2.bg1.spr = 41,1
+p2.bg1.facing = 1
 ;p2.mid.spr = 42,0
-;p2.mid.facing = -1
-p2.front.spr = 43,0
-p2.front.palfx.mul = 178, 178, 178
-p2.front.offset = 0,4
-p2.front.facing = -1
-p2.range.x  = 4,206
+;p2.mid.facing = 1
+p2.front.spr = 43,1
+p2.front.palfx.mul = 255, 255, 255
+p2.front.offset = 0,5
+p2.front.facing = 1
+p2.range.x  = 56,158
 
 ; Multiple Front Elements can be added depending on the amount of power, including maximum power
 
@@ -2216,21 +2209,27 @@ p2.range.x = 106, 0
 ;-----------------------------------------------------------
 [Face]
 ;Player 1
-p1.pos    = 20,20
+p1.pos    = 64,24
 p1.bg0.spr = 50,0
-p1.bg1.spr = 51,0
-p1.face.spr = 9000,0
+p1.bg0.offset = -4,-2
+p1.face.spr = 9000,1
 p1.face.facing = 1
 p1.face.offset = 0,0
+p1.face.scale = 0.15,0.15
+p1.bg1.spr = 51,0
+p1.bg1.offset = -4,-2
 ;Player 2
-p2.pos    = 1260,20
-p2.bg0.spr = 50,0
-p2.bg0.facing = -1
-p2.bg1.spr = 51,0
-p2.bg1.facing = -1
-p2.face.spr = 9000,0
+p2.pos    = 1216,24
+p2.bg0.spr = 50,1
+p2.bg0.facing = 1
+p2.bg0.offset = -76,-2
+p2.face.spr = 9000,1
 p2.face.facing = -1
 p2.face.offset = 0,0
+p2.face.scale = 0.15,0.15
+p2.bg1.spr = 51,1
+p2.bg1.facing = 1
+p2.bg1.offset = -76,-2
 
 [Simul Face]
 ;Player 1
@@ -2709,14 +2708,14 @@ p*.teammate.ko.hide = 1
 
 ;-----------------------------------------------------------
 [Time]
-pos = 640,105
+pos = 640,30
 ; Uncomment the following line to use a bg component
 ;bg.spr = 
 ; Time count display
-counter.offset = 0,30
+counter.offset = 0,16
 counter.font = 2,0, 0
-counter.scale = 2, 2
-counter.palfx.mul = 256, 0, 0
+counter.scale = 1.6, 1.6
+counter.palfx.mul = 256, 220, 50
 ; Ticks for each count
 framespercount = 60
 

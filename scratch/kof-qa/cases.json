@@ -1,0 +1,658 @@
+[
+  {
+    "label": "AB roll",
+    "facing": 1,
+    "sequence": [
+      [
+        "x",
+        "a"
+      ]
+    ],
+    "target": 920
+  },
+  {
+    "label": "back AB roll",
+    "facing": 1,
+    "sequence": [
+      [
+        "B"
+      ],
+      [
+        "B",
+        "x",
+        "a"
+      ]
+    ],
+    "target": 921
+  },
+  {
+    "label": "RT roll",
+    "facing": 1,
+    "sequence": [
+      [
+        "c"
+      ]
+    ],
+    "target": 920
+  },
+  {
+    "label": "BC MAX",
+    "facing": 1,
+    "sequence": [
+      [
+        "a",
+        "y"
+      ]
+    ],
+    "target": 900
+  },
+  {
+    "label": "RB MAX",
+    "facing": 1,
+    "sequence": [
+      [
+        "z"
+      ]
+    ],
+    "target": 900
+  },
+  {
+    "label": "crouch A",
+    "facing": 1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "x"
+      ]
+    ],
+    "target": 400
+  },
+  {
+    "label": "crouch C",
+    "facing": 1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "y"
+      ]
+    ],
+    "target": 410
+  },
+  {
+    "label": "stand D",
+    "facing": 1,
+    "sequence": [
+      [
+        "b"
+      ]
+    ],
+    "target": 240
+  },
+  {
+    "label": "crouch D",
+    "facing": 1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "b"
+      ]
+    ],
+    "target": 440
+  },
+  {
+    "label": "QCF A",
+    "facing": 1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F",
+        "x"
+      ]
+    ],
+    "target": 1000
+  },
+  {
+    "label": "QCF C",
+    "facing": 1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F",
+        "y"
+      ]
+    ],
+    "target": 1000
+  },
+  {
+    "label": "DP A",
+    "facing": 1,
+    "sequence": [
+      [
+        "F"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F",
+        "x"
+      ]
+    ],
+    "target": 1010
+  },
+  {
+    "label": "QCB A",
+    "facing": 1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "B",
+        "x"
+      ]
+    ],
+    "target": 1020
+  },
+  {
+    "label": "HCF B",
+    "facing": 1,
+    "sequence": [
+      [
+        "B"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F",
+        "a"
+      ]
+    ],
+    "target": 1030
+  },
+  {
+    "label": "double QCF super",
+    "facing": 1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F",
+        "x"
+      ]
+    ],
+    "target": -1
+  },
+  {
+    "label": "rush super",
+    "facing": 1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "B",
+        "x"
+      ]
+    ],
+    "target": 3500
+  },
+  {
+    "label": "MAX2",
+    "facing": 1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "B"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "B",
+        "x",
+        "y"
+      ]
+    ],
+    "target": 4000
+  },
+  {
+    "label": "CD blowback",
+    "facing": 1,
+    "sequence": [
+      [
+        "y",
+        "b"
+      ]
+    ],
+    "target": 750
+  },
+  {
+    "label": "BC insufficient energy",
+    "facing": 1,
+    "sequence": [
+      [
+        "a",
+        "y"
+      ]
+    ],
+    "target": -2
+  },
+  {
+    "label": "guard cancel AB",
+    "facing": 1,
+    "sequence": [
+      [
+        "x",
+        "a"
+      ]
+    ],
+    "target": 922
+  },
+  {
+    "label": "AB roll",
+    "facing": -1,
+    "sequence": [
+      [
+        "x",
+        "a"
+      ]
+    ],
+    "target": 920
+  },
+  {
+    "label": "back AB roll",
+    "facing": -1,
+    "sequence": [
+      [
+        "B"
+      ],
+      [
+        "B",
+        "x",
+        "a"
+      ]
+    ],
+    "target": 921
+  },
+  {
+    "label": "RT roll",
+    "facing": -1,
+    "sequence": [
+      [
+        "c"
+      ]
+    ],
+    "target": 920
+  },
+  {
+    "label": "BC MAX",
+    "facing": -1,
+    "sequence": [
+      [
+        "a",
+        "y"
+      ]
+    ],
+    "target": 900
+  },
+  {
+    "label": "RB MAX",
+    "facing": -1,
+    "sequence": [
+      [
+        "z"
+      ]
+    ],
+    "target": 900
+  },
+  {
+    "label": "crouch A",
+    "facing": -1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "x"
+      ]
+    ],
+    "target": 400
+  },
+  {
+    "label": "crouch C",
+    "facing": -1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "y"
+      ]
+    ],
+    "target": 410
+  },
+  {
+    "label": "stand D",
+    "facing": -1,
+    "sequence": [
+      [
+        "b"
+      ]
+    ],
+    "target": 240
+  },
+  {
+    "label": "crouch D",
+    "facing": -1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "b"
+      ]
+    ],
+    "target": 440
+  },
+  {
+    "label": "QCF A",
+    "facing": -1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F",
+        "x"
+      ]
+    ],
+    "target": 1000
+  },
+  {
+    "label": "QCF C",
+    "facing": -1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F",
+        "y"
+      ]
+    ],
+    "target": 1000
+  },
+  {
+    "label": "DP A",
+    "facing": -1,
+    "sequence": [
+      [
+        "F"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F",
+        "x"
+      ]
+    ],
+    "target": 1010
+  },
+  {
+    "label": "QCB A",
+    "facing": -1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "B",
+        "x"
+      ]
+    ],
+    "target": 1020
+  },
+  {
+    "label": "HCF B",
+    "facing": -1,
+    "sequence": [
+      [
+        "B"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F",
+        "a"
+      ]
+    ],
+    "target": 1030
+  },
+  {
+    "label": "double QCF super",
+    "facing": -1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F",
+        "x"
+      ]
+    ],
+    "target": -1
+  },
+  {
+    "label": "rush super",
+    "facing": -1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "F"
+      ],
+      [
+        "D",
+        "F"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "B",
+        "x"
+      ]
+    ],
+    "target": 3500
+  },
+  {
+    "label": "MAX2",
+    "facing": -1,
+    "sequence": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "B"
+      ],
+      [
+        "D"
+      ],
+      [
+        "D",
+        "B"
+      ],
+      [
+        "B",
+        "x",
+        "y"
+      ]
+    ],
+    "target": 4000
+  },
+  {
+    "label": "CD blowback",
+    "facing": -1,
+    "sequence": [
+      [
+        "y",
+        "b"
+      ]
+    ],
+    "target": 750
+  },
+  {
+    "label": "BC insufficient energy",
+    "facing": -1,
+    "sequence": [
+      [
+        "a",
+        "y"
+      ]
+    ],
+    "target": -2
+  },
+  {
+    "label": "guard cancel AB",
+    "facing": -1,
+    "sequence": [
+      [
+        "x",
+        "a"
+      ]
+    ],
+    "target": 922
+  }
+]

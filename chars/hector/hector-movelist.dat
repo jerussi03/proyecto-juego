@@ -1,27 +1,40 @@
-<#abf2eb>:HECTOR / PROFESOR DE REDES:</>
+<#abf2eb>:HECTOR / CONTROLES KOF:</>
 
-<#ead08e>:Basicos:</>
-Ping / Ping / Pong                    ^X ^X ^X
-RJ-45                                 ^Y
-Packet Kick                           ^A
-Capa Fisica                           _D_+^A
-Handshake (cerca)                      ^A_+^B
-Firewall                              _B / _DB
-Acceso Denegado                        ^C
-Error 403 (tras parry)                 ^Y
-Packet Loss                           _D_+^C
+KOF A / B / C / D = ^X / ^A / ^Y / ^B
+Xbox: X / A / Y / B. RT esquive, RB MAX.
 
-<#ead08e>:Red y drones:</>
-DDoS (500)                            ^B
-Drone Deploy (1000)                    ^Z
-Sin conexion (750)                     _D_+^Z
-Modo FPV (750)                         _F_+^Z
-CTRL + ALT + SUPR (1500)               ^X_+^Y
-Denegacion de servicio (3000)          ^Y_+^Z
-Desconectado (1000, rival <=120)       _B_+^Z
+<#ead08e>:Basicos y sistema:</>
+Punio ligero / fuerte                 ^X / ^Y
+Patada ligera / fuerte                ^A / ^B
+Agachado / aire                       mismos cuatro botones
+Correr / salto atras                  _F_F / _B_B
+Bloquear                              _B / _DB
+Esquive adelante                      ^X_+^A o ^C
+Esquive atras                         _B + ^X_+^A o ^C
+MAX (1000; durante golpe 2000)         ^A_+^Y o ^Z
+Golpe de rechazo                      ^Y_+^B
+Esquive al bloquear: 1000 de energia.
 
-Parry: ventana de 6 cuadros. Pulsa Y despues para Error 403.
-Drone Deploy dura 8 segundos; el rival puede destruir el dron.
-Sin conexion reduce el impulso horizontal del rival alcanzado.
-El remate debe conectar: puede fallar o ser bloqueado.
-Provocacion: un dato curioso. Victoria: otro curso completado.
+<#ead08e>:Especiales sin barra:</>
+Paquete de red                        _D_DF_F + ^X / ^Y
+Gancho de protocolo                   _F_D_DF + ^X / ^Y
+Latigazo RJ-45                        _D_DB_B + ^X / ^Y
+Barrida capa fisica                   _B_DB_D_DF_F + ^A / ^B
+Firewall parry                        _D_DB_B + ^A / ^B
+Error 403 tras parry                  ^Y
+Handshake (cerca)                     _F_DF_D_DB_B + ^X
+
+<#ead08e>:Supers - 1000 de energia:</>
+Sin conexion                         _B_DB_D_DF_F + ^X / ^Y
+Drone Deploy                         _D_DF_F_D_DF_F + ^X / ^Y
+DDoS                                 _D_DF_F_D_DF_F + ^A / ^B
+Modo FPV                             _D_DB_B_D_DB_B + ^A / ^B
+CTRL ALT SUPR                        _D_DF_F_DF_D_DB_B + ^X / ^Y
+Desconectado (rival <=120 vida)       _F_DF_D_DB_B + ^Y
+
+<#ead08e>:MAX2 - 2000 y MAX activo:</>
+Denegacion de servicio               _D_DB_B_D_DB_B + ^X_+^Y
+
+MAX permite cancelar entre especiales distintos al conectar.
+Cada cancelacion de especial consume tiempo de MAX.
+Las direcciones se invierten al cambiar de lado.

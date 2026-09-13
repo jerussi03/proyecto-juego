@@ -192,8 +192,9 @@
  ;
  ;Insert your characters below.
 
-; ALEX — EL ALUMNO PROMEDIO
-estudiante, stages/patio.def
+; CHAVA
+chava, stages/patio.def
+hector, stages/patio.def
 chan/chan.def, stages/patio.def
 kfm_zss, stages/kfm.def
 kfm720, stages/kfm.def, order=0
@@ -278,6 +279,8 @@ stages/interactivestage.def
 stages/kfm.def
 stages/stage0.def
 stages/stage0-720.def
+stages/utc_pasillo.def
+stages/utc_vinculacion.def
 
 ;-------------------------------------------------------------------------------
 [Options]

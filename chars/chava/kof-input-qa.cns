@@ -1,0 +1,2991 @@
+; Chava - Ingenieria en Sistemas
+[Data]
+power = 5000
+;Amount of life to start with
+life = 1000
+;attack power (more is stronger)
+attack = 100
+;defensive power (more is stronger)
+defence = 100
+;Percentage to increase defense everytime player is knocked down
+fall.defence_up = 50
+;Time which player lies down for, before getting up
+liedown.time = 60
+;Number of points for juggling
+airjuggle = 15
+;Default hit spark number for HitDefs
+sparkno = 2
+;Default guard spark number
+guard.sparkno = 40
+;1 to enable echo on KO
+KO.echo = 0
+;Volume offset (negative for softer)
+volume = 0
+;Variables with this index and above will not have their values
+;reset to 0 between rounds or matches. There are 60 int variables,
+;indexed from 0 to 59, and 40 float variables, indexed from 0 to 39.
+;If omitted, then it defaults to 60 and 40 for integer and float
+;variables repectively, meaning that none are persistent, i.e. all
+;are reset. If you want your variables to persist between matches,
+;you need to override state 5900 from common1.cns.
+IntPersistIndex = 60
+FloatPersistIndex = 40
+
+[Size]
+xscale = 1           ;Horizontal scaling factor.
+yscale = 1           ;Vertical scaling factor.
+ground.back = 13 ;Player width (back, ground)
+ground.front = 14 ;Player width (front, ground)
+air.back = 11 ;Player width (back, air)
+air.front = 11 ;Player width (front, air)
+height = 99 ;Height of player (for opponent to jump over)
+attack.dist = 85    ;Default attack distance
+proj.attack.dist = 90 ;Default attack distance for projectiles
+proj.doscale = 0     ;Set to 1 to scale projectiles too
+head.pos = 0, -92 ;Approximate position of head
+mid.pos = 0, -53 ;Approximate position of midsection
+shadowoffset = 0     ;Number of pixels to vertically offset the shadow
+draw.offset = 0,0    ;Player drawing offset in pixels (x, y). Recommended 0,0
+
+[Velocity]
+walk.fwd  = 1.55      ;Walk forward
+walk.back = -1.25     ;Walk backward
+run.fwd  = 3.8, 0    ;Run forward (x, y)
+run.back = -4.5,-3.8 ;Hop backward (x, y)
+jump.neu = 0,-8.4    ;Neutral jumping velocity (x, y)
+jump.back = -2.55    ;Jump back Speed (x, y)
+jump.fwd = 2.5       ;Jump forward Speed (x, y)
+runjump.back = -2.55,-8.1 ;Running jump speeds (opt)
+runjump.fwd = 4,-8.1      ;.
+airjump.neu = 0,-8.1      ;.
+airjump.back = -2.55      ;Air jump speeds (opt)
+airjump.fwd = 2.5         ;.
+air.gethit.groundrecover = -.15,-3.5  ;Velocity for ground recovery state (x, y) **MUGEN 1.0**
+air.gethit.airrecover.mul = .5,.2     ;Multiplier for air recovery velocity (x, y) **MUGEN 1.0**
+air.gethit.airrecover.add = 0,-4.5    ;Velocity offset for air recovery (x, y) **MUGEN 1.0**
+air.gethit.airrecover.back = -1       ;Extra x-velocity for holding back during air recovery **MUGEN 1.0**
+air.gethit.airrecover.fwd = 0         ;Extra x-velocity for holding forward during air recovery **MUGEN 1.0**
+air.gethit.airrecover.up = -2         ;Extra y-velocity for holding up during air recovery **MUGEN 1.0**
+air.gethit.airrecover.down = 1.5      ;Extra y-velocity for holding down during air recovery **MUGEN 1.0**
+
+[Movement]
+airjump.num = 0       ;Number of air jumps allowed (opt)
+airjump.height = 35   ;Minimum distance from ground before you can air jump (opt)
+yaccel = .44          ;Vertical acceleration
+stand.friction = .85  ;Friction coefficient when standing
+crouch.friction = .82 ;Friction coefficient when crouching
+stand.friction.threshold = 2          ;If player's speed drops below this threshold while standing, stop his movement **MUGEN 1.0**
+crouch.friction.threshold = .05       ;If player's speed drops below this threshold while crouching, stop his movement **MUGEN 1.0**
+air.gethit.groundlevel = 25           ;Y-position at which a falling player is considered to hit the ground **MUGEN 1.0**
+air.gethit.groundrecover.ground.threshold = -20 ;Y-position below which falling player can use the recovery command **MUGEN 1.0**
+air.gethit.groundrecover.groundlevel = 10   ;Y-position at which player in the ground recovery state touches the ground **MUGEN 1.0**
+air.gethit.airrecover.threshold = -1  ;Y-velocity above which player may use the air recovery command **MUGEN 1.0**
+air.gethit.airrecover.yaccel = .35    ;Vertical acceleration for player in the air recovery state **MUGEN 1.0**
+air.gethit.trip.groundlevel = 15      ;Y-position at which player in the tripped state touches the ground **MUGEN 1.0**
+down.bounce.offset = 0, 20            ;Offset for player bouncing off the ground (x, y) **MUGEN 1.0**
+down.bounce.yaccel = .4               ;Vertical acceleration for player bouncing off the ground **MUGEN 1.0**
+down.bounce.groundlevel = 12          ;Y-position at which player bouncing off the ground touches the ground again **MUGEN 1.0**
+down.friction.threshold = .05         ;If the player's speed drops below this threshold while lying down, stop his movement **MUGEN 1.0**
+
+
+[Quotes]
+victory1 = "Un semestre menos. Un paso mas cerca del titulo."
+victory2 = "Compila, funciona y pasa la materia."
+victory3 = "La IA ayuda, pero el examen lo peleo yo."
+
+[Statedef 180]
+type = S
+physics = S
+ctrl = 0
+anim = 181
+velset = 0,0
+
+[State 180, Victory]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[Statedef 191]
+type = S
+physics = S
+ctrl = 0
+anim = 190
+velset = 0,0
+
+[State 191, Intro]
+type = AssertSpecial
+trigger1 = AnimTime != 0
+flag = Intro
+
+[State 191, Ready]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[Statedef 195]
+type = S
+movetype = I
+physics = S
+ctrl = 0
+anim = 195
+velset = 0,0
+
+[State 195, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 200]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = ifelse(var(20), 201, 200)
+velset = 0,0
+juggle = 1
+poweradd = 12
+sprpriority = 2
+
+[State 200, Alternate next attack]
+type = VarSet
+trigger1 = Time = 0
+v = 20
+value = 1 - var(20)
+
+[State 200, Clear repeat buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 24
+value = 0
+
+[State 200, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+[State 200, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 28,0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 6,7
+sparkno = 0
+sparkxy = -7,-68
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 8
+ground.hittime = 12
+ground.velocity = -3.2
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 200, Buffer another press]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 3
+trigger1 = command = "x"
+v = 24
+value = 1
+ignorehitpause = 1
+
+[State 200, Play buffered alternate]
+type = ChangeState
+trigger1 = var(24) = 1
+trigger1 = AnimElemTime(5) >= 0
+value = 200
+ctrl = 0
+
+[State 200, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 210]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = ifelse(var(21), 211, 210)
+velset = 0,0
+juggle = 4
+poweradd = 30
+sprpriority = 2
+
+[State 210, Alternate next attack]
+type = VarSet
+trigger1 = Time = 0
+v = 21
+value = 1 - var(21)
+
+[State 210, Clear repeat buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 24
+value = 0
+
+[State 210, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,4
+
+[State 210, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 76,0
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 10,11
+sparkno = 2
+sparkxy = -7,-68
+hitsound = 5,2
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -5.8
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 210, Buffer another press]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 3
+trigger1 = command = "y"
+v = 24
+value = 1
+ignorehitpause = 1
+
+[State 210, Play buffered alternate]
+type = ChangeState
+trigger1 = var(24) = 1
+trigger1 = AnimElemTime(6) >= 0
+value = 210
+ctrl = 0
+
+[State 210, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 230]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 230
+velset = 0,0
+juggle = 1
+poweradd = 12
+sprpriority = 2
+
+[State 230, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+[State 230, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 35,0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 6,7
+sparkno = 0
+sparkxy = -7,-68
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 8
+ground.hittime = 12
+ground.velocity = -3.2
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 230, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 240]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 240
+velset = 0,0
+juggle = 4
+poweradd = 30
+sprpriority = 2
+
+[State 240, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,4
+
+[State 240, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+damage = 62,0
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 10,11
+sparkno = 2
+sparkxy = -7,-68
+hitsound = 5,2
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -5.8
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 240, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 400]
+type = C
+movetype = A
+physics = C
+ctrl = 0
+anim = ifelse(var(22), 401, 400)
+velset = 0,0
+juggle = 1
+poweradd = 12
+sprpriority = 2
+
+[State 400, Alternate next attack]
+type = VarSet
+trigger1 = Time = 0
+v = 22
+value = 1 - var(22)
+
+[State 400, Clear repeat buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 24
+value = 0
+
+[State 400, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+[State 400, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = C, NA
+damage = 24,0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 6,7
+sparkno = 0
+sparkxy = -7,-45
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 8
+ground.hittime = 12
+ground.velocity = -3.2
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 400, Buffer another press]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 3
+trigger1 = command = "x"
+v = 24
+value = 1
+ignorehitpause = 1
+
+[State 400, Play buffered alternate]
+type = ChangeState
+trigger1 = var(24) = 1
+trigger1 = AnimElemTime(5) >= 0
+value = 400
+ctrl = 0
+
+[State 400, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 410]
+type = C
+movetype = A
+physics = C
+ctrl = 0
+anim = 410
+velset = 0,0
+juggle = 4
+poweradd = 30
+sprpriority = 2
+
+[State 410, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,4
+
+[State 410, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = C, NA
+damage = 48,0
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 10,11
+sparkno = 2
+sparkxy = -7,-45
+hitsound = 5,2
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -5.8
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 410, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 430]
+type = C
+movetype = A
+physics = C
+ctrl = 0
+anim = 430
+velset = 0,0
+juggle = 1
+poweradd = 12
+sprpriority = 2
+
+[State 430, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+[State 430, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = C, NA
+damage = 28,0
+animtype = Light
+guardflag = L
+hitflag = MAF
+priority = 3,Hit
+pausetime = 6,7
+sparkno = 0
+sparkxy = -7,-13
+hitsound = 5,0
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 8
+ground.hittime = 12
+ground.velocity = -3.2
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 430, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 440]
+type = C
+movetype = A
+physics = C
+ctrl = 0
+anim = 440
+velset = 0,0
+juggle = 4
+poweradd = 30
+sprpriority = 2
+
+[State 440, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,4
+
+[State 440, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = C, NA
+damage = 60,0
+animtype = Heavy
+guardflag = L
+hitflag = MAF
+priority = 3,Hit
+pausetime = 10,11
+sparkno = 2
+sparkxy = -7,-13
+hitsound = 5,2
+guardsound = 6,0
+ground.type = Trip
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -5.8,-3.8
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 1
+fall.recover = 1
+
+[State 440, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 600]
+type = A
+movetype = A
+physics = A
+ctrl = 0
+anim = ifelse(var(23), 601, 600)
+
+juggle = 1
+poweradd = 12
+sprpriority = 2
+
+[State 600, Alternate next attack]
+type = VarSet
+trigger1 = Time = 0
+v = 23
+value = 1 - var(23)
+
+[State 600, Clear repeat buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 24
+value = 0
+
+[State 600, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+[State 600, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = A, NA
+damage = 30,0
+animtype = Light
+guardflag = HA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 6,7
+sparkno = 0
+sparkxy = -7,-68
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 8
+ground.hittime = 12
+ground.velocity = -3.2
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 600, Buffer another press]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 3
+trigger1 = command = "x"
+v = 24
+value = 1
+ignorehitpause = 1
+
+[State 600, Play buffered alternate]
+type = ChangeState
+trigger1 = var(24) = 1
+trigger1 = AnimElemTime(5) >= 0
+value = 600
+ctrl = 0
+
+[State 600, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 610]
+type = A
+movetype = A
+physics = A
+ctrl = 0
+anim = 610
+
+juggle = 4
+poweradd = 30
+sprpriority = 2
+
+[State 610, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,4
+
+[State 610, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = A, NA
+damage = 54,0
+animtype = Heavy
+guardflag = HA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 10,11
+sparkno = 2
+sparkxy = -7,-68
+hitsound = 5,2
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -5.8
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 610, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 630]
+type = A
+movetype = A
+physics = A
+ctrl = 0
+anim = 630
+
+juggle = 1
+poweradd = 12
+sprpriority = 2
+
+[State 630, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,0
+
+[State 630, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = A, NA
+damage = 36,0
+animtype = Light
+guardflag = HA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 6,7
+sparkno = 0
+sparkxy = -7,-68
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 8
+ground.hittime = 12
+ground.velocity = -3.2
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 630, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+
+; Active frame is element 4 in chava.air, including on whiff.
+[Statedef 640]
+type = A
+movetype = A
+physics = A
+ctrl = 0
+anim = 640
+
+juggle = 4
+poweradd = 30
+sprpriority = 2
+
+[State 640, Swing]
+type = PlaySnd
+trigger1 = AnimElem = 3
+value = 0,4
+
+[State 640, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = A, NA
+damage = 62,0
+animtype = Heavy
+guardflag = HA
+hitflag = MAF
+priority = 3,Hit
+pausetime = 10,11
+sparkno = 2
+sparkxy = -7,-68
+hitsound = 5,2
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -5.8
+air.velocity = -3,-4.5
+air.hittime = 18
+fall = 0
+fall.recover = 1
+
+[State 640, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+
+; The controller calls an AI tutor. Cost is charged exactly once on entry.
+[Statedef 3000]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+anim = 3000
+velset = 0,0
+poweradd = -1000
+sprpriority = 2
+
+[State 3000, Presentation]
+type = SuperPause
+trigger1 = Time = 10
+time = 18
+movetime = 18
+anim = -1
+sound = F20,0
+darken = 1
+p2defmul = 1
+
+[State 3000, AI tutor]
+type = Helper
+trigger1 = Time = 0
+trigger1 = NumHelper(3010) = 0
+helpertype = normal
+name = "Asistente IA"
+ID = 3010
+stateno = 3010
+postype = p1
+pos = -25,-85
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 18
+
+[State 3000, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[Statedef 3010]
+type = A
+movetype = I
+physics = N
+anim = 3010
+ctrl = 0
+velset = 0,0
+sprpriority = 3
+
+[State 3010, No collision]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 3010, Hologram]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+[State 3010, Shot]
+type = Helper
+trigger1 = AnimElem = 5
+trigger2 = AnimElem = 8
+trigger3 = AnimElem = 11
+trigger4 = AnimElem = 14
+trigger5 = AnimElem = 17
+helpertype = normal
+name = "Codigo compilado"
+ID = 3020
+stateno = 3020
+postype = p1
+pos = 38,14
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+[State 3010, Fade]
+type = DestroySelf
+trigger1 = AnimTime = 0
+trigger2 = RoundState != 2
+trigger3 = Root, Life <= 0
+
+[Statedef 3020]
+type = A
+movetype = A
+physics = N
+anim = 3020
+ctrl = 0
+velset = 6.3,0
+sprpriority = 4
+
+[State 3020, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 3020, Shot collision]
+type = HitOverride
+trigger1 = 1
+attr = SCA,AA,AP,AT
+slot = 0
+stateno = 3021
+time = 1
+
+[State 3020, Damage]
+type = HitDef
+trigger1 = Time = 0
+attr = A,HP
+damage = 32,4
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 0,9
+sparkno = -1
+guard.sparkno = 40
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 18
+ground.velocity = -4.0
+air.velocity = -3,-3.5
+air.hittime = 18
+fall = 0
+getpower = 0,0
+givepower = 18,9
+
+[State 3020, Impact]
+type = ChangeState
+trigger1 = MoveContact
+value = 3021
+
+[State 3020, Cleanup]
+type = DestroySelf
+trigger1 = Time > 100
+trigger2 = FrontEdgeDist < -90
+trigger3 = RoundState != 2
+
+[Statedef 3021]
+type = A
+movetype = I
+physics = N
+anim = 3021
+ctrl = 0
+velset = 0,0
+sprpriority = 4
+
+[State 3021, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 3021, No hit]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 3021, Cleanup]
+type = DestroySelf
+trigger1 = AnimTime = 0
+trigger2 = RoundState != 2
+
+[Statedef -2]
+[State QA, Clock]
+type = VarAdd
+trigger1 = RoundState = 2
+v = 58
+value = 1
+ignorehitpause = 1
+
+[State QA, Preserve life]
+type = LifeSet
+trigger1 = 1
+value = 10000
+ignorehitpause = 1
+
+[State QA, PowerSet 0]
+type = PowerSet
+trigger1 = var(58) = 10
+value = 5000
+
+[State QA, VarSet 0]
+type = VarSet
+trigger1 = var(58) = 10
+v = 40
+value = 0
+
+[State QA, PosSet 0]
+type = PosSet
+trigger1 = var(58) = 10
+x = -65
+y = 0
+
+[State QA, Turn 0]
+type = Turn
+trigger1 = var(58) = 10 && Facing != 1
+
+
+[State QA, PosSet 0]
+type = PosSet
+trigger1 = var(58) = 10
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 0]
+type = ChangeState
+trigger1 = var(58) = 10
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 0]
+type = AssertInput
+trigger1 = var(58) = [18,20]
+flag = x
+flag2 = a
+
+[State QA, PowerSet 1]
+type = PowerSet
+trigger1 = var(58) = 150
+value = 5000
+
+[State QA, VarSet 1]
+type = VarSet
+trigger1 = var(58) = 150
+v = 40
+value = 0
+
+[State QA, PosSet 1]
+type = PosSet
+trigger1 = var(58) = 150
+x = -65
+y = 0
+
+[State QA, Turn 1]
+type = Turn
+trigger1 = var(58) = 150 && Facing != 1
+
+
+[State QA, PosSet 1]
+type = PosSet
+trigger1 = var(58) = 150
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 1]
+type = ChangeState
+trigger1 = var(58) = 150
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 1]
+type = AssertInput
+trigger1 = var(58) = [158,160]
+flag = B
+
+[State QA, AssertInput 1]
+type = AssertInput
+trigger1 = var(58) = [161,163]
+flag = B
+flag2 = x
+flag3 = a
+
+[State QA, PowerSet 2]
+type = PowerSet
+trigger1 = var(58) = 290
+value = 5000
+
+[State QA, VarSet 2]
+type = VarSet
+trigger1 = var(58) = 290
+v = 40
+value = 0
+
+[State QA, PosSet 2]
+type = PosSet
+trigger1 = var(58) = 290
+x = -65
+y = 0
+
+[State QA, Turn 2]
+type = Turn
+trigger1 = var(58) = 290 && Facing != 1
+
+
+[State QA, PosSet 2]
+type = PosSet
+trigger1 = var(58) = 290
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 2]
+type = ChangeState
+trigger1 = var(58) = 290
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 2]
+type = AssertInput
+trigger1 = var(58) = [298,300]
+flag = c
+
+[State QA, PowerSet 3]
+type = PowerSet
+trigger1 = var(58) = 430
+value = 5000
+
+[State QA, VarSet 3]
+type = VarSet
+trigger1 = var(58) = 430
+v = 40
+value = 0
+
+[State QA, PosSet 3]
+type = PosSet
+trigger1 = var(58) = 430
+x = -65
+y = 0
+
+[State QA, Turn 3]
+type = Turn
+trigger1 = var(58) = 430 && Facing != 1
+
+
+[State QA, PosSet 3]
+type = PosSet
+trigger1 = var(58) = 430
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 3]
+type = ChangeState
+trigger1 = var(58) = 430
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 3]
+type = AssertInput
+trigger1 = var(58) = [438,440]
+flag = a
+flag2 = y
+
+[State QA, PowerSet 4]
+type = PowerSet
+trigger1 = var(58) = 570
+value = 5000
+
+[State QA, VarSet 4]
+type = VarSet
+trigger1 = var(58) = 570
+v = 40
+value = 0
+
+[State QA, PosSet 4]
+type = PosSet
+trigger1 = var(58) = 570
+x = -65
+y = 0
+
+[State QA, Turn 4]
+type = Turn
+trigger1 = var(58) = 570 && Facing != 1
+
+
+[State QA, PosSet 4]
+type = PosSet
+trigger1 = var(58) = 570
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 4]
+type = ChangeState
+trigger1 = var(58) = 570
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 4]
+type = AssertInput
+trigger1 = var(58) = [578,580]
+flag = z
+
+[State QA, PowerSet 5]
+type = PowerSet
+trigger1 = var(58) = 710
+value = 5000
+
+[State QA, VarSet 5]
+type = VarSet
+trigger1 = var(58) = 710
+v = 40
+value = 0
+
+[State QA, PosSet 5]
+type = PosSet
+trigger1 = var(58) = 710
+x = -65
+y = 0
+
+[State QA, Turn 5]
+type = Turn
+trigger1 = var(58) = 710 && Facing != 1
+
+
+[State QA, PosSet 5]
+type = PosSet
+trigger1 = var(58) = 710
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 5]
+type = ChangeState
+trigger1 = var(58) = 710
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 5]
+type = AssertInput
+trigger1 = var(58) = [718,720]
+flag = D
+
+[State QA, AssertInput 5]
+type = AssertInput
+trigger1 = var(58) = [721,723]
+flag = D
+flag2 = x
+
+[State QA, PowerSet 6]
+type = PowerSet
+trigger1 = var(58) = 850
+value = 5000
+
+[State QA, VarSet 6]
+type = VarSet
+trigger1 = var(58) = 850
+v = 40
+value = 0
+
+[State QA, PosSet 6]
+type = PosSet
+trigger1 = var(58) = 850
+x = -65
+y = 0
+
+[State QA, Turn 6]
+type = Turn
+trigger1 = var(58) = 850 && Facing != 1
+
+
+[State QA, PosSet 6]
+type = PosSet
+trigger1 = var(58) = 850
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 6]
+type = ChangeState
+trigger1 = var(58) = 850
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 6]
+type = AssertInput
+trigger1 = var(58) = [858,860]
+flag = D
+
+[State QA, AssertInput 6]
+type = AssertInput
+trigger1 = var(58) = [861,863]
+flag = D
+flag2 = y
+
+[State QA, PowerSet 7]
+type = PowerSet
+trigger1 = var(58) = 990
+value = 5000
+
+[State QA, VarSet 7]
+type = VarSet
+trigger1 = var(58) = 990
+v = 40
+value = 0
+
+[State QA, PosSet 7]
+type = PosSet
+trigger1 = var(58) = 990
+x = -65
+y = 0
+
+[State QA, Turn 7]
+type = Turn
+trigger1 = var(58) = 990 && Facing != 1
+
+
+[State QA, PosSet 7]
+type = PosSet
+trigger1 = var(58) = 990
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 7]
+type = ChangeState
+trigger1 = var(58) = 990
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 7]
+type = AssertInput
+trigger1 = var(58) = [998,1000]
+flag = b
+
+[State QA, PowerSet 8]
+type = PowerSet
+trigger1 = var(58) = 1130
+value = 5000
+
+[State QA, VarSet 8]
+type = VarSet
+trigger1 = var(58) = 1130
+v = 40
+value = 0
+
+[State QA, PosSet 8]
+type = PosSet
+trigger1 = var(58) = 1130
+x = -65
+y = 0
+
+[State QA, Turn 8]
+type = Turn
+trigger1 = var(58) = 1130 && Facing != 1
+
+
+[State QA, PosSet 8]
+type = PosSet
+trigger1 = var(58) = 1130
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 8]
+type = ChangeState
+trigger1 = var(58) = 1130
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 8]
+type = AssertInput
+trigger1 = var(58) = [1138,1140]
+flag = D
+
+[State QA, AssertInput 8]
+type = AssertInput
+trigger1 = var(58) = [1141,1143]
+flag = D
+flag2 = b
+
+[State QA, PowerSet 9]
+type = PowerSet
+trigger1 = var(58) = 1270
+value = 5000
+
+[State QA, VarSet 9]
+type = VarSet
+trigger1 = var(58) = 1270
+v = 40
+value = 0
+
+[State QA, PosSet 9]
+type = PosSet
+trigger1 = var(58) = 1270
+x = -65
+y = 0
+
+[State QA, Turn 9]
+type = Turn
+trigger1 = var(58) = 1270 && Facing != 1
+
+
+[State QA, PosSet 9]
+type = PosSet
+trigger1 = var(58) = 1270
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 9]
+type = ChangeState
+trigger1 = var(58) = 1270
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 9]
+type = AssertInput
+trigger1 = var(58) = [1278,1280]
+flag = D
+
+[State QA, AssertInput 9]
+type = AssertInput
+trigger1 = var(58) = [1281,1283]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 9]
+type = AssertInput
+trigger1 = var(58) = [1284,1286]
+flag = F
+flag2 = x
+
+[State QA, PowerSet 10]
+type = PowerSet
+trigger1 = var(58) = 1410
+value = 5000
+
+[State QA, VarSet 10]
+type = VarSet
+trigger1 = var(58) = 1410
+v = 40
+value = 0
+
+[State QA, PosSet 10]
+type = PosSet
+trigger1 = var(58) = 1410
+x = -65
+y = 0
+
+[State QA, Turn 10]
+type = Turn
+trigger1 = var(58) = 1410 && Facing != 1
+
+
+[State QA, PosSet 10]
+type = PosSet
+trigger1 = var(58) = 1410
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 10]
+type = ChangeState
+trigger1 = var(58) = 1410
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 10]
+type = AssertInput
+trigger1 = var(58) = [1418,1420]
+flag = D
+
+[State QA, AssertInput 10]
+type = AssertInput
+trigger1 = var(58) = [1421,1423]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 10]
+type = AssertInput
+trigger1 = var(58) = [1424,1426]
+flag = F
+flag2 = y
+
+[State QA, PowerSet 11]
+type = PowerSet
+trigger1 = var(58) = 1550
+value = 5000
+
+[State QA, VarSet 11]
+type = VarSet
+trigger1 = var(58) = 1550
+v = 40
+value = 0
+
+[State QA, PosSet 11]
+type = PosSet
+trigger1 = var(58) = 1550
+x = -65
+y = 0
+
+[State QA, Turn 11]
+type = Turn
+trigger1 = var(58) = 1550 && Facing != 1
+
+
+[State QA, PosSet 11]
+type = PosSet
+trigger1 = var(58) = 1550
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 11]
+type = ChangeState
+trigger1 = var(58) = 1550
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 11]
+type = AssertInput
+trigger1 = var(58) = [1558,1560]
+flag = F
+
+[State QA, AssertInput 11]
+type = AssertInput
+trigger1 = var(58) = [1561,1563]
+flag = D
+
+[State QA, AssertInput 11]
+type = AssertInput
+trigger1 = var(58) = [1564,1566]
+flag = D
+flag2 = F
+flag3 = x
+
+[State QA, PowerSet 12]
+type = PowerSet
+trigger1 = var(58) = 1690
+value = 5000
+
+[State QA, VarSet 12]
+type = VarSet
+trigger1 = var(58) = 1690
+v = 40
+value = 0
+
+[State QA, PosSet 12]
+type = PosSet
+trigger1 = var(58) = 1690
+x = -65
+y = 0
+
+[State QA, Turn 12]
+type = Turn
+trigger1 = var(58) = 1690 && Facing != 1
+
+
+[State QA, PosSet 12]
+type = PosSet
+trigger1 = var(58) = 1690
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 12]
+type = ChangeState
+trigger1 = var(58) = 1690
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 12]
+type = AssertInput
+trigger1 = var(58) = [1698,1700]
+flag = D
+
+[State QA, AssertInput 12]
+type = AssertInput
+trigger1 = var(58) = [1701,1703]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 12]
+type = AssertInput
+trigger1 = var(58) = [1704,1706]
+flag = B
+flag2 = x
+
+[State QA, PowerSet 13]
+type = PowerSet
+trigger1 = var(58) = 1830
+value = 5000
+
+[State QA, VarSet 13]
+type = VarSet
+trigger1 = var(58) = 1830
+v = 40
+value = 0
+
+[State QA, PosSet 13]
+type = PosSet
+trigger1 = var(58) = 1830
+x = -65
+y = 0
+
+[State QA, Turn 13]
+type = Turn
+trigger1 = var(58) = 1830 && Facing != 1
+
+
+[State QA, PosSet 13]
+type = PosSet
+trigger1 = var(58) = 1830
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 13]
+type = ChangeState
+trigger1 = var(58) = 1830
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 13]
+type = AssertInput
+trigger1 = var(58) = [1838,1840]
+flag = B
+
+[State QA, AssertInput 13]
+type = AssertInput
+trigger1 = var(58) = [1841,1843]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 13]
+type = AssertInput
+trigger1 = var(58) = [1844,1846]
+flag = D
+
+[State QA, AssertInput 13]
+type = AssertInput
+trigger1 = var(58) = [1847,1849]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 13]
+type = AssertInput
+trigger1 = var(58) = [1850,1852]
+flag = F
+flag2 = a
+
+[State QA, PowerSet 14]
+type = PowerSet
+trigger1 = var(58) = 1970
+value = 5000
+
+[State QA, VarSet 14]
+type = VarSet
+trigger1 = var(58) = 1970
+v = 40
+value = 0
+
+[State QA, PosSet 14]
+type = PosSet
+trigger1 = var(58) = 1970
+x = -65
+y = 0
+
+[State QA, Turn 14]
+type = Turn
+trigger1 = var(58) = 1970 && Facing != 1
+
+
+[State QA, PosSet 14]
+type = PosSet
+trigger1 = var(58) = 1970
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 14]
+type = ChangeState
+trigger1 = var(58) = 1970
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 14]
+type = AssertInput
+trigger1 = var(58) = [1978,1980]
+flag = D
+
+[State QA, AssertInput 14]
+type = AssertInput
+trigger1 = var(58) = [1981,1983]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 14]
+type = AssertInput
+trigger1 = var(58) = [1984,1986]
+flag = F
+
+[State QA, AssertInput 14]
+type = AssertInput
+trigger1 = var(58) = [1987,1989]
+flag = D
+
+[State QA, AssertInput 14]
+type = AssertInput
+trigger1 = var(58) = [1990,1992]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 14]
+type = AssertInput
+trigger1 = var(58) = [1993,1995]
+flag = F
+flag2 = x
+
+[State QA, PowerSet 15]
+type = PowerSet
+trigger1 = var(58) = 2110
+value = 5000
+
+[State QA, VarSet 15]
+type = VarSet
+trigger1 = var(58) = 2110
+v = 40
+value = 0
+
+[State QA, PosSet 15]
+type = PosSet
+trigger1 = var(58) = 2110
+x = -65
+y = 0
+
+[State QA, Turn 15]
+type = Turn
+trigger1 = var(58) = 2110 && Facing != 1
+
+
+[State QA, PosSet 15]
+type = PosSet
+trigger1 = var(58) = 2110
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 15]
+type = ChangeState
+trigger1 = var(58) = 2110
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 15]
+type = AssertInput
+trigger1 = var(58) = [2118,2120]
+flag = D
+
+[State QA, AssertInput 15]
+type = AssertInput
+trigger1 = var(58) = [2121,2123]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 15]
+type = AssertInput
+trigger1 = var(58) = [2124,2126]
+flag = F
+
+[State QA, AssertInput 15]
+type = AssertInput
+trigger1 = var(58) = [2127,2129]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 15]
+type = AssertInput
+trigger1 = var(58) = [2130,2132]
+flag = D
+
+[State QA, AssertInput 15]
+type = AssertInput
+trigger1 = var(58) = [2133,2135]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 15]
+type = AssertInput
+trigger1 = var(58) = [2136,2138]
+flag = B
+flag2 = x
+
+[State QA, PowerSet 16]
+type = PowerSet
+trigger1 = var(58) = 2250
+value = 5000
+
+[State QA, VarSet 16]
+type = VarSet
+trigger1 = var(58) = 2250
+v = 40
+value = 500
+
+[State QA, PosSet 16]
+type = PosSet
+trigger1 = var(58) = 2250
+x = -65
+y = 0
+
+[State QA, Turn 16]
+type = Turn
+trigger1 = var(58) = 2250 && Facing != 1
+
+
+[State QA, PosSet 16]
+type = PosSet
+trigger1 = var(58) = 2250
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 16]
+type = ChangeState
+trigger1 = var(58) = 2250
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 16]
+type = AssertInput
+trigger1 = var(58) = [2258,2260]
+flag = D
+
+[State QA, AssertInput 16]
+type = AssertInput
+trigger1 = var(58) = [2261,2263]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 16]
+type = AssertInput
+trigger1 = var(58) = [2264,2266]
+flag = B
+
+[State QA, AssertInput 16]
+type = AssertInput
+trigger1 = var(58) = [2267,2269]
+flag = D
+
+[State QA, AssertInput 16]
+type = AssertInput
+trigger1 = var(58) = [2270,2272]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 16]
+type = AssertInput
+trigger1 = var(58) = [2273,2275]
+flag = B
+flag2 = x
+flag3 = y
+
+[State QA, PowerSet 17]
+type = PowerSet
+trigger1 = var(58) = 2390
+value = 5000
+
+[State QA, VarSet 17]
+type = VarSet
+trigger1 = var(58) = 2390
+v = 40
+value = 0
+
+[State QA, PosSet 17]
+type = PosSet
+trigger1 = var(58) = 2390
+x = -65
+y = 0
+
+[State QA, Turn 17]
+type = Turn
+trigger1 = var(58) = 2390 && Facing != 1
+
+
+[State QA, PosSet 17]
+type = PosSet
+trigger1 = var(58) = 2390
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 17]
+type = ChangeState
+trigger1 = var(58) = 2390
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 17]
+type = AssertInput
+trigger1 = var(58) = [2398,2400]
+flag = y
+flag2 = b
+
+[State QA, PowerSet 18]
+type = PowerSet
+trigger1 = var(58) = 2530
+value = 0
+
+[State QA, VarSet 18]
+type = VarSet
+trigger1 = var(58) = 2530
+v = 40
+value = 0
+
+[State QA, PosSet 18]
+type = PosSet
+trigger1 = var(58) = 2530
+x = -65
+y = 0
+
+[State QA, Turn 18]
+type = Turn
+trigger1 = var(58) = 2530 && Facing != 1
+
+
+[State QA, PosSet 18]
+type = PosSet
+trigger1 = var(58) = 2530
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 18]
+type = ChangeState
+trigger1 = var(58) = 2530
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 18]
+type = AssertInput
+trigger1 = var(58) = [2538,2540]
+flag = a
+flag2 = y
+
+[State QA, PowerSet 19]
+type = PowerSet
+trigger1 = var(58) = 2670
+value = 5000
+
+[State QA, VarSet 19]
+type = VarSet
+trigger1 = var(58) = 2670
+v = 40
+value = 0
+
+[State QA, PosSet 19]
+type = PosSet
+trigger1 = var(58) = 2670
+x = -65
+y = 0
+
+[State QA, Turn 19]
+type = Turn
+trigger1 = var(58) = 2670 && Facing != 1
+
+
+[State QA, PosSet 19]
+type = PosSet
+trigger1 = var(58) = 2670
+x = 65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 19]
+type = ChangeState
+trigger1 = var(58) = 2670
+value = 0
+ctrl = 1
+
+[State QA, ChangeState 19]
+type = ChangeState
+trigger1 = var(58) = 2677
+value = 150
+ctrl = 0
+
+[State QA, AssertInput 19]
+type = AssertInput
+trigger1 = var(58) = [2678,2680]
+flag = x
+flag2 = a
+
+[State QA, PowerSet 20]
+type = PowerSet
+trigger1 = var(58) = 2810
+value = 5000
+
+[State QA, VarSet 20]
+type = VarSet
+trigger1 = var(58) = 2810
+v = 40
+value = 0
+
+[State QA, PosSet 20]
+type = PosSet
+trigger1 = var(58) = 2810
+x = 65
+y = 0
+
+[State QA, Turn 20]
+type = Turn
+trigger1 = var(58) = 2810 && Facing != -1
+
+
+[State QA, PosSet 20]
+type = PosSet
+trigger1 = var(58) = 2810
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 20]
+type = ChangeState
+trigger1 = var(58) = 2810
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 20]
+type = AssertInput
+trigger1 = var(58) = [2818,2820]
+flag = x
+flag2 = a
+
+[State QA, PowerSet 21]
+type = PowerSet
+trigger1 = var(58) = 2950
+value = 5000
+
+[State QA, VarSet 21]
+type = VarSet
+trigger1 = var(58) = 2950
+v = 40
+value = 0
+
+[State QA, PosSet 21]
+type = PosSet
+trigger1 = var(58) = 2950
+x = 65
+y = 0
+
+[State QA, Turn 21]
+type = Turn
+trigger1 = var(58) = 2950 && Facing != -1
+
+
+[State QA, PosSet 21]
+type = PosSet
+trigger1 = var(58) = 2950
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 21]
+type = ChangeState
+trigger1 = var(58) = 2950
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 21]
+type = AssertInput
+trigger1 = var(58) = [2958,2960]
+flag = B
+
+[State QA, AssertInput 21]
+type = AssertInput
+trigger1 = var(58) = [2961,2963]
+flag = B
+flag2 = x
+flag3 = a
+
+[State QA, PowerSet 22]
+type = PowerSet
+trigger1 = var(58) = 3090
+value = 5000
+
+[State QA, VarSet 22]
+type = VarSet
+trigger1 = var(58) = 3090
+v = 40
+value = 0
+
+[State QA, PosSet 22]
+type = PosSet
+trigger1 = var(58) = 3090
+x = 65
+y = 0
+
+[State QA, Turn 22]
+type = Turn
+trigger1 = var(58) = 3090 && Facing != -1
+
+
+[State QA, PosSet 22]
+type = PosSet
+trigger1 = var(58) = 3090
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 22]
+type = ChangeState
+trigger1 = var(58) = 3090
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 22]
+type = AssertInput
+trigger1 = var(58) = [3098,3100]
+flag = c
+
+[State QA, PowerSet 23]
+type = PowerSet
+trigger1 = var(58) = 3230
+value = 5000
+
+[State QA, VarSet 23]
+type = VarSet
+trigger1 = var(58) = 3230
+v = 40
+value = 0
+
+[State QA, PosSet 23]
+type = PosSet
+trigger1 = var(58) = 3230
+x = 65
+y = 0
+
+[State QA, Turn 23]
+type = Turn
+trigger1 = var(58) = 3230 && Facing != -1
+
+
+[State QA, PosSet 23]
+type = PosSet
+trigger1 = var(58) = 3230
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 23]
+type = ChangeState
+trigger1 = var(58) = 3230
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 23]
+type = AssertInput
+trigger1 = var(58) = [3238,3240]
+flag = a
+flag2 = y
+
+[State QA, PowerSet 24]
+type = PowerSet
+trigger1 = var(58) = 3370
+value = 5000
+
+[State QA, VarSet 24]
+type = VarSet
+trigger1 = var(58) = 3370
+v = 40
+value = 0
+
+[State QA, PosSet 24]
+type = PosSet
+trigger1 = var(58) = 3370
+x = 65
+y = 0
+
+[State QA, Turn 24]
+type = Turn
+trigger1 = var(58) = 3370 && Facing != -1
+
+
+[State QA, PosSet 24]
+type = PosSet
+trigger1 = var(58) = 3370
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 24]
+type = ChangeState
+trigger1 = var(58) = 3370
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 24]
+type = AssertInput
+trigger1 = var(58) = [3378,3380]
+flag = z
+
+[State QA, PowerSet 25]
+type = PowerSet
+trigger1 = var(58) = 3510
+value = 5000
+
+[State QA, VarSet 25]
+type = VarSet
+trigger1 = var(58) = 3510
+v = 40
+value = 0
+
+[State QA, PosSet 25]
+type = PosSet
+trigger1 = var(58) = 3510
+x = 65
+y = 0
+
+[State QA, Turn 25]
+type = Turn
+trigger1 = var(58) = 3510 && Facing != -1
+
+
+[State QA, PosSet 25]
+type = PosSet
+trigger1 = var(58) = 3510
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 25]
+type = ChangeState
+trigger1 = var(58) = 3510
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 25]
+type = AssertInput
+trigger1 = var(58) = [3518,3520]
+flag = D
+
+[State QA, AssertInput 25]
+type = AssertInput
+trigger1 = var(58) = [3521,3523]
+flag = D
+flag2 = x
+
+[State QA, PowerSet 26]
+type = PowerSet
+trigger1 = var(58) = 3650
+value = 5000
+
+[State QA, VarSet 26]
+type = VarSet
+trigger1 = var(58) = 3650
+v = 40
+value = 0
+
+[State QA, PosSet 26]
+type = PosSet
+trigger1 = var(58) = 3650
+x = 65
+y = 0
+
+[State QA, Turn 26]
+type = Turn
+trigger1 = var(58) = 3650 && Facing != -1
+
+
+[State QA, PosSet 26]
+type = PosSet
+trigger1 = var(58) = 3650
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 26]
+type = ChangeState
+trigger1 = var(58) = 3650
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 26]
+type = AssertInput
+trigger1 = var(58) = [3658,3660]
+flag = D
+
+[State QA, AssertInput 26]
+type = AssertInput
+trigger1 = var(58) = [3661,3663]
+flag = D
+flag2 = y
+
+[State QA, PowerSet 27]
+type = PowerSet
+trigger1 = var(58) = 3790
+value = 5000
+
+[State QA, VarSet 27]
+type = VarSet
+trigger1 = var(58) = 3790
+v = 40
+value = 0
+
+[State QA, PosSet 27]
+type = PosSet
+trigger1 = var(58) = 3790
+x = 65
+y = 0
+
+[State QA, Turn 27]
+type = Turn
+trigger1 = var(58) = 3790 && Facing != -1
+
+
+[State QA, PosSet 27]
+type = PosSet
+trigger1 = var(58) = 3790
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 27]
+type = ChangeState
+trigger1 = var(58) = 3790
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 27]
+type = AssertInput
+trigger1 = var(58) = [3798,3800]
+flag = b
+
+[State QA, PowerSet 28]
+type = PowerSet
+trigger1 = var(58) = 3930
+value = 5000
+
+[State QA, VarSet 28]
+type = VarSet
+trigger1 = var(58) = 3930
+v = 40
+value = 0
+
+[State QA, PosSet 28]
+type = PosSet
+trigger1 = var(58) = 3930
+x = 65
+y = 0
+
+[State QA, Turn 28]
+type = Turn
+trigger1 = var(58) = 3930 && Facing != -1
+
+
+[State QA, PosSet 28]
+type = PosSet
+trigger1 = var(58) = 3930
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 28]
+type = ChangeState
+trigger1 = var(58) = 3930
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 28]
+type = AssertInput
+trigger1 = var(58) = [3938,3940]
+flag = D
+
+[State QA, AssertInput 28]
+type = AssertInput
+trigger1 = var(58) = [3941,3943]
+flag = D
+flag2 = b
+
+[State QA, PowerSet 29]
+type = PowerSet
+trigger1 = var(58) = 4070
+value = 5000
+
+[State QA, VarSet 29]
+type = VarSet
+trigger1 = var(58) = 4070
+v = 40
+value = 0
+
+[State QA, PosSet 29]
+type = PosSet
+trigger1 = var(58) = 4070
+x = 65
+y = 0
+
+[State QA, Turn 29]
+type = Turn
+trigger1 = var(58) = 4070 && Facing != -1
+
+
+[State QA, PosSet 29]
+type = PosSet
+trigger1 = var(58) = 4070
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 29]
+type = ChangeState
+trigger1 = var(58) = 4070
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 29]
+type = AssertInput
+trigger1 = var(58) = [4078,4080]
+flag = D
+
+[State QA, AssertInput 29]
+type = AssertInput
+trigger1 = var(58) = [4081,4083]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 29]
+type = AssertInput
+trigger1 = var(58) = [4084,4086]
+flag = F
+flag2 = x
+
+[State QA, PowerSet 30]
+type = PowerSet
+trigger1 = var(58) = 4210
+value = 5000
+
+[State QA, VarSet 30]
+type = VarSet
+trigger1 = var(58) = 4210
+v = 40
+value = 0
+
+[State QA, PosSet 30]
+type = PosSet
+trigger1 = var(58) = 4210
+x = 65
+y = 0
+
+[State QA, Turn 30]
+type = Turn
+trigger1 = var(58) = 4210 && Facing != -1
+
+
+[State QA, PosSet 30]
+type = PosSet
+trigger1 = var(58) = 4210
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 30]
+type = ChangeState
+trigger1 = var(58) = 4210
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 30]
+type = AssertInput
+trigger1 = var(58) = [4218,4220]
+flag = D
+
+[State QA, AssertInput 30]
+type = AssertInput
+trigger1 = var(58) = [4221,4223]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 30]
+type = AssertInput
+trigger1 = var(58) = [4224,4226]
+flag = F
+flag2 = y
+
+[State QA, PowerSet 31]
+type = PowerSet
+trigger1 = var(58) = 4350
+value = 5000
+
+[State QA, VarSet 31]
+type = VarSet
+trigger1 = var(58) = 4350
+v = 40
+value = 0
+
+[State QA, PosSet 31]
+type = PosSet
+trigger1 = var(58) = 4350
+x = 65
+y = 0
+
+[State QA, Turn 31]
+type = Turn
+trigger1 = var(58) = 4350 && Facing != -1
+
+
+[State QA, PosSet 31]
+type = PosSet
+trigger1 = var(58) = 4350
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 31]
+type = ChangeState
+trigger1 = var(58) = 4350
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 31]
+type = AssertInput
+trigger1 = var(58) = [4358,4360]
+flag = F
+
+[State QA, AssertInput 31]
+type = AssertInput
+trigger1 = var(58) = [4361,4363]
+flag = D
+
+[State QA, AssertInput 31]
+type = AssertInput
+trigger1 = var(58) = [4364,4366]
+flag = D
+flag2 = F
+flag3 = x
+
+[State QA, PowerSet 32]
+type = PowerSet
+trigger1 = var(58) = 4490
+value = 5000
+
+[State QA, VarSet 32]
+type = VarSet
+trigger1 = var(58) = 4490
+v = 40
+value = 0
+
+[State QA, PosSet 32]
+type = PosSet
+trigger1 = var(58) = 4490
+x = 65
+y = 0
+
+[State QA, Turn 32]
+type = Turn
+trigger1 = var(58) = 4490 && Facing != -1
+
+
+[State QA, PosSet 32]
+type = PosSet
+trigger1 = var(58) = 4490
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 32]
+type = ChangeState
+trigger1 = var(58) = 4490
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 32]
+type = AssertInput
+trigger1 = var(58) = [4498,4500]
+flag = D
+
+[State QA, AssertInput 32]
+type = AssertInput
+trigger1 = var(58) = [4501,4503]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 32]
+type = AssertInput
+trigger1 = var(58) = [4504,4506]
+flag = B
+flag2 = x
+
+[State QA, PowerSet 33]
+type = PowerSet
+trigger1 = var(58) = 4630
+value = 5000
+
+[State QA, VarSet 33]
+type = VarSet
+trigger1 = var(58) = 4630
+v = 40
+value = 0
+
+[State QA, PosSet 33]
+type = PosSet
+trigger1 = var(58) = 4630
+x = 65
+y = 0
+
+[State QA, Turn 33]
+type = Turn
+trigger1 = var(58) = 4630 && Facing != -1
+
+
+[State QA, PosSet 33]
+type = PosSet
+trigger1 = var(58) = 4630
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 33]
+type = ChangeState
+trigger1 = var(58) = 4630
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 33]
+type = AssertInput
+trigger1 = var(58) = [4638,4640]
+flag = B
+
+[State QA, AssertInput 33]
+type = AssertInput
+trigger1 = var(58) = [4641,4643]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 33]
+type = AssertInput
+trigger1 = var(58) = [4644,4646]
+flag = D
+
+[State QA, AssertInput 33]
+type = AssertInput
+trigger1 = var(58) = [4647,4649]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 33]
+type = AssertInput
+trigger1 = var(58) = [4650,4652]
+flag = F
+flag2 = a
+
+[State QA, PowerSet 34]
+type = PowerSet
+trigger1 = var(58) = 4770
+value = 5000
+
+[State QA, VarSet 34]
+type = VarSet
+trigger1 = var(58) = 4770
+v = 40
+value = 0
+
+[State QA, PosSet 34]
+type = PosSet
+trigger1 = var(58) = 4770
+x = 65
+y = 0
+
+[State QA, Turn 34]
+type = Turn
+trigger1 = var(58) = 4770 && Facing != -1
+
+
+[State QA, PosSet 34]
+type = PosSet
+trigger1 = var(58) = 4770
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 34]
+type = ChangeState
+trigger1 = var(58) = 4770
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 34]
+type = AssertInput
+trigger1 = var(58) = [4778,4780]
+flag = D
+
+[State QA, AssertInput 34]
+type = AssertInput
+trigger1 = var(58) = [4781,4783]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 34]
+type = AssertInput
+trigger1 = var(58) = [4784,4786]
+flag = F
+
+[State QA, AssertInput 34]
+type = AssertInput
+trigger1 = var(58) = [4787,4789]
+flag = D
+
+[State QA, AssertInput 34]
+type = AssertInput
+trigger1 = var(58) = [4790,4792]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 34]
+type = AssertInput
+trigger1 = var(58) = [4793,4795]
+flag = F
+flag2 = x
+
+[State QA, PowerSet 35]
+type = PowerSet
+trigger1 = var(58) = 4910
+value = 5000
+
+[State QA, VarSet 35]
+type = VarSet
+trigger1 = var(58) = 4910
+v = 40
+value = 0
+
+[State QA, PosSet 35]
+type = PosSet
+trigger1 = var(58) = 4910
+x = 65
+y = 0
+
+[State QA, Turn 35]
+type = Turn
+trigger1 = var(58) = 4910 && Facing != -1
+
+
+[State QA, PosSet 35]
+type = PosSet
+trigger1 = var(58) = 4910
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 35]
+type = ChangeState
+trigger1 = var(58) = 4910
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 35]
+type = AssertInput
+trigger1 = var(58) = [4918,4920]
+flag = D
+
+[State QA, AssertInput 35]
+type = AssertInput
+trigger1 = var(58) = [4921,4923]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 35]
+type = AssertInput
+trigger1 = var(58) = [4924,4926]
+flag = F
+
+[State QA, AssertInput 35]
+type = AssertInput
+trigger1 = var(58) = [4927,4929]
+flag = D
+flag2 = F
+
+[State QA, AssertInput 35]
+type = AssertInput
+trigger1 = var(58) = [4930,4932]
+flag = D
+
+[State QA, AssertInput 35]
+type = AssertInput
+trigger1 = var(58) = [4933,4935]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 35]
+type = AssertInput
+trigger1 = var(58) = [4936,4938]
+flag = B
+flag2 = x
+
+[State QA, PowerSet 36]
+type = PowerSet
+trigger1 = var(58) = 5050
+value = 5000
+
+[State QA, VarSet 36]
+type = VarSet
+trigger1 = var(58) = 5050
+v = 40
+value = 500
+
+[State QA, PosSet 36]
+type = PosSet
+trigger1 = var(58) = 5050
+x = 65
+y = 0
+
+[State QA, Turn 36]
+type = Turn
+trigger1 = var(58) = 5050 && Facing != -1
+
+
+[State QA, PosSet 36]
+type = PosSet
+trigger1 = var(58) = 5050
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 36]
+type = ChangeState
+trigger1 = var(58) = 5050
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 36]
+type = AssertInput
+trigger1 = var(58) = [5058,5060]
+flag = D
+
+[State QA, AssertInput 36]
+type = AssertInput
+trigger1 = var(58) = [5061,5063]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 36]
+type = AssertInput
+trigger1 = var(58) = [5064,5066]
+flag = B
+
+[State QA, AssertInput 36]
+type = AssertInput
+trigger1 = var(58) = [5067,5069]
+flag = D
+
+[State QA, AssertInput 36]
+type = AssertInput
+trigger1 = var(58) = [5070,5072]
+flag = D
+flag2 = B
+
+[State QA, AssertInput 36]
+type = AssertInput
+trigger1 = var(58) = [5073,5075]
+flag = B
+flag2 = x
+flag3 = y
+
+[State QA, PowerSet 37]
+type = PowerSet
+trigger1 = var(58) = 5190
+value = 5000
+
+[State QA, VarSet 37]
+type = VarSet
+trigger1 = var(58) = 5190
+v = 40
+value = 0
+
+[State QA, PosSet 37]
+type = PosSet
+trigger1 = var(58) = 5190
+x = 65
+y = 0
+
+[State QA, Turn 37]
+type = Turn
+trigger1 = var(58) = 5190 && Facing != -1
+
+
+[State QA, PosSet 37]
+type = PosSet
+trigger1 = var(58) = 5190
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 37]
+type = ChangeState
+trigger1 = var(58) = 5190
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 37]
+type = AssertInput
+trigger1 = var(58) = [5198,5200]
+flag = y
+flag2 = b
+
+[State QA, PowerSet 38]
+type = PowerSet
+trigger1 = var(58) = 5330
+value = 0
+
+[State QA, VarSet 38]
+type = VarSet
+trigger1 = var(58) = 5330
+v = 40
+value = 0
+
+[State QA, PosSet 38]
+type = PosSet
+trigger1 = var(58) = 5330
+x = 65
+y = 0
+
+[State QA, Turn 38]
+type = Turn
+trigger1 = var(58) = 5330 && Facing != -1
+
+
+[State QA, PosSet 38]
+type = PosSet
+trigger1 = var(58) = 5330
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 38]
+type = ChangeState
+trigger1 = var(58) = 5330
+value = 0
+ctrl = 1
+
+[State QA, AssertInput 38]
+type = AssertInput
+trigger1 = var(58) = [5338,5340]
+flag = a
+flag2 = y
+
+[State QA, PowerSet 39]
+type = PowerSet
+trigger1 = var(58) = 5470
+value = 5000
+
+[State QA, VarSet 39]
+type = VarSet
+trigger1 = var(58) = 5470
+v = 40
+value = 0
+
+[State QA, PosSet 39]
+type = PosSet
+trigger1 = var(58) = 5470
+x = 65
+y = 0
+
+[State QA, Turn 39]
+type = Turn
+trigger1 = var(58) = 5470 && Facing != -1
+
+
+[State QA, PosSet 39]
+type = PosSet
+trigger1 = var(58) = 5470
+x = -65
+y = 0
+redirectID = EnemyNear, ID
+
+[State QA, ChangeState 39]
+type = ChangeState
+trigger1 = var(58) = 5470
+value = 0
+ctrl = 1
+
+[State QA, ChangeState 39]
+type = ChangeState
+trigger1 = var(58) = 5477
+value = 150
+ctrl = 0
+
+[State QA, AssertInput 39]
+type = AssertInput
+trigger1 = var(58) = [5478,5480]
+flag = x
+flag2 = a

@@ -1,0 +1,34 @@
+<#abf2eb>:CHAVA / CONTROLES KOF:</>
+
+KOF A / B / C / D = ^X / ^A / ^Y / ^B
+Xbox: X / A / Y / B. RT esquive, RB MAX.
+
+<#ead08e>:Basicos y sistema:</>
+Punio ligero / fuerte                 ^X / ^Y
+Patada ligera / fuerte                ^A / ^B
+Agachado / aire                       mismos cuatro botones
+Correr / salto atras                  _F_F / _B_B
+Bloquear                              _B / _DB
+Esquive adelante                      ^X_+^A o ^C
+Esquive atras                         _B + ^X_+^A o ^C
+MAX (1000; durante golpe 2000)         ^A_+^Y o ^Z
+Golpe de rechazo                      ^Y_+^B
+Esquive al bloquear: 1000 de energia.
+
+<#63ded7>:Especiales sin barra:</>
+Codigo compilado                      _D_DF_F + ^X / ^Y
+Codigo, alternativa U                 _B_DB_D_DF_F + ^X / ^Y
+Gancho compilacion                    _F_D_DF + ^X / ^Y
+Mochilazo de avance                   _D_DB_B + ^X / ^Y
+Barrida de semestre                   _B_DB_D_DF_F + ^A / ^B
+
+<#63ded7>:Supers - 1000 de energia:</>
+Asistente IA                          _D_DF_F_D_DF_F + ^X / ^Y
+Entrega final                         _D_DF_F_DF_D_DB_B + ^X / ^Y
+
+<#63ded7>:MAX2 - 2000 y MAX activo:</>
+Compilacion final + IA                _D_DB_B_D_DB_B + ^X_+^Y
+
+MAX permite cancelar entre especiales distintos al conectar.
+Cada cancelacion de especial consume tiempo de MAX.
+Las direcciones se invierten al cambiar de lado.

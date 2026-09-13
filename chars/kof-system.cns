@@ -1,0 +1,320 @@
+; Shared KOF-inspired system. var(40)=MAX frames, var(41)=entry cost.
+
+[Statedef 920]
+type = S
+movetype = I
+physics = N
+anim = 920
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 920, Invulnerable to strikes and projectiles, throwable]
+type = NotHitBy
+trigger1 = Time >= 2 && Time < 16
+value = SCA, AA, AP
+time = 1
+
+[State 920, Travel]
+type = VelSet
+trigger1 = Time < 16
+x = 5.5
+
+[State 920, Vulnerable recovery]
+type = VelSet
+trigger1 = Time >= 16
+x = 0
+
+[State 920, Pass opponent]
+type = PlayerPush
+trigger1 = Time < 16
+value = 0
+
+[State 920, Trail]
+type = AfterImage
+trigger1 = Time = 0
+time = 16
+length = 5
+timegap = 2
+framegap = 1
+trans = add
+palcolor = 0
+paladd = 0,35,65
+
+[State 920, Finish]
+type = ChangeState
+trigger1 = Time >= 24
+value = 0
+ctrl = 1
+
+[Statedef 921]
+type = S
+movetype = I
+physics = N
+anim = 920
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 921, Invulnerable to strikes and projectiles, throwable]
+type = NotHitBy
+trigger1 = Time >= 2 && Time < 16
+value = SCA, AA, AP
+time = 1
+
+[State 921, Travel]
+type = VelSet
+trigger1 = Time < 16
+x = -5.5
+
+[State 921, Vulnerable recovery]
+type = VelSet
+trigger1 = Time >= 16
+x = 0
+
+[State 921, Pass opponent]
+type = PlayerPush
+trigger1 = Time < 16
+value = 0
+
+[State 921, Trail]
+type = AfterImage
+trigger1 = Time = 0
+time = 16
+length = 5
+timegap = 2
+framegap = 1
+trans = add
+palcolor = 0
+paladd = 0,35,65
+
+[State 921, Finish]
+type = ChangeState
+trigger1 = Time >= 24
+value = 0
+ctrl = 1
+
+[Statedef 922]
+type = S
+movetype = I
+physics = N
+anim = 920
+ctrl = 0
+velset = 0,0
+poweradd = -1000
+
+[State 922, Invulnerable to strikes and projectiles, throwable]
+type = NotHitBy
+trigger1 = Time >= 0 && Time < 16
+value = SCA, AA, AP
+time = 1
+
+[State 922, Travel]
+type = VelSet
+trigger1 = Time < 16
+x = 5.5
+
+[State 922, Vulnerable recovery]
+type = VelSet
+trigger1 = Time >= 16
+x = 0
+
+[State 922, Pass opponent]
+type = PlayerPush
+trigger1 = Time < 16
+value = 0
+
+[State 922, Trail]
+type = AfterImage
+trigger1 = Time = 0
+time = 16
+length = 5
+timegap = 2
+framegap = 1
+trans = add
+palcolor = 0
+paladd = 0,35,65
+
+[State 922, Finish]
+type = ChangeState
+trigger1 = Time >= 24
+value = 0
+ctrl = 1
+
+[Statedef 923]
+type = S
+movetype = I
+physics = N
+anim = 920
+ctrl = 0
+velset = 0,0
+poweradd = -1000
+
+[State 923, Invulnerable to strikes and projectiles, throwable]
+type = NotHitBy
+trigger1 = Time >= 0 && Time < 16
+value = SCA, AA, AP
+time = 1
+
+[State 923, Travel]
+type = VelSet
+trigger1 = Time < 16
+x = -5.5
+
+[State 923, Vulnerable recovery]
+type = VelSet
+trigger1 = Time >= 16
+x = 0
+
+[State 923, Pass opponent]
+type = PlayerPush
+trigger1 = Time < 16
+value = 0
+
+[State 923, Trail]
+type = AfterImage
+trigger1 = Time = 0
+time = 16
+length = 5
+timegap = 2
+framegap = 1
+trans = add
+palcolor = 0
+paladd = 0,35,65
+
+[State 923, Finish]
+type = ChangeState
+trigger1 = Time >= 24
+value = 0
+ctrl = 1
+
+[Statedef 900]
+type = S
+movetype = I
+physics = S
+anim = 0
+velset = 0,0
+ctrl = 0
+
+[State 900, Quick MAX costs two stocks]
+type = VarSet
+trigger1 = Time = 0
+v = 41
+value = ifelse((PrevStateNo = [200,240]) || (PrevStateNo = [400,440]),2000,1000)
+
+[State 900, Pay]
+type = PowerAdd
+trigger1 = Time = 0
+value = -var(41)
+
+[State 900, Start MAX]
+type = VarSet
+trigger1 = Time = 0
+v = 40
+value = 600
+
+[State 900, Activation flash]
+type = PalFX
+trigger1 = Time = 0
+time = 12
+add = 100,70,0
+
+[State 900, Finish]
+type = ChangeState
+trigger1 = Time >= ifelse(var(41) = 2000,3,12)
+value = 0
+ctrl = 1
+
+[Statedef -3]
+
+[State -3, End MAX outside combat]
+type = VarSet
+triggerall = !IsHelper
+trigger1 = RoundState != 2
+trigger2 = !Alive
+v = 40
+value = 0
+
+[State -3, MAX clock]
+type = VarAdd
+triggerall = !IsHelper
+trigger1 = var(40) > 0
+v = 40
+value = -1
+
+[State -3, Special cancel drains MAX]
+type = VarAdd
+triggerall = !IsHelper
+triggerall = var(40) > 0
+triggerall = Time = 0
+trigger1 = StateNo = [1000,1030]
+trigger1 = PrevStateNo = [1000,1030]
+v = 40
+value = -min(90,var(40))
+
+[State -3, MAX2 consumes the mode after entry payment]
+type = VarSet
+triggerall = !IsHelper
+trigger1 = StateNo = 4000 && Time = 1
+v = 40
+value = 0
+
+[State -3, Golden MAX pulse]
+type = PalFX
+triggerall = !IsHelper
+trigger1 = var(40) > 0 && GameTime % 24 = 0
+time = 8
+add = 48,32,0
+
+[State -3, MAX label]
+type = Explod
+triggerall = !IsHelper
+trigger1 = var(40) > 0 && NumExplod(9901) = 0
+anim = 9901
+ID = 9901
+postype = left
+pos = ifelse(TeamSide = 1,12,226),207
+facing = 1
+bindtime = -1
+removetime = -1
+sprpriority = 10
+ontop = 1
+ownpal = 1
+supermovetime = 999999
+pausemovetime = 999999
+
+[State -3, MAX bar]
+type = Explod
+triggerall = !IsHelper
+trigger1 = var(40) > 0 && NumExplod(9900) = 0
+anim = 9900
+ID = 9900
+postype = left
+pos = ifelse(TeamSide = 1,13,227),217
+facing = 1
+bindtime = -1
+removetime = -1
+sprpriority = 11
+ontop = 1
+ownpal = 1
+supermovetime = 999999
+pausemovetime = 999999
+
+[State -3, Update MAX bar]
+type = ModifyExplod
+triggerall = !IsHelper
+trigger1 = NumExplod(9900) > 0
+ID = 9900
+scale = max(0.001,var(40)/600.0),1
+
+[State -3, Remove expired MAX bar]
+type = RemoveExplod
+triggerall = !IsHelper
+trigger1 = var(40) <= 0
+ID = 9900
+
+[State -3, Remove expired MAX label]
+type = RemoveExplod
+triggerall = !IsHelper
+trigger1 = var(40) <= 0
+ID = 9901

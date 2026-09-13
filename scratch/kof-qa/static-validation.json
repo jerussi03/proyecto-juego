@@ -1,0 +1,16 @@
+{
+  "hector": {
+    "sprites": 236,
+    "animations": 129,
+    "states": 56,
+    "commands": 50,
+    "passed": true
+  },
+  "chava": {
+    "sprites": 231,
+    "animations": 113,
+    "states": 33,
+    "commands": 50,
+    "passed": true
+  }
+}

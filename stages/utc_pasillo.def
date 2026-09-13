@@ -1,0 +1,85 @@
+[Info]
+name = "UTC: Pasillo de Rectoría"
+displayname = "Pasillo de Rectoría"
+versiondate = 09,13,2026
+mugenversion = 1.1
+author = "Universidad Tecnologica de la Costa / adaptacion"
+
+[Camera]
+startx = 0
+starty = 0
+boundleft = -71
+boundright = 71
+boundhigh = -22
+boundlow = 0
+verticalfollow = .2
+floortension = 60
+tension = 65
+overdrawhigh = 0
+overdrawlow = 0
+cuthigh = 0
+cutlow = 0
+; Reduce photo world scale and compensate camera zoom: fighters become
+; one third larger relative to the architecture, keeping the same framing.
+startzoom = 1.0667
+zoomout = 1.0667
+zoomin = 1.2000
+
+[PlayerInfo]
+p1startx = -65
+p1starty = 0
+p1facing = 1
+p2startx = 65
+p2starty = 0
+p2facing = -1
+p3startx = -95
+p3starty = 0
+p3facing = 1
+p4startx = 95
+p4starty = 0
+p4facing = -1
+leftbound = -210
+rightbound = 210
+
+[Bound]
+screenleft = 20
+screenright = 20
+
+[StageInfo]
+zoffset = 216
+autoturn = 1
+resetBG = 1
+localcoord = 320, 240
+xscale = 1
+yscale = 1
+portraitscale = 1
+
+[Shadow]
+intensity = 80
+color = 0,0,0
+yscale = .25
+fade.range = 0,0
+
+[Reflection]
+intensity = 0
+
+[Music]
+bgmusic =
+bgmvolume = 100
+
+[BGdef]
+spr = utc-real/utc_pasillo.sff
+debugbg = 0
+
+[Begin Action 9000]
+9000,1,0,0,-1
+
+[BG 0]
+type = normal
+spriteno = 0,0
+layerno = 0
+start = 0,216
+delta = 1,1
+zoomdelta = 1,1
+mask = 0
+scalestart = .375, .375

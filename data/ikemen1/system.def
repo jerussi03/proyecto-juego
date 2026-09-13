@@ -123,13 +123,39 @@ hiscore.bgm.loopend =
 [Title Info]
 fadein.time = 10
 fadeout.time = 10
-menu.pos = 1240,330
+menu.pos = 753,160
 menu.tween.factor = 0.5
-menu.item.font = 4,0,-1
-menu.item.active.font = 4,0,-1, 123,206,255
-menu.item.spacing = 0, 54
+menu.item.font = -1
+menu.item.active.font = -1
+menu.item.spacing = 0, 80
 menu.item.layerno = 2
 menu.item.active.layerno = 2
+
+; Button graphic backgrounds for title menu items
+menu.item.bg.arcade.spr = 101, 1
+menu.item.bg.arcade.layerno = 2
+menu.item.active.bg.arcade.spr = 102, 1
+menu.item.active.bg.arcade.layerno = 2
+
+menu.item.bg.training.spr = 101, 2
+menu.item.bg.training.layerno = 2
+menu.item.active.bg.training.spr = 102, 2
+menu.item.active.bg.training.layerno = 2
+
+menu.item.bg.menuversus.spr = 101, 3
+menu.item.bg.menuversus.layerno = 2
+menu.item.active.bg.menuversus.spr = 102, 3
+menu.item.active.bg.menuversus.layerno = 2
+
+menu.item.bg.options.spr = 101, 4
+menu.item.bg.options.layerno = 2
+menu.item.active.bg.options.spr = 102, 4
+menu.item.active.bg.options.layerno = 2
+
+menu.item.bg.exit.spr = 101, 5
+menu.item.bg.exit.layerno = 2
+menu.item.active.bg.exit.spr = 102, 5
+menu.item.active.bg.exit.layerno = 2
 
 loading.font = 9, 0, -1, 191, 191, 191, 255, -1
 loading.offset = 1200, 680
@@ -149,8 +175,8 @@ footer.version.font = default-3x5.def, 0, -1, 191, 191, 191, 255, -1
 footer.version.offset = 1275, 721
 footer.version.scale = 3,3
 
-footer.overlay.col = 0, 0, 64
-footer.overlay.alpha = 255, 100
+footer.overlay.col = 0, 0, 0
+footer.overlay.alpha = 0, 0
 footer.overlay.window = 0, 700, 1280, 720
 
 ;Network menu
@@ -159,7 +185,6 @@ connecting.font = 7,0,0
 connecting.scale = 1.0, 1.0
 connecting.text = Waiting for player 2... (%s)
 connecting.join.text = Now connecting to %s... (%s)
-;connecting.overlay.window = 0, 0, 1280, 720
 connecting.overlay.col = 0, 0, 0
 connecting.overlay.alpha = 0, 128
 textinput.offset = 189, 393
@@ -167,177 +192,49 @@ textinput.font = 7,0,1
 textinput.scale = 1.0, 1.0
 textinput.name.text = Enter Host display name, e.g. John.\nExisting entries can be removed with DELETE button.
 textinput.address.text = Enter Host IP address, e.g. 127.0.0.1\nCopied text can be pasted with INSERT button.
-;textinput.overlay.window = 0, 0, 1280, 720
 textinput.overlay.col = 0, 0, 0
 textinput.overlay.alpha = 0, 128
 
 ; These parameters define the window in which the items are visible
-; in.
-menu.window.margins.y = 40, 30
-menu.window.visibleitems = 6
+menu.window.margins.y = 0, 0
+menu.window.visibleitems = 5
 menu.boxcursor.visible = 0         ;Set to 1 to enable default cursor display
 menu.boxcursor.tween.snap = 1      ;Set to 0 to disable cursor snap on menu section change
 menu.boxcursor.tween.factor = 0.5
-menu.boxcursor.coords = -646,-45,45,6
+menu.boxcursor.coords = 0,0,320,66
 ; These are the sounds for cursor movement
 cursor.move.snd = 100,0
 cursor.done.snd = 100,1
 cancel.snd = 100,2
 
-; Flexible submenu grouping.
-;Full documentation of this feature is available on Ikemen GO features wiki
+; Main Menu: Strictly 5 options (Modo Historia, Modo Practica, Modo VS, Opciones, Salir)
+menu.itemname.arcade = MODO HISTORIA
+menu.itemname.training = MODO PRÁCTICA
+menu.itemname.menuversus = MODO VS
+menu.itemname.menuversus.freebattle = JUGADOR VS CPU
+menu.itemname.menuversus.versus = P1 vs P2
+menu.itemname.menuversus.back = REGRESAR
+menu.itemname.options = OPCIONES
+menu.itemname.exit = SALIR
 
-; Submenu: Arcade
-menu.itemname.menuarcade = ARCADE
-menu.itemname.menuarcade.arcade = SINGLE MODE
-menu.itemname.menuarcade.teamarcade = TEAM ARCADE
-menu.itemname.menuarcade.teamcoop = TEAM CO-OP
-menu.itemname.menuarcade.back = BACK
-
-; Submenu: Versus
-menu.itemname.menuversus = VS MODE
-menu.itemname.menuversus.versus = 1P VS 2P
-menu.itemname.menuversus.teamversus = TEAM VERSUS
-menu.itemname.menuversus.versuscoop = VERSUS CO-OP
-menu.itemname.menuversus.freebattle = QUICK MATCH
-menu.itemname.menuversus.back = BACK
-
-; Submenu: Story Mode
-menu.itemname.storymode = STORY MODE
-; story arcs menu items are automatically added before storymode.back
-menu.itemname.storymode.back = BACK
-
-; Submenu: Network
-menu.itemname.menunetwork = NETWORK
-menu.itemname.menunetwork.serverhost = HOST GAME
-menu.itemname.menunetwork.serverjoin = JOIN GAME
-menu.itemname.menunetwork.back = BACK
-
-; known IP addresses show up before serverjoin.back item
-menu.itemname.menunetwork.serverjoin.joinadd = NEW ADDRESS
-menu.itemname.menunetwork.serverjoin.back = BACK
-
-; This group is hidden and should not be moved to other menus.
-; It's opened automatically, after synchronization with online player.
-menu.itemname.server.netplayversus = VERSUS 2P
-menu.itemname.server.netplayteamcoop = ARCADE CO-OP
-menu.itemname.server.netplaysurvivalcoop = SURVIVAL CO-OP
-menu.itemname.server.back = EXIT
-
-; Submenu: Practice
-menu.itemname.menupractice = PRACTICE
-menu.itemname.menupractice.training = TRAINING
-menu.itemname.menupractice.back = BACK
-
-; Submenu: Mission
-menu.itemname.menumission = MISSION
-menu.itemname.menumission.survival = SURVIVAL
-menu.itemname.menumission.survivalcoop = SURVIVAL CO-OP
-menu.itemname.menumission.timeattack = TIME ATTACK
-menu.itemname.menumission.bonusgames = BONUS GAMES
-menu.itemname.menumission.back = BACK
-
-; Submenu: Mission => Bonus Games
-; bonus characters menu items are automatically added before bonusgames.back
-menu.itemname.menumission.bonusgames.back = BACK
-
-; Submenu: Watch Mode
-menu.itemname.menuwatch = WATCH MODE
-menu.itemname.menuwatch.watch = CPU MATCH
-menu.itemname.menuwatch.randomtest = RANDOMTEST
-menu.itemname.menuwatch.replay = REPLAY
-menu.itemname.menuwatch.back = BACK
-
-; Options
-menu.itemname.options = OPTIONS
-
-; Exit Game
-menu.itemname.exit = EXIT
+; Explicitly disable unused default submenus
+menu.itemname.menuarcade = ""
+menu.itemname.storymode = ""
+menu.itemname.menunetwork = ""
+menu.itemname.menupractice = ""
+menu.itemname.menumission = ""
+menu.itemname.menuwatch = ""
 
 ;----------------------------
 ;Title background definition
 [TitleBGdef]
-bgclearcolor = 255,255,255
+bgclearcolor = 0,0,0
 
-[TitleBG Background Sky]
+[TitleBG Programmer Desk Monitor]
 type = normal
 spriteno = 100,0
 layerno = 0
 start = -640,0
-
-[TitleBG Background Clouds Top]
-type = normal
-spriteno = 100,2
-layerno = 0
-start = -640, -50
-tile = 1,0
-velocity = -0.1, 0
-window = 0,0, 1279,959
-mask = 1
-
-[TitleBG Background Clouds Bottom]
-type = normal
-spriteno = 100,3
-layerno = 0
-start = -640, 0
-tile = 1,0
-velocity = -0.7, 0
-window = 0,0, 1279,959
-mask = 1
-
-
-[TitleBG Background Black Bars]
-type = normal
-spriteno = 100,1
-layerno = 0
-start = -640,0
-trans = add1
-mask = 1
-
-
-[TitleBG Background Black Menu Bars]
-type = normal
-spriteno = 98,0
-layerno = 0
-start = 640,282
-trans = add1
-mask = 1
-
-[TitleBG Title LogoShadow]
-type = normal
-spriteno = 0, 2
-layerno = 1
-start = -250,155
-mask = 1
-alpha = 256,96
-trans = add
-sin.y = 15, 264, 2
-
-[TitleBG Title LogoShadow]
-type = normal
-spriteno = 0, 3
-layerno = 1
-start = -250,155
-mask = 1
-alpha = 256,96
-trans = add
-sin.y = 15, 264, 32
-
-[TitleBG Title Logo]
-type = normal
-spriteno = 0, 0
-layerno = 1
-start = -250,155
-mask = 1
-sin.y = 15, 264, 2
-
-[TitleBG Title Logo 2]
-type = normal
-spriteno = 0, 1
-layerno = 1
-start = -250,155
-mask = 1
-sin.y = 15, 264, 32
 
 ;----------------------------
 [Infobox] ;(new in MUGEN 1.0)
@@ -1010,33 +907,9 @@ start = -640,94
 trans = add1
 mask = 1
 
-[SelectBG Background PortraitGradient 2]
-type = normal
-spriteno = 102,1
-layerno = 1
-start = 116,94
-trans = add1
-mask = 1
-
-[SelectBG Background Clouds Top]
-type = normal
-spriteno = 101,2
-layerno = 0
-start = -640, -50
-tile = 1,0
-velocity = -0.1, 0
-window = 0,0, 1279,959
-mask = 1
-
-[SelectBG Background Clouds Bottom]
-type = normal
-spriteno = 101,3
-layerno = 0
-start = -640, 0
-tile = 1,0
-velocity = -0.7, 0
-window = 0,0, 1279,959
-mask = 1
+; Mode artwork is drawn once by the selection-screen heading.
+; Sprites 101,2 / 101,3 / 102,1 are now menu buttons, not clouds
+; or portrait gradients; do not repeat them as selection backgrounds.
 
 
 ;-------------------------------------------------------------------

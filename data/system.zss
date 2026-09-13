@@ -20,6 +20,57 @@ if pauseTime = 0 {
 	}
 }
 
+# Universal Power System:
+# Gain 1 level (1000 pts) on hit landed, hit blocked, or hit received.
+# DO NOT gain power if already full, in MAX mode, or performing a super ("haciendo un poder").
+ignoreHitPause if !isHelper && roundState = 2 && alive {
+	let isSuper = (stateNo = [3000, 4999]) || gameVar(superpausetime) > 0;
+	let isFullOrMax = power >= powerMax || var(40) > 0;
+	let canGainPower = !$isSuper && !$isFullOrMax;
+
+	# 1. On Hit Received (taking damage)
+	if moveType = H {
+		if $canGainPower {
+			if getHitVar(hitCount) > 0 && getHitVar(hitCount) != map(_iksys_hitPowerCount) {
+				powerAdd{value: 1000}
+				map(_iksys_hitPowerCount) := getHitVar(hitCount);
+			} else if map(_iksys_hitPowerCount) = 0 {
+				powerAdd{value: 1000}
+				map(_iksys_hitPowerCount) := 1;
+			}
+		}
+	} else {
+		map(_iksys_hitPowerCount) := 0;
+	}
+
+	# 2. On Block (guarding an incoming hit)
+	if stateNo = 150 || stateNo = 152 || stateNo = 154 {
+		if $canGainPower {
+			if getHitVar(hitCount) > 0 && getHitVar(hitCount) != map(_iksys_guardPowerCount) {
+				powerAdd{value: 1000}
+				map(_iksys_guardPowerCount) := getHitVar(hitCount);
+			} else if map(_iksys_guardPowerCount) = 0 {
+				powerAdd{value: 1000}
+				map(_iksys_guardPowerCount) := 1;
+			}
+		}
+	} else if !(stateNo = [150, 155]) {
+		map(_iksys_guardPowerCount) := 0;
+	}
+
+	# 3. On Hit Landed (connecting a strike clean on opponent)
+	if moveHit = 1 {
+		if $canGainPower {
+			if moveHitVar(frame) || map(_iksys_dealHitCount) != moveHit {
+				powerAdd{value: 1000}
+				map(_iksys_dealHitCount) := moveHit;
+			}
+		}
+	} else {
+		map(_iksys_dealHitCount) := 0;
+	}
+}
+
 [StateDef +1]
 
 # For backward compatibility, z-axis get hit velocity must be handled here
@@ -44,6 +95,9 @@ mapSet{map: "_iksys_dustposz"; value: pos z}
 if !isHelper && roundTime = 0 {
 	map(_iksys_lifeRecoveryValue) := 0;
 	map(_iksys_lifeRecoveryFlag) := 0;
+	map(_iksys_hitPowerCount) := 0;
+	map(_iksys_dealHitCount) := 0;
+	map(_iksys_guardPowerCount) := 0;
 }
 
 # Turns/Survival life recovery

@@ -1,0 +1,497 @@
+; Character-specific KOF-inspired specials and missing normals.
+
+[Statedef 1000]
+type = S
+movetype = A
+physics = S
+anim = 1000
+ctrl = 0
+velset = 0,0
+poweradd = 20
+
+[State 1000, Clear projectile contact]
+type = VarSet
+trigger1 = Time = 0
+v = 43
+value = 0
+
+[State 1000, Projectile]
+type = Helper
+trigger1 = AnimElem = 4
+trigger1 = NumHelper(1005) = 0
+name = "Codigo / paquete"
+ID = 1005
+stateno = 1005
+postype = p1
+pos = 35,-58
+keyctrl = 0
+ownpal = 1
+
+[State 1000, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+[Statedef 1005]
+type = A
+movetype = A
+physics = N
+anim = 3020
+ctrl = 0
+velset = 6.3,0
+sprpriority = 4
+
+[State 1005, No push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 1005, Shot collision]
+type = HitOverride
+trigger1 = 1
+attr = SCA,AA,AP,AT
+slot = 0
+stateno = 3021
+time = 1
+
+[State 1005, Damage]
+type = HitDef
+trigger1 = Time = 0
+attr = A,SP
+damage = 58,6
+animtype = Medium
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 0,9
+sparkno = -1
+guard.sparkno = 40
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 18
+ground.velocity = -4.0
+air.velocity = -3,-3.5
+air.hittime = 18
+fall = 0
+getpower = 0,0
+givepower = 18,9
+
+[State 1005, Report contact for MAX cancel]
+type = ParentVarSet
+trigger1 = MoveContact
+v = 43
+value = 1
+
+[State 1005, Impact]
+type = ChangeState
+trigger1 = MoveContact
+value = 3021
+
+[State 1005, Cleanup]
+type = DestroySelf
+trigger1 = Time > 100
+trigger2 = FrontEdgeDist < -90
+trigger3 = RoundState != 2
+
+
+[Statedef 1010]
+type = S
+movetype = A
+physics = S
+anim = 410
+ctrl = 0
+velset = 0,0
+poweradd = 12
+
+[State 1010, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, SA
+damage = 78,5
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -3,-7
+air.velocity = -3,-5
+air.hittime = 22
+fall = 1
+fall.recover = 0
+getpower = 40,20
+givepower = 24,12
+
+
+[State 1010, Anti air startup]
+type = NotHitBy
+trigger1 = Time < 5
+value = SCA, NA, SA, HA
+time = 1
+
+[State 1010, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[Statedef 1020]
+type = S
+movetype = A
+physics = S
+anim = 210
+ctrl = 0
+velset = 0,0
+poweradd = 12
+
+[State 1020, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, SA
+damage = 72,5
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -5
+air.velocity = -3,-5
+air.hittime = 22
+fall = 0
+fall.recover = 0
+getpower = 40,20
+givepower = 24,12
+
+
+[State 1020, Advance]
+type = VelSet
+trigger1 = Time < 12
+x = 4.5
+
+[State 1020, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[Statedef 1030]
+type = C
+movetype = A
+physics = C
+anim = 440
+ctrl = 0
+velset = 0,0
+poweradd = 12
+
+[State 1030, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = C, SA
+damage = 64,5
+animtype = Heavy
+guardflag = L
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -5
+air.velocity = -3,-5
+air.hittime = 22
+fall = 1
+fall.recover = 0
+getpower = 40,20
+givepower = 24,12
+
+
+[State 1030, Advance]
+type = VelSet
+trigger1 = Time < 12
+x = 5
+
+[State 1030, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+[Statedef 750]
+type = S
+movetype = A
+physics = S
+anim = 240
+ctrl = 0
+velset = 0,0
+poweradd = 12
+
+[State 750, Contact]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, SA
+damage = 85,0
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -5
+air.velocity = -3,-5
+air.hittime = 22
+fall = 1
+fall.recover = 0
+getpower = 40,20
+givepower = 24,12
+
+
+[State 750, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[Statedef 3500]
+type = S
+movetype = A
+physics = S
+anim = 3500
+ctrl = 0
+velset = 0,0
+poweradd = -1000
+
+[State 3500, Flash]
+type = SuperPause
+trigger1 = Time = 0
+time = 18
+movetime = 18
+anim = -1
+darken = 1
+p2defmul = 1
+
+[State 3500, Rush]
+type = VelSet
+trigger1 = AnimElemTime(9) < 0
+x = 4.5
+
+[State 3500, Contact]
+type = HitDef
+trigger1 = AnimElem = 3
+attr = S, HA
+damage = 50,5
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -1
+air.velocity = -3,-5
+air.hittime = 22
+fall = 0
+fall.recover = 0
+getpower = 0,0
+givepower = 24,12
+
+[State 3500, Contact]
+type = HitDef
+trigger1 = AnimElem = 6
+attr = S, HA
+damage = 50,5
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -1
+air.velocity = -3,-5
+air.hittime = 22
+fall = 0
+fall.recover = 0
+getpower = 0,0
+givepower = 24,12
+
+[State 3500, Contact]
+type = HitDef
+trigger1 = AnimElem = 9
+attr = S, HA
+damage = 85,5
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -2,-7
+air.velocity = -3,-5
+air.hittime = 22
+fall = 1
+fall.recover = 0
+getpower = 0,0
+givepower = 24,12
+
+[State 3500, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[Statedef 4000]
+type = S
+movetype = A
+physics = S
+anim = 3500
+ctrl = 0
+velset = 0,0
+poweradd = -2000
+
+[State 4000, Flash]
+type = SuperPause
+trigger1 = Time = 0
+time = 18
+movetime = 18
+anim = -1
+darken = 1
+p2defmul = 1
+
+[State 4000, Rush]
+type = VelSet
+trigger1 = AnimElemTime(9) < 0
+x = 4.5
+
+[State 4000, Contact]
+type = HitDef
+trigger1 = AnimElem = 3
+attr = S, HA
+damage = 50,5
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -1
+air.velocity = -3,-5
+air.hittime = 22
+fall = 0
+fall.recover = 0
+getpower = 0,0
+givepower = 24,12
+
+[State 4000, Contact]
+type = HitDef
+trigger1 = AnimElem = 6
+attr = S, HA
+damage = 50,5
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -1
+air.velocity = -3,-5
+air.hittime = 22
+fall = 0
+fall.recover = 0
+getpower = 0,0
+givepower = 24,12
+
+[State 4000, Contact]
+type = HitDef
+trigger1 = AnimElem = 9
+attr = S, HA
+damage = 85,5
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 7,10
+sparkno = 2
+sparkxy = -8,-60
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 16
+ground.hittime = 20
+ground.velocity = -2,-7
+air.velocity = -3,-5
+air.hittime = 22
+fall = 1
+fall.recover = 0
+getpower = 0,0
+givepower = 24,12
+
+[State 4000, Compilacion final]
+type = Helper
+trigger1 = AnimElem = 9
+trigger1 = NumHelper(3010) = 0
+name = "Asistente IA MAX2"
+ID = 3010
+stateno = 3010
+postype = p1
+pos = -25,-85
+keyctrl = 0
+ownpal = 1
+
+[State 4000, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1

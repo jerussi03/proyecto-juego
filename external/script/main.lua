@@ -1,7 +1,6 @@
 main = {}
 --;===========================================================
 --; INITIALIZE DATA
---;===========================================================
 do
 	local RANDOM_IMAX = 2147483647 -- Go IMax / Park-Miller modulus
 	function math.random(min, max)
@@ -1175,7 +1174,6 @@ end
 --; LOAD DATA
 --;===========================================================
 main.t_unlockLua = {chars = {}, stages = {}, modes = {}}
-
 motif = loadMotif()
 if gameOption('Debug.DumpLuaTables') then main.f_printTable(motif, "debug/loadMotif.txt") end
 
@@ -2691,7 +2689,7 @@ function main.f_createMenu(tbl, bool_bgreset, bool_main, bool_f1, bool_del)
 			if tbl.reset then
 				tbl.reset = false
 			else
-				main.f_menuCommonDraw(t, item, cursorPosY, moveTxt, motif[main.group], motif[main.background], false)
+				main.f_menuCommonDraw(t, item, cursorPosY, moveTxt, motif[main.group], motif[main.background], false, { isMainMenu = bool_main and (main.group == 'title_info'), isVersusMenu = tbl.name == 'menuversus' and main.group == 'title_info' })
 			end
 			-- While fading, ignore normal menu inputs, but still allow ESC / menu-cancel to skip the fade.
 			if fadeActive() then
@@ -2870,6 +2868,34 @@ end
 
 -- Dynamically generates all menus and submenus
 function main.f_start()
+	if not main.titleScreenAnims and motif.Sff then
+		main.titleScreenAnims = {}
+		for i = 1, 5 do
+			main.titleScreenAnims[i] = animNew(motif.Sff, string.format("103,%d, 0,0, -1", i))
+			animSetLayerno(main.titleScreenAnims[i], 2)
+			animSetLocalcoord(main.titleScreenAnims[i], motif.info.localcoord[1], motif.info.localcoord[2])
+			-- Apply position and scale after localcoord: these setters perform
+			-- the conversion from motif pixels into the engine's drawing space.
+			animSetPos(main.titleScreenAnims[i], 0, 0)
+			animSetScale(main.titleScreenAnims[i], motif.info.localcoord[1] / 1280, motif.info.localcoord[2] / 720)
+		end
+	end
+	if not main.versusScreenAnim and motif.Sff then
+		main.versusScreenAnim = animNew(motif.Sff, '104,0,0,0,-1')
+		animSetLocalcoord(main.versusScreenAnim, 1024, 559)
+		animSetPos(main.versusScreenAnim, 0, 0)
+		animSetScale(main.versusScreenAnim, 1, 1)
+		animSetLayerno(main.versusScreenAnim, 2)
+		main.versusScreenAnims = {}
+		for name, number in pairs({freebattle = 1, versus = 2, back = 3}) do
+			local a = animNew(motif.Sff, string.format('104,%d,0,0,-1', number))
+			animSetLocalcoord(a, 1024, 559)
+			animSetPos(a, 0, 0)
+			animSetScale(a, 1, 1)
+			animSetLayerno(a, 2)
+			main.versusScreenAnims[name] = a
+		end
+	end
 	main.menu = {title = main.f_itemnameUpper(motif[main.group].title.text, motif[main.group].menu.title.uppercase), submenu = {}, items = {}}
 	main.menu.loop = main.f_createMenu(main.menu, true, main.group == 'title_info', main.group == 'title_info', false)
 	local w = main.f_menuWindow(motif[main.group].menu)
@@ -2962,6 +2988,27 @@ function main.f_start()
 					})
 				end
 			end
+		end
+	end
+	if main.group == 'title_info' then
+		local allowed = { arcade = 1, training = 2, menuversus = 3, options = 4, exit = 5 }
+		local filtered = {}
+		for _, item in ipairs(main.menu.items) do
+			if allowed[item.itemname] then
+				filtered[allowed[item.itemname]] = item
+			end
+		end
+		local finalItems = {}
+		for i = 1, 5 do
+			if filtered[i] then
+				table.insert(finalItems, filtered[i])
+			end
+		end
+		main.menu.items = finalItems
+		local versus = main.menu.submenu.menuversus
+		if versus then
+			local order = {freebattle = 1, versus = 2, back = 3}
+			table.sort(versus.items, function(a, b) return (order[a.itemname] or 99) < (order[b.itemname] or 99) end)
 		end
 	end
 	textImgSetWindow(motif[main.group].menu.item.selected.active.TextSpriteData, w[1], w[2], w[3], w[4])
@@ -3750,9 +3797,18 @@ function main.f_menuCommonDraw(t, item, cursorPosY, moveTxt, sec, bg, skipClear,
 	if not opts.skipBG0 then
 		bgDraw(bg.BGDef, 0)
 	end
+	-- The title art is a complete 1280x720 composition. It includes all menu
+	-- buttons in their exact visual positions, so the generic menu rows must
+	-- not be drawn over it.
+	local titleScreen = opts.isMainMenu and main.titleScreenAnims and main.titleScreenAnims[item]
+	if opts.isVersusMenu and t[item] then titleScreen = main.versusScreenAnims[t[item].itemname] end
+	if titleScreen then
+		animDraw(titleScreen, 2)
+		animUpdate(titleScreen)
+	end
 
 	--draw menu box
-	if m.boxbg.visible then
+	if not titleScreen and m.boxbg.visible then
 		local x1 = offx + m.pos[1] + m.boxcursor.coords[1]
 		local y1 = offy + m.pos[2] + m.boxcursor.coords[2]
 		local w  = m.boxcursor.coords[3] - m.boxcursor.coords[1] + 1
@@ -3763,7 +3819,7 @@ function main.f_menuCommonDraw(t, item, cursorPosY, moveTxt, sec, bg, skipClear,
 		rectDraw(m.boxbg.RectData)
 	end
 	--draw title
-	if not opts.skipTitle and sec.title and sec.title.TextSpriteData then
+	if not titleScreen and not opts.skipTitle and sec.title and sec.title.TextSpriteData then
 		textImgDraw(sec.title.TextSpriteData)
 	end
 	--draw menu items
@@ -3780,8 +3836,21 @@ function main.f_menuCommonDraw(t, item, cursorPosY, moveTxt, sec, bg, skipClear,
 		items_shown = #t
 	end
 
-	-- helper that draws a single item either as active or inactive
 	local function drawItem(i, isActive)
+		if titleScreen then
+			return
+		end
+		if opts.isMainMenu and main.titleBtnAnims then
+			local coords = main.titleBtnCoords and main.titleBtnCoords[i]
+			if coords then
+				local anim = isActive and main.titleBtnAnims.sel[i] or main.titleBtnAnims.unsel[i]
+				animReset(anim, {"pos"})
+				animAddPos(anim, coords[1], coords[2])
+				animDraw(anim, 2)
+				animUpdate(anim)
+				return
+			end
+		end
 		local itemData = t[i]
 		-- display name
 		local displayname = main.f_itemnameUpper(itemData.displayname, m.item.uppercase)

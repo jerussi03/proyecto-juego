@@ -2664,6 +2664,29 @@ function start.f_selectScreen()
 
 	local staticDrawList = start.updateDrawList()
 	start.needUpdateDrawList = false
+	-- Reuse the selected title-menu buttons as the mode heading.
+	-- Resolve on every selection-screen entry so returning from another mode
+	-- never leaves the previous heading displayed.
+	local modeButtons = {
+		arcade = 1, teamarcade = 1, teamcoop = 1, storymode = 1, storyarc = 1,
+		training = 2,
+		versus = 3, teamversus = 3, freebattle = 3, versuscoop = 3,
+		netplayversus = 3,
+	}
+	local modeButton = modeButtons[gameMode()]
+	local modeHeading
+	if modeButton then
+		start.modeHeadingAnims = start.modeHeadingAnims or {}
+		modeHeading = start.modeHeadingAnims[modeButton]
+		if not modeHeading then
+			modeHeading = animNew(motif.Sff, string.format('102,%d,0,0,-1', modeButton))
+			animSetLocalcoord(modeHeading, motif.info.localcoord[1], motif.info.localcoord[2])
+			animSetPos(modeHeading, (motif.info.localcoord[1] - 320) / 2, 10)
+			animSetScale(modeHeading, 1, 1)
+			animSetLayerno(modeHeading, 2)
+			start.modeHeadingAnims[modeButton] = modeHeading
+		end
+	end
 
 	while not selScreenEnd do
 		main.f_preloadTick(4)
@@ -2674,7 +2697,12 @@ function start.f_selectScreen()
 		--draw layerno = 0 backgrounds
 		bgDraw(motif.selectbgdef.BGDef, 0)
 		--draw title
-		textImgDraw(motif.select_info.title.TextSpriteData)
+		if modeHeading then
+			animUpdate(modeHeading)
+			animDraw(modeHeading, 2)
+		else
+			textImgDraw(motif.select_info.title.TextSpriteData)
+		end
 		--draw portraits
 		for side = 1, 2 do
 			if #start.p[side].t_selTemp > 0 then
