@@ -16,6 +16,20 @@ PUNCH_ACTIVE_START = 8
 PUNCH_ACTIVE_END = 27
 PUNCH_CLSN1 = "20, -82, 42, -30"
 
+JUMP_START_FRAMES = 13
+JUMP_START_TICK = 1
+JUMP_AIR_FRAMES = 6
+JUMP_AIR_TICK = 2
+JUMP_LAND_FRAMES = 8
+JUMP_LAND_TICK = 2
+
+CROUCH_DOWN_FRAMES = 11
+CROUCH_DOWN_TICK = 1
+CROUCH_IDLE_FRAMES = 30
+CROUCH_IDLE_TICK = 2
+CROUCH_WALK_FRAMES = 25
+CROUCH_WALK_TICK = 2
+
 CLSN = [
     "Clsn2Default: 2",
     "Clsn2[0] = -20, -100, 20, -50",
@@ -69,8 +83,68 @@ for i in range(PUNCH_FRAMES):
     lines.append(f"200,{i}, 0,0, {PUNCH_TICK}")
 lines.append("")
 
+# Jump start (state 40). The jump velocity is applied when this animation ends.
+lines.append("[Begin Action 40]")
+lines.extend(clsn())
+for i in range(JUMP_START_FRAMES):
+    lines.append(f"40,{i}, 0,0, {JUMP_START_TICK}")
+lines.append("")
+
+# Air poses (state 50). 41 = neutral, 42/43 = forward/back, all reuse the
+# same airborne sprites.
+for action in (41, 42, 43):
+    lines.append(f"[Begin Action {action}]")
+    lines.extend(clsn())
+    for i in range(JUMP_AIR_FRAMES):
+        lines.append(f"41,{i}, 0,0, {JUMP_AIR_TICK}")
+    lines.append("")
+
+# Landing (state 52).
+lines.append("[Begin Action 47]")
+lines.extend(clsn())
+for i in range(JUMP_LAND_FRAMES):
+    lines.append(f"47,{i}, 0,0, {JUMP_LAND_TICK}")
+lines.append("")
+
+# Crouch walk forward (state 11 movement).
+lines.append("[Begin Action 8]")
+lines.extend(clsn())
+for i in range(CROUCH_WALK_FRAMES):
+    lines.append(f"8,{i}, 0,0, {CROUCH_WALK_TICK}")
+lines.append("")
+
+# Crouch walk backward.
+lines.append("[Begin Action 9]")
+lines.extend(clsn())
+for i in range(CROUCH_WALK_FRAMES - 1, 0, -1):
+    lines.append(f"8,{i}, 0,0, {CROUCH_WALK_TICK}")
+lines.append(f"8,0, 0,0, {CROUCH_WALK_TICK}")
+lines.append("")
+
+# Stand to crouch (state 10).
+lines.append("[Begin Action 10]")
+lines.extend(clsn())
+for i in range(CROUCH_DOWN_FRAMES):
+    lines.append(f"10,{i}, 0,0, {CROUCH_DOWN_TICK}")
+lines.append("")
+
+# Crouching (state 11).
+lines.append("[Begin Action 11]")
+lines.extend(clsn())
+for i in range(CROUCH_IDLE_FRAMES):
+    lines.append(f"11,{i}, 0,0, {CROUCH_IDLE_TICK}")
+lines.append("")
+
+# Crouch to stand (state 12, plays crouch-down frames in reverse).
+lines.append("[Begin Action 12]")
+lines.extend(clsn())
+for i in range(CROUCH_DOWN_FRAMES - 1, 0, -1):
+    lines.append(f"10,{i}, 0,0, {CROUCH_DOWN_TICK}")
+lines.append(f"10,0, 0,0, {CROUCH_DOWN_TICK}")
+lines.append("")
+
 # Fallback poses used by the standard KFM states.
-fallback_single = [5, 6, 10, 11, 12, 40, 41, 42, 43, 47, 170, 181, 190, 191,
+fallback_single = [5, 6, 170, 181, 190, 191,
                    192, 195, 210, 230, 240, 400, 410, 430, 440, 600, 610,
                    630, 640, 800, 810, 820, 1000, 1010, 1020, 1025, 1027, 1050,
                    1051, 1052, 1055, 1056, 1060, 1061, 1070, 1071, 1100, 1110,

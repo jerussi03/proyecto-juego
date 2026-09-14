@@ -1,0 +1,45 @@
+; Chan crouch override (state 11).
+; Adds the ability to move while crouched using the crouch-walk animations.
+; Loaded via st1 in chan.def so it overrides the common crouching state.
+
+[Statedef 11]
+type = C
+physics = C
+anim = 11
+sprpriority = 0
+
+[State 11, Walk Fwd Vel]
+type = VelSet
+trigger1 = command = "holdfwd"
+x = 1.0
+
+[State 11, Walk Back Vel]
+type = VelSet
+trigger1 = command = "holdback"
+x = -0.8
+
+[State 11, Stop Vel]
+type = VelSet
+triggerall = !command = "holdfwd"
+triggerall = !command = "holdback"
+trigger1 = 1
+x = 0
+
+[State 11, Walk Fwd Anim]
+type = ChangeAnim
+triggerall = command = "holdfwd"
+trigger1 = anim != 8
+value = 8
+
+[State 11, Walk Back Anim]
+type = ChangeAnim
+triggerall = command = "holdback"
+trigger1 = anim != 9
+value = 9
+
+[State 11, Idle Anim]
+type = ChangeAnim
+triggerall = !command = "holdfwd"
+triggerall = !command = "holdback"
+trigger1 = anim != 11
+value = 11

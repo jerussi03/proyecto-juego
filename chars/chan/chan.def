@@ -11,6 +11,7 @@ localcoord = 320,240
 cmd = ../kfm/kfm.cmd
 cns = chan.cns
 st = ../kfm/kfm.cns
+st1 = chan_crouch.cns
 stcommon = common1.cns
 sprite = chan.sff
 anim = chan.air

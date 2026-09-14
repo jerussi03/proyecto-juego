@@ -7,12 +7,28 @@ ROOT = Path(__file__).parent
 WALK_DIR = ROOT / "caminar"
 IDLE_DIR = ROOT / "estaticochan"
 PUNCH_DIR = ROOT / "golpeMySQL"
+JUMP_DIR = ROOT / "salto"
+CROUCH_DIR = ROOT / "agachar"
+CROUCH_IDLE_DIR = ROOT / "estaticaAgachada"
+CROUCH_WALK_DIR = ROOT / "caminarAgachada"
 OUTPUT = ROOT / "chan.sff"
+
+# The jump clip (salto) is a continuous jump: crouch/launch (frames 1..13),
+# airborne (14..19), then landing (20..27). The remaining frames repeat a
+# second hop, so only the first 27 frames are used.
+JUMP_START_END, JUMP_AIR_END, JUMP_LAND_END = 13, 19, 27
 
 # The punch clip is 192 frames, but only frames 1..121 contain the actual
 # punch motion (the rest is a static rest pose). Subsample every 4th frame so
 # the punch lasts a playable amount of time (~31 frames) instead of 3+ seconds.
 PUNCH_FIRST, PUNCH_LAST, PUNCH_STEP = 0, 121, 4
+
+# Crouch clips (continuous numbering: agachar 1..40, estatica 41..70,
+# caminar 71..180). The crouch-down transition is the crouching part of
+# "agachar" (frames 20..40), the static crouch is "estatica" (41..70), and the
+# crouch-walk is the walking part of "caminar" (frames 76..124).
+CROUCH_DOWN_FIRST, CROUCH_DOWN_LAST, CROUCH_DOWN_STEP = 19, 40, 2
+CROUCH_WALK_FIRST, CROUCH_WALK_LAST, CROUCH_WALK_STEP = 5, 54, 2
 
 # The source frames are 720x1280 with the character content occupying a
 # region that varies per frame. We crop every set to the union of its strong
@@ -44,22 +60,61 @@ def process_set(files):
     return frames
 
 
+def slice_frames(frames, start, end, step):
+    return frames[start:end:step]
+
+
 walk_frames = process_set(sorted(WALK_DIR.glob("*.png")))
 idle_frames = process_set(sorted(IDLE_DIR.glob("*.png")))
 punch_files = sorted(PUNCH_DIR.glob("*.png"))[PUNCH_FIRST:PUNCH_LAST:PUNCH_STEP]
 punch_frames = process_set(punch_files)
+salto_frames = process_set(sorted(JUMP_DIR.glob("*.png"))[:JUMP_LAND_END])
+jump_start_frames = salto_frames[:JUMP_START_END]
+jump_air_frames = salto_frames[JUMP_START_END:JUMP_AIR_END]
+jump_land_frames = salto_frames[JUMP_AIR_END:JUMP_LAND_END]
+
+# Crouch frames share one crop/scale so the crouched poses are naturally
+# shorter than the standing ones.
+crouch_down_files = sorted(CROUCH_DIR.glob("*.png"))[
+    CROUCH_DOWN_FIRST:CROUCH_DOWN_LAST:CROUCH_DOWN_STEP]
+crouch_idle_files = sorted(CROUCH_IDLE_DIR.glob("*.png"))
+crouch_walk_files = sorted(CROUCH_WALK_DIR.glob("*.png"))[
+    CROUCH_WALK_FIRST:CROUCH_WALK_LAST:CROUCH_WALK_STEP]
+crouch_frames = process_set(crouch_down_files + crouch_idle_files +
+                            crouch_walk_files)
+crouch_down_frames = crouch_frames[:len(crouch_down_files)]
+crouch_idle_frames = crouch_frames[
+    len(crouch_down_files):len(crouch_down_files) + len(crouch_idle_files)]
+crouch_walk_frames = crouch_frames[
+    len(crouch_down_files) + len(crouch_idle_files):]
+
 print(f"walk: {len(walk_frames)} frames at {walk_frames[0].size}")
 print(f"idle: {len(idle_frames)} frames at {idle_frames[0].size}")
 print(f"punch: {len(punch_frames)} frames at {punch_frames[0].size}")
+print(f"jump start/air/land: {len(jump_start_frames)}/{len(jump_air_frames)}/{len(jump_land_frames)} frames at {salto_frames[0].size}")
+print(f"crouch down/idle/walk: {len(crouch_down_frames)}/{len(crouch_idle_frames)}/{len(crouch_walk_frames)} frames at {crouch_frames[0].size}")
+
+frames_by_group = [
+    (0, idle_frames),
+    (20, walk_frames),
+    (200, punch_frames),
+    (40, jump_start_frames),
+    (41, jump_air_frames),
+    (47, jump_land_frames),
+    (8, crouch_walk_frames),
+    (10, crouch_down_frames),
+    (11, crouch_idle_frames),
+]
 
 table_offset = 512
-sprite_count = len(idle_frames) + len(walk_frames) + len(punch_frames)
+sprite_count = sum(len(f) for _, f in frames_by_group)
 data_offset = table_offset + sprite_count * 28
 payloads = []
-for frame in idle_frames + walk_frames + punch_frames:
-    buffer = BytesIO()
-    frame.save(buffer, format="PNG", optimize=True)
-    payloads.append(b"\0\0\0\0" + buffer.getvalue())
+for _, frames in frames_by_group:
+    for frame in frames:
+        buffer = BytesIO()
+        frame.save(buffer, format="PNG", optimize=True)
+        payloads.append(b"\0\0\0\0" + buffer.getvalue())
 
 
 def sprite_header(group, number, frame, payload_offset, payload_size):
@@ -74,17 +129,14 @@ struct.pack_into("<4B", output, 12, 0, 1, 0, 2)
 struct.pack_into("<I", output, 36, table_offset)
 struct.pack_into("<I", output, 40, sprite_count)
 current_offset = data_offset
-for number, (frame, payload) in enumerate(zip(idle_frames, payloads)):
-    output.extend(sprite_header(0, number, frame, current_offset, len(payload)))
-    current_offset += len(payload)
-for number, (frame, payload) in enumerate(
-        zip(walk_frames, payloads[len(idle_frames):len(idle_frames) + len(walk_frames)])):
-    output.extend(sprite_header(20, number, frame, current_offset, len(payload)))
-    current_offset += len(payload)
-for number, (frame, payload) in enumerate(
-        zip(punch_frames, payloads[len(idle_frames) + len(walk_frames):])):
-    output.extend(sprite_header(200, number, frame, current_offset, len(payload)))
-    current_offset += len(payload)
+payload_idx = 0
+for group, frames in frames_by_group:
+    for number, frame in enumerate(frames):
+        payload = payloads[payload_idx]
+        payload_idx += 1
+        output.extend(sprite_header(group, number, frame, current_offset,
+                                    len(payload)))
+        current_offset += len(payload)
 for payload in payloads:
     output.extend(payload)
 OUTPUT.write_bytes(output)
