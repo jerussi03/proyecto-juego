@@ -2882,17 +2882,17 @@ function main.f_start()
 	end
 	if not main.versusScreenAnim and motif.Sff then
 		main.versusScreenAnim = animNew(motif.Sff, '104,0,0,0,-1')
-		animSetLocalcoord(main.versusScreenAnim, 1024, 559)
-		animSetPos(main.versusScreenAnim, 0, 0)
-		animSetScale(main.versusScreenAnim, 1, 1)
 		animSetLayerno(main.versusScreenAnim, 2)
+		animSetLocalcoord(main.versusScreenAnim, motif.info.localcoord[1], motif.info.localcoord[2])
+		animSetPos(main.versusScreenAnim, 0, 0)
+		animSetScale(main.versusScreenAnim, motif.info.localcoord[1] / 1280, motif.info.localcoord[2] / 720)
 		main.versusScreenAnims = {}
 		for name, number in pairs({freebattle = 1, versus = 2, back = 3}) do
 			local a = animNew(motif.Sff, string.format('104,%d,0,0,-1', number))
-			animSetLocalcoord(a, 1024, 559)
-			animSetPos(a, 0, 0)
-			animSetScale(a, 1, 1)
 			animSetLayerno(a, 2)
+			animSetLocalcoord(a, motif.info.localcoord[1], motif.info.localcoord[2])
+			animSetPos(a, 0, 0)
+			animSetScale(a, motif.info.localcoord[1] / 1280, motif.info.localcoord[2] / 720)
 			main.versusScreenAnims[name] = a
 		end
 	end

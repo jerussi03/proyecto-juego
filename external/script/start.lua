@@ -2884,7 +2884,9 @@ function start.f_selectScreen()
 				main.f_animPosDraw(motif.select_info.stage.portrait.bg.AnimData)
 				--draw stage portrait (random)
 				if stageListNo == 0 then
-					main.f_animPosDraw(motif.select_info.stage.portrait.random.AnimData)
+					local x = motif.select_info.stage.pos[1] + motif.select_info.stage.portrait.random.offset[1]
+					local y = motif.select_info.stage.pos[2] + motif.select_info.stage.portrait.random.offset[2]
+					main.f_animPosDraw(motif.select_info.stage.portrait.random.AnimData, x, y)
 				--draw stage portrait loaded from stage SFF
 				else
 					stageRef = main.t_selectableStages[stageListNo]
@@ -2896,12 +2898,9 @@ function start.f_selectScreen()
 						anim = portrait.AnimData
 						loadingPortrait = true
 					end
-					local x = motif.select_info.stage.pos[1]
-					local y = motif.select_info.stage.pos[2]
-					if not loadingPortrait then
-						x = x + portrait.offset[1]
-						y = y + portrait.offset[2]
-					end
+					local offset = loadingPortrait and portrait.offset or motif.select_info.stage.portrait.offset
+					local x = motif.select_info.stage.pos[1] + offset[1]
+					local y = motif.select_info.stage.pos[2] + offset[2]
 					main.f_animPosDraw(anim, x, y)
 				end
 				if not stageEnd then
@@ -3569,6 +3568,8 @@ function start.f_selectMenu(side, cmd, player, member, selectState)
 					velCopy = wasRandom
 					-- re-entering random slot: reset random overlay anims so sliding restarts
 					if not wasRandom then
+						start.c[player].randCnt = 0
+						start.c[player].randRef = nil
 						local pData = pCfg
 						if pData.face2.random then
 							animReset(pData.face2.random.AnimData)
@@ -3582,6 +3583,10 @@ function start.f_selectMenu(side, cmd, player, member, selectState)
 					if start.c[player].randCnt > 0 then
 						start.c[player].randCnt = start.c[player].randCnt - 1
 						start.c[player].selRef = start.c[player].randRef
+						start.p[side].t_selTemp[member].ref = start.c[player].selRef
+						if (start.p[side].t_selTemp[member].face2_data == nil or start.p[side].t_selTemp[member].face_data == nil) and start.c[player].selRef ~= nil then
+							updateAnim = true
+						end
 					else
 						if motif.select_info.random.move.snd.cancel then
 							sndStop(motif.Snd, start.f_getCursorData(player).random.move.snd[1], start.f_getCursorData(player).random.move.snd[2])
@@ -3589,9 +3594,10 @@ function start.f_selectMenu(side, cmd, player, member, selectState)
 						sndPlay(motif.Snd, start.f_getCursorData(player).random.move.snd[1], start.f_getCursorData(player).random.move.snd[2])
 						start.c[player].randCnt = motif.select_info.cell.random.switchtime
 						start.c[player].selRef = start.f_randomChar(side)
-						if start.c[player].randRef ~= start.c[player].selRef or start.p[side].t_selTemp[member].face_data == nil then
+						if start.c[player].randRef ~= start.c[player].selRef or start.p[side].t_selTemp[member].face_data == nil or start.p[side].t_selTemp[member].face2_data == nil then
 							updateAnim = true
 							start.c[player].randRef = start.c[player].selRef
+							start.p[side].t_selTemp[member].ref = start.c[player].selRef
 						end
 					end
 				else
@@ -3604,6 +3610,7 @@ function start.f_selectMenu(side, cmd, player, member, selectState)
 					local face2_data = velCopy and start.p[side].t_selTemp[member].face2_data or nil
 					start.p[side].t_selTemp[member].face_data = start.f_animGet(start.c[player].selRef, side, member, pCfg.face, nil, true, face_data)
 					start.p[side].t_selTemp[member].face2_data = start.f_animGet(start.c[player].selRef, side, member, pCfg.face2, nil, true, face2_data)
+					start.needUpdateDrawList = true
 				end
 				-- cell selected or select screen timer reached 0
 				local canConfirm = (slotSelected and start.f_selGrid(start.c[player].cell + 1).char ~= nil and start.f_selGrid(start.c[player].cell + 1).hidden ~= 2) or timerExpired
@@ -3669,11 +3676,16 @@ function start.f_selectMenu(side, cmd, player, member, selectState)
 						elseif palmenu_preview_anim ~= -1 or palmenu_preview_spr[1] ~= -1 then
 							start.f_playWave(start.c[player].selRef, 'cursor', motif.select_info['p' .. side].palmenu.preview.snd[1], motif.select_info['p' .. side].palmenu.preview.snd[2])
 							setDoneAnim(start.c[player].selRef, side, member, pCfg.palmenu.preview, pCfg.face, 'face_data')
+						else
+							start.p[side].t_selTemp[member].face_data = start.f_animGet(start.c[player].selRef, side, member, pCfg.face, nil, true, start.p[side].t_selTemp[member].face_data)
 						end
 					end
 					-- face2 "done" anim
-					if face2_anim ~= done_anim and canShow2 and done_anim2 ~= -1 then
+					local done_spr2 = pCfg.face2.done.spr
+					if canShow2 and ((done_anim2 ~= nil and done_anim2 ~= -1 and face2_anim ~= done_anim2) or (done_spr2 ~= nil and done_spr2[1] ~= -1)) then
 						setDoneAnim(start.c[player].selRef, side, member, pCfg.face2.done, pCfg.face2, 'face2_data')
+					else
+						start.p[side].t_selTemp[member].face2_data = start.f_animGet(start.c[player].selRef, side, member, pCfg.face2, nil, true, start.p[side].t_selTemp[member].face2_data)
 					end
 
 					start.p[side].t_selTemp[member].ref = start.c[player].selRef

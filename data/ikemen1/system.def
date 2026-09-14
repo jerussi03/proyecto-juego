@@ -265,51 +265,51 @@ Welcome to I.K.E.M.E.N GO engine! (%s - %s)
 [Select Info]
 fadein.time = 10
 fadeout.time = 10
-rows = 10
-columns = 8
+rows = 3
+columns = 5
 wrapping = 1                       ;1 to let cursor wrap around
-pos = 525,195                      ;Position to draw to
-showemptyboxes = 1                 ;1 to show empty boxes
-moveoveremptyboxes = 1             ;1 to allow cursor to move over empty boxes
-cell.size = 24,24                  ;x,y size of each cell (in pixels)
-cell.spacing = 4                   ;Space between each cell
+pos = 297,160
+showemptyboxes = 1
+moveoveremptyboxes = 0
+cell.size = 126,86                 ;x,y size of each cell (in pixels)
+cell.spacing = 14                  ;Space between each cell
 cell.bg.spr = 150,0                ;Note: Don't use animation for cells
-cell.bg.scale = .25,.25
+cell.bg.scale = 1.0,1.0
 cell.random.spr = 151,0            ;Icon for random select (don't use animation)
 cell.random.switchtime = 4         ;Time to wait before changing to another random portrait
-cell.random.scale = .25,.25
+cell.random.scale = 1.0,1.0
 p1.cursor.tween.factor = 0.5, 0.5
 p1.cursor.startcell = 0,0
 p1.cursor.active.anim = 160
-p1.cursor.active.scale = .25,.25
+p1.cursor.active.scale = 1.0,1.0
 p1.cursor.done.spr = 161,0
-p1.cursor.done.scale = .25,.25
+p1.cursor.done.scale = 1.0,1.0
 p1.cursor.move.snd = 100,0
 p1.cursor.done.snd = 100,1
 p1.random.move.snd = 100,0
 p2.cursor.tween.factor = 0.25, 0.25
-p2.cursor.startcell = 0,0
+p2.cursor.startcell = 0,1
 p2.cursor.active.anim = 170
-p2.cursor.active.scale = .25,.25
+p2.cursor.active.scale = 1.0,1.0
 p2.cursor.done.spr = 171,0
-p2.cursor.done.scale = .25,.25
+p2.cursor.done.scale = 1.0,1.0
 p2.cursor.blink = 0                ;1 to blink p2's cursor if overlapping p1's
 p2.cursor.move.snd = 100,0
 p2.cursor.done.snd = 100,1
 p2.random.move.snd = 100,0
-p3.cursor.startcell = 3,0
+p3.cursor.startcell = 1,0
 p3.cursor.active.anim = 172
-p3.cursor.active.scale = .25,.25
+p3.cursor.active.scale = 1.0,1.0
 p3.cursor.done.spr = 173,0
-p3.cursor.done.scale = .25,.25
+p3.cursor.done.scale = 1.0,1.0
 p3.cursor.move.snd = 100,0
 p3.cursor.done.snd = 100,1
 p3.random.move.snd = 100,0
-p4.cursor.startcell = 3,2
+p4.cursor.startcell = 1,1
 p4.cursor.active.anim = 174
-p4.cursor.active.scale = .25,.25
+p4.cursor.active.scale = 1.0,1.0
 p4.cursor.done.spr = 175,0
-p4.cursor.done.scale = .25,.25
+p4.cursor.done.scale = 1.0,1.0
 p4.cursor.move.snd = 100,0
 p4.cursor.done.snd = 100,1
 p4.random.move.snd = 100,0
@@ -318,11 +318,14 @@ stage.move.snd = 100,0
 stage.done.snd = 100,1
 cancel.snd = 100,2
 portrait.spr = 9000,0
-portrait.offset = 0,0
-portrait.scale = .25,.25
+portrait.offset = 41,25
+portrait.scale = .45,.45
 portrait.loading.spr = 1000,0
-portrait.loading.offset = 0,0
-portrait.loading.scale = .25,.25
+portrait.loading.offset = 41,25
+portrait.loading.scale = .45,.45
+p1.name.scale = .65,.65
+p2.name.scale = .65,.65
+stage.scale = .6,.6
 title.offset = 640,48              ;Position of title (Arcade Mode, etc)
 title.font = 4,0,0                 ;Font of title (-1 for none)
 title.layerno = 2
@@ -348,80 +351,79 @@ title.bonus.text = BONUS
 title.watch.text = WATCH MODE
 title.replay.text = REPLAY
 
-; Cell Projection
+; Cell Projection (disabled for 2D arcade style)
+;cell.*-0.xangle = 10
+;cell.*-0.projection = perspective
+;cell.*-0.focallength = 50
+;cell.*-0.spacing = 7.5, 0
+;cell.*-0.scale = 0.3,0.3
+;cell.*-0.offset = -11, -46
 
-cell.*-0.xangle = 10
-cell.*-0.projection = perspective
-cell.*-0.focallength = 50
-cell.*-0.spacing = 7.5, 0
-cell.*-0.scale = 0.3,0.3
-cell.*-0.offset = -11, -46
+;cell.*-1.xangle = 10
+;cell.*-1.projection = perspective
+;cell.*-1.focallength = 50
+;cell.*-1.spacing = 8.75, -46
+;cell.*-1.scale = 0.315,0.315
+;cell.*-1.offset = -16, 0
 
-cell.*-1.xangle = 10
-cell.*-1.projection = perspective
-cell.*-1.focallength = 50
-cell.*-1.spacing = 8.75, -46
-cell.*-1.scale = 0.315,0.315
-cell.*-1.offset = -16, 0
+;cell.*-2.xangle = 10
+;cell.*-2.projection = perspective
+;cell.*-2.focallength = 50
+;cell.*-2.spacing = 10, -22
+;cell.*-2.scale = 0.325,0.325
+;cell.*-2.offset = -21, 0
 
-cell.*-2.xangle = 10
-cell.*-2.projection = perspective
-cell.*-2.focallength = 50
-cell.*-2.spacing = 10, -22
-cell.*-2.scale = 0.325,0.325
-cell.*-2.offset = -21, 0
+;cell.*-3.xangle = 10
+;cell.*-3.projection = perspective
+;cell.*-3.focallength = 50
+;cell.*-3.spacing = 11.5, -13.5
+;cell.*-3.scale = 0.34,0.34
+;cell.*-3.offset = -27, 0
 
-cell.*-3.xangle = 10
-cell.*-3.projection = perspective
-cell.*-3.focallength = 50
-cell.*-3.spacing = 11.5, -13.5
-cell.*-3.scale = 0.34,0.34
-cell.*-3.offset = -27, 0
+;cell.*-4.xangle = 10
+;cell.*-4.projection = perspective
+;cell.*-4.focallength = 50
+;cell.*-4.spacing = 13, -8.5
+;cell.*-4.scale = 0.355,0.355
+;cell.*-4.offset = -33, 0
 
-cell.*-4.xangle = 10
-cell.*-4.projection = perspective
-cell.*-4.focallength = 50
-cell.*-4.spacing = 13, -8.5
-cell.*-4.scale = 0.355,0.355
-cell.*-4.offset = -33, 0
+;cell.*-5.xangle = 10
+;cell.*-5.projection = perspective
+;cell.*-5.focallength = 50
+;cell.*-5.spacing = 14.5, -5.2
+;cell.*-5.scale = 0.37,0.37
+;cell.*-5.offset = -39, 0
 
-cell.*-5.xangle = 10
-cell.*-5.projection = perspective
-cell.*-5.focallength = 50
-cell.*-5.spacing = 14.5, -5.2
-cell.*-5.scale = 0.37,0.37
-cell.*-5.offset = -39, 0
+;cell.*-6.xangle = 10
+;cell.*-6.projection = perspective
+;cell.*-6.focallength = 50
+;cell.*-6.spacing = 16.25, -2.3
+;cell.*-6.scale = 0.39,0.39
+;cell.*-6.offset = -46, 0
 
-cell.*-6.xangle = 10
-cell.*-6.projection = perspective
-cell.*-6.focallength = 50
-cell.*-6.spacing = 16.25, -2.3
-cell.*-6.scale = 0.39,0.39
-cell.*-6.offset = -46, 0
+;cell.*-7.xangle = 10
+;cell.*-7.projection = perspective
+;cell.*-7.focallength = 50
+;cell.*-7.spacing = 18.375, 0.3
+;cell.*-7.scale = 0.405,0.405
+;cell.*-7.offset = -54, 0
 
-cell.*-7.xangle = 10
-cell.*-7.projection = perspective
-cell.*-7.focallength = 50
-cell.*-7.spacing = 18.375, 0.3
-cell.*-7.scale = 0.405,0.405
-cell.*-7.offset = -54, 0
+;cell.*-8.xangle = 10
+;cell.*-8.projection = perspective
+;cell.*-8.focallength = 50
+;cell.*-8.spacing = 20.7, 2.7
+;cell.*-8.scale = 0.422,0.422
+;cell.*-8.offset = -63, 0
 
-cell.*-8.xangle = 10
-cell.*-8.projection = perspective
-cell.*-8.focallength = 50
-cell.*-8.spacing = 20.7, 2.7
-cell.*-8.scale = 0.422,0.422
-cell.*-8.offset = -63, 0
-
-cell.*-9.xangle = 10
-cell.*-9.projection = perspective
-cell.*-9.focallength = 50
-cell.*-9.spacing = 23, 5
-cell.*-9.scale = 0.46,0.46
-cell.*-9.offset = -73, 0
+;cell.*-9.xangle = 10
+;cell.*-9.projection = perspective
+;cell.*-9.focallength = 50
+;cell.*-9.spacing = 23, 5
+;cell.*-9.scale = 0.46,0.46
+;cell.*-9.offset = -73, 0
 
 ; If defined draws a sprite or anim from the screenpack on cells using the slot parameter in select.def.
-cell.slot.anim = 158
+cell.slot.anim = -1
 ;cell.slot.spr = -1, 0
 cell.slot.offset = 0, 0
 cell.slot.facing = 1
@@ -430,23 +432,23 @@ cell.slot.layerno = 2
 
 ;Main big portraits
 p1.face.anim = 0                   ;Animated portraits
-p1.face.offset = 280, 560          ;Position to place the portrait
-p1.face.scale = 0.75,0.75
+p1.face.offset = 190,640
+p1.face.scale = .5,.5
 p1.face.facing = 1
-p1.face.window = 0,46, 476,629
+p1.face.window = 60,370,290,650
 p1.face.applypal = 1               ;Display portrait with selected palette (requires shared palette)
 p1.face.layerno = 2
 
 p1.face.random.anim = 151
-p1.face.random.offset = 300, 360
+p1.face.random.offset = 190,640
 p1.face.random.facing = 1
-p1.face.random.scale = 2, 2
+p1.face.random.scale = 1,1
 p1.face.random.layerno = 2
 
 p1.face.loading.anim = 151
-p1.face.loading.offset = 300, 360
+p1.face.loading.offset = 190,640
 p1.face.loading.facing = 1
-p1.face.loading.scale = 2, 2
+p1.face.loading.scale = 1,1
 p1.face.loading.layerno = 2
 
 p1.face.slot.anim = 156
@@ -458,23 +460,23 @@ p1.face.slot.scale = 0.2,0.2
 p1.face.slot.layerno = 2
 	
 p2.face.anim = 0
-p2.face.offset = 1000, 560
-p2.face.scale = 0.75,0.75
+p2.face.offset = 1090,640
+p2.face.scale = .5,.5
 p2.face.facing = -1
-p2.face.window = 802,46, 1280,629
+p2.face.window = 990,370,1220,650
 p2.face.applypal = 1
 p2.face.layerno = 2
 
 p2.face.random.anim = 151
-p2.face.random.offset = 960, 360
+p2.face.random.offset = 1090,640
 p2.face.random.facing = 1
-p2.face.random.scale = 2, 2
+p2.face.random.scale = 1,1
 p2.face.random.layerno = 2
 
 p2.face.loading.anim = 151
-p2.face.loading.offset = 960, 360
+p2.face.loading.offset = 1090,640
 p2.face.loading.facing = 1
-p2.face.loading.scale = 1, 1
+p2.face.loading.scale = 1,1
 p2.face.loading.layerno = 2
 
 p2.face.slot.anim = 156
@@ -488,51 +490,60 @@ p2.face.slot.layerno = 2
 p1.face.done.anim = 181            ;Portrait to use when selection is confirmed
 p2.face.done.anim = 181
 
-;Secondary big portraits
-p1.face2.spr = 9000,1              ;Secondary portrait
-p1.face2.projection = perspective
-p1.face2.yangle = 70
-p1.face2.layerno = 2
+;Secondary big portraits (large profile picture in background)
+p1.face2.spr = 9000,1
+p1.face2.projection = orthographic
+p1.face2.yangle = 0
+p1.face2.layerno = 0
 p1.face2.focallength = 400
-p1.face2.offset = 0, 94
-p1.face2.scale = 1, 1
+p1.face2.offset = 35,160
+p1.face2.scale = 0.85,0.85
 p1.face2.facing = 1
-p1.face2.window = 0,46, 476,629
+p1.face2.window = 25,60,480,675
 p1.face2.applypal = 1
 
+p1.face2.done.spr = 9000,1
+p1.face2.done.offset = 35,160
+p1.face2.done.scale = 0.85,0.85
+p1.face2.done.facing = 1
+p1.face2.done.window = 25,60,480,675
+p1.face2.done.applypal = 1
+p1.face2.done.layerno = 0
+
 p2.face2.spr = 9000,1
-p2.face2.projection = perspective
-p2.face2.yangle = -70
-p2.face2.layerno = 2
+p2.face2.projection = orthographic
+p2.face2.yangle = 0
+p2.face2.layerno = 0
 p2.face2.focallength = 400
-p2.face2.offset = 1279, 94
-p2.face2.scale = 1, 1
+p2.face2.offset = 1245,160
+p2.face2.scale = 0.85,0.85
 p2.face2.facing = -1
-p2.face2.window = 802,46, 1280,629
+p2.face2.window = 800,60,1255,675
 p2.face2.applypal = 1
 
-p1.face2.random.spr = 151,0
-p1.face2.random.offset = 0, 94
-p1.face2.random.facing = 1
-p1.face2.random.scale = 5, 5
-p1.face2.random.layerno = 2
-p1.face2.random.projection = perspective
-p1.face2.random.yangle = 70
-p1.face2.random.layerno = 2
-p1.face2.random.focallength = 400
-p1.face2.random.window = 0,46, 476,629
+p2.face2.done.spr = 9000,1
+p2.face2.done.offset = 1245,160
+p2.face2.done.scale = 0.85,0.85
+p2.face2.done.facing = -1
+p2.face2.done.window = 800,60,1255,675
+p2.face2.done.applypal = 1
+p2.face2.done.layerno = 0
 
-p2.face2.random.spr = 151, 1
-p2.face2.random.offset = 1280, 94
-p2.face2.random.facing = -1
-p2.face2.random.scale = 5, 5
-p2.face2.random.layerno = 2
-p2.face2.random.window = 802,46, 1280,629
-p2.face2.random.projection = perspective
-p2.face2.random.yangle = -70
-p2.face2.random.focallength = 400
+;p1.face2.random.spr = 152,0
+;p1.face2.random.offset = 35,160
+;p1.face2.random.scale = 1.0,1.0
+;p1.face2.random.facing = 1
+;p1.face2.random.window = 25,60,480,675
+;p1.face2.random.layerno = 0
 
-p1.face2.loading.spr = 1000, 1
+;p2.face2.random.spr = 152,0
+;p2.face2.random.offset = 1245,160
+;p2.face2.random.scale = 1.0,1.0
+;p2.face2.random.facing = -1
+;p2.face2.random.window = 800,60,1255,675
+;p2.face2.random.layerno = 0
+
+p1.face2.loading.spr = -1,0
 p1.face2.loading.offset = 0, 94
 p1.face2.loading.facing = 1
 p1.face2.loading.scale = 1, 1
@@ -543,7 +554,7 @@ p1.face2.loading.layerno = 2
 p1.face2.loading.focallength = 400
 p1.face2.loading.window = 0,46, 476,629
 
-p2.face2.loading.spr = 1000, 1
+p2.face2.loading.spr = -1,0
 p2.face2.loading.offset = 1280, 94
 p2.face2.loading.facing = -1
 p2.face2.loading.scale = 1, 1
@@ -554,50 +565,46 @@ p2.face2.loading.yangle = -70
 p2.face2.loading.focallength = 400
 
 ;Name
-p1.name.offset = 50,620                   ;Position to put name
-p1.name.font = 3,0,1, 210,210,255         ;Set to -1 for no display
+p1.name.offset = 190,678
+p1.name.font = 2,0,0, 240,210,160
 p1.name.spacing = 15,25                   ;Space between each name for players on the same team
 p1.name.layerno = 2
-p2.name.offset = 1230,620
-p2.name.font = 3,0,-1, 255,210,239
+p2.name.offset = 1090,678
+p2.name.font = 2,0,0, 160,220,240
 p2.name.spacing = -15,25
 p2.name.layerno = 2
 
 ;Stage select
-stage.pos = 640,707
-stage.font = 3,0,0
-stage.active.font = 3,0,0
-stage.active2.font = 3,0,0, 200,256,200  ;Second font color for blinking
-stage.done.font = 3,0
+stage.pos = 640,680
+stage.font = 2,0,0
+stage.active.font = 2,0,0
+stage.active2.font = 2,0,0, 240,210,160
+stage.done.font = 2,0,0
 stage.layerno = 2
 
-;Stage portraits
+;Stage portraits (rendered inside the single Stage Monitor at start = -144, 437)
 ;stage.portrait.anim = 
 stage.portrait.spr = 9000,1
-stage.portrait.offset = -121, -141
-stage.portrait.scale = 0.25, 0.25
-stage.portrait.bg.anim = 110
-;stage.portrait.bg.spr = 
-stage.portrait.bg.offset = -163, -144
-stage.portrait.bg.scale = 1.0, 1.0
-stage.portrait.bg.layerno = 2
-;stage.portrait.random.anim = 113
+stage.portrait.offset = -95,-196
+stage.portrait.scale = 0.1833, 0.285
+stage.portrait.bg.spr = -1,0
 stage.portrait.random.spr = 111,0
-stage.portrait.random.offset = -163, -144
+stage.portrait.random.offset = -95,-196
 stage.portrait.random.scale = 1.0, 1.0
+stage.portrait.random.window = 545,484,721,598
 stage.portrait.random.layerno = 2
 ; stage.portrait.loading.spr = 
 stage.portrait.loading.anim = 113
-stage.portrait.loading.offset = -163, -144
+stage.portrait.loading.offset = -95,-196
 stage.portrait.loading.scale = 1.0, 1.0
 stage.portrait.loading.layerno = 2
-stage.portrait.window = 521, 567, 759, 665
+stage.portrait.window = 545,484,721,598
 stage.portrait.layerno = 2
 
 ;Record
-record.font = 3,0,0
-record.offset = 640, 672
-record.scale = 0.6, 0.6
+record.font = 1,0,0
+record.offset = 640,702
+record.scale = 2,2
 record.layerno = 2
 ;record.<gamemode>.text = 
 record.window = 
@@ -764,27 +771,7 @@ p2.palmenu.cancel.snd = 100, 2
 113,7, 0,0, 4
 
 [Begin Action 151]
-LoopStart
-151,2, 0,0, 20
-Interpolate Scale
-151,2, 0,0, 20, , , 0.75
-Interpolate Scale
-151,2, 0,0, 1, , , 0.001
-151,3, 0,0, 20, , , 0.001
-Interpolate Scale
-151,3, 0,0, 20, , , 0.75
-Interpolate Scale
-151,3, 0,0, 3
-151,3, 0,0, 20
-Interpolate Scale
-151,3, 0,0, 20, , , 0.75
-Interpolate Scale
-151,3, 0,0, 1, , , 0.001
-151,2, 0,0, 20, , , 0.001
-Interpolate Scale
-151,2, 0,0, 20, , , 0.75
-Interpolate Scale
-151,2, 0,0, 3
+151,2,0,0,-1
 
 [Begin Action 155]
 155,0, 0,0, 8
@@ -883,36 +870,28 @@ Interpolate Scale
 ;-----------------------
 ;Character select screen background
 [SelectBGdef]
-;spr = graphics/selectbg.sff  ;Filename of sprite data
+bgclearcolor = 0,0,0
 
-[SelectBG Background Sky]
+[SelectBG General Background]
 type = normal
-spriteno = 101,0
+spriteno = 205,0
 layerno = 0
 start = -640,0
 
-[SelectBG Background Black Bars]
+[SelectBG Stage Monitor]
 type = normal
-spriteno = 100,1
+spriteno = 112,0
+layerno = 0
+start = -144,437
+mask = 1
+
+[SelectBG Outer Frame]
+type = normal
+spriteno = 106,0
 layerno = 1
 start = -640,0
-trans = add1
 mask = 1
 
-[SelectBG Background PortraitGradient]
-type = normal
-spriteno = 102,0
-layerno = 1
-start = -640,94
-trans = add1
-mask = 1
-
-; Mode artwork is drawn once by the selection-screen heading.
-; Sprites 101,2 / 101,3 / 102,1 are now menu buttons, not clouds
-; or portrait gradients; do not repeat them as selection backgrounds.
-
-
-;-------------------------------------------------------------------
 [VS Screen]
 time = 390                   ;Time to show screen
 fadein.time = 20
@@ -1128,20 +1107,19 @@ p8.value.icon.spr = 810, 5
 p8.value.empty.icon.spr = 810, 9
 
 ;Stage preview
-stage.pos = 640,707
-stage.text = Next Stage: %s
-stage.offset = 0, -10
+stage.pos = 640,680
+stage.text = Escenario: %s
+stage.offset = 0, -250
 stage.font = 3,0,0
 stage.scale = 0.6, 0.6
 ;stage.portrait.anim = 
 stage.portrait.spr = 9000,1
-stage.portrait.offset = -121, -141
-stage.portrait.scale = 0.25, 0.25
+stage.portrait.offset = -96, -214
+stage.portrait.scale = 0.8, 0.8
 stage.portrait.bg.spr = 112,0
-;stage.portrait.bg.spr = 
-stage.portrait.bg.offset = -163, -144
+stage.portrait.bg.offset = -144, -240
 stage.portrait.bg.scale = 1.0, 1.0
-stage.portrait.window = 521, 567, 759, 665
+stage.portrait.window = 544, 496, 736, 624
 
 ;Order timer
 ; Change timer.count to positive number to enable order selection timer
@@ -1214,40 +1192,11 @@ loading.storyboard =
 ;VS Match up screen background
 [VersusBGdef]
 
-[VersusBG Background Sky]
+[VersusBG General Background]
 type = normal
-spriteno = 204,0
+spriteno = 205,0
 layerno = 0
 start = -640,0
-
-[VersusBG Background Clouds Top]
-type = normal
-spriteno = 102,2
-layerno = 0
-start = -640, -50
-tile = 1,0
-velocity = -0.05, 0
-trans = add1
-window = 0,0, 1279,959
-mask = 1
-
-[VersusBG Background Clouds Bottom]
-type = normal
-spriteno = 102,3
-layerno = 0
-start = -640, 0
-tile = 1,0
-velocity = -0.7, 0
-window = 0,0, 1279,959
-mask = 1
-
-[VersusBG Background Black Bars]
-type = normal
-spriteno = 100,1
-layerno = 0
-start = -640,0
-trans = add1
-mask = 1
 
 [VersusBG 5]   ;VS Logo
 type = anim
@@ -1647,6 +1596,12 @@ Interpolate Scale
 ;Continue screen background
 [Continuebgdef]
 
+[ContinueBG General Background]
+type = normal
+spriteno = 205,0
+layerno = 0
+start = -640,0
+
 [ContinueBG Text]
 type  = anim
 actionno = 901
@@ -1709,48 +1664,11 @@ winquote.textdelay = 2
 ;Victory screen background
 [VictoryBGdef]
 
-[VictoryBG Background Sky]
+[VictoryBG General Background]
 type = normal
-spriteno = 204,0
+spriteno = 205,0
 layerno = 0
 start = -640,0
-
-[VictoryBG Background Clouds Top]
-type = normal
-spriteno = 102,2
-layerno = 0
-start = -640, -50
-tile = 1,0
-velocity = -0.05, 0
-trans = add1
-window = 0,0, 1279,959
-mask = 1
-
-[VictoryBG Background Clouds Bottom]
-type = normal
-spriteno = 102,3
-layerno = 0
-start = -640, 0
-tile = 1,0
-velocity = -0.7, 0
-window = 0,0, 1279,959
-mask = 1
-
-[VictoryBG Background Black Bars]
-type = normal
-spriteno = 100,10
-layerno = 0
-start = -640,0
-trans = add1
-mask = 1
-
-[VictoryBG Background RedGradient]
-type = normal
-spriteno = 100,11
-layerno = 1
-start = -640,0
-trans = add1
-mask = 1
 
 [VictoryBG Text] ;Victory
 type = anim
@@ -1793,6 +1711,12 @@ wintext.layerno = 2
 [WinBGdef]
 ; results screens variants reuse WinBgDef if dedicated ResultsBgDef is not set
 
+[WinBG General Background]
+type = normal
+spriteno = 205,0
+layerno = 0
+start = -640,0
+
 ;-------------------------------------------------------------------
 ;Game ending screen definition
 ;This screen shows up after the Win Screen.
@@ -1828,6 +1752,12 @@ roundstowin = 5 ;Number of rounds to get win pose (lose pose otherwise)
 ;Survival mode results screen background
 [SurvivalResultsBGdef]
 
+[SurvivalResultsBG General Background]
+type = normal
+spriteno = 205,0
+layerno = 0
+start = -640,0
+
 
 ;-------------------------------------------------------------------
 [Time Attack Results Screen]
@@ -1844,6 +1774,12 @@ winstext.layerno = 2
 ;-----------------------
 ;Time Attack results screen background
 [TimeAttackResultsBGdef]
+
+[TimeAttackResultsBG General Background]
+type = normal
+spriteno = 205,0
+layerno = 0
+start = -640,0
 
 
 ;-------------------------------------------------------------------
@@ -1988,31 +1924,11 @@ keymenu.itemname.page = Page
 ;Options screen background
 [OptionBGdef]
 
-[OptionBG Background Sky]
+[OptionBG General Background]
 type = normal
-spriteno = 100,0
+spriteno = 205,0
 layerno = 0
 start = -640,0
-
-[OptionBG Background Clouds Top]
-type = normal
-spriteno = 100,2
-layerno = 0
-start = -640, -50
-tile = 1,0
-velocity = -0.1, 0
-window = 0,0, 1279,959
-mask = 1
-
-[OptionBG Background Clouds Bottom]
-type = normal
-spriteno = 100,3
-layerno = 0
-start = -640, 0
-tile = 1,0
-velocity = -0.7, 0
-window = 0,0, 1279,959
-mask = 1
 
 ;-------------------------------------------------------------------
 ;Replay select screen definition
@@ -2062,32 +1978,11 @@ menu.itemname.back = Back
 ;Replay select screen background
 [ReplayBGdef]
 
-[ReplayBG Background Sky]
+[ReplayBG General Background]
 type = normal
-spriteno = 204,0
+spriteno = 205,0
 layerno = 0
 start = -640,0
-
-[ReplayBG Background Clouds Top]
-type = normal
-spriteno = 102,2
-layerno = 0
-start = -640, -50
-tile = 1,0
-velocity = -0.05, 0
-trans = add1
-window = 0,0, 1279,959
-mask = 1
-
-[ReplayBG Background Clouds Bottom]
-type = normal
-spriteno = 102,3
-layerno = 0
-start = -640, 0
-tile = 1,0
-velocity = -0.7, 0
-window = 0,0, 1279,959
-mask = 1
 ---------------------------------------------
 ;Pause menu screen definition
 [Pause Menu]
@@ -2384,6 +2279,12 @@ overlay.alpha = 0, 128
 ;Challenger background
 [ChallengerBGdef]
 
+[ChallengerBG General Background]
+type = normal
+spriteno = 205,0
+layerno = 0
+start = -640,0
+
 
 ;-------------------------------------------------------------------
 ;Dialogue definition
@@ -2584,31 +2485,11 @@ glyphs = A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X,
 ;Hiscore screen background
 [HiscoreBGdef]
 
-[HiscoreBG Background Sky]
+[HiscoreBG General Background]
 type = normal
-spriteno = 100,0
+spriteno = 205,0
 layerno = 0
 start = -640,0
-
-[HiscoreBG Background Clouds Top]
-type = normal
-spriteno = 100,2
-layerno = 0
-start = -640, -50
-tile = 1,0
-velocity = -0.1, 0
-window = 0,0, 1279,959
-mask = 1
-
-[HiscoreBG Background Clouds Bottom]
-type = normal
-spriteno = 100,3
-layerno = 0
-start = -640, 0
-tile = 1,0
-velocity = -0.7, 0
-window = 0,0, 1279,959
-mask = 1
 
 ;-------------------------------------------------------------------
 ;Warning screen definition

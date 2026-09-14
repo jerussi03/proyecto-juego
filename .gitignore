@@ -1,4 +1,5 @@
 save/logs/
+save/stats.json
 backups/
 *.bak
 *.log
