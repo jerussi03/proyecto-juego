@@ -3,3 +3,4 @@ save/stats.json
 backups/
 *.bak
 *.log
+*.lnk
