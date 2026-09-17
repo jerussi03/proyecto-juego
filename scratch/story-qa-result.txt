@@ -1,0 +1,5 @@
+PASS: MODO HISTORIA selects Chava and the custom route
+PASS: actual menu callback reaches Chan without nil P1; startup/attract intro disabled
+PASS: all 58 cards rendered; 12 chapters and ending traversed; two fight requests
+PASS: cancelling a scene exits the route
+PASS: failed/aborted fight does not reach later chapters or ending

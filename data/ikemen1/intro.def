@@ -1,0 +1,29 @@
+[Info]
+localcoord = 1280,720
+[SceneDef]
+spr = ../story/story.sff
+startscene = 0
+[Scene 0]
+fadein.time = 15
+fadeout.time = 15
+clearcolor = 16,25,32
+layer0.anim = 0
+end.time = 900
+[Begin Action 0]
+0,0,0,0,-1
+[Scene 1]
+fadein.time = 15
+fadeout.time = 15
+clearcolor = 16,25,32
+layer0.anim = 1
+end.time = 900
+[Begin Action 1]
+0,1,0,0,-1
+[Scene 2]
+fadein.time = 15
+fadeout.time = 15
+clearcolor = 16,25,32
+layer0.anim = 2
+end.time = 900
+[Begin Action 2]
+0,2,0,0,-1

@@ -1,0 +1,82 @@
+{
+  "intro": {
+    "title": "INGENIERÍA EN SISTEMAS DE COMBATE",
+    "portrait": "chava",
+    "pages": [
+      ["NARRADOR", "En un México corrupto y pobre, un alumno hambriado quiere acercarse un pelín a tener algo en la vida. Se llama Chava. Su gran idea: inscribirse a una universidad."],
+      ["NARRADOR", "Lamentablemente, el muy pendejo eligió la Universidad Tecnológica de la Costa de Santiago. En resumen: se la metió él solo. Ahora le esperan materias, trámites y el sagrado título de Ingeniero en Sistemas de Combate."],
+      ["NARRADOR", "Usa tus prompts, tus desvelos, tus Monsters y tus justificantes sacados del culo. No defraudes a tu jefa. Esta historia se juega capítulo a capítulo: algunos encuentros todavía se cuentan con escenas mientras llegan sus luchadores."]
+    ]
+  },
+  "chapters": [
+    {"id":"chan", "title":"RESPETO Y CORDIALIDAD", "subject":"Bases de datos", "name":"Chan", "source":"chan_basededatos.jpeg", "fighter":"chan/chan.def", "pages":[
+      ["NARRADOR","Primer día. Chava camina por los oscuros pasillos sin luz de la UTC. Al fondo está el salón de Chan, quien lo espera con total respeto y cordialidad. Nuestro héroe abre la puerta."],
+      ["CHAN","Buenos días, Chava. Pasa. Aquí vamos a ordenar tus datos... y a comprobar si traes algo en la cabeza."],
+      ["CHAVA","Buenos días, maestra. Traigo ganas de aprender. Lo del cerebro se lo entrego en la próxima clase."]
+    ],"after":[["NARRADOR","¡MATERIA APROBADA! Chava sobrevive a Chan. Ya puede guardar su primera victoria en una base de datos. Lo que sigue no se arregla con un SELECT: viene Soporte."]]},
+    {"id":"felix", "title":"REINICIA Y REZA", "subject":"Soporte", "name":"Félix", "source":"felix_soporte.jpeg", "pages":[
+      ["NARRADOR","Después de Chan, nuestro pequeño amigo ñengo llega a Soporte. Esta materia sí le enseñará un chingo. Pero Chava pretende contrarrestar las tareas de IA de Félix con su propia medicina automatizada."],
+      ["FÉLIX","Puedes pedirle ayuda a tu IA. Pero cuando la computadora no encienda, el que va a explicar qué pasó eres tú."],
+      ["CHAVA","Prompt: actúa como un alumno que sí estudió. No, espera... actúa como uno que por lo menos sabe conectar el cable."]
+    ],"after":[["NARRADOR","En la historia, Chava logra sacar adelante Soporte. Ya reconoce una motherboard. Su cerebro, idiotizado por TikTok, solicita un descanso de quince videos."]]},
+    {"id":"alejandro", "title":"¿Y ESA MADRE DE ANGULAR?", "subject":"Programación / Angular", "name":"Alejandro", "source":"alejandro_angular.jpeg", "pages":[
+      ["NARRADOR","Chava entra al salón con esperanzas de aprender. Pero sácate a la verga: Alejandro aparece de pronto con un Marlboro rojo y una pregunta que le cambia la cara."],
+      ["ALEJANDRO","¿Estás preparado para aprender a programar con Angular?"],
+      ["CHAVA","Profe, todavía no sé qué carajo es una variable. ¿Angular viene antes o después de llorar?"],
+      ["NARRADOR","Chava no sabía programar. De esa madre llamada Angular, ni hablar. Ahora le van a llorar los ojos por algo más que el desvelo."]
+    ],"after":[["NARRADOR","A base de errores y prompts marranotes, el proyecto termina arrancando. Chava no toca nada más, por si se rompe. Daniela lo espera."]]},
+    {"id":"daniela", "title":"SÍ ERA IMPORTANTE", "subject":"La materia de Daniela", "name":"Daniela", "source":"daniela_esposadevictor.jpeg", "pages":[
+      ["NARRADOR","Corre, mi amigo: la materia superimportante de Daniela te espera. No recuerdo cuál es, pero es importante. Tú dale, mi estimado; eres una máquina atrofiada."],
+      ["DANIELA","A ver, Chava. ¿Por lo menos sabes qué entrega toca hoy?"],
+      ["CHAVA","La importante, maestra. Esa la tengo clarísima. Lo que no tengo clarísimo es en cuál carpeta la guardé."]
+    ],"after":[["NARRADOR","Chava consigue entregar a tiempo. El narrador sigue sin recordar la materia, pero al menos ya aprendió a no subestimar a Daniela."]]},
+    {"id":"hector", "title":"SIN CONEXIÓN CON LA REALIDAD", "subject":"Redes", "name":"Héctor Hugo", "source":"hector_hugo_redes.jpeg", "fighter":"hector", "pages":[
+      ["NARRADOR","Chava se abre paso entre materias. Cada vez es más competente pidiendo prompts marranotes. Su próxima parada: Redes. La cosa más jodidamente aburrida, amén."],
+      ["HÉCTOR HUGO","Si dos equipos no se comunican, revisa la configuración antes de echarle la culpa al internet."],
+      ["CHAVA","Mi cerebro lleva todo el semestre sin conexión. ¿También se arregla cambiándole la IP?"]
+    ],"after":[["NARRADOR","¡MATERIA APROBADA! Hubo respuesta al ping. Héctor deja pasar a Chava, aunque entre sus dos neuronas todavía se pierden paquetes."]]},
+    {"id":"gameros", "title":"EIGHTY PERCENT DE FE", "subject":"Inglés", "name":"Gameros", "source":"gameros_ingles.jpeg", "pages":[
+      ["NARRADOR","Mister Chava debe hablar inglés con un 80 % de asertividad. Apenas logra explicarse en español. Solo míralo: está todo tonto, pero trae actitud."],
+      ["GAMEROS","Tell me about your project, Chava. In English, please."],
+      ["CHAVA","My project is... very project. Teacher, give me a chance."],
+      ["NARRADOR","Buena suerte. Recuerda: el respeto y la cordialidad abren puertas. Aprender algo de inglés tampoco estaría mal, cabrón."]
+    ],"after":[["NARRADOR","Entre nervios y frases improvisadas, Chava logra hacerse entender. No salió bilingüe, pero ya pide una segunda oportunidad en dos idiomas."]]},
+    {"id":"armando", "title":"A VELOCIDAD INFINITUM", "subject":"Internet de las cosas", "name":"Armando", "source":"armando_iot.jpeg", "pages":[
+      ["NARRADOR","Armando espera en IoT para enseñarle a Chava cómo se sienten unos buenos putazos a velocidad Infinitum. En la mesa hay sensores, cables y un solenoide con muy malas intenciones."],
+      ["ARMANDO","Si tu sensor no responde, revisa el circuito. Aquí hasta las cosas están conectadas; nomás falta que tú te conectes con la clase."],
+      ["CHAVA","Profe, yo funciono con café y frijoles puercos. ¿Eso cuenta como sistema de alimentación?"]
+    ],"after":[["NARRADOR","El prototipo por fin responde. Chava retira las manos, guarda los cables y promete no volver a conectar cosas a lo pendejo. Promesa de estudiante."]]},
+    {"id":"vladimir", "title":"EL JUSTIFICANTE SAGRADO", "subject":"Dirección de carrera", "name":"Vladimir", "source":"vladimir_directordelacarrera.jpeg", "pages":[
+      ["NARRADOR","Tantas materias y el puñetas de Chava faltó varias veces. Puede reprobar por asistencia. Su última esperanza: conseguir que Vladimir le justifique antes de acabar haciendo honores en el solazo."],
+      ["VLADIMIR","Aquí dice que faltaste. Y aquí dice que tu excusa es que se cayó el sistema. ¿Cuál sistema?"],
+      ["CHAVA","El mío, director. Se me apagó el cuerpo después de tres entregas y dos desvelos. Vengo a negociar mi supervivencia."]
+    ],"after":[["NARRADOR","Chava sale de la dirección con sus papeles en orden. Guarda el justificante como si fuera un objeto legendario. Ahora sí: a darle una santa putiza a las matemáticas."]]},
+    {"id":"jaime", "title":"DESPEJA TU SUFRIMIENTO", "subject":"Matemáticas", "name":"Jaime Esqueda", "source":"jaime_matematicas.jpeg", "pages":[
+      ["NARRADOR","La materia de Jaime Esqueda es de las clásicas: ha atormentado a generaciones. Hoy es la oportunidad de Chava para ajustar cuentas con las matemáticas."],
+      ["JAIME ESQUEDA","No quiero solo el resultado. Quiero ver el procedimiento."],
+      ["CHAVA","Primero entré en pánico. Luego recé. Después puse la fórmula. ¿Le anoto también el orden de las lágrimas?"]
+    ],"after":[["NARRADOR","Chava encuentra la incógnita. Resulta que sí había que estudiar. Guarda la calculadora y descubre otras dos entregas antes del examen final."]]},
+    {"id":"leonardo", "title":"EN MI CELULAR SÍ JALA", "subject":"Dispositivos móviles", "name":"Leonardo", "source":"leonardo_dispositivosmoviles.jpeg", "pages":[
+      ["NARRADOR","Chava creía que dominar el celular significaba deslizar TikToks. Leonardo lo recibe con una tarea muy diferente: construir una aplicación que funcione."],
+      ["LEONARDO","Enséñame tu aplicación. Y que funcione en otro teléfono, no solamente en el tuyo."],
+      ["CHAVA","No mame, profe. Mi app tiene personalidad: se cierra cuando siente presión, igual que yo."]
+    ],"after":[["NARRADOR","Después de reinstalar medio mundo, la app abre sin cerrarse. Chava celebra una pantalla que dice hola como si hubiera inventado la computación."]]},
+    {"id":"victor", "title":"LA ÚLTIMA REVISIÓN", "subject":"Revisión del proyecto", "name":"Víctor", "source":"vistor_esposodelamaestradaniela.jpeg", "pages":[
+      ["NARRADOR","Chava ya se veía con título. Pero Víctor aparece con una computadora y la peor frase del semestre: falta revisar tu proyecto. Daniela ya le había advertido que no cantara victoria."],
+      ["VÍCTOR","Abre el proyecto y explícame cómo funciona. Desde el principio."],
+      ["CHAVA","¿Desde cuando lo hice o desde cuando le pedí a la IA que dejara de inventarse funciones?"]
+    ],"after":[["NARRADOR","Esta vez Chava consigue explicar lo que entregó. Cierra la computadora y respira. Solo queda una puerta: la de César Geovanni."]]},
+    {"id":"cesar", "title":"EL PRECIO DEL TÍTULO", "subject":"Examen final", "name":"César Geovanni", "source":"cesar_giovani.jpeg", "pages":[
+      ["NARRADOR","Nuestro casi hombre está por entrar al salón de MGT. César Geovanni Machuca Pereida. Una nube espesa llena el ambiente: estrés y sueño acumulados durante todo el semestre."],
+      ["CÉSAR GEOVANNI","Tu alma y cuerpo... son míos a partir de ahora. Lo único tuyo que te permitiré conservar en este momento será tu propio sufrimiento y dolor."],
+      ["CHAVA","Ya llegué hasta aquí. Traigo sueño, hambre y un proyecto que apenas compila. Pero no voy a defraudar a mi jefa."],
+      ["NARRADOR","Chava deja la mochila en el suelo. Del otro lado de este último examen está el sagrado título. Échele ganas, mijo."]
+    ],"after":[["NARRADOR","En el desenlace de la historia, Chava supera el examen de César. Por primera vez, el silencio del salón no anuncia otra tarea."]]}
+  ],
+  "ending":{"title":"INGENIERO, POR FIN", "portrait":"chava", "pages":[
+    ["NARRADOR","¡Mierdaaaaaa! ¡Lo has logrado! Ahora Chava tiene un título y se ha convertido en un hombre. Ya no es la puta zorra esclava de la UTC: ahora es una puta zorra libre."],
+    ["CHAVA","Jefa, sí pude. Ahora déjeme dormir tantito antes de preguntarme por el trabajo."],
+    ["NARRADOR","Chava disfrutará de su libertad. Ojalá tenga buena suerte. Posdata: por favor, Chava, no te metas a ATR. No mames... bueno, mejor mama, con tal de no meterte a esa madre."],
+    ["NARRADOR","Posdata 2: pendejo.\n\nFIN — THE KING OF UTC"]
+  ]}
+}

@@ -1,0 +1,1 @@
+Reached real Chava vs Chan loading from menu callback
