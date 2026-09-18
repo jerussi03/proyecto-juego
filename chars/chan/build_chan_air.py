@@ -13,8 +13,14 @@ PUNCH_FRAMES = 31
 PUNCH_TICK = 1
 # The fist is extended forward between these animation elements.
 PUNCH_ACTIVE_START = 8
-PUNCH_ACTIVE_END = 27
-PUNCH_CLSN1 = "20, -82, 42, -30"
+PUNCH_ACTIVE_END = 26
+PUNCH_CLSN1 = "16, -85, 52, -28"
+
+MONGO_FRAMES = 55
+MONGO_TICK = 1
+MONGO_ACTIVE_START = 8
+MONGO_ACTIVE_END = 37
+MONGO_CLSN1 = "20, -100, 75, -25"
 
 JUMP_START_FRAMES = 13
 JUMP_START_TICK = 1
@@ -39,6 +45,22 @@ CLSN = [
 
 def clsn():
     return [f"    {line}" for line in CLSN]
+
+
+def emit_attack(lines, action, group, frames, tick, active_start, active_end,
+                clsn1_box):
+    # In MUGEN an explicit "Clsn1:" line only applies to the very next frame
+    # element (after that the parser falls back to Clsn1Default), so the
+    # hitbox must be repeated before every active element.
+    lines.append(f"[Begin Action {action}]")
+    lines.extend(clsn())
+    lines.append("    Clsn1Default: 0")
+    for i in range(frames):
+        if active_start <= i <= active_end:
+            lines.append("    Clsn1: 1")
+            lines.append(f"    Clsn1[0] = {clsn1_box}")
+        lines.append(f"{group},{i}, 0,0, {tick}")
+    lines.append("")
 
 
 lines = []
@@ -71,17 +93,14 @@ lines.append("")
 
 # Standing light punch (state 200). The hitbox (Clsn1) is only active while
 # the fist is extended forward.
-lines.append("[Begin Action 200]")
-lines.extend(clsn())
-lines.append("    Clsn1Default: 0")
-for i in range(PUNCH_FRAMES):
-    if i == PUNCH_ACTIVE_START:
-        lines.append("    Clsn1: 1")
-        lines.append(f"    Clsn1[0] = {PUNCH_CLSN1}")
-    elif i == PUNCH_ACTIVE_END + 1:
-        lines.append("    Clsn1: 0")
-    lines.append(f"200,{i}, 0,0, {PUNCH_TICK}")
-lines.append("")
+emit_attack(lines, 200, 200, PUNCH_FRAMES, PUNCH_TICK, PUNCH_ACTIVE_START,
+            PUNCH_ACTIVE_END, PUNCH_CLSN1)
+
+# Mongo punch: heavy overhead strike. Played by the strong punch state (210)
+# and also available as action 220 (same sprites).
+for action in (210, 220):
+    emit_attack(lines, action, 220, MONGO_FRAMES, MONGO_TICK,
+                MONGO_ACTIVE_START, MONGO_ACTIVE_END, MONGO_CLSN1)
 
 # Jump start (state 40). The jump velocity is applied when this animation ends.
 lines.append("[Begin Action 40]")
@@ -145,7 +164,7 @@ lines.append("")
 
 # Fallback poses used by the standard KFM states.
 fallback_single = [5, 6, 170, 181, 190, 191,
-                   192, 195, 210, 230, 240, 400, 410, 430, 440, 600, 610,
+                   192, 195, 230, 240, 400, 410, 430, 440, 600, 610,
                    630, 640, 800, 810, 820, 1000, 1010, 1020, 1025, 1027, 1050,
                    1051, 1052, 1055, 1056, 1060, 1061, 1070, 1071, 1100, 1110,
                    1120, 1200, 1210, 1220, 1300, 1310, 1320, 1330, 1340, 1350,

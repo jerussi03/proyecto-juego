@@ -43,3 +43,50 @@ triggerall = !command = "holdfwd"
 triggerall = !command = "holdback"
 trigger1 = anim != 11
 value = 11
+
+;---------------------------------------------------------------------------
+; Mongo punch
+[Statedef 220]
+type = S
+movetype = A
+physics = S
+juggle = 4
+poweradd = 30
+ctrl = 0
+velset = 0,0
+anim = 220
+sprpriority = 2
+
+[State 220, Hit]
+type = HitDef
+trigger1 = AnimElem = 30
+attr = S, NA
+animtype = Medium
+damage = 65, 0
+guardflag = MA
+hitflag = MAF
+priority = 4, Hit
+pausetime = 12, 12
+sparkno = 1
+sparkxy = 35, -55
+hitsound = 5, 2
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 12
+ground.hittime = 16
+ground.velocity = -5.5
+air.velocity = -2.5, -4
+forcenofall = 1
+
+[State 220, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[State -1, Mongo punch]
+type = ChangeState
+value = 220
+triggerall = command = "c"
+triggerall = statetype = S
+trigger1 = ctrl
