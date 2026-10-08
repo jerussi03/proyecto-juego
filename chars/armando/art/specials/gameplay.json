@@ -1,0 +1,35 @@
+{
+  "name": "Armando",
+  "moves": [
+    "Saque de Pingpong",
+    "Clavada de Basquet",
+    "Sensor Impreso",
+    "Rebote Conectado",
+    "Calibrar IoT",
+    "Clavada Final",
+    "Torneo de Basquet",
+    "Internet de los Golpes MAX2"
+  ],
+  "speed": 5.2,
+  "damage": 52,
+  "stun": 19,
+  "advance": 4.2,
+  "rush": 80,
+  "utility": "buff",
+  "cost": 0,
+  "cooldown": 300,
+  "shots": 6,
+  "interval": 13,
+  "arc": 1,
+  "role": "Rebotes / IoT",
+  "resource": "Calibraciones",
+  "walk": 1.75,
+  "run": 4.3,
+  "jump": -9.2,
+  "tempo": 0.95,
+  "notes": [
+    "Calibrar prepara rebotes extra y mejora el sensor.",
+    "Pingpong rebota; Clavada salta y golpea al caer.",
+    "Impresion planta un sensor; Rebote Conectado es una patada doble."
+  ]
+}

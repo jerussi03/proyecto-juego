@@ -1,0 +1,34 @@
+<#abf2eb>:FÉLIX / SOPORTE KOF:</>
+
+KOF A / B / C / D = ^X / ^A / ^Y / ^B
+Xbox: X / A / Y / B. RT esquive, RB MAX.
+
+<#ead08e>:Basicos y sistema:</>
+Punio ligero / fuerte                 ^X / ^Y
+Patada ligera / fuerte                ^A / ^B
+Agachado / aire                       mismos cuatro botones
+Correr / salto atras                  _F_F / _B_B
+Bloquear                              _B / _DB
+Esquive adelante                      ^X_+^A o ^C
+Esquive atras                         _B + ^X_+^A o ^C
+MAX (1000; durante golpe 2000)         ^A_+^Y o ^Z
+Golpe de rechazo                      ^Y_+^B
+Esquive al bloquear: 1000 de energia.
+
+<#63ded7>:Especiales sin barra:</>
+Diagnostico rapido                      _D_DF_F + ^X / ^Y
+Diagnostico alternativo                 _B_DB_D_DF_F + ^X / ^Y
+Reinicio forzado                    _F_D_DF + ^X / ^Y
+Entrada de soporte                   _D_DB_B + ^X / ^Y
+Barrida de cables                   _B_DB_D_DF_F + ^A / ^B
+
+<#63ded7>:Supers - 1000 de energia:</>
+Asistente de soporte                          _D_DF_F_D_DF_F + ^X / ^Y
+Reparacion final                         _D_DF_F_DF_D_DB_B + ^X / ^Y
+
+<#63ded7>:MAX2 - 2000 y MAX activo:</>
+Soporte de emergencia                _D_DB_B_D_DB_B + ^X_+^Y
+
+MAX permite cancelar entre especiales distintos al conectar.
+Cada cancelacion de especial consume tiempo de MAX.
+Las direcciones se invierten al cambiar de lado.

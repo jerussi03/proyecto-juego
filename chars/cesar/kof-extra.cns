@@ -1,0 +1,600 @@
+; Independent teacher identity, generated from teacher_identity.py
+
+[Statedef 1000]
+type = S
+movetype = A
+physics = N
+anim = 8740
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 1000, Contact]
+type = HitDef
+trigger1 = Time = 24
+attr = S,SA
+damage = 82,6
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 6,9
+sparkno = 2
+guard.sparkno = 40
+sparkxy = -8,-60
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 28
+ground.velocity = -4
+air.velocity = -3,-5
+air.hittime = 24
+fall = 0
+fall.recover = 0
+getpower = 30,0
+givepower = 18,9
+
+[State 1000, Recovery]
+type = ChangeState
+trigger1 = Time >= 50
+value = 0
+ctrl = 1
+
+[Statedef 1010]
+type = S
+movetype = A
+physics = N
+anim = 8741
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 1010, Contact]
+type = HitDef
+trigger1 = Time = 18
+attr = S,SA
+damage = 100,8
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 6,9
+sparkno = 2
+guard.sparkno = 40
+sparkxy = -8,-60
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 20
+ground.velocity = -4,-7
+air.velocity = -3,-5
+air.hittime = 24
+fall = 1
+fall.recover = 0
+getpower = 30,0
+givepower = 18,9
+
+[State 1010, Recovery]
+type = ChangeState
+trigger1 = Time >= 46
+value = 0
+ctrl = 1
+
+[Statedef 1020]
+type = S
+movetype = A
+physics = N
+anim = 8742
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 1020, Footwork]
+type = VelSet
+trigger1 = Time = [5,26]
+x = 2.6
+
+[State 1020, Brake]
+type = VelSet
+trigger1 = Time = 27
+x = 0
+
+[State 1020, Supported advance]
+type = DefenceMulSet
+trigger1 = Time = [5,28]
+value = .55
+
+[State 1020, Contact]
+type = HitDef
+trigger1 = Time = 18
+attr = S,SA
+damage = 94,7
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 6,9
+sparkno = 2
+guard.sparkno = 40
+sparkxy = -8,-60
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 20
+ground.velocity = -4
+air.velocity = -3,-5
+air.hittime = 24
+fall = 1
+fall.recover = 0
+getpower = 30,0
+givepower = 18,9
+
+[State 1020, Recovery]
+type = ChangeState
+trigger1 = Time >= 48
+value = 0
+ctrl = 1
+
+[Statedef 1030]
+type = S
+movetype = A
+physics = N
+anim = 8743
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 1030, Remember resource]
+type = VarSet
+trigger1 = Time = 0
+v = 45
+value = var(44)
+
+[State 1030, Spend resource]
+type = VarSet
+trigger1 = Time = 0
+v = 44
+value = 0
+
+[State 1030, Footwork]
+type = VelSet
+trigger1 = Time = [2,7]
+x = 1.6
+
+[State 1030, Brake]
+type = VelSet
+trigger1 = Time = 8
+x = 0
+
+[State 1030, Command grab]
+type = HitDef
+trigger1 = Time = 8
+attr = S,ST
+hitflag = M-
+priority = 1,Miss
+damage = 90+var(45)*20,0
+pausetime = 0,0
+sparkno = -1
+p2stateno = 1080
+fall = 1
+getpower = 30,0
+
+[State 1030, Hold opponent]
+type = TargetBind
+trigger1 = Time = [9,20] && NumTarget > 0
+time = 1
+pos = 32,-4
+
+[State 1030, Release opponent]
+type = TargetState
+trigger1 = Time = 21 && NumTarget > 0
+value = 1081
+
+[State 1030, Recovery]
+type = ChangeState
+trigger1 = Time >= 44
+value = 0
+ctrl = 1
+
+[Statedef 1040]
+type = S
+movetype = I
+physics = N
+anim = 8744
+ctrl = 0
+velset = 0,0
+poweradd = -200
+
+[State 1040, Support cooldown]
+type = VarSet
+trigger1 = Time = 0
+v = 48
+value = 420
+
+[State 1040, Pill recovery]
+type = LifeAdd
+trigger1 = Time = 40
+value = 65
+kill = 0
+
+[State 1040, Supported recovery]
+type = VarSet
+trigger1 = Time = 40
+v = 46
+value = 180
+
+[State 1040, Recovery]
+type = ChangeState
+trigger1 = Time >= 54
+value = 0
+ctrl = 1
+
+[Statedef 1080]
+type = A
+movetype = H
+physics = N
+anim = 5000
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 1080, Use victim animation]
+type = ChangeAnim
+trigger1 = Time = 0
+value = 5000
+
+[State 1080, Safe release]
+type = SelfState
+trigger1 = Time >= 24
+value = 5050
+ctrl = 0
+
+[Statedef 1081]
+type = A
+movetype = H
+physics = N
+anim = 5050
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 1081, Throw velocity]
+type = VelSet
+trigger1 = Time = 0
+x = -4
+y = -4
+
+[State 1081, Return victim control]
+type = SelfState
+trigger1 = Time = 0
+value = 5050
+ctrl = 0
+
+[Statedef 750]
+type = S
+movetype = A
+physics = N
+anim = 240
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 750, Contact]
+type = HitDef
+trigger1 = Time = 8
+attr = S,SA
+damage = 85,7
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 6,9
+sparkno = 2
+guard.sparkno = 40
+sparkxy = -8,-60
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 20
+ground.velocity = -4
+air.velocity = -3,-5
+air.hittime = 24
+fall = 1
+fall.recover = 0
+getpower = 30,0
+givepower = 18,9
+
+[State 750, Recovery]
+type = ChangeState
+trigger1 = Time >= 28
+value = 0
+ctrl = 1
+
+[Statedef 3021]
+type = A
+movetype = I
+physics = N
+anim = 8705
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 3021, Impact no push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 3021, Impact cleanup]
+type = DestroySelf
+trigger1 = AnimTime = 0
+trigger2 = RoundState != 2
+
+
+[Statedef 3000]
+type = S
+movetype = A
+physics = N
+anim = 8721
+ctrl = 0
+velset = 0,0
+poweradd = -1000
+
+[State 3000, Super freeze]
+type = SuperPause
+trigger1 = Time = 0
+time = 18
+movetime = 18
+anim = -1
+darken = 1
+p2defmul = 1
+
+[State 3000, Chair armor]
+type = DefenceMulSet
+trigger1 = Time = [4,32]
+value = 0.55
+
+[State 3000, Walk with support]
+type = VelSet
+trigger1 = Time = [5,28]
+x = 3.1
+
+[State 3000, Stop]
+type = VelSet
+trigger1 = Time = 29
+x = 0
+
+[State 3000, Contact]
+type = HitDef
+trigger1 = Time = 24
+attr = S,HA
+damage = 175,14
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 6,9
+sparkno = 2
+guard.sparkno = 40
+sparkxy = -8,-60
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 20
+ground.velocity = -4,-7
+air.velocity = -3,-5
+air.hittime = 24
+fall = 1
+fall.recover = 0
+getpower = 0,0
+givepower = 18,9
+
+[State 3000, Heavy finish]
+type = EnvShake
+trigger1 = Time = 24
+time = 10
+freq = 60
+ampl = -4
+
+[State 3000, Recovery]
+type = ChangeState
+trigger1 = Time >= 54
+value = 0
+ctrl = 1
+
+[Statedef 3500]
+type = S
+movetype = A
+physics = N
+anim = 8730
+ctrl = 0
+velset = 0,0
+poweradd = -1000
+
+[State 3500, Super freeze]
+type = SuperPause
+trigger1 = Time = 0
+time = 18
+movetime = 18
+anim = -1
+darken = 1
+p2defmul = 1
+
+[State 3500, Contact]
+type = HitDef
+trigger1 = Time = 16
+attr = S,HA
+damage = 85,7
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 6,9
+sparkno = 2
+guard.sparkno = 40
+sparkxy = -8,-60
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 38
+ground.velocity = -0.5
+air.velocity = -3,-5
+air.hittime = 24
+fall = 0
+fall.recover = 0
+getpower = 0,0
+givepower = 18,9
+
+[State 3500, Contact]
+type = HitDef
+trigger1 = Time = 36
+attr = S,HA
+damage = 110,9
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 6,9
+sparkno = 2
+guard.sparkno = 40
+sparkxy = -8,-60
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 20
+ground.velocity = -4,-7
+air.velocity = -3,-5
+air.hittime = 24
+fall = 1
+fall.recover = 0
+getpower = 0,0
+givepower = 18,9
+
+[State 3500, Strict finish]
+type = EnvShake
+trigger1 = Time = 36
+time = 10
+freq = 60
+ampl = -4
+
+[State 3500, Recovery]
+type = ChangeState
+trigger1 = Time >= 58
+value = 0
+ctrl = 1
+
+[Statedef 4000]
+type = S
+movetype = A
+physics = N
+anim = 8746
+ctrl = 0
+velset = 0,0
+poweradd = -2000
+
+[State 4000, MAX2 freeze]
+type = SuperPause
+trigger1 = Time = 0
+time = 22
+movetime = 22
+anim = -1
+darken = 1
+p2defmul = 1
+
+[State 4000, Snapshot identity resource]
+type = VarSet
+trigger1 = Time = 0
+v = 45
+value = var(44)
+
+[State 4000, MAX2 spends resource]
+type = VarSet
+trigger1 = Time = 0
+v = 44
+value = 0
+
+[State 4000, Final exam support]
+type = DefenceMulSet
+trigger1 = Time = [4,32]
+value = .35
+
+[State 4000, MAX2 step]
+type = VelSet
+trigger1 = Time = [5,24]
+x = 2.1
+
+[State 4000, MAX2 brake]
+type = VelSet
+trigger1 = Time = 25
+x = 0
+
+[State 4000, Contact]
+type = HitDef
+trigger1 = Time = 18
+attr = S,HA
+damage = 85,7
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 6,9
+sparkno = 2
+guard.sparkno = 40
+sparkxy = -8,-60
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 38
+ground.velocity = -0.5
+air.velocity = -3,-5
+air.hittime = 24
+fall = 0
+fall.recover = 0
+getpower = 0,0
+givepower = 18,9
+
+[State 4000, Contact]
+type = HitDef
+trigger1 = Time = 40
+attr = S,HA
+damage = 165+var(45)*22,8
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 6,9
+sparkno = 2
+guard.sparkno = 40
+sparkxy = -8,-60
+hitsound = F5,2
+guardsound = F6,0
+ground.type = High
+ground.slidetime = 14
+ground.hittime = 20
+ground.velocity = -4,-7
+air.velocity = -3,-5
+air.hittime = 24
+fall = 1
+fall.recover = 0
+getpower = 0,0
+givepower = 18,9
+
+[State 4000, Backend impact]
+type = EnvShake
+trigger1 = Time = 40
+time = 14
+freq = 60
+ampl = -6
+
+[State 4000, Recovery]
+type = ChangeState
+trigger1 = Time >= 60
+value = 0
+ctrl = 1

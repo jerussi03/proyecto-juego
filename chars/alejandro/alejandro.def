@@ -1,0 +1,29 @@
+; Alejandro - profesor de Angular
+[Info]
+name = "Alejandro"
+displayname = "ALEJANDRO"
+versiondate = 09,09,2026
+mugenversion = 1.1
+author = "Proyecto Universidad"
+pal.defaults = 1
+localcoord = 320,240
+
+[Files]
+st2 = kof-extra.cns
+st3 = ../kof-system.cns
+cmd = alejandro.cmd
+cns = alejandro.cns
+st = alejandro.cns
+stcommon = common1.cns
+sprite = alejandro.sff
+anim = alejandro.air
+sound = alejandro.snd
+movelist = alejandro-movelist.dat
+
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1

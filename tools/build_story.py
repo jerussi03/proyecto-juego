@@ -105,14 +105,15 @@ def main():
         indexes = []
         for i, (speaker, body) in enumerate(pages):
             indexes.append(len(images))
-            images.append(card(portrait, label, part['title'], speaker, body, i+1,len(pages)))
+            face = Image.open(src/'vistor_esposodelamaestradaniela.jpeg').convert('RGB') if speaker == 'VÍCTOR' else portrait
+            images.append(card(face, label, part['title'], speaker, body, i+1,len(pages)))
         groups[key] = indexes
     add('intro',data['intro'],chava,'Prólogo',data['intro']['pages'])
     for i, ch in enumerate(data['chapters']):
         target = src/ch['source']
         if args.source:
             shutil.copy2(args.source/ch['source'], target)
-        portrait = Image.open(target).convert('RGB')
+        portrait = chava if ch.get('portrait') == 'chava' else Image.open(target).convert('RGB')
         add(ch['id'],ch,portrait,f"Capítulo {i+1:02d} / {ch['subject']}",ch['pages'])
         add(ch['id']+'_after',ch,portrait,'Materia aprobada' if ch.get('fighter') else 'Continuación de la historia',ch['after'])
     add('ending',data['ending'],chava,'Epílogo',data['ending']['pages'])
@@ -131,7 +132,7 @@ def main():
     for i, n in enumerate(groups['intro']):
         intro += [f'[Scene {i}]','fadein.time = 15','fadeout.time = 15','clearcolor = 16,25,32',f'layer0.anim = {i}','end.time = 900',f'[Begin Action {i}]',f'0,{n},0,0,-1']
     (ROOT/'data/ikemen1/intro.def').write_text('\n'.join(intro)+'\n',encoding='utf-8')
-    print(f'Built {len(images)} dialogue cards, 12 chapters, introduction and ending.')
+    print(f'Built {len(images)} dialogue cards, {len(data["chapters"])} chapters, introduction and ending.')
 
 
 if __name__ == '__main__':

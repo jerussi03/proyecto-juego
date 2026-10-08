@@ -1,8 +1,8 @@
--- Only implemented fighters launch a match. The other chapters are narrative.
+-- All professors fight; the project rehearsal is a narrative interlude.
 local chapters = {
-    {'chan', 'chan/chan.def'}, {'felix'}, {'alejandro'}, {'daniela'},
-    {'hector', 'hector'}, {'gameros'}, {'armando'}, {'vladimir'},
-    {'jaime'}, {'leonardo'}, {'victor'}, {'cesar'},
+    {'chan', 'chan_kof/chan_kof.def'}, {'felix', 'felix/felix.def'}, {'alejandro', 'alejandro/alejandro.def'}, {'daniela', 'daniela/daniela.def'},
+    {'hector', 'hector'}, {'gameros', 'gameros/gameros.def'}, {'armando', 'armando/armando.def'}, {'vladimir', 'vladimir/vladimir.def'},
+    {'jaime', 'jaime/jaime.def'}, {'leonardo', 'leonardo/leonardo.def'}, {'proyecto'}, {'cesar', 'cesar/cesar.def'},
 }
 local function leave()
     setMatchNo(-1)

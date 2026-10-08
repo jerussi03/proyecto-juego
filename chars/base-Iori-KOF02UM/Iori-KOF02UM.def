@@ -1,0 +1,34 @@
+[Info]
+Name         = "Iori Yagami"
+DisplayName  = "Iori"
+Author       = "ikaruga"
+VersionDate  = 07,23,2018
+MugenVersion = 1.0
+Pal.Defaults = 4
+localcoord   = 320
+
+[Files]
+movelist = utc-movelist.dat
+Cmd      = Iori.cmd
+Cns      = Constants.cns
+St       = Iori.cns
+St1      = Iori-N.cns
+St2      = Iori-S.cns
+St3      = Iori-H.cns
+st4      = helper.cns
+St5      = config.cns
+St6      = Iori-2-3.cns
+StCommon = common_kof.cns
+;Sprite   = Iori.sff
+Sprite   = Iori2.sff
+Anim     = Iori.air
+Sound    = Iori.snd
+
+;---カラーパレット---
+
+Pal1 = act/act02.act
+Pal2 = act/act04.act
+Pal3 = act/act06.act
+Pal4 = act/act01.act
+Pal5 = act/act03.act
+Pal6 = act/act05.act

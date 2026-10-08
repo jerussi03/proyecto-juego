@@ -1,0 +1,32 @@
+[Info]
+Name         = "Mr.Karate 2nd"
+DisplayName  = "Ryo"
+Author       = "ikaruga"
+VersionDate  = 07,23,2018
+MugenVersion = 1.0
+Pal.Defaults = 4
+localcoord   = 320
+
+[Files]
+Cmd      = Ryo.cmd
+Cns      = Constants.cns
+St       = Ryo.cns
+St1      = Ryo-N.cns
+St2      = Ryo-S.cns
+St3      = Ryo-H.cns
+St4      = Ryo-2-3.cns
+St5      = helper.cns
+St6      = config.cns
+StCommon = common_kof.cns
+Sprite   = Ryo.sff
+Anim     = Ryo.air
+Sound    = Ryo.snd
+
+;---カラーパレット---
+
+Pal1 = act/act02.act
+Pal2 = act/act04.act
+Pal3 = act/act06.act
+Pal4 = act/act01.act
+Pal5 = act/act03.act
+Pal6 = act/act05.act

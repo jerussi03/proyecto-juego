@@ -1,0 +1,63 @@
+<#abf2eb>:BASE KOF 2002 UM / IKARUGA:</>
+KOF A / B / C / D = ^X / ^A / ^Y / ^B
+Atajos UTC: ^C evasión / ^Z MAX
+Graficos originales; conversion UTC pendiente.
+
+
+-- Button Assign
+x - Light Punch
+y - Hard Punch
+z - Maximum Mode (RB / teclado D)
+a - Light Kick
+b - Hard Kick
+c - Roll (RT / teclado C)
+start - Taunt
+
+
+-- Moves
+Knockdown Attack - y+b
+GC Knockdown Attack - y+b while guarding
+Roll - x+a or c
+GC Roll - x+a or c while guarding(Requires 1 Power Bar)
+Quick Roll - x+a or c while attack hitting(Requires 1 Power Bar)
+Safe Fall Recovery - x+a when nearing ground while falling
+Maximum Mode - a+y or z(Requires 1 Power Bar)
+Quick Max - a+y while attack hitting(Requires 2 Power Bars)
+
+
+-- Throw
+Minegumo - F, y
+
+Murakumo - F, b
+
+
+-- Command Moves
+Senkou Sengi: Yukikaze - F, x
+
+Sokutou Sengi: Shigure - F, a
+
+Shukyaku Sengi: Shinonome - DF, b
+
+
+-- Super Moves
+Chisou Gata Basshutou Sengi: Sawarabi - D, DF, F, x or y
+
+Taikuu Gata Basshutou Sengi: Yoitsuki - F, D, DF, x or y
+
+Kyoushu Gata Basshutou Sengi: Amagiri - D, DB, B, a or b
+
+
+-- DM(Normally:Requires 1 Power Bars/MAX Mode:No Cost)
+Senkou Gata Basshutou Ougi: Shakuhou - DB, F, DF, D, DB, B, DF, x or y
+
+Kakusan Gata Basshutou Ougi: Zetsuei - DB, F, DF, D, DB, B, DF, a or b
+
+
+-- SDM(Normally:Requires 3 Power Bars/MAX Mode:Requires 1 Power Bars)
+Kaiten Gata Tokkan Ougi: Rasen - D, F, DF, x+y+a+b
+
+
+-- MAX2(In low life, Normally:Requires 3 Power Bars/MAX Mode:Requires 1 Power Bars)
+Saishu Gata Basshutou Higi: Rinkou -  F, DF, D, DB, B, F, DF, D, DB, B, x+y
+
+

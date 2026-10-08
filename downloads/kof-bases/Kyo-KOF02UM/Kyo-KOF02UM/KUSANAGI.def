@@ -1,0 +1,33 @@
+[Info]
+Name         = "KUSANAGI"
+DisplayName  = "KUSANAGI"
+Author       = "ikaruga"
+VersionDate  = 07,23,2018
+MugenVersion = 1.0
+Pal.Defaults = 4
+localcoord   = 320
+
+[Files]
+Cmd      = Kyo.cmd
+Cns      = Constants.cns
+St       = KUSANAGI/KUSANAGI.cns
+St1      = Kyo.cns
+St2      = Kyo-N.cns
+St3      = Kyo-S.cns
+St4      = Kyo-H.cns
+St5      = Kyo-2-3.cns
+St6      = Helper.cns
+St7      = Config.cns
+StCommon = common_kof.cns
+Sprite   = KUSANAGI/KUSANAGI.sff
+Anim     = KUSANAGI/KUSANAGI.air
+Sound    = Kyo.snd
+
+;---カラーパレット---
+
+Pal1 = KUSANAGI/act/act02.act
+Pal2 = KUSANAGI/act/act04.act
+Pal3 = KUSANAGI/act/act06.act
+Pal4 = KUSANAGI/act/act01.act
+Pal5 = KUSANAGI/act/act03.act
+Pal6 = KUSANAGI/act/act05.act

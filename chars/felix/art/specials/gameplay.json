@@ -1,0 +1,36 @@
+{
+  "name": "Felix",
+  "moves": [
+    "Llave de Soporte",
+    "Reinicio Forzado",
+    "Reparacion en Marcha",
+    "Cable a Tierra",
+    "Mantenimiento Preventivo",
+    "Reinicio en Cadena",
+    "Reparacion General",
+    "Restaurar Sistema MAX2"
+  ],
+  "speed": 4.6,
+  "damage": 68,
+  "stun": 20,
+  "advance": 3.0,
+  "rush": 84,
+  "utility": "heal",
+  "heal": 40,
+  "cost": 150,
+  "cooldown": 360,
+  "shots": 4,
+  "interval": 18,
+  "arc": 0,
+  "role": "Reparacion / contraataque",
+  "resource": "Diagnosticos",
+  "walk": 1.4,
+  "run": 3.5,
+  "jump": -7.8,
+  "tempo": 1.12,
+  "notes": [
+    "Gana diagnosticos conectando Llave o Cable a Tierra.",
+    "Mantenimiento consume diagnosticos: +10 de vida por punto.",
+    "Reinicio espera un ataque y responde; no causa danio al fallar."
+  ]
+}

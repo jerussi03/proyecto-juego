@@ -1,0 +1,33 @@
+[Info]
+Name         = "Kyo-1"
+DisplayName  = "Kyo-1"
+Author       = "ikaruga"
+VersionDate  = 07,23,2018
+MugenVersion = 1.0
+Pal.Defaults = 4
+localcoord   = 320
+
+[Files]
+Cmd      = Kyo.cmd
+Cns      = Constants.cns
+St       = Kyo-1/Kyo-1.cns
+St1      = Kyo.cns
+St2      = Kyo-N.cns
+St3      = Kyo-S.cns
+St4      = Kyo-H.cns
+St5      = Kyo-2-3.cns
+St6      = Helper.cns
+St7      = Config.cns
+StCommon = common_kof.cns
+Sprite   = Kyo-1/Kyo-1.sff
+Anim     = Kyo-1/Kyo-1.air
+Sound    = Kyo.snd
+
+;---カラーパレット---
+
+Pal1 = Kyo-1/act/act02.act
+Pal2 = Kyo-1/act/act04.act
+Pal3 = Kyo-1/act/act06.act
+Pal4 = Kyo-1/act/act01.act
+Pal5 = Kyo-1/act/act03.act
+Pal6 = Kyo-1/act/act05.act

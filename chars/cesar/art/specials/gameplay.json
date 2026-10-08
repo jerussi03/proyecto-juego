@@ -1,0 +1,36 @@
+{
+  "name": "Cesar",
+  "moves": [
+    "Baston PHP",
+    "Baston del Backend",
+    "Silla de Apoyo",
+    "DELETE Sin WHERE",
+    "Pausa de Recuperacion",
+    "Empuje de Backend",
+    "Revision Estricta",
+    "Examen Final MAX2"
+  ],
+  "speed": 3.8,
+  "damage": 74,
+  "stun": 24,
+  "advance": 2.6,
+  "rush": 92,
+  "utility": "heal",
+  "heal": 65,
+  "cost": 200,
+  "cooldown": 420,
+  "shots": 4,
+  "interval": 20,
+  "arc": 0,
+  "role": "Resistencia / castigo",
+  "resource": "Rigor",
+  "walk": 1.15,
+  "run": 2.9,
+  "jump": -7.2,
+  "tempo": 1.28,
+  "notes": [
+    "Recibir golpes aumenta Rigor: hasta tres puntos.",
+    "DELETE es un agarre que consume Rigor para aumentar el castigo.",
+    "Silla reduce danio al avanzar; Pastillas curan tras una pausa larga."
+  ]
+}

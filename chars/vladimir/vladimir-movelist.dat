@@ -1,0 +1,44 @@
+<#abf2eb>:VLADIMIR / CONTROLES KOF:</>
+
+KOF A / B / C / D = ^X / ^A / ^Y / ^B
+Xbox: X / A / Y / B. RT esquive, RB MAX.
+
+<#ead08e>:Basicos y sistema:</>
+Punio ligero / fuerte                 ^X / ^Y
+Patada ligera / fuerte                ^A / ^B
+Agachado / aire                       mismos cuatro botones
+Correr / salto atras                  _F_F / _B_B
+Bloquear                              _B / _DB
+Esquive adelante                      ^X_+^A o ^C
+Esquive atras                         _B + ^X_+^A o ^C
+MAX (1000; durante golpe 2000)         ^A_+^Y o ^Z
+Golpe de rechazo                      ^Y_+^B
+Esquive al bloquear: 1000 de energia.
+
+<#63ded7>:Especiales sin barra:</>
+Invitacion Obligatoria                      _D_DF_F + ^X / ^Y
+Invitacion Obligatoria (alternativa)                 _B_DB_D_DF_F + ^X / ^Y
+Pase al Frente                    _F_D_DF + ^X / ^Y
+Nadie se Va                   _D_DB_B + ^X / ^Y
+Honores al Sol                   _B_DB_D_DF_F + ^A / ^B
+
+Pase de Lista                          _D_DB_B + ^A / ^B
+Apoyo: costo 0; espera 4 s.
+
+<#63ded7>:Supers - 1000 de energia:</>
+Conferencia Obligatoria                          _D_DF_F_D_DF_F + ^X / ^Y
+Recorrido de Salones                         _D_DF_F_DF_D_DB_B + ^X / ^Y
+
+<#63ded7>:MAX2 - 2000 y MAX activo:</>
+Asistencia Total MAX2                _D_DB_B_D_DB_B + ^X_+^Y
+
+MAX permite cancelar entre especiales distintos al conectar.
+Cada cancelacion de especial consume tiempo de MAX.
+Las direcciones se invierten al cambiar de lado.
+
+
+<#63ded7>:Identidad - Agarres / retencion:</>
+Asistencias: hasta tres iconos debajo de VIDA.
+Invitacion es un agarre: no lanza objetos.
+Gana asistencias con agarres o Pase de Lista.
+Honores gasta asistencias en un pisoton de zona.

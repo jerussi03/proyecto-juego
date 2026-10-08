@@ -1,0 +1,16 @@
+{
+  "design_reference": "felix_soporte.jpeg",
+  "sheets": [
+    "felix-idle-walk-punch-uppercut.png",
+    "felix-kick-sweep-jump-guard.png"
+  ],
+  "poses": 48,
+  "sprite_slots_replaced": 217,
+  "gameplay_reference": "Chava KOF controls",
+  "limitations": "Voices and some impact sounds share prototype resources; some normal actions reuse poses.",
+  "special_frames": 24,
+  "specials": "art/specials/gameplay.json",
+  "identity_frames": 6,
+  "identity_art": "art/identity-v2/preview.png",
+  "identity_role": "Reparacion / contraataque"
+}

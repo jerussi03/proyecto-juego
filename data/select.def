@@ -195,15 +195,31 @@
 ; CHAVA
 chava, stages/patio.def
 hector, stages/patio.def
-chan/chan.def, stages/patio.def
+chan_kof/chan_kof.def, stages/patio.def
+felix/felix.def, stages/patio.def
+alejandro/alejandro.def, stages/patio.def
+daniela/daniela.def, stages/patio.def
+gameros/gameros.def, stages/patio.def
+armando/armando.def, stages/patio.def
+vladimir/vladimir.def, stages/patio.def
+jaime/jaime.def, stages/patio.def
+leonardo/leonardo.def, stages/patio.def
+cesar/cesar.def, stages/patio.def
 kfm_zss, stages/kfm.def
 kfm720, stages/kfm.def, order=0
 kfm_zaxis, stages/kfm.def, order=0
-; Slot 7 empty cell between kfm_zaxis and randomselect
-,
 randomselect
 
 ;-------------------------------------------------------------------------------
+; BEGIN KOF BASES - original artwork / UTC controls
+base-Kyo-KOF02UM/Kyo-KOF02UM.def, stages/patio.def, order=0
+base-TerryEX-KOF02UM/TerryEX-KOF02UM.def, stages/patio.def, order=0
+base-RyoEX-KOF02UM/RyoEX-KOF02UM.def, stages/patio.def, order=0
+base-Iori-KOF02UM/Iori-KOF02UM.def, stages/patio.def, order=0
+base-Kprime-KOF02UM/K'-KOF02UM.def, stages/patio.def, order=0
+base-Nameless-KOF02UM/Nameless-KOF02UM.def, stages/patio.def, order=0
+; END KOF BASES
+
 [ExtraStages]
  ;Put extra stages here. They will be available in modes that allow selecting
  ;stage manually. For example, you can insert "stages/mybg.def".

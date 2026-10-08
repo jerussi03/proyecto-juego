@@ -1,0 +1,23 @@
+{
+  "reference": "leonardo_dispositivosmoviles.jpeg",
+  "poses": 72,
+  "sheets": [
+    "basics.png",
+    "combat.png",
+    "reactions.png"
+  ],
+  "sprite_slots_replaced": 223,
+  "dedicated_animations": [
+    "intro",
+    "fall",
+    "getup",
+    "victory"
+  ],
+  "gameplay_reference": "UTC KOF controls (Chava)",
+  "limitations": "Voices and some impact sounds share prototype resources; some normal actions reuse poses.",
+  "special_frames": 24,
+  "specials": "art/specials/gameplay.json",
+  "identity_frames": 6,
+  "identity_art": "art/identity-v2/preview.png",
+  "identity_role": "Evasion / patadas"
+}

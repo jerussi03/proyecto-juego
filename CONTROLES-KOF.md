@@ -86,7 +86,7 @@ Héctor tiene dibujos nuevos para puñetazos agachados ligero y fuerte, patada f
 1. Prueba los cuatro ataques de pie, agachado y saltando con ambos. Observa especialmente puñetazos agachados y patadas fuertes de Héctor.
 2. Ejecuta cuartos de círculo, ganchos y medias lunas mirando a ambos lados. Comprueba que salga el poder y no un golpe normal. En Xbox, A de KOF es X del mando.
 3. Compara el esquive A+B con RT, hacia delante y atrás: cruce del rival, distancia y recuperación vulnerable.
-4. Compara MAX B+C con RB: coste, barra dorada, agotamiento, activación durante un golpe y cancelación entre especiales distintos.
+4. Compara MAX B+C con RB: coste, pulso dorado del personaje, agotamiento, activación durante un golpe y cancelación entre especiales distintos. La energía se consulta en STACK/MAX arriba; ya no aparece una segunda barra en la parte baja de la arena.
 5. Prueba supers y MAX2: consumo de energía, daño, bloqueo y desaparición de drones/IA al acabar el ataque o la ronda.
 6. Comprueba las combinaciones simultáneas en tu mando y arcade; ajusta el mapeo si sus botones están en otro orden.
 
@@ -99,3 +99,7 @@ El respaldo previo está en `backups/kof-controls-20260913/`. Los `.cmd` contien
 `tools/build_kof_controls.py` reconstruye esta revisión desde el respaldo. No lo ejecutes después de hacer nuevos cambios manuales sin adaptar primero el generador: sobrescribe los archivos de esta revisión. Las definiciones `kof-input-qa.def` son pruebas aisladas y no se incluyen en el selector normal.
 
 Referencia: [sistema oficial de KOF 2002, SNK](https://www.snk-corp.co.jp/official/kof2002/english/e_kof2002_system.html).
+
+## Especiales de los demás maestros
+
+Los diez maestros restantes ya tienen ocho movimientos temáticos propios. Conservan las entradas de ataque y añaden un apoyo con ↓↙← + B/D de KOF, sin cambiar botones, esquive ni MAX. La lista de cada personaje aparece en el menú de pausa y en [ESPECIALES-MAESTROS.md](ESPECIALES-MAESTROS.md). Se probaron 210 escenarios de comandos y comportamiento dentro del motor, mirando hacia ambos lados.

@@ -13,10 +13,11 @@ local reached = false
 launchFight = function(data)
     assert(start.p[1].t_selected[1].ref == main.t_charDef.chava)
     assert(scenes[1] == 'intro' and scenes[2] == 'chan')
-    data.time = 1
+    data.time = 10
     data.p1rounds, data.p2rounds = 1, 1
     data.continue = false
     data.vsscreen = false
+    data.p1orderselect, data.p2orderselect = false, false
     data.ai = 8
     output:write('Reached real Chava vs Chan loading from menu callback\n'); output:flush()
     fight(data)

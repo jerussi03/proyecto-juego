@@ -1,0 +1,36 @@
+{
+  "name": "Daniela",
+  "moves": [
+    "Diagrama UML",
+    "Revision de Negocio",
+    "Bolsazo de Requisitos",
+    "Cambio de Alcance",
+    "Documento Aprobado",
+    "Victor, Echame la Mano",
+    "Entrega Documentada",
+    "Auditoria MAX2"
+  ],
+  "speed": 5.3,
+  "damage": 59,
+  "stun": 24,
+  "advance": 4.0,
+  "rush": 76,
+  "utility": "charge",
+  "gain": 180,
+  "cost": 0,
+  "cooldown": 210,
+  "shots": 5,
+  "interval": 14,
+  "arc": 0,
+  "role": "Presion / asistencia",
+  "resource": "Requisitos",
+  "walk": 1.7,
+  "run": 4,
+  "jump": -8.1,
+  "tempo": 1,
+  "notes": [
+    "UML encadena tres golpes y acumula requisitos.",
+    "Documento prepara otro requisito; Victor los consume al acudir.",
+    "Revision es un contraataque; Cambio de Alcance es un agarre."
+  ]
+}

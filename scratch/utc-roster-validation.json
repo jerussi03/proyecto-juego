@@ -1,0 +1,44 @@
+[
+  {
+    "character": "daniela",
+    "passed": true,
+    "controls_unchanged": true,
+    "log": "scratch\\daniela-match.log"
+  },
+  {
+    "character": "gameros",
+    "passed": true,
+    "controls_unchanged": true,
+    "log": "scratch\\gameros-match.log"
+  },
+  {
+    "character": "armando",
+    "passed": true,
+    "controls_unchanged": true,
+    "log": "scratch\\armando-match.log"
+  },
+  {
+    "character": "vladimir",
+    "passed": true,
+    "controls_unchanged": true,
+    "log": "scratch\\vladimir-match.log"
+  },
+  {
+    "character": "jaime",
+    "passed": true,
+    "controls_unchanged": true,
+    "log": "scratch\\jaime-match.log"
+  },
+  {
+    "character": "leonardo",
+    "passed": true,
+    "controls_unchanged": true,
+    "log": "scratch\\leonardo-match.log"
+  },
+  {
+    "character": "cesar",
+    "passed": true,
+    "controls_unchanged": true,
+    "log": "scratch\\cesar-match.log"
+  }
+]

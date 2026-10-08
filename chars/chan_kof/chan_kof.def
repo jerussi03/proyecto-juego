@@ -1,0 +1,29 @@
+; Chan - maestra de Bases de Datos
+[Info]
+name = "Chan"
+displayname = "CHAN"
+versiondate = 09,09,2026
+mugenversion = 1.1
+author = "Proyecto Universidad"
+pal.defaults = 1
+localcoord = 320,240
+
+[Files]
+st2 = kof-extra.cns
+st3 = ../kof-system.cns
+cmd = chan_kof.cmd
+cns = chan_kof.cns
+st = chan_kof.cns
+stcommon = common1.cns
+sprite = chan_kof.sff
+anim = chan_kof.air
+sound = chan_kof.snd
+movelist = chan_kof-movelist.dat
+
+[Palette Keymap]
+x = 1
+y = 1
+z = 1
+a = 1
+b = 1
+c = 1

@@ -1,0 +1,170 @@
+[
+  {
+    "id": "daniela",
+    "name": "Daniela",
+    "reference": "daniela_esposadevictor.jpeg",
+    "face": [
+      330,
+      25,
+      610,
+      330
+    ],
+    "subject": "Documentacion y UML",
+    "moves": [
+      "Diagrama UML",
+      "Diagrama UML (alternativa)",
+      "Revision de Negocio",
+      "Bolsazo de Requisitos",
+      "Cambio de Alcance",
+      "Victor, Echame la Mano",
+      "Entrega Documentada",
+      "Auditoria MAX2"
+    ],
+    "support_move": "Documento Aprobado",
+    "specials": "chars/daniela/art/specials/gameplay.json"
+  },
+  {
+    "id": "gameros",
+    "name": "Gameros",
+    "reference": "gameros_ingles.jpeg",
+    "face": [
+      245,
+      30,
+      540,
+      315
+    ],
+    "subject": "Ingles",
+    "moves": [
+      "Gamepad Arcade",
+      "Gamepad Arcade (alternativa)",
+      "Rep de Gimnasio",
+      "Rodada en Moto",
+      "Pedal a Fondo",
+      "Combo de Gimnasio",
+      "Full Throttle",
+      "Final Boss MAX2"
+    ],
+    "support_move": "Modo Gym",
+    "specials": "chars/gameros/art/specials/gameplay.json"
+  },
+  {
+    "id": "armando",
+    "name": "Armando",
+    "reference": "armando_iot.jpeg",
+    "face": [
+      245,
+      0,
+      535,
+      310
+    ],
+    "subject": "Internet de las cosas",
+    "moves": [
+      "Saque de Pingpong",
+      "Saque de Pingpong (alternativa)",
+      "Clavada de Basquet",
+      "Impresion en Movimiento",
+      "Rebote Conectado",
+      "Clavada Final",
+      "Torneo de Basquet",
+      "Internet de los Golpes MAX2"
+    ],
+    "support_move": "Calibrar IoT",
+    "specials": "chars/armando/art/specials/gameplay.json"
+  },
+  {
+    "id": "vladimir",
+    "name": "Vladimir",
+    "reference": "vladimir_directordelacarrera.jpeg",
+    "face": [
+      230,
+      5,
+      530,
+      300
+    ],
+    "subject": "Direccion de carrera",
+    "moves": [
+      "Invitacion Obligatoria",
+      "Invitacion Obligatoria (alternativa)",
+      "Pase al Frente",
+      "Nadie se Va",
+      "Honores al Sol",
+      "Conferencia Obligatoria",
+      "Recorrido de Salones",
+      "Asistencia Total MAX2"
+    ],
+    "support_move": "Pase de Lista",
+    "specials": "chars/vladimir/art/specials/gameplay.json"
+  },
+  {
+    "id": "jaime",
+    "name": "Jaime",
+    "reference": "jaime_matematicas.jpeg",
+    "face": [
+      230,
+      35,
+      505,
+      335
+    ],
+    "subject": "Matematicas",
+    "moves": [
+      "Salto del Caballo",
+      "Salto del Caballo (alternativa)",
+      "Potencia al Cuadrado",
+      "Sprint en Bicicleta",
+      "Derivada al Piso",
+      "Gambito Ciclista",
+      "Tour de Integrales",
+      "Teorema Final MAX2"
+    ],
+    "support_move": "Calculo Mental",
+    "specials": "chars/jaime/art/specials/gameplay.json"
+  },
+  {
+    "id": "leonardo",
+    "name": "Leonardo",
+    "reference": "leonardo_dispositivosmoviles.jpeg",
+    "face": [
+      335,
+      30,
+      625,
+      350
+    ],
+    "subject": "Desarrollo movil",
+    "moves": [
+      "Notificacion Push",
+      "Notificacion Push (alternativa)",
+      "Actualizar App",
+      "Swipe Elegante",
+      "Scroll Infinito",
+      "Contraataque Movil",
+      "Release Movil",
+      "Actualizacion MAX2"
+    ],
+    "support_move": "Modo Avion",
+    "specials": "chars/leonardo/art/specials/gameplay.json"
+  },
+  {
+    "id": "cesar",
+    "name": "Cesar Giovani",
+    "reference": "cesar_giovani.jpeg",
+    "face": [
+      420,
+      0,
+      690,
+      275
+    ],
+    "subject": "PHP y MySQL",
+    "moves": [
+      "Consulta PHP",
+      "Consulta PHP (alternativa)",
+      "Baston del Backend",
+      "Silla de Apoyo",
+      "DELETE Sin WHERE",
+      "Empuje de Backend",
+      "Revision Estricta",
+      "Examen Final MAX2"
+    ],
+    "support_move": "Pausa de Recuperacion",
+    "specials": "chars/cesar/art/specials/gameplay.json"
+  }
+]

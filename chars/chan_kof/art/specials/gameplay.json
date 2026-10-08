@@ -1,0 +1,36 @@
+{
+  "name": "Chan",
+  "moves": [
+    "Examen SQL",
+    "Peso de Crossfit",
+    "Ruta de Senderismo",
+    "Indice Cluster",
+    "Documentacion Perfecta",
+    "Circuito de Crossfit",
+    "Crossfit Total",
+    "DROP TABLE MAX2"
+  ],
+  "speed": 5.8,
+  "damage": 54,
+  "stun": 27,
+  "advance": 3.8,
+  "rush": 78,
+  "utility": "prepare",
+  "gain": 200,
+  "cost": 0,
+  "cooldown": 200,
+  "shots": 5,
+  "interval": 13,
+  "arc": 0,
+  "role": "Precision / crossfit",
+  "resource": "Correcciones",
+  "walk": 1.65,
+  "run": 4.1,
+  "jump": -8.7,
+  "tempo": 1.05,
+  "notes": [
+    "Gana correcciones al conectar Examen SQL o punio fuerte.",
+    "Documentar prepara una correccion; Indice Cluster las gasta.",
+    "SQL es un golpe corto; Senderismo salta; Crossfit golpea alto."
+  ]
+}

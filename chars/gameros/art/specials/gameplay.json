@@ -1,0 +1,36 @@
+{
+  "name": "Gameros",
+  "moves": [
+    "Combo Arcade",
+    "Patada de Gimnasio",
+    "Rodada en Moto",
+    "Pedal a Fondo",
+    "Modo Gym",
+    "Combo de Gimnasio",
+    "Full Throttle",
+    "Final Boss MAX2"
+  ],
+  "speed": 6.6,
+  "damage": 55,
+  "stun": 18,
+  "advance": 7.4,
+  "rush": 74,
+  "utility": "buff",
+  "gain": 220,
+  "cost": 0,
+  "cooldown": 240,
+  "shots": 5,
+  "interval": 12,
+  "arc": 0,
+  "role": "Rachas / gimnasio",
+  "resource": "Racha",
+  "walk": 1.95,
+  "run": 5,
+  "jump": -9,
+  "tempo": 0.8,
+  "notes": [
+    "Encadena golpes para ganar racha; recibir un golpe la rompe.",
+    "Modo Gym potencia ataques durante cinco segundos.",
+    "Boxeo, patada ascendente, moto y pedal tienen trayectorias propias."
+  ]
+}

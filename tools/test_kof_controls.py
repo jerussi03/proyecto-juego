@@ -14,7 +14,7 @@ OUT.mkdir(parents=True,exist_ok=True)
 
 def validate():
     report={}
-    for name in ['hector','chava']:
+    for name in ['hector','chava','chan_kof','felix','alejandro','daniela','gameros','armando','vladimir','jaime','leonardo','cesar']:
         folder=ROOT/f'chars/{name}'
         blob=(folder/f'{name}.sff').read_bytes()
         off,count=struct.unpack_from('<II',blob,36)
@@ -33,14 +33,15 @@ def validate():
         assert not refs-sprites.keys(),(name,'missing sprites',refs-sprites.keys())
         anims=re.findall(r'(?im)^\[Begin Action (\d+)\]',air)
         assert len(anims)==len(set(anims)),(name,'duplicate animation')
-        cns='\n'.join((folder/f).read_text() for f in [f'{name}.cns','kof-extra.cns'])+'\n'+(ROOT/'chars/kof-system.cns').read_text()
+        cns='\n'.join((folder/f).read_text(encoding='utf-8') for f in [f'{name}.cns','kof-extra.cns'])+'\n'+(ROOT/'chars/kof-system.cns').read_text()
         states=re.findall(r'(?im)^\[Statedef (-?\d+)\]',cns)
         assert len(states)==len(set(states)),(name,'duplicate state')
         cmd=(folder/f'{name}.cmd').read_text()
         declared=set(re.findall(r'(?m)^name\s*=\s*"([^"]+)"',cmd.split('[Statedef -1]')[0]))
         used=set(re.findall(r'command\s*[!=]=?\s*"([^"]+)"',cmd+cns))
         assert not used-declared,(name,'undeclared commands',used-declared)
-        required={200,210,230,240,400,410,430,440,600,610,630,640,750,900,920,921,922,923,1000,1005,1010,1020,1030,3000,3500,4000}
+        required={200,210,230,240,400,410,430,440,600,610,630,640,750,900,920,921,922,923,1000,1010,1020,1030,3000,3500,4000}
+        if name in {'hector','chava','alejandro','armando'}: required.add(1005)
         assert required <= {int(n) for n in states},(name,'missing moves')
         # Each new contact box must intersect visible pixels of its active frame.
         if name=='hector':
@@ -161,7 +162,8 @@ def check_logs():
             checks={}
             if target==900:
                 checks['cost']=any(r[4]==4000 for r in window)
-                checks['max_bar']=any(r[5]>0 and r[6]>0 for r in window)
+                # MAX remains active without the removed duplicate bottom HUD.
+                checks['max_active']=any(r[5]>0 for r in window)
             if target in [920,921,922]:
                 checks['returns_to_idle']=any(r[1]==0 for r in window if r[0]>start+35)
                 if target==922: checks['cost']=any(r[4]==4000 for r in window)

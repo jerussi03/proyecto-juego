@@ -1,0 +1,36 @@
+{
+  "name": "Jaime",
+  "moves": [
+    "Salto del Caballo",
+    "Potencia al Cuadrado",
+    "Sprint en Bicicleta",
+    "Derivada al Piso",
+    "Calculo Mental",
+    "Gambito Ciclista",
+    "Tour de Integrales",
+    "Teorema Final MAX2"
+  ],
+  "speed": 4.4,
+  "damage": 61,
+  "stun": 21,
+  "advance": 6.4,
+  "rush": 78,
+  "utility": "prepare",
+  "gain": 200,
+  "cost": 0,
+  "cooldown": 230,
+  "shots": 5,
+  "interval": 15,
+  "arc": 2,
+  "role": "Saltos / calculo",
+  "resource": "Calculos",
+  "walk": 1.85,
+  "run": 4.8,
+  "jump": -9.4,
+  "tempo": 0.92,
+  "notes": [
+    "Calculo Mental prepara hasta tres calculos.",
+    "Caballo salta en arco; Potencia consume calculos para elevar mas.",
+    "Bicicleta avanza; Derivada golpea bajo y retrocede."
+  ]
+}

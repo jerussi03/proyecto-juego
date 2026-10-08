@@ -1,0 +1,32 @@
+[Info]
+Name         = "Terry Bogard"
+DisplayName  = "Terry"
+Author       = "ikaruga"
+VersionDate  = 07,23,2018
+MugenVersion = 1.0
+Pal.Defaults = 4
+localcoord   = 320
+
+[Files]
+Cmd      = terry.cmd
+Cns      = Constants.cns
+St       = terry.cns
+St0      = terry-N.cns
+St1      = terry-S.cns
+St2      = terry-H.cns
+St3      = helper.cns
+St4      = config.cns
+St5      = terry-2-3.cns
+StCommon = common_kof.cns
+Sprite   = terry.sff
+Anim     = terry.air
+Sound    = terry.snd
+
+;---カラーパレット---
+
+Pal1 = act/act02.act
+Pal2 = act/act04.act
+Pal3 = act/act06.act
+Pal4 = act/act01.act
+Pal5 = act/act03.act
+Pal6 = act/act05.act

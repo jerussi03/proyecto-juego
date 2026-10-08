@@ -265,10 +265,10 @@ Welcome to I.K.E.M.E.N GO engine! (%s - %s)
 [Select Info]
 fadein.time = 10
 fadeout.time = 10
-rows = 3
-columns = 5
+rows = 4
+columns = 6
 wrapping = 1                       ;1 to let cursor wrap around
-pos = 297,160
+pos = 227,160
 showemptyboxes = 1
 moveoveremptyboxes = 0
 cell.size = 126,86                 ;x,y size of each cell (in pixels)

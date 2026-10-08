@@ -17,7 +17,7 @@ local reachedFight = false
 utcStory.show = function() return true end
 launchFight = function(data)
     assert(start.p[1].t_selected[1].ref == main.t_charDef.chava)
-    assert(data.p2char[1] == 'chan/chan.def')
+    assert(data.p2char[1] == 'chan_kof/chan_kof.def')
     reachedFight = true
     setMatchNo(-1)
     start.exit = true
@@ -51,10 +51,12 @@ end
 getWinnerTeam = function() return 1 end
 setMatchNo(1)
 dofile('data/story/route.lua')
-assert(#matches == 2 and matches[1] == 'chan/chan.def' and matches[2] == 'hector')
+local expected = {'chan_kof/chan_kof.def', 'felix/felix.def', 'alejandro/alejandro.def', 'daniela/daniela.def', 'hector', 'gameros/gameros.def', 'armando/armando.def', 'vladimir/vladimir.def', 'jaime/jaime.def', 'leonardo/leonardo.def', 'cesar/cesar.def'}
+assert(#matches == #expected)
+for i, fighter in ipairs(expected) do assert(matches[i] == fighter) end
 assert(#seen == 26 and seen[26] == 'ending')
 assert(matchNo() == -1)
-log('PASS: all 58 cards rendered; 12 chapters and ending traversed; two fight requests')
+log('PASS: all 60 cards rendered; 12 chapters and ending traversed; eleven fight requests')
 utcStory.show = function() return false end
 setMatchNo(1)
 dofile('data/story/route.lua')

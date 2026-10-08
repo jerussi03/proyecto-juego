@@ -1,0 +1,35 @@
+{
+  "name": "Alejandro",
+  "moves": [
+    "Componente Angular",
+    "Inyeccion de Dependencias",
+    "Paso de Refactorizacion",
+    "Error de Compilacion",
+    "Importar Modulo",
+    "Refactorizacion",
+    "Build de Produccion",
+    "Deploy MAX2"
+  ],
+  "speed": 7.6,
+  "damage": 47,
+  "stun": 17,
+  "advance": 0,
+  "rush": 65,
+  "utility": "buff",
+  "cost": 0,
+  "cooldown": 300,
+  "shots": 6,
+  "interval": 10,
+  "arc": 0,
+  "role": "Preparacion / trampas",
+  "resource": "Modulos",
+  "walk": 1.8,
+  "run": 4.6,
+  "jump": -8.6,
+  "tempo": 0.9,
+  "notes": [
+    "Importar prepara modulos durante cuatro segundos.",
+    "Angular gasta un modulo para duplicar el componente.",
+    "Refactor cruza al rival; Error planta una trampa de piso."
+  ]
+}

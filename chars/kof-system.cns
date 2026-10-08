@@ -266,55 +266,6 @@ trigger1 = var(40) > 0 && GameTime % 24 = 0
 time = 8
 add = 48,32,0
 
-[State -3, MAX label]
-type = Explod
-triggerall = !IsHelper
-trigger1 = var(40) > 0 && NumExplod(9901) = 0
-anim = 9901
-ID = 9901
-postype = left
-pos = ifelse(TeamSide = 1,12,226),207
-facing = 1
-bindtime = -1
-removetime = -1
-sprpriority = 10
-ontop = 1
-ownpal = 1
-supermovetime = 999999
-pausemovetime = 999999
-
-[State -3, MAX bar]
-type = Explod
-triggerall = !IsHelper
-trigger1 = var(40) > 0 && NumExplod(9900) = 0
-anim = 9900
-ID = 9900
-postype = left
-pos = ifelse(TeamSide = 1,13,227),217
-facing = 1
-bindtime = -1
-removetime = -1
-sprpriority = 11
-ontop = 1
-ownpal = 1
-supermovetime = 999999
-pausemovetime = 999999
-
-[State -3, Update MAX bar]
-type = ModifyExplod
-triggerall = !IsHelper
-trigger1 = NumExplod(9900) > 0
-ID = 9900
-scale = max(0.001,var(40)/600.0),1
-
-[State -3, Remove expired MAX bar]
-type = RemoveExplod
-triggerall = !IsHelper
-trigger1 = var(40) <= 0
-ID = 9900
-
-[State -3, Remove expired MAX label]
-type = RemoveExplod
-triggerall = !IsHelper
-trigger1 = var(40) <= 0
-ID = 9901
+; MAX duration stays visible through the character's golden pulse. The
+; fight screen already owns the upper STACK/MAX meter, so no second bar is
+; drawn over the bottom of the arena.

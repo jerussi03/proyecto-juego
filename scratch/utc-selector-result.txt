@@ -1,0 +1,1 @@
+PASS: seven new teachers registered; 4x6 selector rendered

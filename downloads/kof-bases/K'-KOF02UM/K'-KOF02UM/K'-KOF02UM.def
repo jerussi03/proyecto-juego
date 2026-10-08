@@ -1,0 +1,32 @@
+[Info]
+Name         = "K'"
+DisplayName  = "K'"
+Author       = "ikaruga"
+VersionDate  = 07,23,2018
+MugenVersion = 1.0
+Pal.Defaults = 4
+localcoord   = 320
+
+[Files]
+Cmd      = K'.cmd
+Cns      = Constants.cns
+St       = K'.cns
+St1      = K'-N.cns
+St2      = K'-S.cns
+St3      = K'-H.cns
+St4      = K'-2-3.cns
+st5      = helper.cns
+St6      = config.cns
+StCommon = common_kof.cns
+Sprite   = K'.sff
+Anim     = K'.air
+Sound    = K'.snd
+
+;---カラーパレット---
+
+Pal1 = act/act02.act
+Pal2 = act/act04.act
+Pal3 = act/act06.act
+Pal4 = act/act01.act
+Pal5 = act/act03.act
+Pal6 = act/act05.act

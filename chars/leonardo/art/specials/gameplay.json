@@ -1,0 +1,35 @@
+{
+  "name": "Leonardo",
+  "moves": [
+    "Push de Patadas",
+    "Actualizar App",
+    "Swipe Elegante",
+    "Scroll Infinito",
+    "Modo Avion",
+    "Contraataque Movil",
+    "Release Movil",
+    "Actualizacion MAX2"
+  ],
+  "speed": 8.8,
+  "damage": 43,
+  "stun": 17,
+  "advance": 0,
+  "rush": 63,
+  "utility": "evade",
+  "cost": 100,
+  "cooldown": 180,
+  "shots": 7,
+  "interval": 9,
+  "arc": 0,
+  "role": "Evasion / patadas",
+  "resource": "Bateria",
+  "walk": 2.15,
+  "run": 5.4,
+  "jump": -8.9,
+  "tempo": 0.78,
+  "notes": [
+    "Modo Avion evade y carga bateria; contrarrestar tambien carga.",
+    "Push gasta bateria para una tercera patada.",
+    "Swipe cruza al rival; Scroll espera un golpe y contraataca."
+  ]
+}

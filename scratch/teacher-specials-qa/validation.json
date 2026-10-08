@@ -1,0 +1,3891 @@
+{
+  "chan_kof": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "resource_prepared": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "resource_prepared": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_consumed": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "resource_prepared": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    }
+  ],
+  "felix": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "physical_counter_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "heals": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "successful_repair": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "physical_counter_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "heals": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "successful_repair": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "successful_repair": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "heals": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "no_free_counter_damage": true,
+        "no_unprovoked_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    }
+  ],
+  "alejandro": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "buff_active": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "buff_active": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "component_copy": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "profile_speed": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "blink_forward": true,
+        "blink_strike": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "prepared_followup": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "buff_active": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "preparation_expires": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    }
+  ],
+  "daniela": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "physical_counter_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "charges": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true,
+        "victor_rises_punches_sits": true,
+        "victor_back_home": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true,
+        "victor_rises_punches_sits": true,
+        "victor_back_home": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "physical_counter_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "charges": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true,
+        "victor_rises_punches_sits": true,
+        "victor_back_home": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true,
+        "victor_rises_punches_sits": true,
+        "victor_back_home": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true,
+        "camera_moved": true,
+        "victor_can_leave_screen": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "charges": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true,
+        "victor_rises_punches_sits": true,
+        "victor_back_home": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "no_free_counter_damage": true,
+        "no_unprovoked_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true,
+        "victor_present": true,
+        "desk_fixed_in_stage": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Victor typing and phone",
+      "checks": {
+        "typing_frames": true,
+        "phone_frames": true
+      },
+      "passed": true
+    }
+  ],
+  "gameros": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "buff_active": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "boss_transformation": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "buff_active": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "boss_transformation": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "buff_active": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "boss_transformation": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "incoming_hit_lands": true,
+        "identity_hit_reaction": true,
+        "armor_did_not_leak": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    }
+  ],
+  "armando": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "buff_active": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "buff_active": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "profile_speed": true,
+        "pingpong_bounces": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "prepared_followup": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "buff_active": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "preparation_expires": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    }
+  ],
+  "vladimir": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "charges": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "attendance_energy_penalty": false,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": false
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "charges": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "attendance_energy_penalty": false,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": false
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "confirmed_resource": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_consumed": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "charges": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "attendance_energy_penalty": false,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": false
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    }
+  ],
+  "jaime": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "resource_prepared": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "knight_leap": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "resource_prepared": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "knight_leap": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "resource_prepared": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "knight_leap": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    }
+  ],
+  "leonardo": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "physical_counter_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "counter_triggers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "physical_counter_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "counter_triggers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "blink_forward": true,
+        "blink_strike": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "physical_counter_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "support_resource": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "no_free_counter_damage": true,
+        "no_unprovoked_reply": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    }
+  ],
+  "cesar": [
+    {
+      "label": "QCF punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "heals": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "DP punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB punch",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "HCF kick",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCB kick support",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "heals": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Double QCF super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "QCF HCB super",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "MAX2",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support cooldown blocked",
+      "facing": 1,
+      "checks": {
+        "cooldown_blocks": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Support zero power",
+      "facing": 1,
+      "checks": {
+        "energy_requirement": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared projectile",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Projectile trajectory",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "projectile_identity": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Ranged signature",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera left",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Desk camera right",
+      "facing": -1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared alternate super",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Full identity resource",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "resource_consumed": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared support",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "support_cost": true,
+        "heals": true,
+        "cooldown_started": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Prepared MAX2",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "recovers": true,
+        "deals_damage": true,
+        "stock_cost": true,
+        "consumes_max": true,
+        "no_device_emitter": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Counter whiff",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Identity receiving hit",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "incoming_hit_lands": true,
+        "identity_hit_reaction": true,
+        "armor_did_not_leak": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    },
+    {
+      "label": "Preparation expires",
+      "facing": 1,
+      "checks": {
+        "motion": true,
+        "resource_cap": true,
+        "helpers_clean_up": true
+      },
+      "passed": true
+    }
+  ]
+}

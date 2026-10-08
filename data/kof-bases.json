@@ -1,0 +1,92 @@
+[
+  {
+    "base": "Kyo-KOF02UM",
+    "author": "Ikaruga",
+    "definition": "base-Kyo-KOF02UM/Kyo-KOF02UM.def",
+    "source": "http://ikrgmugen.web.fc2.com/kof02um.html",
+    "sha256": "b5181a812f3c289b5e2d336b7f76e126c82f64535d87b7913478d0e009d7ca27",
+    "adaptation": {
+      "Kyo.cmd": {
+        "roll_shortcuts": 1,
+        "max_shortcuts": 1,
+        "cd_shortcuts_removed": 1
+      }
+    },
+    "artwork": "Original KOF; UTC animation replacement pending"
+  },
+  {
+    "base": "TerryEX-KOF02UM",
+    "author": "Ikaruga",
+    "definition": "base-TerryEX-KOF02UM/TerryEX-KOF02UM.def",
+    "source": "http://ikrgmugen.web.fc2.com/kof02um.html",
+    "sha256": "d6fa33c81ee61d0a20c60e673e8bfef8029f4d2f374f6ec0130b40d18a06e4a9",
+    "adaptation": {
+      "Terry.cmd": {
+        "roll_shortcuts": 1,
+        "max_shortcuts": 1,
+        "cd_shortcuts_removed": 1
+      }
+    },
+    "artwork": "Original KOF; UTC animation replacement pending"
+  },
+  {
+    "base": "RyoEX-KOF02UM",
+    "author": "Ikaruga",
+    "definition": "base-RyoEX-KOF02UM/RyoEX-KOF02UM.def",
+    "source": "http://ikrgmugen.web.fc2.com/kof02um.html",
+    "sha256": "29e4f7f85dcb4fd24fe290e82399a999a8512424e836e0bcb0074a16b512241d",
+    "adaptation": {
+      "Ryo.cmd": {
+        "roll_shortcuts": 1,
+        "max_shortcuts": 1,
+        "cd_shortcuts_removed": 1
+      }
+    },
+    "artwork": "Original KOF; UTC animation replacement pending"
+  },
+  {
+    "base": "Iori-KOF02UM",
+    "author": "Ikaruga",
+    "definition": "base-Iori-KOF02UM/Iori-KOF02UM.def",
+    "source": "http://ikrgmugen.web.fc2.com/kof02um.html",
+    "sha256": "0e56a66f61755cbd0180ea0a81d738af74a3c8c97d47b1c1ed9fd9440334bbd5",
+    "adaptation": {
+      "Iori.cmd": {
+        "roll_shortcuts": 1,
+        "max_shortcuts": 1,
+        "cd_shortcuts_removed": 1
+      }
+    },
+    "artwork": "Original KOF; UTC animation replacement pending"
+  },
+  {
+    "base": "K'-KOF02UM",
+    "author": "Ikaruga",
+    "definition": "base-Kprime-KOF02UM/K'-KOF02UM.def",
+    "source": "http://ikrgmugen.web.fc2.com/kof02um.html",
+    "sha256": "54af64830a5a051a766774f9e6418eb51527fbcbe8a3b30691ee6d4d12f82ccc",
+    "adaptation": {
+      "K'.cmd": {
+        "roll_shortcuts": 1,
+        "max_shortcuts": 1,
+        "cd_shortcuts_removed": 1
+      }
+    },
+    "artwork": "Original KOF; UTC animation replacement pending"
+  },
+  {
+    "base": "Nameless-KOF02UM",
+    "author": "Ikaruga",
+    "definition": "base-Nameless-KOF02UM/Nameless-KOF02UM.def",
+    "source": "http://ikrgmugen.web.fc2.com/kof02um.html",
+    "sha256": "6afb2ce8b9d6bcda37bf8ce8abe98291e2296e11f9a07f07c87a177ca04f70ae",
+    "adaptation": {
+      "Nameless.cmd": {
+        "roll_shortcuts": 1,
+        "max_shortcuts": 1,
+        "cd_shortcuts_removed": 1
+      }
+    },
+    "artwork": "Original KOF; UTC animation replacement pending"
+  }
+]
