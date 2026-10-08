@@ -17,7 +17,7 @@
   "rush": 80,
   "utility": "buff",
   "cost": 0,
-  "cooldown": 300,
+  "cooldown": 120,
   "shots": 6,
   "interval": 13,
   "arc": 1,

@@ -236,6 +236,8 @@ def actions(id):
             if k!=4 and not (id in COUNTERS and [1000,1010,1020,1030,1040,1070][k]==COUNTERS[id]):
                 box='-88,-32,88,0' if id=='vladimir' and k==3 else '8,-48,68,-8' if low else '8,-100,72,-18'
                 if id=='cesar' and k==0: box='8,-85,104,-22'
+                if id=='leonardo' and k==0: box='18,-100,105,-25'
+                if id=='chan_kof' and k==1: box='0,-135,50,-35'
                 out+=f'Clsn1: 1\nClsn1[0] = {box}\n'
             out+=f'{group},{i}, 0,0, {ticks}\n'
     out+='\n[Begin Action 8790]\n8703,0, 0,0, -1\n'

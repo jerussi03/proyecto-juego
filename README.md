@@ -1,3 +1,24 @@
+# The King of UTc
+
+Juego de pelea del proyecto UTC. En Windows, ejecutar `TheKingOfUTc.exe` desde
+esta carpeta. Los movimientos e identidades están documentados en
+[IDENTIDADES-PERSONAJES.md](IDENTIDADES-PERSONAJES.md).
+
+El repositorio conserva el motor activo, personajes, escenarios, interfaz,
+materiales fuente, herramientas y configuración del proyecto. Las descargas
+duplicadas, respaldos, cachés, capturas y resultados de pruebas quedan solo en
+local y están excluidos mediante `.gitignore`. Los scripts de pruebas generan
+sus archivos temporales al ejecutarse.
+
+El constructor del menú está en `tools/build_system_sff.py` y sus imágenes
+fuente en `data/ikemen1/menu-source/`. Para repetir la importación opcional de
+bases KOF, descargar primero los originales indicados en `BASES-KOF.md` dentro
+de `downloads/kof-bases/`; las bases ya instaladas están en `chars/base-*`.
+
+La limpieza elimina archivos de la versión actual del repositorio; las versiones
+anteriores permanecen en el historial de Git.
+
+Información del motor original:
 
 <p align="center">
   <a href="https://ikemen-engine.github.io/">

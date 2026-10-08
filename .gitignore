@@ -4,3 +4,27 @@ backups/
 *.bak
 *.log
 *.lnk
+
+# Material local y resultados regenerables
+/downloads/
+/scratch/
+/debug/
+__pycache__/
+*.py[cod]
+*.tmp
+Thumbs.db
+desktop.ini
+**/before-specials/
+/chars/hector/art/preview/
+/chars/**/teacher-qa.cns
+/chars/**/teacher-qa.def
+/chars/**/kof-input-qa.cns
+/chars/**/kof-input-qa.def
+/chars/**/identity-preview.cns
+/chars/**/identity-preview.def
+/chars/chava/chava-qa.cns
+/chars/chava/chava-qa.def
+/chars/hector/hector-qa.cns
+/chars/hector/hector-qa.def
+/The_King_of_UTc*.png
+/Ikemen_GO*.png

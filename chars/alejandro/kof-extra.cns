@@ -362,7 +362,7 @@ poweradd = 0
 type = VarSet
 trigger1 = Time = 0
 v = 48
-value = 300
+value = 90
 
 [State 1040, Resource gain]
 type = VarSet

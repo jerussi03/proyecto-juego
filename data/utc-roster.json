@@ -21,7 +21,9 @@
       "Auditoria MAX2"
     ],
     "support_move": "Documento Aprobado",
-    "specials": "chars/daniela/art/specials/gameplay.json"
+    "specials": "chars/daniela/art/specials/gameplay.json",
+    "identity_role": "Presion / asistencia",
+    "identity_resource": "Requisitos"
   },
   {
     "id": "gameros",
@@ -35,9 +37,9 @@
     ],
     "subject": "Ingles",
     "moves": [
-      "Gamepad Arcade",
-      "Gamepad Arcade (alternativa)",
-      "Rep de Gimnasio",
+      "Combo Arcade",
+      "Combo Arcade (alternativa)",
+      "Patada de Gimnasio",
       "Rodada en Moto",
       "Pedal a Fondo",
       "Combo de Gimnasio",
@@ -45,7 +47,9 @@
       "Final Boss MAX2"
     ],
     "support_move": "Modo Gym",
-    "specials": "chars/gameros/art/specials/gameplay.json"
+    "specials": "chars/gameros/art/specials/gameplay.json",
+    "identity_role": "Rachas / gimnasio",
+    "identity_resource": "Racha"
   },
   {
     "id": "armando",
@@ -62,14 +66,16 @@
       "Saque de Pingpong",
       "Saque de Pingpong (alternativa)",
       "Clavada de Basquet",
-      "Impresion en Movimiento",
+      "Sensor Impreso",
       "Rebote Conectado",
       "Clavada Final",
       "Torneo de Basquet",
       "Internet de los Golpes MAX2"
     ],
     "support_move": "Calibrar IoT",
-    "specials": "chars/armando/art/specials/gameplay.json"
+    "specials": "chars/armando/art/specials/gameplay.json",
+    "identity_role": "Rebotes / IoT",
+    "identity_resource": "Calibraciones"
   },
   {
     "id": "vladimir",
@@ -93,7 +99,9 @@
       "Asistencia Total MAX2"
     ],
     "support_move": "Pase de Lista",
-    "specials": "chars/vladimir/art/specials/gameplay.json"
+    "specials": "chars/vladimir/art/specials/gameplay.json",
+    "identity_role": "Agarres / retencion",
+    "identity_resource": "Asistencias"
   },
   {
     "id": "jaime",
@@ -117,7 +125,9 @@
       "Teorema Final MAX2"
     ],
     "support_move": "Calculo Mental",
-    "specials": "chars/jaime/art/specials/gameplay.json"
+    "specials": "chars/jaime/art/specials/gameplay.json",
+    "identity_role": "Saltos / calculo",
+    "identity_resource": "Calculos"
   },
   {
     "id": "leonardo",
@@ -131,8 +141,8 @@
     ],
     "subject": "Desarrollo movil",
     "moves": [
-      "Notificacion Push",
-      "Notificacion Push (alternativa)",
+      "Push de Patadas",
+      "Push de Patadas (alternativa)",
       "Actualizar App",
       "Swipe Elegante",
       "Scroll Infinito",
@@ -141,7 +151,9 @@
       "Actualizacion MAX2"
     ],
     "support_move": "Modo Avion",
-    "specials": "chars/leonardo/art/specials/gameplay.json"
+    "specials": "chars/leonardo/art/specials/gameplay.json",
+    "identity_role": "Evasion / patadas",
+    "identity_resource": "Bateria"
   },
   {
     "id": "cesar",
@@ -155,8 +167,8 @@
     ],
     "subject": "PHP y MySQL",
     "moves": [
-      "Consulta PHP",
-      "Consulta PHP (alternativa)",
+      "Baston PHP",
+      "Baston PHP (alternativa)",
       "Baston del Backend",
       "Silla de Apoyo",
       "DELETE Sin WHERE",
@@ -165,6 +177,8 @@
       "Examen Final MAX2"
     ],
     "support_move": "Pausa de Recuperacion",
-    "specials": "chars/cesar/art/specials/gameplay.json"
+    "specials": "chars/cesar/art/specials/gameplay.json",
+    "identity_role": "Resistencia / castigo",
+    "identity_resource": "Rigor"
   }
 ]

@@ -49,6 +49,17 @@ type = VelAdd
 trigger1 = 1
 y = 0.28
 
+[State 1005, Calibrated serve snapshot]
+type = VarSet
+trigger1 = Time = 0
+v = 3
+value = Root,var(44)
+
+[State 1005, Calibrated lateral rebound]
+type = VelMul
+trigger1 = var(3)>0 && ((FrontEdgeDist<12 && Vel X>0) || (BackEdgeDist<12 && Vel X<0))
+x = -1
+
 [State 1005, Bounce count]
 type = VarAdd
 trigger1 = Pos Y >= -12 && Vel Y > 0
@@ -67,7 +78,7 @@ y = -12
 
 [State 1005, Bounce limit]
 type = DestroySelf
-trigger1 = var(1) >= ifelse(Root,var(46) > 0,4,3)
+trigger1 = var(1) >= 3+var(3)
 
 
 [State 1005, No push]
@@ -122,7 +133,7 @@ value = 3021
 
 [State 1005, Cleanup]
 type = DestroySelf
-trigger1 = Time > 100
+trigger1 = Time > 180
 trigger2 = FrontEdgeDist < -90
 trigger3 = RoundState != 2
 trigger4 = Root,Life <= 0
@@ -424,7 +435,7 @@ poweradd = 0
 type = VarSet
 trigger1 = Time = 0
 v = 48
-value = 300
+value = 120
 
 [State 1040, Resource gain]
 type = VarSet

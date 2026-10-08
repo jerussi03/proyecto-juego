@@ -1,1 +1,0 @@
-PASS: Daniela has exactly one Victor companion during the fight

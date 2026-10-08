@@ -1,12 +1,16 @@
 # Animaciones UTC integradas
 
+La revisión actual de repertorios está en [IDENTIDADES-PERSONAJES.md](IDENTIDADES-PERSONAJES.md):
+cinco especiales propios por profesor, recursos, movilidad diferenciada, MAX2 distintos
+y 60 cuadros nuevos. Los recuentos siguientes describen las hojas normales originales.
+
 El reparto UTC completo está disponible: Chava y once profesores jugables.
 Chan y Félix tienen 48 poses cada uno. Alejandro y los siete profesores nuevos
 tienen 72 poses cada uno. Víctor acompaña a Daniela en un punto fijo del escenario y añade 24 cuadros nuevos
 para levantarse, correr, golpear como asistencia y volver a su escritorio. No tiene controles propios. El selector ahora tiene 4 filas por 6 columnas. Sus
 secuencias de espera, caminar, puño, gancho, patada, barrida, salto, guardia y
-reacción al golpe conservan las duraciones y colisiones del sistema KOF de
-Chava. La pantalla del juego muestra sus retratos propios.
+reacción al golpe se basan en el sistema KOF de Chava, con velocidades y ritmos
+propios para cada profesor. La pantalla del juego muestra sus retratos propios.
 
 | Personaje | Archivos del juego | Hojas fuente | Capítulo |
 |---|---|---|---|
@@ -81,4 +85,4 @@ Se corrigió el escalado por pose/fila y la postura de agachado de Chan y Félix
 Los supers ahora usan combos, agarres, saltos, contraataques y la asistencia física de Víctor.
 Víctor y su escritorio tienen una posición fija en el escenario, independiente de la cámara.
 La hoja nueva y su prompt exacto están en `chars/daniela/art/victor-assist/`.
-Detalle de acciones y 230 escenarios de prueba en `ESPECIALES-MAESTROS.md`.
+La guía vigente de acciones, recursos y validación es `IDENTIDADES-PERSONAJES.md`.

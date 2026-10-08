@@ -1,3 +1,0 @@
-Reached real Chava vs Chan loading from menu callback
-PASS: real match completed; winner team 1
-PASS: returned from campaign without error

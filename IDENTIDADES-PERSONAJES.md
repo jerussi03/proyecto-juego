@@ -47,6 +47,11 @@ los ataca. Las trampas de Alejandro y Armando permanecen en el suelo, pueden
 romperse con ataques y caducan; cada uno puede tener una sola activa.
 Solo Alejandro y Armando usan un proyectil como primer especial.
 
+Alejandro puede volver a importar después de 1.5 segundos y Armando volver a
+calibrar después de dos segundos: pueden acumular preparación antes de que
+caduque. Cada calibración añade un rebote de piso al saque de pingpong; los
+saques calibrados también regresan al tocar un borde lateral de pantalla.
+
 ## Recursos y forma de jugar
 
 | Profesor | Recurso | Cómo se obtiene y para qué sirve |
@@ -106,8 +111,14 @@ tamaño según el ancho del arma o la altura de cada pose.
 - Pruebas de comandos, daño, recursos y comportamiento: `python tools/test_teacher_specials.py`.
 - Validación de sprites, estados y comandos: `python tools/test_kof_controls.py`.
 - Respaldo anterior: `backups/teacher-identity-v2/`.
+- Capturas dentro del motor a velocidad normal: `scratch/identity-preview/<personaje>/`.
 
 Las secuencias también reutilizan poses normales y especiales existentes para
 combos y transiciones. No se sustituyeron todas las poses ni las voces.
 La validación automática verifica ejecución y mecánicas; el balance fino y la
 sensación con mando necesitan partidas de juego.
+
+Validación final de esta revisión: **311 escenarios de comandos y mecánicas,
+sin fallos**, validación estática de los doce luchadores UTC y siete combates
+CPU completos. Se capturaron las diez nuevas secuencias a velocidad normal.
+Informe de comportamiento: `scratch/teacher-specials-qa/validation.json`.

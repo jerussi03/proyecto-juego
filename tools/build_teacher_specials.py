@@ -364,13 +364,22 @@ def apply_character(id):
         data.update(identity_frames=6,identity_art='art/identity-v2/preview.png',identity_role=p['role'])
         if id=='daniela':data.update(victor_assist_frames=24,victor_assist='art/victor-assist/PROMPT.json')
         manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
-    print(id, '24 themed frames; 8 moves; support',p['utility'],flush=True)
+    print(id, '30 themed frames; independent specials, resource and MAX2;',p['role'],flush=True)
     return True
 
 
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('characters',nargs='*'); args=parser.parse_args()
     for id in args.characters or PROFILES: assert apply_character(id),(id,'missing sheet')
+    path=ROOT/'data/utc-roster.json'
+    roster=json.loads(path.read_text(encoding='utf-8'))
+    for entry in roster:
+        if entry['id'] not in PROFILES: continue
+        profile=PROFILES[entry['id']]
+        moves=profile['moves']
+        entry.update(moves=[moves[0],moves[0]+' (alternativa)',*moves[1:4],*moves[5:]],
+                     support_move=moves[4],identity_role=profile['role'],identity_resource=profile['resource'])
+    path.write_text(json.dumps(roster,ensure_ascii=False,indent=2),encoding='utf-8')
 
 
 if __name__=='__main__': main()

@@ -23,7 +23,7 @@ Sensor Impreso                   _D_DB_B + ^X / ^Y
 Rebote Conectado                   _B_DB_D_DF_F + ^A / ^B
 
 Calibrar IoT                           _D_DB_B + ^A / ^B
-Apoyo: costo 0; espera 5 s.
+Apoyo: costo 0; espera 2 s.
 
 <#63ded7>:Supers - 1000 de energia:</>
 Clavada Final                          _D_DF_F_D_DF_F + ^X / ^Y
