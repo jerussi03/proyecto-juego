@@ -11,6 +11,7 @@ import json
 import re
 import shutil
 import struct
+import time
 import numpy as np
 import cv2
 from PIL import Image, ImageDraw
@@ -189,6 +190,17 @@ def extract_sheet(path, id):
     return frames
 
 
+def write_binary(path,packed):
+    # OneDrive may briefly lock a synchronized binary between reads/writes.
+    for attempt in range(12):
+        try:
+            path.write_bytes(packed)
+            return
+        except OSError:
+            if attempt==11: raise
+            time.sleep(.25)
+
+
 def upsert_sff(path, frames):
     blob=bytearray(path.read_bytes())
     tableoff,count=struct.unpack_from('<II',blob,36)
@@ -209,7 +221,8 @@ def upsert_sff(path, frames):
         payload.extend(raw)
     struct.pack_into('<II',blob,36,tableoff,len(entries))
     struct.pack_into('<I',blob,56,start+len(payload)-ldata)
-    path.write_bytes(blob+b''.join(entries)+payload)
+    packed=blob+b''.join(entries)+payload
+    write_binary(path,packed)
 
 
 def actions(id):
@@ -294,11 +307,14 @@ def apply_character(id):
         previous=json.loads(record.read_text(encoding='utf-8'))
         if hashlib.sha256(current).hexdigest()==previous['installed_hash']:
             current=bytes.fromhex(previous['input_header'])+current[64:previous['input_size']]
-            sff.write_bytes(current)
+            write_binary(sff,current)
     installation=dict(input_size=len(current),input_header=current[:64].hex())
     from teacher_identity import sprites as identity_sprites
+    from teacher_animation import normal_sprites, legacy_combat_sprites
     frames=extract_sheet(sheet,id)
     frames.update(identity_sprites(ROOT,id))
+    frames.update(legacy_combat_sprites(ROOT,id))
+    frames.update(normal_sprites(ROOT,id))
     upsert_sff(sff,frames)
     if id=='daniela':
         from victor_assist import sprites as victor_sprites
@@ -346,6 +362,17 @@ def apply_character(id):
     text=text.replace('[State -1, Motion special 1010]',commands(p,id)+'\n[State -1, Motion special 1010]',1)
     text=re.sub(r'(?m)^x = ifelse\(P2BodyDist X > 50,.*','x = ifelse(P2BodyDist X > 50,Const(velocity.walk.fwd),0)',text)
     cmd.write_text(text,encoding='utf-8')
+    # Normal contacts, chains and airborne attacks belong to the individual
+    # teacher. Special timelines use the real HitDef schedule for visible hits.
+    from teacher_normals import apply_cns, apply_air, apply_cmd, describe, update_movelist
+    from teacher_animation import synchronize
+    for state_path in (cns, folder/'kof-extra.cns'):
+        state_path.write_text(apply_cns(state_path.read_text(encoding='utf-8'),id),encoding='utf-8')
+    air_text=apply_air(air.read_text(encoding='utf-8'),id)
+    air_text,extra_text=synchronize(air_text,(folder/'kof-extra.cns').read_text(encoding='utf-8'),id,sff)
+    air.write_text(air_text,encoding='utf-8')
+    (folder/'kof-extra.cns').write_text(extra_text,encoding='utf-8')
+    cmd.write_text(apply_cmd(cmd.read_text(encoding='utf-8'),id),encoding='utf-8')
     moves=folder/f'{id}-movelist.dat'
     base=(ROOT/'chars/chava/chava-movelist.dat').read_text(encoding='utf-8')
     old=['Codigo compilado','Gancho compilacion','Mochilazo de avance','Barrida de semestre','unused','Asistente IA','Entrega final','Compilacion final + IA']
@@ -355,6 +382,13 @@ def apply_character(id):
     base=base.replace('<#63ded7>:Supers',f'{p["moves"][4]:38} _D_DB_B + ^A / ^B\nApoyo: costo {p["cost"]}; espera {p["cooldown"]//60} s.\n\n<#63ded7>:Supers')
     base+='\n\n<#63ded7>:Identidad - '+p['role']+':</>\n'
     base+=p['resource']+': hasta tres iconos debajo de VIDA.\n'+'\n'.join(p['notes'])+'\n'
+    normals=describe(id)
+    # Remove the template character's normals and show the actual repertoire
+    # and confirmed chains maintained by the same module as the state files.
+    base=update_movelist(base,id)
+    normal_art=folder/'art/normal-v3'
+    normal_art.mkdir(parents=True,exist_ok=True)
+    (normal_art/'moves.json').write_text(json.dumps(normals,ensure_ascii=False,indent=2),encoding='utf-8')
     moves.write_text(base,encoding='utf-8')
     (art/'gameplay.json').write_text(json.dumps(p,ensure_ascii=False,indent=2),encoding='utf-8')
     manifest=folder/'art/manifest.json'
@@ -362,15 +396,18 @@ def apply_character(id):
         data=json.loads(manifest.read_text(encoding='utf-8'))
         data.update(special_frames=24,specials='art/specials/gameplay.json',limitations='Voices and some impact sounds share prototype resources; some normal actions reuse poses.')
         data.update(identity_frames=6,identity_art='art/identity-v2/preview.png',identity_role=p['role'])
+        data.update(normal_frames=24,normal_art='art/normal-v3/sheet.png',normal_moves='art/normal-v3/moves.json',limitations='Original keyframe animations; prototype voices and some impact sounds are shared.')
         if id=='daniela':data.update(victor_assist_frames=24,victor_assist='art/victor-assist/PROMPT.json')
         manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
-    print(id, '30 themed frames; independent specials, resource and MAX2;',p['role'],flush=True)
+    print(id, '54 themed frames; own normals, specials, resource and MAX2;',p['role'],flush=True)
     return True
 
 
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('characters',nargs='*'); args=parser.parse_args()
     for id in args.characters or PROFILES: assert apply_character(id),(id,'missing sheet')
+    from teacher_normals import write_catalog
+    write_catalog()
     path=ROOT/'data/utc-roster.json'
     roster=json.loads(path.read_text(encoding='utf-8'))
     for entry in roster:

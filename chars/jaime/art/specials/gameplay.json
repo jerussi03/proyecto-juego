@@ -30,7 +30,7 @@
   "tempo": 0.92,
   "notes": [
     "Calculo Mental prepara hasta tres calculos.",
-    "Caballo salta en arco; Potencia consume calculos para elevar mas.",
-    "Bicicleta avanza; Derivada golpea bajo y retrocede."
+    "Durante Caballo, mantener adelante o atras consume un calculo y corrige la ruta.",
+    "Potencia gasta calculos para lanzar mas alto; Bicicleta avanza y Derivada retrocede."
   ]
 }

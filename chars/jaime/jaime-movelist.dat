@@ -36,9 +36,32 @@ MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
 
-
 <#63ded7>:Identidad - Saltos / calculo:</>
 Calculos: hasta tres iconos debajo de VIDA.
 Calculo Mental prepara hasta tres calculos.
-Caballo salta en arco; Potencia consume calculos para elevar mas.
-Bicicleta avanza; Derivada golpea bajo y retrocede.
+Durante Caballo, mantener adelante o atras consume un calculo y corrige la ruta.
+Potencia gasta calculos para lanzar mas alto; Bicicleta avanza y Derivada retrocede.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Jab de apertura                      ^X
+Pedal de avance                      ^A
+Codo de gambito                      ^Y
+Patada de caballo                    ^B
+Agachado:
+Apertura baja                        ^X
+Pedal rasante                        ^A
+Diagonal ascendente                  ^Y
+Barrido de tablero                   ^B
+En el aire:
+Mano diagonal                        ^X
+Rodilla ciclista                     ^A
+Codo de calculo                      ^Y
+Diagonal descendente                 ^B
+
+Cadenas propias: conecta antes de continuar.
+Pedal de avance > Patada de caballo (^B)
+Pedal rasante > Diagonal ascendente (^Y)
+Mano diagonal > Diagonal descendente (^B)
+Rodilla ciclista > Codo de calculo (^Y)
+Si el rival bloquea o esquiva, termina la recuperacion.

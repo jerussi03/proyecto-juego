@@ -14,12 +14,15 @@
     "victory"
   ],
   "gameplay_reference": "UTC KOF controls (Chava)",
-  "limitations": "Voices and some impact sounds share prototype resources; some normal actions reuse poses.",
+  "limitations": "Original keyframe animations; prototype voices and some impact sounds are shared.",
   "special_frames": 24,
   "specials": "art/specials/gameplay.json",
   "victor_assist_frames": 24,
   "victor_assist": "art/victor-assist/PROMPT.json",
   "identity_frames": 6,
   "identity_art": "art/identity-v2/preview.png",
-  "identity_role": "Presion / asistencia"
+  "identity_role": "Presion / asistencia",
+  "normal_frames": 24,
+  "normal_art": "art/normal-v3/sheet.png",
+  "normal_moves": "art/normal-v3/moves.json"
 }

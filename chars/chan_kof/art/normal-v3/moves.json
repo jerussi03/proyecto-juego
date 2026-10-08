@@ -1,0 +1,675 @@
+{
+  "character": "chan_kof",
+  "moves": {
+    "200": {
+      "name": "Palma de correccion",
+      "startup": 5,
+      "active": 3,
+      "recovery": 10,
+      "damage": 27,
+      "band": [
+        -92,
+        -43
+      ],
+      "push": 1.5,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 55,
+      "low": false,
+      "state": 200,
+      "button": "x",
+      "group": 200,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        5,
+        5
+      ],
+      "total": 20,
+      "contact_box": [
+        16,
+        -93,
+        55,
+        -42
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          210,
+          "y"
+        ]
+      ]
+    },
+    "210": {
+      "name": "Empuje de crossfit",
+      "startup": 10,
+      "active": 4,
+      "recovery": 18,
+      "damage": 78,
+      "band": [
+        -120,
+        -35
+      ],
+      "push": 5.0,
+      "stun": 26,
+      "step": 1.1,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 210,
+      "button": "y",
+      "group": 8770,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        4,
+        2,
+        9,
+        9
+      ],
+      "total": 34,
+      "contact_box": [
+        16,
+        -111,
+        47,
+        -34
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "230": {
+      "name": "Puntapie de senderismo",
+      "startup": 6,
+      "active": 3,
+      "recovery": 10,
+      "damage": 33,
+      "band": [
+        -78,
+        -24
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": -0.8,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 230,
+      "button": "a",
+      "group": 240,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        3,
+        2,
+        5,
+        5
+      ],
+      "total": 21,
+      "contact_box": [
+        16,
+        -79,
+        68,
+        -23
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "240": {
+      "name": "Patada de precision",
+      "startup": 12,
+      "active": 4,
+      "recovery": 18,
+      "damage": 72,
+      "band": [
+        -108,
+        -29
+      ],
+      "push": 5.0,
+      "stun": 22,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 240,
+      "button": "b",
+      "group": 240,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        4,
+        4,
+        4,
+        4,
+        2,
+        9,
+        9
+      ],
+      "total": 36,
+      "contact_box": [
+        16,
+        -109,
+        68,
+        -28
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "400": {
+      "name": "Correccion desde cuclillas",
+      "startup": 5,
+      "active": 3,
+      "recovery": 8,
+      "damage": 23,
+      "band": [
+        -61,
+        -20
+      ],
+      "push": 1.1,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 400,
+      "button": "x",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        4
+      ],
+      "total": 18,
+      "contact_box": [
+        16,
+        -62,
+        73,
+        -19
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          410,
+          "y"
+        ]
+      ]
+    },
+    "410": {
+      "name": "Elevacion de crossfit",
+      "startup": 11,
+      "active": 4,
+      "recovery": 17,
+      "damage": 65,
+      "band": [
+        -83,
+        -21
+      ],
+      "push": 3.5,
+      "stun": 22,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": -6.4,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 410,
+      "button": "y",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        4,
+        4,
+        4,
+        2,
+        8,
+        9
+      ],
+      "total": 34,
+      "contact_box": [
+        16,
+        -84,
+        74,
+        -20
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "430": {
+      "name": "Paso al tobillo",
+      "startup": 6,
+      "active": 3,
+      "recovery": 9,
+      "damage": 25,
+      "band": [
+        -31,
+        -1
+      ],
+      "push": 2.2,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 430,
+      "button": "a",
+      "group": 430,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        3,
+        2,
+        4,
+        5
+      ],
+      "total": 20,
+      "contact_box": [
+        16,
+        -32,
+        89,
+        -1
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          440,
+          "b"
+        ]
+      ]
+    },
+    "440": {
+      "name": "Barrido de indice",
+      "startup": 12,
+      "active": 4,
+      "recovery": 20,
+      "damage": 65,
+      "band": [
+        -36,
+        -1
+      ],
+      "push": 4.0,
+      "stun": 17,
+      "step": 1.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 440,
+      "button": "b",
+      "group": 440,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        4,
+        4,
+        4,
+        4,
+        2,
+        10,
+        10
+      ],
+      "total": 38,
+      "contact_box": [
+        16,
+        -37,
+        89,
+        -1
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "600": {
+      "name": "Palma de descenso",
+      "startup": 6,
+      "active": 4,
+      "recovery": 10,
+      "damage": 28,
+      "band": [
+        -108,
+        -44
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 600,
+      "button": "x",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        4,
+        2,
+        5,
+        5
+      ],
+      "total": 22,
+      "contact_box": [
+        16,
+        -109,
+        49,
+        -43
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "610": {
+      "name": "Codo de crossfit",
+      "startup": 9,
+      "active": 5,
+      "recovery": 15,
+      "damage": 62,
+      "band": [
+        -100,
+        -25
+      ],
+      "push": 4.0,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 610,
+      "button": "y",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        3,
+        5,
+        2,
+        7,
+        8
+      ],
+      "total": 31,
+      "contact_box": [
+        16,
+        -101,
+        49,
+        -24
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "630": {
+      "name": "Extension de senderismo",
+      "startup": 7,
+      "active": 5,
+      "recovery": 10,
+      "damage": 31,
+      "band": [
+        -86,
+        -22
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 630,
+      "button": "a",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        3,
+        5,
+        2,
+        5,
+        5
+      ],
+      "total": 24,
+      "contact_box": [
+        16,
+        -87,
+        74,
+        -21
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "640": {
+      "name": "Patada de cumbre",
+      "startup": 11,
+      "active": 5,
+      "recovery": 16,
+      "damage": 65,
+      "band": [
+        -100,
+        -8
+      ],
+      "push": 4.5,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 1.8,
+      "max_reach": 120,
+      "low": false,
+      "state": 640,
+      "button": "b",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        4,
+        4,
+        5,
+        2,
+        8,
+        8
+      ],
+      "total": 34,
+      "contact_box": [
+        16,
+        -101,
+        74,
+        -21
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    }
+  },
+  "normal_buffer": 28,
+  "contacts": [
+    4,
+    6
+  ],
+  "art_scale": "native",
+  "controls": "KOF x/a/y/b"
+}

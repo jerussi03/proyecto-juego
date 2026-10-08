@@ -4,10 +4,16 @@
 type = S
 movetype = A
 physics = N
-anim = 8740
+anim = 8800
 ctrl = 0
 velset = 0,0
 poweradd = 0
+
+[State 1000, Reset knight route]
+type = VarSet
+trigger1 = Time = 0
+v = 42
+value = 0
 
 [State 1000, Takeoff]
 type = VelSet
@@ -22,24 +28,50 @@ statetype = A
 
 [State 1000, Arc gravity]
 type = VelAdd
-trigger1 = Time = [4,28]
+trigger1 = Time = [4,28] && StateType = A
 y = 0.5
 
 [State 1000, Landing position]
 type = PosSet
 trigger1 = Time >= 29
+trigger2 = Time > 3 && Vel Y>0 && Pos Y+Vel Y>=0
 y = 0
 
 [State 1000, Landing brake]
 type = VelSet
 trigger1 = Time >= 29
+trigger2 = Time > 3 && Vel Y>0 && Pos Y+Vel Y>=0
 x = 0
 y = 0
 
 [State 1000, Grounded]
 type = StateTypeSet
-trigger1 = Time = 29
+trigger1 = Time >= 29
+trigger2 = Time > 3 && Pos Y>=0 && Vel Y>=0
 statetype = S
+
+[State 1000, Calculate an airborne square]
+type = VarSet
+trigger1 = Time = [10,17] && var(42)=0 && var(44)>0 && (command="holdfwd" || command="holdback")
+v = 42
+value = ifelse(command="holdback",-1,1)
+
+[State 1000, Apply calculated knight route]
+type = VelSet
+trigger1 = Time = [10,17] && Abs(var(42))=1
+x = ifelse(var(42)<0,-3.8,5.2)
+
+[State 1000, Pay for calculation]
+type = VarSet
+trigger1 = Time = [10,17] && Abs(var(42))=1
+v = 44
+value = max(0,var(44)-1)
+
+[State 1000, Latch chosen route]
+type = VarSet
+trigger1 = Time = [10,17] && Abs(var(42))=1
+v = 42
+value = var(42)*2
 
 [State 1000, Contact]
 type = HitDef
@@ -77,7 +109,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8741
+anim = 8801
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -120,6 +152,11 @@ fall.recover = 0
 getpower = 30,0
 givepower = 18,9
 
+[State 1010, Calculated launch height]
+type = TargetVelSet
+trigger1 = Time = 11 && MoveHit && NumTarget>0
+y = -7-var(45)*1.5
+
 [State 1010, Recovery]
 type = ChangeState
 trigger1 = Time >= 35
@@ -130,7 +167,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8742
+anim = 8802
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -181,7 +218,7 @@ ctrl = 1
 type = C
 movetype = A
 physics = N
-anim = 8743
+anim = 8803
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -232,7 +269,7 @@ ctrl = 1
 type = S
 movetype = I
 physics = N
-anim = 8744
+anim = 8804
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -320,7 +357,7 @@ trigger2 = RoundState != 2
 type = S
 movetype = A
 physics = N
-anim = 8721
+anim = 8806
 ctrl = 0
 velset = 0,0
 poweradd = -1000
@@ -333,11 +370,6 @@ movetime = 18
 anim = -1
 darken = 1
 p2defmul = 1
-
-[State 3000, Cycling strike animation]
-type = ChangeAnim
-trigger1 = Time = 0
-value = 8734
 
 [State 3000, Cycling gambit]
 type = PlayerPush
@@ -426,7 +458,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8736
+anim = 8807
 ctrl = 0
 velset = 0,0
 poweradd = -1000
@@ -632,7 +664,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8746
+anim = 8808
 ctrl = 0
 velset = 0,0
 poweradd = -2000
@@ -671,23 +703,26 @@ statetype = A
 
 [State 4000, MAX2 gravity]
 type = VelAdd
-trigger1 = Time = [4,27]
+trigger1 = Time = [4,27] && StateType = A
 y = .5
 
 [State 4000, MAX2 land]
 type = PosSet
 trigger1 = Time = 28
+trigger2 = Time > 3 && Time < 28 && Vel Y>0 && Pos Y+Vel Y>=0
 y = 0
 
 [State 4000, MAX2 land stop]
 type = VelSet
 trigger1 = Time = 28
+trigger2 = Time > 3 && Time < 28 && Vel Y>0 && Pos Y+Vel Y>=0
 x = 0
 y = 0
 
 [State 4000, MAX2 grounded]
 type = StateTypeSet
 trigger1 = Time = 28
+trigger2 = Time > 3 && Time < 28 && Pos Y>=0 && Vel Y>=0
 statetype = S
 
 [State 4000, Contact]
@@ -734,23 +769,26 @@ statetype = A
 
 [State 4000, MAX2 gravity]
 type = VelAdd
-trigger1 = Time = [32,53]
+trigger1 = Time = [32,53] && StateType = A
 y = .5
 
 [State 4000, MAX2 land]
 type = PosSet
 trigger1 = Time = 54
+trigger2 = Time > 31 && Time < 54 && Vel Y>0 && Pos Y+Vel Y>=0
 y = 0
 
 [State 4000, MAX2 land stop]
 type = VelSet
 trigger1 = Time = 54
+trigger2 = Time > 31 && Time < 54 && Vel Y>0 && Pos Y+Vel Y>=0
 x = 0
 y = 0
 
 [State 4000, MAX2 grounded]
 type = StateTypeSet
 trigger1 = Time = 54
+trigger2 = Time > 31 && Time < 54 && Pos Y>=0 && Vel Y>=0
 statetype = S
 
 [State 4000, Contact]

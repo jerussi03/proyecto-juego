@@ -4,7 +4,7 @@
 type = S
 movetype = A
 physics = N
-anim = 8740
+anim = 8800
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -143,7 +143,7 @@ trigger4 = Root,Life <= 0
 type = S
 movetype = A
 physics = N
-anim = 8741
+anim = 8801
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -161,23 +161,26 @@ statetype = A
 
 [State 1010, Arc gravity]
 type = VelAdd
-trigger1 = Time = [4,26]
+trigger1 = Time = [4,26] && StateType = A
 y = 0.5
 
 [State 1010, Landing position]
 type = PosSet
 trigger1 = Time >= 27
+trigger2 = Time > 3 && Vel Y>0 && Pos Y+Vel Y>=0
 y = 0
 
 [State 1010, Landing brake]
 type = VelSet
 trigger1 = Time >= 27
+trigger2 = Time > 3 && Vel Y>0 && Pos Y+Vel Y>=0
 x = 0
 y = 0
 
 [State 1010, Grounded]
 type = StateTypeSet
-trigger1 = Time = 27
+trigger1 = Time >= 27
+trigger2 = Time > 3 && Pos Y>=0 && Vel Y>=0
 statetype = S
 
 [State 1010, Contact]
@@ -249,7 +252,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8742
+anim = 8802
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -276,30 +279,30 @@ ctrl = 1
 
 [Statedef 1050]
 type = C
-movetype = A
+movetype = I
 physics = N
 anim = 8703
 ctrl = 0
 velset = 0,0
 poweradd = 0
 
-[State 1050, Keep trap on floor]
+[State 1050, Sensor rests on floor]
 type = PosSet
 trigger1 = 1
 y = -12
 
-[State 1050, Trap does not move camera]
+[State 1050, Sensor stays in the stage]
 type = ScreenBound
 trigger1 = 1
 value = 0
 movecamera = 0,0
 
-[State 1050, No push]
+[State 1050, Sensor no push]
 type = PlayerPush
 trigger1 = 1
 value = 0
 
-[State 1050, Trap can be broken]
+[State 1050, Sensor can be broken]
 type = HitOverride
 trigger1 = 1
 attr = SCA,AA,AP,AT
@@ -307,13 +310,50 @@ slot = 0
 stateno = 3021
 time = 1
 
-[State 1050, Contact]
+[State 1050, Detect nearby visitor]
+type = ChangeState
+trigger1 = Time >= 8 && Abs(P2Dist X)<46 && P2Dist Y > -85
+value = 1051
+
+[State 1050, Remote calibration signal]
+type = ChangeState
+trigger1 = Root,StateNo = 1040 && Root,Time = 24
+value = 1051
+
+[State 1050, Sensor timeout]
+type = DestroySelf
+trigger1 = Time >= 110
+trigger2 = RoundState != 2
+trigger3 = Root,Life <= 0
+
+
+[Statedef 1051]
+type = C
+movetype = A
+physics = N
+anim = 8750
+ctrl = 0
+velset = 0,0
+poweradd = 0
+
+[State 1051, Active sensor no push]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 1051, Active sensor stage bounds]
+type = ScreenBound
+trigger1 = 1
+value = 0
+movecamera = 0,0
+
+[State 1051, Contact]
 type = HitDef
 trigger1 = Time = 0
 attr = A,SP
-damage = ifelse(Root,var(46)>0,80,55),8
+damage = 55+(Root,var(44))*9,8
 animtype = Heavy
-guardflag = L
+guardflag = MA
 hitflag = MAF
 priority = 4,Hit
 pausetime = 0,9
@@ -322,10 +362,10 @@ guard.sparkno = 40
 sparkxy = -8,-60
 hitsound = F5,2
 guardsound = F6,0
-ground.type = Low
+ground.type = High
 ground.slidetime = 14
 ground.hittime = 20
-ground.velocity = -4
+ground.velocity = -4,-7
 air.velocity = -3,-5
 air.hittime = 24
 fall = 1
@@ -333,14 +373,14 @@ fall.recover = 0
 getpower = 0,0
 givepower = 18,9
 
-[State 1050, Impact]
+[State 1051, Sensor contact cleanup]
 type = ChangeState
 trigger1 = MoveContact
 value = 3021
 
-[State 1050, Trap timeout]
+[State 1051, Sensor burst cleanup]
 type = DestroySelf
-trigger1 = Time >= 110
+trigger1 = Time >= 16
 trigger2 = RoundState != 2
 trigger3 = Root,Life <= 0
 
@@ -349,7 +389,7 @@ trigger3 = Root,Life <= 0
 type = S
 movetype = A
 physics = N
-anim = 8743
+anim = 8803
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -426,7 +466,7 @@ ctrl = 1
 type = S
 movetype = I
 physics = N
-anim = 8744
+anim = 8804
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -520,7 +560,7 @@ trigger2 = RoundState != 2
 type = S
 movetype = A
 physics = N
-anim = 8721
+anim = 8806
 ctrl = 0
 velset = 0,0
 poweradd = -1000
@@ -539,6 +579,11 @@ type = VelSet
 trigger1 = Time = 3
 x = 3.8
 y = -5.5
+
+[State 3000, Dunk is airborne]
+type = StateTypeSet
+trigger1 = Time = 3
+statetype = A
 
 [State 3000, Gravity]
 type = VelAdd
@@ -577,6 +622,21 @@ fall.recover = 0
 getpower = 0,0
 givepower = 18,9
 
+[State 3000, Dunk reaches the court]
+type = PosSet
+trigger1 = Time >= 18 && Vel Y>=0 && Pos Y+Vel Y>=0
+y = 0
+
+[State 3000, Dunk landing velocity]
+type = VelSet
+trigger1 = Time >= 18 && Vel Y>=0 && Pos Y+Vel Y>=0
+y = 0
+
+[State 3000, Dunk lands physically]
+type = StateTypeSet
+trigger1 = Time >= 18 && Vel Y>=0 && Pos Y+Vel Y>=0
+statetype = S
+
 [State 3000, Plant feet]
 type = PosSet
 trigger1 = Time = 29
@@ -588,10 +648,10 @@ trigger1 = Time = 29
 x = 0
 y = 0
 
-[State 3000, Ground finish animation]
-type = ChangeAnim
+[State 3000, Dunk returns to ground]
+type = StateTypeSet
 trigger1 = Time = 29
-value = 8732
+statetype = S
 
 [State 3000, Contact]
 type = HitDef
@@ -636,7 +696,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8736
+anim = 8807
 ctrl = 0
 velset = 0,0
 poweradd = -1000
@@ -758,7 +818,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8746
+anim = 8808
 ctrl = 0
 velset = 0,0
 poweradd = -2000
@@ -797,23 +857,26 @@ statetype = A
 
 [State 4000, MAX2 gravity]
 type = VelAdd
-trigger1 = Time = [4,28]
+trigger1 = Time = [4,28] && StateType = A
 y = .5
 
 [State 4000, MAX2 land]
 type = PosSet
 trigger1 = Time = 29
+trigger2 = Time > 3 && Time < 29 && Vel Y>0 && Pos Y+Vel Y>=0
 y = 0
 
 [State 4000, MAX2 land stop]
 type = VelSet
 trigger1 = Time = 29
+trigger2 = Time > 3 && Time < 29 && Vel Y>0 && Pos Y+Vel Y>=0
 x = 0
 y = 0
 
 [State 4000, MAX2 grounded]
 type = StateTypeSet
 trigger1 = Time = 29
+trigger2 = Time > 3 && Time < 29 && Pos Y>=0 && Vel Y>=0
 statetype = S
 
 [State 4000, Contact]

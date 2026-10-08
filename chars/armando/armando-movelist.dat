@@ -36,9 +36,32 @@ MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
 
-
 <#63ded7>:Identidad - Rebotes / IoT:</>
 Calibraciones: hasta tres iconos debajo de VIDA.
-Calibrar prepara rebotes extra y mejora el sensor.
+Calibrar prepara rebotes extra y activa a distancia el sensor instalado.
 Pingpong rebota; Clavada salta y golpea al caer.
-Impresion planta un sensor; Rebote Conectado es una patada doble.
+El sensor espera proximidad y eleva al rival; una trampa de Angular solo golpea bajo.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Toque de pingpong                    ^X
+Paso de cancha                       ^A
+Reves de raqueta                     ^Y
+Patada de rebote                     ^B
+Agachado:
+Recepcion baja                       ^X
+Puntapie de defensa                  ^A
+Elevacion de cancha                  ^Y
+Deslizamiento de cancha              ^B
+En el aire:
+Manotazo de rebote                   ^X
+Rodilla de basquet                   ^A
+Manotazo de clavada                  ^Y
+Patada de aterrizaje                 ^B
+
+Cadenas propias: conecta antes de continuar.
+Toque de pingpong > Patada de rebote (^B)
+Recepcion baja > Elevacion de cancha (^Y)
+Manotazo de rebote > Manotazo de clavada (^Y)
+Rodilla de basquet > Patada de aterrizaje (^B)
+Si el rival bloquea o esquiva, termina la recuperacion.

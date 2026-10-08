@@ -122,11 +122,18 @@ def build(id,p,n,state,ctl,hit,end):
         out+=end(n,48)
     elif id=='armando':
         out+=ctl(n,'Jump','VelSet','x = 3.8\ny = -5.5','Time = 3')
+        out+=ctl(n,'Dunk is airborne','StateTypeSet','statetype = A','Time = 3')
         out+=ctl(n,'Gravity','VelAdd','y = 0.38','Time = [4,17]')
         out+=ctl(n,'Dunk descent','VelSet','x = 2.6\ny = 7','Time = 18')
         out+=contact(65,18,fall=False,velocity='-1')
+        # The descent can reach the floor before its finishing contact. Clamp
+        # before the next velocity step so the host never sinks below court.
+        out+=ctl(n,'Dunk reaches the court','PosSet','y = 0','Time >= 18 && Vel Y>=0 && Pos Y+Vel Y>=0')
+        out+=ctl(n,'Dunk landing velocity','VelSet','y = 0','Time >= 18 && Vel Y>=0 && Pos Y+Vel Y>=0')
+        out+=ctl(n,'Dunk lands physically','StateTypeSet','statetype = S','Time >= 18 && Vel Y>=0 && Pos Y+Vel Y>=0')
         out+=ctl(n,'Plant feet','PosSet','y = 0','Time = 29')
         out+=ctl(n,'Land','VelSet','x = 0\ny = 0','Time = 29')
+        out+=ctl(n,'Dunk returns to ground','StateTypeSet','statetype = S','Time = 29')
         out+=ctl(n,'Ground finish animation','ChangeAnim','value = 8732','Time = 29')
         out+=contact(105,29,fall=True,lift=True)
         out+=ctl(n,'Court shake','EnvShake','time = 14\nfreq = 80\nampl = -5','Time = 29')
@@ -169,7 +176,9 @@ def extra(id,state,ctl,hit,end):
     if id=='leonardo':
         out+=state(3015,8730)
         out+=ctl(3015,'Face the attacker','Turn','','Time = 0 && P2Dist X < 0')
-        out+=ctl(3015,'Counter step','PosAdd','x = min(90,max(0,P2BodyDist X-18))')
+        out+=ctl(3015,'Counter slip','VelSet','x = -3','Time = [0,2]')
+        out+=ctl(3015,'Counter return footwork','VelSet','x = 8.2','Time = [3,6]')
+        out+=ctl(3015,'Counter plant foot','VelSet','x = 0','Time = 7')
         out+=ctl(3015,'Counter immunity','NotHitBy','value = SCA\ntime = 1','Time < 10')
         out+=hit(3015,'var(49)',trigger='Time = 8',supermove=True,fall=True,lift=True)
         out+=end(3015,42)

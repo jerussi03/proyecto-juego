@@ -1,0 +1,680 @@
+{
+  "character": "jaime",
+  "moves": {
+    "200": {
+      "name": "Jab de apertura",
+      "startup": 5,
+      "active": 3,
+      "recovery": 9,
+      "damage": 25,
+      "band": [
+        -92,
+        -43
+      ],
+      "push": 1.8,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 200,
+      "button": "x",
+      "group": 200,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        5
+      ],
+      "total": 19,
+      "contact_box": [
+        16,
+        -93,
+        50,
+        -42
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "210": {
+      "name": "Codo de gambito",
+      "startup": 10,
+      "active": 4,
+      "recovery": 16,
+      "damage": 65,
+      "band": [
+        -120,
+        -35
+      ],
+      "push": 5.0,
+      "stun": 23,
+      "step": 1.6,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 210,
+      "button": "y",
+      "group": 8770,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        4,
+        2,
+        8,
+        8
+      ],
+      "total": 32,
+      "contact_box": [
+        16,
+        -95,
+        63,
+        -34
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "230": {
+      "name": "Pedal de avance",
+      "startup": 6,
+      "active": 3,
+      "recovery": 10,
+      "damage": 31,
+      "band": [
+        -78,
+        -24
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 2.1,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 230,
+      "button": "a",
+      "group": 230,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        3,
+        2,
+        5,
+        5
+      ],
+      "total": 21,
+      "contact_box": [
+        16,
+        -79,
+        58,
+        -23
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          240,
+          "b"
+        ]
+      ]
+    },
+    "240": {
+      "name": "Patada de caballo",
+      "startup": 10,
+      "active": 4,
+      "recovery": 19,
+      "damage": 66,
+      "band": [
+        -108,
+        -29
+      ],
+      "push": 4.5,
+      "stun": 22,
+      "step": 1.3,
+      "retreat": 0.0,
+      "launch": -5.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 240,
+      "button": "b",
+      "group": 240,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        4,
+        2,
+        9,
+        10
+      ],
+      "total": 35,
+      "contact_box": [
+        16,
+        -103,
+        58,
+        -28
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "400": {
+      "name": "Apertura baja",
+      "startup": 5,
+      "active": 3,
+      "recovery": 9,
+      "damage": 23,
+      "band": [
+        -61,
+        -20
+      ],
+      "push": 2.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 400,
+      "button": "x",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        5
+      ],
+      "total": 19,
+      "contact_box": [
+        16,
+        -62,
+        62,
+        -19
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "410": {
+      "name": "Diagonal ascendente",
+      "startup": 10,
+      "active": 4,
+      "recovery": 17,
+      "damage": 62,
+      "band": [
+        -83,
+        -21
+      ],
+      "push": 3.5,
+      "stun": 22,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": -6.8,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 410,
+      "button": "y",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        4,
+        2,
+        8,
+        9
+      ],
+      "total": 33,
+      "contact_box": [
+        16,
+        -79,
+        62,
+        -20
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "430": {
+      "name": "Pedal rasante",
+      "startup": 5,
+      "active": 3,
+      "recovery": 9,
+      "damage": 26,
+      "band": [
+        -31,
+        -1
+      ],
+      "push": 2.2,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": -1.2,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 430,
+      "button": "a",
+      "group": 430,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        5
+      ],
+      "total": 19,
+      "contact_box": [
+        7,
+        -32,
+        37,
+        0
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          410,
+          "y"
+        ]
+      ]
+    },
+    "440": {
+      "name": "Barrido de tablero",
+      "startup": 10,
+      "active": 4,
+      "recovery": 20,
+      "damage": 59,
+      "band": [
+        -36,
+        -1
+      ],
+      "push": 4.0,
+      "stun": 17,
+      "step": 1.7,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 440,
+      "button": "b",
+      "group": 440,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        4,
+        2,
+        10,
+        10
+      ],
+      "total": 36,
+      "contact_box": [
+        7,
+        -37,
+        37,
+        0
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "600": {
+      "name": "Mano diagonal",
+      "startup": 5,
+      "active": 4,
+      "recovery": 10,
+      "damage": 28,
+      "band": [
+        -108,
+        -44
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 1.1,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 600,
+      "button": "x",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        4,
+        2,
+        5,
+        5
+      ],
+      "total": 21,
+      "contact_box": [
+        6,
+        -100,
+        36,
+        -43
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          640,
+          "b"
+        ]
+      ]
+    },
+    "610": {
+      "name": "Codo de calculo",
+      "startup": 8,
+      "active": 5,
+      "recovery": 15,
+      "damage": 54,
+      "band": [
+        -100,
+        -25
+      ],
+      "push": 4.0,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": -0.8,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 610,
+      "button": "y",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "durations": [
+        2,
+        3,
+        3,
+        5,
+        2,
+        7,
+        8
+      ],
+      "total": 30,
+      "contact_box": [
+        6,
+        -100,
+        36,
+        -24
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "630": {
+      "name": "Rodilla ciclista",
+      "startup": 6,
+      "active": 5,
+      "recovery": 10,
+      "damage": 33,
+      "band": [
+        -86,
+        -22
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 1.5,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 630,
+      "button": "a",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        5,
+        2,
+        5,
+        5
+      ],
+      "total": 23,
+      "contact_box": [
+        16,
+        -80,
+        59,
+        -27
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          610,
+          "y"
+        ]
+      ]
+    },
+    "640": {
+      "name": "Diagonal descendente",
+      "startup": 9,
+      "active": 5,
+      "recovery": 16,
+      "damage": 64,
+      "band": [
+        -100,
+        -8
+      ],
+      "push": 4.5,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 2.0,
+      "dive": 3.2,
+      "max_reach": 120,
+      "low": false,
+      "state": 640,
+      "button": "b",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "durations": [
+        3,
+        3,
+        3,
+        5,
+        2,
+        8,
+        8
+      ],
+      "total": 32,
+      "contact_box": [
+        16,
+        -80,
+        59,
+        -27
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    }
+  },
+  "normal_buffer": 28,
+  "contacts": [
+    4,
+    6
+  ],
+  "art_scale": "native",
+  "controls": "KOF x/a/y/b"
+}

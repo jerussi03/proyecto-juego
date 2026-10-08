@@ -28,8 +28,8 @@
   "jump": -9.2,
   "tempo": 0.95,
   "notes": [
-    "Calibrar prepara rebotes extra y mejora el sensor.",
+    "Calibrar prepara rebotes extra y activa a distancia el sensor instalado.",
     "Pingpong rebota; Clavada salta y golpea al caer.",
-    "Impresion planta un sensor; Rebote Conectado es una patada doble."
+    "El sensor espera proximidad y eleva al rival; una trampa de Angular solo golpea bajo."
   ]
 }

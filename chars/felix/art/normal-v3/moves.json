@@ -1,0 +1,675 @@
+{
+  "character": "felix",
+  "moves": {
+    "200": {
+      "name": "Toque de diagnostico",
+      "startup": 6,
+      "active": 3,
+      "recovery": 10,
+      "damage": 27,
+      "band": [
+        -92,
+        -43
+      ],
+      "push": 1.5,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 200,
+      "button": "x",
+      "group": 200,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        3,
+        2,
+        5,
+        5
+      ],
+      "total": 21,
+      "contact_box": [
+        16,
+        -93,
+        59,
+        -42
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          240,
+          "b"
+        ]
+      ]
+    },
+    "210": {
+      "name": "Codo de reparacion",
+      "startup": 11,
+      "active": 4,
+      "recovery": 18,
+      "damage": 74,
+      "band": [
+        -120,
+        -35
+      ],
+      "push": 5.0,
+      "stun": 26,
+      "step": 1.8,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 210,
+      "button": "y",
+      "group": 8770,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        4,
+        4,
+        4,
+        2,
+        9,
+        9
+      ],
+      "total": 35,
+      "contact_box": [
+        16,
+        -100,
+        67,
+        -34
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "230": {
+      "name": "Puntapie de comprobacion",
+      "startup": 7,
+      "active": 3,
+      "recovery": 12,
+      "damage": 33,
+      "band": [
+        -78,
+        -24
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": -1.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 230,
+      "button": "a",
+      "group": 240,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        3,
+        3,
+        2,
+        6,
+        6
+      ],
+      "total": 24,
+      "contact_box": [
+        16,
+        -79,
+        77,
+        -23
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "240": {
+      "name": "Talon de soporte",
+      "startup": 13,
+      "active": 4,
+      "recovery": 18,
+      "damage": 70,
+      "band": [
+        -108,
+        -29
+      ],
+      "push": 5.5,
+      "stun": 22,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 240,
+      "button": "b",
+      "group": 240,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        4,
+        4,
+        5,
+        4,
+        2,
+        9,
+        9
+      ],
+      "total": 37,
+      "contact_box": [
+        16,
+        -109,
+        77,
+        -28
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "400": {
+      "name": "Ajuste bajo",
+      "startup": 5,
+      "active": 3,
+      "recovery": 10,
+      "damage": 23,
+      "band": [
+        -61,
+        -20
+      ],
+      "push": 0.8,
+      "stun": 21,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 400,
+      "button": "x",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        5,
+        5
+      ],
+      "total": 20,
+      "contact_box": [
+        16,
+        -62,
+        75,
+        -19
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          210,
+          "y"
+        ]
+      ]
+    },
+    "410": {
+      "name": "Gancho de herramienta",
+      "startup": 10,
+      "active": 4,
+      "recovery": 17,
+      "damage": 64,
+      "band": [
+        -83,
+        -21
+      ],
+      "push": 3.5,
+      "stun": 22,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": -5.7,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 410,
+      "button": "y",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        4,
+        2,
+        8,
+        9
+      ],
+      "total": 33,
+      "contact_box": [
+        16,
+        -80,
+        75,
+        -20
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "430": {
+      "name": "Comprobacion al tobillo",
+      "startup": 7,
+      "active": 3,
+      "recovery": 11,
+      "damage": 25,
+      "band": [
+        -31,
+        -1
+      ],
+      "push": 2.2,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": -0.7,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 430,
+      "button": "a",
+      "group": 430,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        3,
+        3,
+        2,
+        5,
+        6
+      ],
+      "total": 23,
+      "contact_box": [
+        16,
+        -32,
+        79,
+        0
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "440": {
+      "name": "Cable rasante",
+      "startup": 11,
+      "active": 4,
+      "recovery": 20,
+      "damage": 57,
+      "band": [
+        -36,
+        -1
+      ],
+      "push": 0.7,
+      "stun": 29,
+      "step": 0.0,
+      "retreat": -1.8,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 440,
+      "button": "b",
+      "group": 440,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        3,
+        4,
+        4,
+        4,
+        2,
+        10,
+        10
+      ],
+      "total": 37,
+      "contact_box": [
+        16,
+        -37,
+        79,
+        0
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "600": {
+      "name": "Toque de mantenimiento",
+      "startup": 6,
+      "active": 4,
+      "recovery": 10,
+      "damage": 28,
+      "band": [
+        -108,
+        -44
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 600,
+      "button": "x",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        4,
+        2,
+        5,
+        5
+      ],
+      "total": 22,
+      "contact_box": [
+        16,
+        -98,
+        47,
+        -43
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "610": {
+      "name": "Codo de emergencia",
+      "startup": 10,
+      "active": 5,
+      "recovery": 15,
+      "damage": 62,
+      "band": [
+        -100,
+        -25
+      ],
+      "push": 4.0,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 610,
+      "button": "y",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        5,
+        2,
+        7,
+        8
+      ],
+      "total": 32,
+      "contact_box": [
+        16,
+        -98,
+        48,
+        -24
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "630": {
+      "name": "Patada de alcance",
+      "startup": 7,
+      "active": 5,
+      "recovery": 10,
+      "damage": 31,
+      "band": [
+        -86,
+        -22
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": -0.8,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 630,
+      "button": "a",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        3,
+        5,
+        2,
+        5,
+        5
+      ],
+      "total": 24,
+      "contact_box": [
+        16,
+        -87,
+        75,
+        -26
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          610,
+          "y"
+        ]
+      ]
+    },
+    "640": {
+      "name": "Talon descendente",
+      "startup": 10,
+      "active": 5,
+      "recovery": 16,
+      "damage": 65,
+      "band": [
+        -100,
+        -8
+      ],
+      "push": 5.7,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 640,
+      "button": "b",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        5,
+        2,
+        8,
+        8
+      ],
+      "total": 33,
+      "contact_box": [
+        16,
+        -101,
+        75,
+        -26
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    }
+  },
+  "normal_buffer": 28,
+  "contacts": [
+    4,
+    6
+  ],
+  "art_scale": "native",
+  "controls": "KOF x/a/y/b"
+}

@@ -1,0 +1,665 @@
+{
+  "character": "cesar",
+  "moves": {
+    "200": {
+      "name": "Palma estricta",
+      "startup": 8,
+      "active": 3,
+      "recovery": 13,
+      "damage": 38,
+      "band": [
+        -92,
+        -43
+      ],
+      "push": 3.6,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 200,
+      "button": "x",
+      "group": 200,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        2,
+        3,
+        3,
+        3,
+        2,
+        6,
+        7
+      ],
+      "total": 26,
+      "contact_box": [
+        16,
+        -93,
+        53,
+        -42
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "210": {
+      "name": "Baston de sentencia",
+      "startup": 16,
+      "active": 5,
+      "recovery": 27,
+      "damage": 96,
+      "band": [
+        -120,
+        -35
+      ],
+      "push": 6.8,
+      "stun": 30,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 210,
+      "button": "y",
+      "group": 8770,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        5,
+        5,
+        6,
+        5,
+        2,
+        13,
+        14
+      ],
+      "total": 50,
+      "contact_box": [
+        16,
+        -97,
+        81,
+        -34
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "230": {
+      "name": "Puntapie de advertencia",
+      "startup": 10,
+      "active": 3,
+      "recovery": 16,
+      "damage": 43,
+      "band": [
+        -78,
+        -24
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 230,
+      "button": "a",
+      "group": 230,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        3,
+        2,
+        8,
+        8
+      ],
+      "total": 31,
+      "contact_box": [
+        16,
+        -79,
+        63,
+        -23
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "240": {
+      "name": "Talon de castigo",
+      "startup": 17,
+      "active": 5,
+      "recovery": 26,
+      "damage": 85,
+      "band": [
+        -108,
+        -29
+      ],
+      "push": 5.8,
+      "stun": 22,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 240,
+      "button": "b",
+      "group": 240,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        5,
+        6,
+        6,
+        5,
+        2,
+        13,
+        13
+      ],
+      "total": 50,
+      "contact_box": [
+        16,
+        -103,
+        63,
+        -28
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "400": {
+      "name": "Advertencia baja",
+      "startup": 7,
+      "active": 3,
+      "recovery": 12,
+      "damage": 34,
+      "band": [
+        -61,
+        -20
+      ],
+      "push": 0.8,
+      "stun": 24,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 400,
+      "button": "x",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        3,
+        3,
+        2,
+        6,
+        6
+      ],
+      "total": 24,
+      "contact_box": [
+        16,
+        -62,
+        82,
+        -19
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          210,
+          "y"
+        ]
+      ]
+    },
+    "410": {
+      "name": "Baston desde cuclillas",
+      "startup": 14,
+      "active": 5,
+      "recovery": 23,
+      "damage": 78,
+      "band": [
+        -83,
+        -21
+      ],
+      "push": 5.5,
+      "stun": 22,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 410,
+      "button": "y",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        4,
+        5,
+        5,
+        5,
+        2,
+        11,
+        12
+      ],
+      "total": 44,
+      "contact_box": [
+        16,
+        -74,
+        82,
+        -20
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "430": {
+      "name": "Puntapie estricto",
+      "startup": 9,
+      "active": 3,
+      "recovery": 14,
+      "damage": 37,
+      "band": [
+        -31,
+        -1
+      ],
+      "push": 2.6,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 430,
+      "button": "a",
+      "group": 430,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        7,
+        7
+      ],
+      "total": 28,
+      "contact_box": [
+        16,
+        -32,
+        73,
+        0
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "440": {
+      "name": "Barrido disciplinario",
+      "startup": 15,
+      "active": 5,
+      "recovery": 28,
+      "damage": 79,
+      "band": [
+        -36,
+        -1
+      ],
+      "push": 5.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 440,
+      "button": "b",
+      "group": 440,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        5,
+        5,
+        5,
+        5,
+        2,
+        14,
+        14
+      ],
+      "total": 50,
+      "contact_box": [
+        16,
+        -37,
+        73,
+        0
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "600": {
+      "name": "Palma de emergencia",
+      "startup": 8,
+      "active": 4,
+      "recovery": 12,
+      "damage": 36,
+      "band": [
+        -108,
+        -44
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 600,
+      "button": "x",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        3,
+        3,
+        4,
+        2,
+        6,
+        6
+      ],
+      "total": 26,
+      "contact_box": [
+        16,
+        -103,
+        47,
+        -43
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "610": {
+      "name": "Baston descendente",
+      "startup": 13,
+      "active": 5,
+      "recovery": 23,
+      "damage": 79,
+      "band": [
+        -100,
+        -25
+      ],
+      "push": 4.0,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 610,
+      "button": "y",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        4,
+        4,
+        5,
+        5,
+        2,
+        11,
+        12
+      ],
+      "total": 43,
+      "contact_box": [
+        16,
+        -101,
+        47,
+        -24
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "630": {
+      "name": "Puntapie de apoyo",
+      "startup": 10,
+      "active": 5,
+      "recovery": 16,
+      "damage": 40,
+      "band": [
+        -86,
+        -22
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 630,
+      "button": "a",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        5,
+        2,
+        8,
+        8
+      ],
+      "total": 33,
+      "contact_box": [
+        16,
+        -87,
+        68,
+        -21
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "640": {
+      "name": "Castigo al aterrizar",
+      "startup": 15,
+      "active": 5,
+      "recovery": 24,
+      "damage": 80,
+      "band": [
+        -100,
+        -8
+      ],
+      "push": 4.5,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 1.2,
+      "max_reach": 120,
+      "low": false,
+      "state": 640,
+      "button": "b",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        5,
+        5,
+        5,
+        5,
+        2,
+        12,
+        12
+      ],
+      "total": 46,
+      "contact_box": [
+        16,
+        -101,
+        68,
+        -21
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    }
+  },
+  "normal_buffer": 28,
+  "contacts": [
+    4,
+    6
+  ],
+  "art_scale": "native",
+  "controls": "KOF x/a/y/b"
+}

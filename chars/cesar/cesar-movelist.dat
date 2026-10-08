@@ -36,9 +36,29 @@ MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
 
-
 <#63ded7>:Identidad - Resistencia / castigo:</>
 Rigor: hasta tres iconos debajo de VIDA.
 Recibir golpes aumenta Rigor: hasta tres puntos.
-DELETE es un agarre que consume Rigor para aumentar el castigo.
-Silla reduce danio al avanzar; Pastillas curan tras una pausa larga.
+DELETE consume Rigor en un agarre; Silla usa un punto para reforzar su resistencia.
+Pastillas curan tras una pausa larga; el baston castiga a distancia.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Palma estricta                       ^X
+Puntapie de advertencia              ^A
+Baston de sentencia                  ^Y
+Talon de castigo                     ^B
+Agachado:
+Advertencia baja                     ^X
+Puntapie estricto                    ^A
+Baston desde cuclillas               ^Y
+Barrido disciplinario                ^B
+En el aire:
+Palma de emergencia                  ^X
+Puntapie de apoyo                    ^A
+Baston descendente                   ^Y
+Castigo al aterrizar                 ^B
+
+Cadenas propias: conecta antes de continuar.
+Advertencia baja > Baston de sentencia (^Y)
+Si el rival bloquea o esquiva, termina la recuperacion.

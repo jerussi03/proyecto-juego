@@ -30,7 +30,7 @@
   "tempo": 1.28,
   "notes": [
     "Recibir golpes aumenta Rigor: hasta tres puntos.",
-    "DELETE es un agarre que consume Rigor para aumentar el castigo.",
-    "Silla reduce danio al avanzar; Pastillas curan tras una pausa larga."
+    "DELETE consume Rigor en un agarre; Silla usa un punto para reforzar su resistencia.",
+    "Pastillas curan tras una pausa larga; el baston castiga a distancia."
   ]
 }

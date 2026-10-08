@@ -579,9 +579,6 @@ triggerall = StateType = A
 
 trigger1 = Ctrl
 
-trigger2 = (StateNo = 600 || StateNo = 630)
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 
 [State -1, Attack 630]
@@ -607,9 +604,6 @@ triggerall = StateType = A
 
 trigger1 = Ctrl
 
-trigger2 = (StateNo = 600 || StateNo = 630)
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 
 [State -1, Attack 400]
@@ -635,9 +629,6 @@ triggerall = StateType = C
 
 trigger1 = Ctrl
 
-trigger2 = (StateNo = 400 || StateNo = 430)
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 
 [State -1, Attack 430]
@@ -663,9 +654,6 @@ triggerall = StateType = C
 
 trigger1 = Ctrl
 
-trigger2 = (StateNo = 400 || StateNo = 430)
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 
 [State -1, Attack 200]
@@ -691,9 +679,6 @@ triggerall = StateType = S
 triggerall = command != "holddown"
 trigger1 = Ctrl
 
-trigger2 = (StateNo = 200 || StateNo = 230)
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 
 [State -1, Attack 230]
@@ -719,9 +704,6 @@ triggerall = StateType = S
 triggerall = command != "holddown"
 trigger1 = Ctrl
 
-trigger2 = (StateNo = 200 || StateNo = 230)
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 
 ; Small, bounded AI for CPU matches. Human controls are unaffected.

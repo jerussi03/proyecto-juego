@@ -592,9 +592,6 @@ triggerall = AILevel = 0
 triggerall = command = "y"
 triggerall = StateType = A
 trigger1 = Ctrl
-trigger2 = StateNo = 600 || StateNo = 630
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 [State -1, Normal 640]
 type = ChangeState
@@ -605,9 +602,6 @@ triggerall = AILevel = 0
 triggerall = command = "b"
 triggerall = StateType = A
 trigger1 = Ctrl
-trigger2 = StateNo = 600 || StateNo = 630
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 [State -1, Normal 400]
 type = ChangeState
@@ -641,9 +635,6 @@ triggerall = command = "y"
 triggerall = StateType != A
 triggerall = command = "holddown"
 trigger1 = Ctrl
-trigger2 = StateNo = 400 || StateNo = 430
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 [State -1, Normal 440]
 type = ChangeState
@@ -655,9 +646,6 @@ triggerall = command = "b"
 triggerall = StateType != A
 triggerall = command = "holddown"
 trigger1 = Ctrl
-trigger2 = StateNo = 400 || StateNo = 430
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 [State -1, Normal 200]
 type = ChangeState
@@ -691,9 +679,6 @@ triggerall = command = "y"
 triggerall = StateType = S
 triggerall = command != "holddown"
 trigger1 = Ctrl
-trigger2 = StateNo = 200 || StateNo = 230
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 [State -1, Normal 240]
 type = ChangeState
@@ -705,9 +690,6 @@ triggerall = command = "b"
 triggerall = StateType = S
 triggerall = command != "holddown"
 trigger1 = Ctrl
-trigger2 = StateNo = 200 || StateNo = 230
-trigger2 = MoveHit
-trigger2 = AnimElemTime(5) >= 0
 
 [State -1, Run]
 type = ChangeState

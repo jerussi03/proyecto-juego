@@ -31,8 +31,11 @@ globales de teclado, mando ni el umbral del stick.
 ## Adaptación propuesta a los profesores
 
 Todos los profesores jugables tienen animaciones UTC y entradas de control KOF.
-Héctor conserva sus poderes de drones y redes; los otros diez ahora tienen ocho
-especiales temáticos cada uno, con lógica y arte originales. Las bases descargadas
+Los doce tienen normales y cadenas propios, documentados en
+[GOLPES-PROPIOS.md](GOLPES-PROPIOS.md). Los diez profesores adaptados tienen
+especiales, recursos y supers con mecánicas distintas; la guía vigente está en
+[IDENTIDADES-PERSONAJES.md](IDENTIDADES-PERSONAJES.md). Héctor conserva el tema de
+drones y redes y añade su cadena triple Ping. Las bases descargadas
 siguen siendo referencias: no se ha trasladado su lógica a estos profesores.
 Las referencias de movimientos de la tabla siguen siendo propuestas de diseño;
 la presencia de un profesor en el selector no implica haber importado esa lógica.
@@ -45,19 +48,21 @@ la historia proporcionada por el autor del juego.
 | Félix | Luchador UTC nuevo; Terry EX como referencia de diseño futuro | Tiene 48 poses propias, controles KOF y pelea en el segundo capítulo. Añade llave, combo de reparación y mantenimiento; falta voz propia. |
 | Alejandro | Luchador UTC nuevo; Kyo como referencia futura de lógica | Tiene 72 poses propias, entrada, caída, recuperación y victoria. Pelea en el capítulo 3 con los controles actuales; componentes Angular, ng serve y preparación de módulos integrados. Falta voz propia; personalidad adicional pendiente en el documento. |
 | Daniela | Iori como referencia futura | 72 poses propias con su bolsa; capítulo 4. Víctor permanece en un punto fijo del fondo y se levanta para golpear durante el super. Especiales UML, bolsazo y documentación integrados. |
-| Héctor Hugo | K’ como referencia adicional | Control de distancia y conexiones de red. Su luchador existente permanece intacto. |
+| Héctor Hugo | K’ como referencia adicional | Control de distancia, conexiones de red y triple Ping. Conserva su arte propio. |
 | Gameros | Iori como referencia futura | 72 poses propias, capítulo 6; 24 cuadros adicionales con moto, gamepad, arcade/gym y bicicleta. |
 | Armando | Terry EX como referencia futura | 72 poses propias, capítulo 7; presentación de anfitrión y celebración deportiva. Pingpong con rebotes, salto con clavada y guiños IoT integrados. |
 | Vladimir | Ryo EX como referencia futura | 72 poses propias, capítulo 8; entrada revisando asistencia. Invitaciones que atraen, puerta, sol y conferencia integrados. |
 | Jaime, Matemáticas | Ryo EX como referencia futura | 72 poses propias, capítulo 9; caballo de ajedrez en arco, bicicleta, tablero y cálculo mental integrados. |
 | Leonardo | K’ como referencia futura | 72 poses propias, capítulo 10; entrada y victoria ajustándose la ropa elegante. Notificaciones, swipe, contraataque físico y modo avión integrados. |
-| César Giovani | Nameless como referencia futura | 72 poses propias con bastón; jefe del capítulo 12. Proyectil PHP, empuje con silla y pausa de recuperación integrados. |
+| César Giovani | Nameless como referencia futura | Arte propio con bastón; jefe del capítulo 12. Bastón físico, resistencia con silla, agarre DELETE y pastillas; Rigor aumenta al recibir golpes. |
 | Víctor | Ninguna: acompañante | Acompañante fijo de Daniela; 24 cuadros nuevos de asistencia física y regreso al escritorio, sin controles propios. |
 
 Las poses básicas, saltos, guardia, ataques, daño, caída, recuperación, entrada
 y victoria de los siete profesores nuevos ya están integradas. Carrera y agarres
-reutilizan cuadros del conjunto actual. Quedan voces propias y más poses para acciones normales. Los especiales
-ya tienen efectos y parámetros diferentes; guía en [ESPECIALES-MAESTROS.md](ESPECIALES-MAESTROS.md). La revisión separada de Víctor se sustituyó por
+reutilizan cuadros del conjunto actual. Quedan voces propias. La revisión actual añade
+240 cuadros para golpes fuertes, puños agachados y ataques aéreos. Las mecánicas
+y animaciones vigentes están en [IDENTIDADES-PERSONAJES.md](IDENTIDADES-PERSONAJES.md).
+La revisión separada de Víctor se sustituyó por
 un ensayo del proyecto de Chava; Víctor aparece con Daniela.
 
 ## Procedencia y conservación

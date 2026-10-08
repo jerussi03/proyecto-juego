@@ -30,7 +30,7 @@
   "tempo": 1.12,
   "notes": [
     "Gana diagnosticos conectando Llave o Cable a Tierra.",
-    "Mantenimiento consume diagnosticos: +10 de vida por punto.",
-    "Reinicio espera un ataque y responde; no causa danio al fallar."
+    "Reparacion baja cura mas con diagnosticos; Mantenimiento los consume.",
+    "Reinicio bloquea, responde sin teletransportarse y recupera vida al confirmar."
   ]
 }

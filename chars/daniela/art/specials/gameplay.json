@@ -31,6 +31,6 @@
   "notes": [
     "UML encadena tres golpes y acumula requisitos.",
     "Documento prepara otro requisito; Victor los consume al acudir.",
-    "Revision es un contraataque; Cambio de Alcance es un agarre."
+    "Revision intercepta golpes cuerpo a cuerpo con una llave; no refleja proyectiles."
   ]
 }

@@ -19,14 +19,16 @@ def validate():
         blob=(folder/f'{name}.sff').read_bytes()
         off,count=struct.unpack_from('<II',blob,36)
         ldata=struct.unpack_from('<I',blob,52)[0]
+        tdata=struct.unpack_from('<I',blob,60)[0]
         sprites={}
         for i in range(count):
             entry=struct.unpack_from('<HHHHhhHBBIIHH',blob,off+i*28)
             g,n,w,h,ax,ay,link,fmt,depth,ofs,size,pal,flags=entry
             assert (g,n) not in sprites,(name,'duplicate sprite',g,n)
             sprites[g,n]=entry
-            if fmt==11 and size:
-                image=Image.open(BytesIO(blob[ldata+ofs+4:ldata+ofs+size]))
+            if fmt in {10,11,12} and size:
+                data=tdata if flags & 1 else ldata
+                image=Image.open(BytesIO(blob[data+ofs+4:data+ofs+size]))
                 assert image.size==(w,h),(name,g,n,image.size,(w,h))
         air=(folder/f'{name}.air').read_text()
         refs={(int(g),int(i)) for g,i in re.findall(r'(?m)^\s*(\d+)\s*,\s*(\d+)\s*,',air)}

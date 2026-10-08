@@ -29,7 +29,7 @@
   "tempo": 0.9,
   "notes": [
     "Importar prepara modulos durante cuatro segundos.",
-    "Angular gasta un modulo para duplicar el componente.",
+    "Cada copia Angular gasta un modulo real; el temporizador solo conserva el stock.",
     "Refactor cruza al rival; Error planta una trampa de piso."
   ]
 }

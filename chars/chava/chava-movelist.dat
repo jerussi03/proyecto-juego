@@ -32,3 +32,32 @@ Compilacion final + IA                _D_DB_B_D_DB_B + ^X_+^Y
 MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Jab alternado                        ^X
+Patada frontal                       ^A
+Mochila ascendente                   ^Y
+Patada alta                          ^B
+Agachado:
+Jab desde cuclillas                  ^X
+Toque al tobillo                     ^A
+Gancho agachado                      ^Y
+Barrida de semestre                  ^B
+En el aire:
+Jab de salto                         ^X
+Patada horizontal                    ^A
+Martillo descendente                 ^Y
+Hacha aerea                          ^B
+
+Cadenas propias: conecta antes de continuar.
+Jab alternado > Mochila ascendente (^Y)
+Jab alternado > Patada alta (^B)
+Patada frontal > Mochila ascendente (^Y)
+Patada frontal > Patada alta (^B)
+Jab desde cuclillas > Gancho agachado (^Y)
+Toque al tobillo > Barrida de semestre (^B)
+Jab de salto > Martillo descendente (^Y)
+Patada horizontal > Hacha aerea (^B)
+Si el rival bloquea o esquiva, termina la recuperacion.
+Chava conserva repeticion alternada con el mismo boton.

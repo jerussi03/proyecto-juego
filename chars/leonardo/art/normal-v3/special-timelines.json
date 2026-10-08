@@ -1,0 +1,113 @@
+{
+  "1000": {
+    "animation": 8800,
+    "group": 240,
+    "contacts": [
+      10,
+      20,
+      25
+    ],
+    "duration": 30,
+    "hold_windows": [],
+    "bike_windows": [],
+    "variants": {
+      "no_battery": {
+        "animation": 8810,
+        "contacts": [
+          10,
+          20
+        ]
+      }
+    }
+  },
+  "1010": {
+    "animation": 8801,
+    "group": 8773,
+    "contacts": [
+      8
+    ],
+    "duration": 38,
+    "hold_windows": [],
+    "bike_windows": []
+  },
+  "1020": {
+    "animation": 8802,
+    "group": 8770,
+    "contacts": [
+      18
+    ],
+    "duration": 29,
+    "hold_windows": [],
+    "bike_windows": []
+  },
+  "1030": {
+    "animation": 8803,
+    "group": 120,
+    "contacts": [],
+    "duration": 34,
+    "hold_windows": [],
+    "bike_windows": []
+  },
+  "1040": {
+    "animation": 8804,
+    "group": 20,
+    "contacts": [],
+    "duration": 26,
+    "hold_windows": [],
+    "bike_windows": []
+  },
+  "1070": {
+    "animation": 8805,
+    "group": 240,
+    "contacts": [
+      12
+    ],
+    "duration": 35,
+    "hold_windows": [],
+    "bike_windows": []
+  },
+  "3000": {
+    "animation": 8806,
+    "group": 120,
+    "contacts": [],
+    "duration": 42,
+    "hold_windows": [],
+    "bike_windows": []
+  },
+  "3500": {
+    "animation": 8807,
+    "group": 240,
+    "contacts": [
+      8,
+      18,
+      30
+    ],
+    "duration": 58,
+    "hold_windows": [],
+    "bike_windows": []
+  },
+  "4000": {
+    "animation": 8808,
+    "group": 240,
+    "contacts": [
+      7,
+      14,
+      21,
+      28,
+      38
+    ],
+    "duration": 60,
+    "hold_windows": [],
+    "bike_windows": []
+  },
+  "3015": {
+    "animation": 8809,
+    "group": 240,
+    "contacts": [
+      8
+    ],
+    "duration": 42,
+    "hold_windows": [],
+    "bike_windows": []
+  }
+}

@@ -36,9 +36,33 @@ MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
 
-
 <#63ded7>:Identidad - Evasion / patadas:</>
 Bateria: hasta tres iconos debajo de VIDA.
 Modo Avion evade y carga bateria; contrarrestar tambien carga.
 Push gasta bateria para una tercera patada.
-Swipe cruza al rival; Scroll espera un golpe y contraataca.
+Swipe cruza corriendo; Scroll retrocede y vuelve con una patada, sin teletransporte.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Toque rapido                         ^X
+Patada de toque                      ^A
+Codo elegante                        ^Y
+Circular de swipe                    ^B
+Agachado:
+Toque desde cuclillas                ^X
+Swipe al tobillo                     ^A
+Codo ascendente                      ^Y
+Barrido de pantalla                  ^B
+En el aire:
+Toque movil                          ^X
+Patada cruzada                       ^A
+Codo de desplazamiento               ^Y
+Circular aerea                       ^B
+
+Cadenas propias: conecta antes de continuar.
+Patada de toque > Circular de swipe (^B)
+Toque desde cuclillas > Swipe al tobillo (^A)
+Swipe al tobillo > Circular de swipe (^B)
+Toque movil > Patada cruzada (^A)
+Patada cruzada > Circular aerea (^B)
+Si el rival bloquea o esquiva, termina la recuperacion.

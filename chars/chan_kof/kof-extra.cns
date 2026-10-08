@@ -4,7 +4,7 @@
 type = S
 movetype = A
 physics = N
-anim = 8740
+anim = 8800
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -35,6 +35,12 @@ fall.recover = 0
 getpower = 30,0
 givepower = 18,9
 
+[State 1000, Correct the confirmed query]
+type = ChangeState
+trigger1 = Time >= 9 && MoveHit && var(44)>0 && command = "a"
+value = 1030
+ctrl = 0
+
 [State 1000, Recovery]
 type = ChangeState
 trigger1 = Time >= 30
@@ -45,7 +51,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8741
+anim = 8801
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -91,7 +97,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8742
+anim = 8802
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -109,23 +115,26 @@ statetype = A
 
 [State 1020, Arc gravity]
 type = VelAdd
-trigger1 = Time = [4,27]
+trigger1 = Time = [4,27] && StateType = A
 y = 0.5
 
 [State 1020, Landing position]
 type = PosSet
 trigger1 = Time >= 28
+trigger2 = Time > 3 && Vel Y>0 && Pos Y+Vel Y>=0
 y = 0
 
 [State 1020, Landing brake]
 type = VelSet
 trigger1 = Time >= 28
+trigger2 = Time > 3 && Vel Y>0 && Pos Y+Vel Y>=0
 x = 0
 y = 0
 
 [State 1020, Grounded]
 type = StateTypeSet
-trigger1 = Time = 28
+trigger1 = Time >= 28
+trigger2 = Time > 3 && Pos Y>=0 && Vel Y>=0
 statetype = S
 
 [State 1020, Contact]
@@ -164,7 +173,7 @@ ctrl = 1
 type = C
 movetype = A
 physics = N
-anim = 8743
+anim = 8803
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -269,7 +278,7 @@ ctrl = 1
 type = S
 movetype = I
 physics = N
-anim = 8744
+anim = 8804
 ctrl = 0
 velset = 0,0
 poweradd = 0
@@ -357,7 +366,7 @@ trigger2 = RoundState != 2
 type = S
 movetype = A
 physics = N
-anim = 8721
+anim = 8806
 ctrl = 0
 velset = 0,0
 poweradd = -1000
@@ -476,7 +485,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8736
+anim = 8807
 ctrl = 0
 velset = 0,0
 poweradd = -1000
@@ -640,7 +649,7 @@ ctrl = 1
 type = S
 movetype = A
 physics = N
-anim = 8746
+anim = 8808
 ctrl = 0
 velset = 0,0
 poweradd = -2000

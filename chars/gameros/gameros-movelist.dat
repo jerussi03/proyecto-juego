@@ -36,9 +36,35 @@ MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
 
-
 <#63ded7>:Identidad - Rachas / gimnasio:</>
 Racha: hasta tres iconos debajo de VIDA.
 Encadena golpes para ganar racha; recibir un golpe la rompe.
-Modo Gym potencia ataques durante cinco segundos.
+En Gym y con dos puntos de racha, confirma Arcade y pulsa B para encadenar Pedal.
 Boxeo, patada ascendente, moto y pedal tienen trayectorias propias.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Jab de boxeo                         ^X
+Paso de gimnasio                     ^A
+Doble directo                        ^Y
+Doble patada arcade                  ^B
+Agachado:
+Jab al cuerpo                        ^X
+Pedal corto                          ^A
+Gancho de gimnasio                   ^Y
+Deslizamiento ciclista               ^B
+En el aire:
+Directo de salto                     ^X
+Rodilla de salto                     ^A
+Codo de gimnasio                     ^Y
+Patada en picada                     ^B
+
+Cadenas propias: conecta antes de continuar.
+Jab de boxeo > Paso de gimnasio (^A)
+Paso de gimnasio > Doble directo (^Y)
+Doble directo > Doble patada arcade (^B)
+Jab al cuerpo > Pedal corto (^A)
+Pedal corto > Gancho de gimnasio (^Y)
+Directo de salto > Rodilla de salto (^A)
+Rodilla de salto > Patada en picada (^B)
+Si el rival bloquea o esquiva, termina la recuperacion.

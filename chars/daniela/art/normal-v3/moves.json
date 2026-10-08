@@ -1,0 +1,683 @@
+{
+  "character": "daniela",
+  "moves": {
+    "200": {
+      "name": "Palma de requisito",
+      "startup": 5,
+      "active": 3,
+      "recovery": 9,
+      "damage": 27,
+      "band": [
+        -92,
+        -43
+      ],
+      "push": 1.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 200,
+      "button": "x",
+      "group": 200,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        5
+      ],
+      "total": 19,
+      "contact_box": [
+        16,
+        -93,
+        50,
+        -42
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          230,
+          "a"
+        ]
+      ]
+    },
+    "210": {
+      "name": "Bolsazo documentado",
+      "startup": 9,
+      "active": 4,
+      "recovery": 16,
+      "damage": 71,
+      "band": [
+        -120,
+        -35
+      ],
+      "push": 5.0,
+      "stun": 25,
+      "step": 1.4,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 210,
+      "button": "y",
+      "group": 8770,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        3,
+        4,
+        2,
+        8,
+        8
+      ],
+      "total": 31,
+      "contact_box": [
+        16,
+        -94,
+        66,
+        -34
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "230": {
+      "name": "Paso de negocio",
+      "startup": 6,
+      "active": 3,
+      "recovery": 12,
+      "damage": 20,
+      "band": [
+        -78,
+        -24
+      ],
+      "push": 0.8,
+      "stun": 17,
+      "step": 1.1,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 2,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 230,
+      "button": "a",
+      "group": 230,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        1,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        3,
+        2,
+        3,
+        6,
+        6
+      ],
+      "total": 26,
+      "contact_box": [
+        16,
+        -79,
+        66,
+        -23
+      ],
+      "contact_elements": [
+        4,
+        6
+      ],
+      "chains": [
+        [
+          210,
+          "y"
+        ]
+      ]
+    },
+    "240": {
+      "name": "Patada de cierre",
+      "startup": 11,
+      "active": 4,
+      "recovery": 18,
+      "damage": 70,
+      "band": [
+        -108,
+        -29
+      ],
+      "push": 5.0,
+      "stun": 22,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 240,
+      "button": "b",
+      "group": 240,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        3,
+        4,
+        4,
+        4,
+        2,
+        9,
+        9
+      ],
+      "total": 35,
+      "contact_box": [
+        16,
+        -101,
+        66,
+        -28
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "400": {
+      "name": "Revision baja",
+      "startup": 5,
+      "active": 3,
+      "recovery": 8,
+      "damage": 23,
+      "band": [
+        -61,
+        -20
+      ],
+      "push": 2.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 400,
+      "button": "x",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        4
+      ],
+      "total": 18,
+      "contact_box": [
+        16,
+        -62,
+        57,
+        -19
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          410,
+          "y"
+        ]
+      ]
+    },
+    "410": {
+      "name": "Carpeta ascendente",
+      "startup": 9,
+      "active": 4,
+      "recovery": 15,
+      "damage": 57,
+      "band": [
+        -83,
+        -21
+      ],
+      "push": 3.5,
+      "stun": 25,
+      "step": 1.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 410,
+      "button": "y",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        3,
+        4,
+        2,
+        7,
+        8
+      ],
+      "total": 30,
+      "contact_box": [
+        16,
+        -76,
+        57,
+        -20
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "430": {
+      "name": "Puntapie de agenda",
+      "startup": 6,
+      "active": 3,
+      "recovery": 11,
+      "damage": 25,
+      "band": [
+        -31,
+        -1
+      ],
+      "push": 1.2,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 430,
+      "button": "a",
+      "group": 430,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        3,
+        2,
+        5,
+        6
+      ],
+      "total": 22,
+      "contact_box": [
+        16,
+        -32,
+        65,
+        -5
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "440": {
+      "name": "Cierre al tobillo",
+      "startup": 10,
+      "active": 4,
+      "recovery": 20,
+      "damage": 57,
+      "band": [
+        -36,
+        -1
+      ],
+      "push": 1.0,
+      "stun": 28,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 440,
+      "button": "b",
+      "group": 440,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        4,
+        2,
+        10,
+        10
+      ],
+      "total": 36,
+      "contact_box": [
+        16,
+        -37,
+        65,
+        -5
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "600": {
+      "name": "Revision aerea",
+      "startup": 5,
+      "active": 4,
+      "recovery": 10,
+      "damage": 28,
+      "band": [
+        -108,
+        -44
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 600,
+      "button": "x",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        4,
+        2,
+        5,
+        5
+      ],
+      "total": 21,
+      "contact_box": [
+        16,
+        -94,
+        49,
+        -43
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          610,
+          "y"
+        ]
+      ]
+    },
+    "610": {
+      "name": "Bolsazo descendente",
+      "startup": 9,
+      "active": 5,
+      "recovery": 15,
+      "damage": 62,
+      "band": [
+        -100,
+        -25
+      ],
+      "push": 4.0,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 1.4,
+      "max_reach": 120,
+      "low": false,
+      "state": 610,
+      "button": "y",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        3,
+        5,
+        2,
+        7,
+        8
+      ],
+      "total": 31,
+      "contact_box": [
+        16,
+        -94,
+        57,
+        -24
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "630": {
+      "name": "Extension de alcance",
+      "startup": 7,
+      "active": 5,
+      "recovery": 10,
+      "damage": 31,
+      "band": [
+        -86,
+        -22
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.7,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 630,
+      "button": "a",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        3,
+        5,
+        2,
+        5,
+        5
+      ],
+      "total": 24,
+      "contact_box": [
+        16,
+        -87,
+        71,
+        -36
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "640": {
+      "name": "Patada de entrega",
+      "startup": 10,
+      "active": 5,
+      "recovery": 16,
+      "damage": 63,
+      "band": [
+        -100,
+        -8
+      ],
+      "push": 5.5,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 640,
+      "button": "b",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        5,
+        2,
+        8,
+        8
+      ],
+      "total": 33,
+      "contact_box": [
+        16,
+        -100,
+        71,
+        -36
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    }
+  },
+  "normal_buffer": 28,
+  "contacts": [
+    4,
+    6
+  ],
+  "art_scale": "native",
+  "controls": "KOF x/a/y/b"
+}

@@ -38,3 +38,28 @@ Denegacion de servicio               _D_DB_B_D_DB_B + ^X_+^Y
 MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Ping inicial                         ^X
+Puntapie de protocolo                ^A
+Latigazo RJ45 corto                  ^Y
+Patada del firewall                  ^B
+Agachado:
+Ping bajo                            ^X
+Toque de capa fisica                 ^A
+Gancho de cable                      ^Y
+Barrido de red                       ^B
+En el aire:
+Ping en salto                        ^X
+Patada de enlace                     ^A
+Codo de desconexion                  ^Y
+Patada descendente                   ^B
+
+Cadenas propias: conecta antes de continuar.
+Ping inicial > Segundo Ping (^X)
+Segundo Ping > Pong de cierre (^X)
+Puntapie de protocolo > Latigazo RJ45 corto (^Y)
+Ping bajo > Gancho de cable (^Y)
+Ping en salto > Codo de desconexion (^Y)
+Si el rival bloquea o esquiva, termina la recuperacion.

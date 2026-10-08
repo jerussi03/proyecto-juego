@@ -36,9 +36,31 @@ MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
 
-
 <#63ded7>:Identidad - Precision / crossfit:</>
 Correcciones: hasta tres iconos debajo de VIDA.
 Gana correcciones al conectar Examen SQL o punio fuerte.
-Documentar prepara una correccion; Indice Cluster las gasta.
+Tras confirmar SQL, pulsa B para cancelar a Indice Cluster y gastar correcciones.
 SQL es un golpe corto; Senderismo salta; Crossfit golpea alto.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Palma de correccion                  ^X
+Puntapie de senderismo               ^A
+Empuje de crossfit                   ^Y
+Patada de precision                  ^B
+Agachado:
+Correccion desde cuclillas           ^X
+Paso al tobillo                      ^A
+Elevacion de crossfit                ^Y
+Barrido de indice                    ^B
+En el aire:
+Palma de descenso                    ^X
+Extension de senderismo              ^A
+Codo de crossfit                     ^Y
+Patada de cumbre                     ^B
+
+Cadenas propias: conecta antes de continuar.
+Palma de correccion > Empuje de crossfit (^Y)
+Correccion desde cuclillas > Elevacion de crossfit (^Y)
+Paso al tobillo > Barrido de indice (^B)
+Si el rival bloquea o esquiva, termina la recuperacion.

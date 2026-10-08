@@ -1,0 +1,4339 @@
+{
+  "chava": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Jab alternado",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 9,
+        "damage": 27,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ],
+          [
+            240,
+            "b"
+          ]
+        ]
+      },
+      "210": {
+        "name": "Mochila ascendente",
+        "button": "y",
+        "startup": 12,
+        "active": 4,
+        "recovery": 18,
+        "damage": 76,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          4,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 1.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Patada frontal",
+        "button": "a",
+        "startup": 7,
+        "active": 3,
+        "recovery": 12,
+        "damage": 33,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          3,
+          2,
+          6,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ],
+          [
+            240,
+            "b"
+          ]
+        ]
+      },
+      "240": {
+        "name": "Patada alta",
+        "button": "b",
+        "startup": 11,
+        "active": 4,
+        "recovery": 18,
+        "damage": 64,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          4,
+          4,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Jab desde cuclillas",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 10,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            410,
+            "y"
+          ]
+        ]
+      },
+      "410": {
+        "name": "Gancho agachado",
+        "button": "y",
+        "startup": 10,
+        "active": 4,
+        "recovery": 17,
+        "damage": 58,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -6.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Toque al tobillo",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 11,
+        "damage": 25,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          5,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            440,
+            "b"
+          ]
+        ]
+      },
+      "440": {
+        "name": "Barrida de semestre",
+        "button": "b",
+        "startup": 10,
+        "active": 4,
+        "recovery": 20,
+        "damage": 57,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          10,
+          10
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Jab de salto",
+        "button": "x",
+        "startup": 6,
+        "active": 4,
+        "recovery": 10,
+        "damage": 28,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          4,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            610,
+            "y"
+          ]
+        ]
+      },
+      "610": {
+        "name": "Martillo descendente",
+        "button": "y",
+        "startup": 9,
+        "active": 5,
+        "recovery": 15,
+        "damage": 55,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 1.6,
+        "chains": []
+      },
+      "630": {
+        "name": "Patada horizontal",
+        "button": "a",
+        "startup": 7,
+        "active": 5,
+        "recovery": 10,
+        "damage": 31,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            640,
+            "b"
+          ]
+        ]
+      },
+      "640": {
+        "name": "Hacha aerea",
+        "button": "b",
+        "startup": 10,
+        "active": 5,
+        "recovery": 16,
+        "damage": 59,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 2.2,
+        "chains": []
+      }
+    }
+  },
+  "hector": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Ping inicial",
+        "button": "x",
+        "startup": 3,
+        "active": 2,
+        "recovery": 8,
+        "damage": 22,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            201,
+            "x"
+          ]
+        ]
+      },
+      "210": {
+        "name": "Latigazo RJ45 corto",
+        "button": "y",
+        "startup": 12,
+        "active": 4,
+        "recovery": 20,
+        "damage": 72,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          4,
+          4,
+          2,
+          10,
+          10
+        ],
+        "step": 1.1,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Puntapie de protocolo",
+        "button": "a",
+        "startup": 7,
+        "active": 3,
+        "recovery": 12,
+        "damage": 32,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          3,
+          2,
+          6,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ]
+        ]
+      },
+      "240": {
+        "name": "Patada del firewall",
+        "button": "b",
+        "startup": 10,
+        "active": 4,
+        "recovery": 18,
+        "damage": 65,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Ping bajo",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 10,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            410,
+            "y"
+          ]
+        ]
+      },
+      "410": {
+        "name": "Gancho de cable",
+        "button": "y",
+        "startup": 10,
+        "active": 4,
+        "recovery": 17,
+        "damage": 58,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -6.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Toque de capa fisica",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 11,
+        "damage": 25,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          5,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "440": {
+        "name": "Barrido de red",
+        "button": "b",
+        "startup": 9,
+        "active": 4,
+        "recovery": 20,
+        "damage": 54,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          4,
+          2,
+          10,
+          10
+        ],
+        "step": 1.4,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Ping en salto",
+        "button": "x",
+        "startup": 6,
+        "active": 4,
+        "recovery": 10,
+        "damage": 28,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          4,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            610,
+            "y"
+          ]
+        ]
+      },
+      "610": {
+        "name": "Codo de desconexion",
+        "button": "y",
+        "startup": 9,
+        "active": 5,
+        "recovery": 15,
+        "damage": 58,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Patada de enlace",
+        "button": "a",
+        "startup": 7,
+        "active": 5,
+        "recovery": 10,
+        "damage": 31,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "640": {
+        "name": "Patada descendente",
+        "button": "b",
+        "startup": 9,
+        "active": 5,
+        "recovery": 16,
+        "damage": 59,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 2.8,
+        "chains": []
+      }
+    }
+  },
+  "chan_kof": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Palma de correccion",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 10,
+        "damage": 27,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ]
+        ]
+      },
+      "210": {
+        "name": "Empuje de crossfit",
+        "button": "y",
+        "startup": 10,
+        "active": 4,
+        "recovery": 18,
+        "damage": 78,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 1.1,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Puntapie de senderismo",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 10,
+        "damage": 33,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": -0.8,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "240": {
+        "name": "Patada de precision",
+        "button": "b",
+        "startup": 12,
+        "active": 4,
+        "recovery": 18,
+        "damage": 72,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          4,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Correccion desde cuclillas",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 8,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            410,
+            "y"
+          ]
+        ]
+      },
+      "410": {
+        "name": "Elevacion de crossfit",
+        "button": "y",
+        "startup": 11,
+        "active": 4,
+        "recovery": 17,
+        "damage": 65,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          4,
+          4,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -6.4,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Paso al tobillo",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 9,
+        "damage": 25,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          4,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            440,
+            "b"
+          ]
+        ]
+      },
+      "440": {
+        "name": "Barrido de indice",
+        "button": "b",
+        "startup": 12,
+        "active": 4,
+        "recovery": 20,
+        "damage": 65,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          4,
+          4,
+          2,
+          10,
+          10
+        ],
+        "step": 1.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Palma de descenso",
+        "button": "x",
+        "startup": 6,
+        "active": 4,
+        "recovery": 10,
+        "damage": 28,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          4,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "610": {
+        "name": "Codo de crossfit",
+        "button": "y",
+        "startup": 9,
+        "active": 5,
+        "recovery": 15,
+        "damage": 62,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Extension de senderismo",
+        "button": "a",
+        "startup": 7,
+        "active": 5,
+        "recovery": 10,
+        "damage": 31,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "640": {
+        "name": "Patada de cumbre",
+        "button": "b",
+        "startup": 11,
+        "active": 5,
+        "recovery": 16,
+        "damage": 65,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          4,
+          4,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 1.8,
+        "chains": []
+      }
+    }
+  },
+  "felix": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Toque de diagnostico",
+        "button": "x",
+        "startup": 6,
+        "active": 3,
+        "recovery": 10,
+        "damage": 27,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            240,
+            "b"
+          ]
+        ]
+      },
+      "210": {
+        "name": "Codo de reparacion",
+        "button": "y",
+        "startup": 11,
+        "active": 4,
+        "recovery": 18,
+        "damage": 74,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          4,
+          4,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 1.8,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Puntapie de comprobacion",
+        "button": "a",
+        "startup": 7,
+        "active": 3,
+        "recovery": 12,
+        "damage": 33,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          3,
+          2,
+          6,
+          6
+        ],
+        "step": 0.0,
+        "retreat": -1.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "240": {
+        "name": "Talon de soporte",
+        "button": "b",
+        "startup": 13,
+        "active": 4,
+        "recovery": 18,
+        "damage": 70,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          5,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Ajuste bajo",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 10,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ]
+        ]
+      },
+      "410": {
+        "name": "Gancho de herramienta",
+        "button": "y",
+        "startup": 10,
+        "active": 4,
+        "recovery": 17,
+        "damage": 64,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -5.7,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Comprobacion al tobillo",
+        "button": "a",
+        "startup": 7,
+        "active": 3,
+        "recovery": 11,
+        "damage": 25,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          3,
+          2,
+          5,
+          6
+        ],
+        "step": 0.0,
+        "retreat": -0.7,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "440": {
+        "name": "Cable rasante",
+        "button": "b",
+        "startup": 11,
+        "active": 4,
+        "recovery": 20,
+        "damage": 57,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          4,
+          4,
+          4,
+          2,
+          10,
+          10
+        ],
+        "step": 0.0,
+        "retreat": -1.8,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Toque de mantenimiento",
+        "button": "x",
+        "startup": 6,
+        "active": 4,
+        "recovery": 10,
+        "damage": 28,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          4,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "610": {
+        "name": "Codo de emergencia",
+        "button": "y",
+        "startup": 10,
+        "active": 5,
+        "recovery": 15,
+        "damage": 62,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Patada de alcance",
+        "button": "a",
+        "startup": 7,
+        "active": 5,
+        "recovery": 10,
+        "damage": 31,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": -0.8,
+        "dive": 0.0,
+        "chains": [
+          [
+            610,
+            "y"
+          ]
+        ]
+      },
+      "640": {
+        "name": "Talon descendente",
+        "button": "b",
+        "startup": 10,
+        "active": 5,
+        "recovery": 16,
+        "damage": 65,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      }
+    }
+  },
+  "alejandro": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Entrada corta",
+        "button": "x",
+        "startup": 4,
+        "active": 2,
+        "recovery": 8,
+        "damage": 22,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ]
+        ]
+      },
+      "210": {
+        "name": "Codo de refactor",
+        "button": "y",
+        "startup": 8,
+        "active": 4,
+        "recovery": 14,
+        "damage": 61,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          4,
+          2,
+          7,
+          7
+        ],
+        "step": 3.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Patada de separacion",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 12,
+        "damage": 33,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          6,
+          6
+        ],
+        "step": 0.0,
+        "retreat": -1.5,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "240": {
+        "name": "Extension de componente",
+        "button": "b",
+        "startup": 10,
+        "active": 4,
+        "recovery": 18,
+        "damage": 61,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 1.2,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Edicion baja",
+        "button": "x",
+        "startup": 4,
+        "active": 3,
+        "recovery": 8,
+        "damage": 20,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          1,
+          2,
+          3,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "410": {
+        "name": "Compilacion ascendente",
+        "button": "y",
+        "startup": 9,
+        "active": 4,
+        "recovery": 17,
+        "damage": 51,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -5.5,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Paso de depuracion",
+        "button": "a",
+        "startup": 5,
+        "active": 3,
+        "recovery": 9,
+        "damage": 25,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ]
+        ]
+      },
+      "440": {
+        "name": "Retirada de error",
+        "button": "b",
+        "startup": 9,
+        "active": 4,
+        "recovery": 17,
+        "damage": 50,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": -2.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Entrada en salto",
+        "button": "x",
+        "startup": 5,
+        "active": 4,
+        "recovery": 8,
+        "damage": 28,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          4,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            640,
+            "b"
+          ]
+        ]
+      },
+      "610": {
+        "name": "Codo de integracion",
+        "button": "y",
+        "startup": 8,
+        "active": 5,
+        "recovery": 15,
+        "damage": 50,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Cruce de componente",
+        "button": "a",
+        "startup": 6,
+        "active": 5,
+        "recovery": 10,
+        "damage": 31,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 1.5,
+        "dive": 0.0,
+        "chains": []
+      },
+      "640": {
+        "name": "Descenso de deploy",
+        "button": "b",
+        "startup": 9,
+        "active": 5,
+        "recovery": 16,
+        "damage": 56,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 3.0,
+        "chains": []
+      }
+    }
+  },
+  "daniela": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Palma de requisito",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 9,
+        "damage": 27,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            230,
+            "a"
+          ]
+        ]
+      },
+      "210": {
+        "name": "Bolsazo documentado",
+        "button": "y",
+        "startup": 9,
+        "active": 4,
+        "recovery": 16,
+        "damage": 71,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          4,
+          2,
+          8,
+          8
+        ],
+        "step": 1.4,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Paso de negocio",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 12,
+        "damage": 20,
+        "contacts": 2,
+        "contact_elements": [
+          4,
+          6
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          3,
+          6,
+          6
+        ],
+        "step": 1.1,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ]
+        ]
+      },
+      "240": {
+        "name": "Patada de cierre",
+        "button": "b",
+        "startup": 11,
+        "active": 4,
+        "recovery": 18,
+        "damage": 70,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          4,
+          4,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Revision baja",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 8,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            410,
+            "y"
+          ]
+        ]
+      },
+      "410": {
+        "name": "Carpeta ascendente",
+        "button": "y",
+        "startup": 9,
+        "active": 4,
+        "recovery": 15,
+        "damage": 57,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          4,
+          2,
+          7,
+          8
+        ],
+        "step": 1.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Puntapie de agenda",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 11,
+        "damage": 25,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          5,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "440": {
+        "name": "Cierre al tobillo",
+        "button": "b",
+        "startup": 10,
+        "active": 4,
+        "recovery": 20,
+        "damage": 57,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          10,
+          10
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Revision aerea",
+        "button": "x",
+        "startup": 5,
+        "active": 4,
+        "recovery": 10,
+        "damage": 28,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          4,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            610,
+            "y"
+          ]
+        ]
+      },
+      "610": {
+        "name": "Bolsazo descendente",
+        "button": "y",
+        "startup": 9,
+        "active": 5,
+        "recovery": 15,
+        "damage": 62,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 1.4,
+        "chains": []
+      },
+      "630": {
+        "name": "Extension de alcance",
+        "button": "a",
+        "startup": 7,
+        "active": 5,
+        "recovery": 10,
+        "damage": 31,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.7,
+        "dive": 0.0,
+        "chains": []
+      },
+      "640": {
+        "name": "Patada de entrega",
+        "button": "b",
+        "startup": 10,
+        "active": 5,
+        "recovery": 16,
+        "damage": 63,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      }
+    }
+  },
+  "gameros": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Jab de boxeo",
+        "button": "x",
+        "startup": 4,
+        "active": 2,
+        "recovery": 7,
+        "damage": 21,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            230,
+            "a"
+          ]
+        ]
+      },
+      "210": {
+        "name": "Doble directo",
+        "button": "y",
+        "startup": 7,
+        "active": 3,
+        "recovery": 15,
+        "damage": 30,
+        "contacts": 2,
+        "contact_elements": [
+          4,
+          6
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          3,
+          2,
+          3,
+          7,
+          8
+        ],
+        "step": 1.8,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            240,
+            "b"
+          ]
+        ]
+      },
+      "230": {
+        "name": "Paso de gimnasio",
+        "button": "a",
+        "startup": 5,
+        "active": 3,
+        "recovery": 8,
+        "damage": 26,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          4
+        ],
+        "step": 1.9,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ]
+        ]
+      },
+      "240": {
+        "name": "Doble patada arcade",
+        "button": "b",
+        "startup": 9,
+        "active": 3,
+        "recovery": 17,
+        "damage": 29,
+        "contacts": 2,
+        "contact_elements": [
+          4,
+          6
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          3,
+          8,
+          9
+        ],
+        "step": 1.3,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Jab al cuerpo",
+        "button": "x",
+        "startup": 4,
+        "active": 3,
+        "recovery": 8,
+        "damage": 20,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          1,
+          2,
+          3,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            430,
+            "a"
+          ]
+        ]
+      },
+      "410": {
+        "name": "Gancho de gimnasio",
+        "button": "y",
+        "startup": 8,
+        "active": 4,
+        "recovery": 17,
+        "damage": 53,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -5.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Pedal corto",
+        "button": "a",
+        "startup": 5,
+        "active": 3,
+        "recovery": 8,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          4
+        ],
+        "step": 1.5,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            410,
+            "y"
+          ]
+        ]
+      },
+      "440": {
+        "name": "Deslizamiento ciclista",
+        "button": "b",
+        "startup": 9,
+        "active": 4,
+        "recovery": 21,
+        "damage": 54,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          4,
+          2,
+          10,
+          11
+        ],
+        "step": 3.6,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Directo de salto",
+        "button": "x",
+        "startup": 4,
+        "active": 4,
+        "recovery": 8,
+        "damage": 24,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          1,
+          2,
+          4,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            630,
+            "a"
+          ]
+        ]
+      },
+      "610": {
+        "name": "Codo de gimnasio",
+        "button": "y",
+        "startup": 7,
+        "active": 5,
+        "recovery": 15,
+        "damage": 48,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 1.1,
+        "dive": 0.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Rodilla de salto",
+        "button": "a",
+        "startup": 5,
+        "active": 5,
+        "recovery": 10,
+        "damage": 29,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 1.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            640,
+            "b"
+          ]
+        ]
+      },
+      "640": {
+        "name": "Patada en picada",
+        "button": "b",
+        "startup": 8,
+        "active": 5,
+        "recovery": 16,
+        "damage": 58,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 1.2,
+        "dive": 4.3,
+        "chains": []
+      }
+    }
+  },
+  "armando": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Toque de pingpong",
+        "button": "x",
+        "startup": 5,
+        "active": 2,
+        "recovery": 8,
+        "damage": 26,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            240,
+            "b"
+          ]
+        ]
+      },
+      "210": {
+        "name": "Reves de raqueta",
+        "button": "y",
+        "startup": 9,
+        "active": 4,
+        "recovery": 17,
+        "damage": 33,
+        "contacts": 2,
+        "contact_elements": [
+          4,
+          6
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          4,
+          2,
+          4,
+          8,
+          9
+        ],
+        "step": 1.4,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Paso de cancha",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 12,
+        "damage": 33,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          6,
+          6
+        ],
+        "step": 1.3,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "240": {
+        "name": "Patada de rebote",
+        "button": "b",
+        "startup": 12,
+        "active": 4,
+        "recovery": 18,
+        "damage": 67,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          4,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -7.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Recepcion baja",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 9,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            410,
+            "y"
+          ]
+        ]
+      },
+      "410": {
+        "name": "Elevacion de cancha",
+        "button": "y",
+        "startup": 10,
+        "active": 4,
+        "recovery": 17,
+        "damage": 60,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -6.2,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Puntapie de defensa",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 11,
+        "damage": 25,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          5,
+          6
+        ],
+        "step": 0.0,
+        "retreat": -0.5,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "440": {
+        "name": "Deslizamiento de cancha",
+        "button": "b",
+        "startup": 10,
+        "active": 4,
+        "recovery": 22,
+        "damage": 60,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          11,
+          11
+        ],
+        "step": 2.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Manotazo de rebote",
+        "button": "x",
+        "startup": 5,
+        "active": 4,
+        "recovery": 10,
+        "damage": 28,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          4,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.7,
+        "dive": 0.0,
+        "chains": [
+          [
+            610,
+            "y"
+          ]
+        ]
+      },
+      "610": {
+        "name": "Manotazo de clavada",
+        "button": "y",
+        "startup": 9,
+        "active": 5,
+        "recovery": 15,
+        "damage": 63,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 2.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Rodilla de basquet",
+        "button": "a",
+        "startup": 6,
+        "active": 5,
+        "recovery": 10,
+        "damage": 34,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 1.3,
+        "dive": 0.0,
+        "chains": [
+          [
+            640,
+            "b"
+          ]
+        ]
+      },
+      "640": {
+        "name": "Patada de aterrizaje",
+        "button": "b",
+        "startup": 10,
+        "active": 5,
+        "recovery": 16,
+        "damage": 64,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 3.2,
+        "chains": []
+      }
+    }
+  },
+  "vladimir": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Palma de alto",
+        "button": "x",
+        "startup": 7,
+        "active": 3,
+        "recovery": 10,
+        "damage": 33,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          3,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ]
+        ]
+      },
+      "210": {
+        "name": "Empuje de asistencia",
+        "button": "y",
+        "startup": 13,
+        "active": 4,
+        "recovery": 23,
+        "damage": 84,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          5,
+          4,
+          2,
+          11,
+          12
+        ],
+        "step": 2.3,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Paso de director",
+        "button": "a",
+        "startup": 9,
+        "active": 3,
+        "recovery": 12,
+        "damage": 38,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          6,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "240": {
+        "name": "Puntapie de retencion",
+        "button": "b",
+        "startup": 15,
+        "active": 4,
+        "recovery": 24,
+        "damage": 78,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          5,
+          5,
+          5,
+          4,
+          2,
+          12,
+          12
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Alto desde cuclillas",
+        "button": "x",
+        "startup": 6,
+        "active": 3,
+        "recovery": 10,
+        "damage": 29,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "410": {
+        "name": "Codo de control",
+        "button": "y",
+        "startup": 12,
+        "active": 4,
+        "recovery": 17,
+        "damage": 68,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          4,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Puntapie al alumno",
+        "button": "a",
+        "startup": 8,
+        "active": 3,
+        "recovery": 11,
+        "damage": 31,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          3,
+          2,
+          5,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "440": {
+        "name": "Barrido de salida",
+        "button": "b",
+        "startup": 13,
+        "active": 4,
+        "recovery": 25,
+        "damage": 69,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          5,
+          4,
+          2,
+          12,
+          13
+        ],
+        "step": 1.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Palma de presencia",
+        "button": "x",
+        "startup": 7,
+        "active": 4,
+        "recovery": 10,
+        "damage": 33,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          4,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "610": {
+        "name": "Golpe de autoridad",
+        "button": "y",
+        "startup": 11,
+        "active": 5,
+        "recovery": 15,
+        "damage": 66,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          4,
+          4,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Patada de paso",
+        "button": "a",
+        "startup": 9,
+        "active": 5,
+        "recovery": 10,
+        "damage": 37,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": -0.6,
+        "dive": 0.0,
+        "chains": []
+      },
+      "640": {
+        "name": "Talon de retencion",
+        "button": "b",
+        "startup": 13,
+        "active": 5,
+        "recovery": 16,
+        "damage": 73,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          5,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      }
+    }
+  },
+  "jaime": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Jab de apertura",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 9,
+        "damage": 25,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "210": {
+        "name": "Codo de gambito",
+        "button": "y",
+        "startup": 10,
+        "active": 4,
+        "recovery": 16,
+        "damage": 65,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          8,
+          8
+        ],
+        "step": 1.6,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Pedal de avance",
+        "button": "a",
+        "startup": 6,
+        "active": 3,
+        "recovery": 10,
+        "damage": 31,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          5,
+          5
+        ],
+        "step": 2.1,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            240,
+            "b"
+          ]
+        ]
+      },
+      "240": {
+        "name": "Patada de caballo",
+        "button": "b",
+        "startup": 10,
+        "active": 4,
+        "recovery": 19,
+        "damage": 66,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          9,
+          10
+        ],
+        "step": 1.3,
+        "retreat": 0.0,
+        "launch": -5.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Apertura baja",
+        "button": "x",
+        "startup": 5,
+        "active": 3,
+        "recovery": 9,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "410": {
+        "name": "Diagonal ascendente",
+        "button": "y",
+        "startup": 10,
+        "active": 4,
+        "recovery": 17,
+        "damage": 62,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          8,
+          9
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -6.8,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Pedal rasante",
+        "button": "a",
+        "startup": 5,
+        "active": 3,
+        "recovery": 9,
+        "damage": 26,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          5
+        ],
+        "step": 0.0,
+        "retreat": -1.2,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            410,
+            "y"
+          ]
+        ]
+      },
+      "440": {
+        "name": "Barrido de tablero",
+        "button": "b",
+        "startup": 10,
+        "active": 4,
+        "recovery": 20,
+        "damage": 59,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          4,
+          2,
+          10,
+          10
+        ],
+        "step": 1.7,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Mano diagonal",
+        "button": "x",
+        "startup": 5,
+        "active": 4,
+        "recovery": 10,
+        "damage": 28,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          4,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 1.1,
+        "dive": 0.0,
+        "chains": [
+          [
+            640,
+            "b"
+          ]
+        ]
+      },
+      "610": {
+        "name": "Codo de calculo",
+        "button": "y",
+        "startup": 8,
+        "active": 5,
+        "recovery": 15,
+        "damage": 54,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          5,
+          2,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": -0.8,
+        "dive": 0.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Rodilla ciclista",
+        "button": "a",
+        "startup": 6,
+        "active": 5,
+        "recovery": 10,
+        "damage": 33,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          2,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 1.5,
+        "dive": 0.0,
+        "chains": [
+          [
+            610,
+            "y"
+          ]
+        ]
+      },
+      "640": {
+        "name": "Diagonal descendente",
+        "button": "b",
+        "startup": 9,
+        "active": 5,
+        "recovery": 16,
+        "damage": 64,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 2.0,
+        "dive": 3.2,
+        "chains": []
+      }
+    }
+  },
+  "leonardo": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Toque rapido",
+        "button": "x",
+        "startup": 4,
+        "active": 2,
+        "recovery": 8,
+        "damage": 20,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "210": {
+        "name": "Codo elegante",
+        "button": "y",
+        "startup": 8,
+        "active": 4,
+        "recovery": 14,
+        "damage": 57,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          4,
+          2,
+          7,
+          7
+        ],
+        "step": 0.0,
+        "retreat": -1.1,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Patada de toque",
+        "button": "a",
+        "startup": 5,
+        "active": 3,
+        "recovery": 8,
+        "damage": 27,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            240,
+            "b"
+          ]
+        ]
+      },
+      "240": {
+        "name": "Circular de swipe",
+        "button": "b",
+        "startup": 9,
+        "active": 4,
+        "recovery": 17,
+        "damage": 30,
+        "contacts": 2,
+        "contact_elements": [
+          4,
+          6
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          4,
+          2,
+          4,
+          8,
+          9
+        ],
+        "step": 1.3,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Toque desde cuclillas",
+        "button": "x",
+        "startup": 4,
+        "active": 3,
+        "recovery": 7,
+        "damage": 19,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          1,
+          2,
+          3,
+          2,
+          3,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            430,
+            "a"
+          ]
+        ]
+      },
+      "410": {
+        "name": "Codo ascendente",
+        "button": "y",
+        "startup": 8,
+        "active": 4,
+        "recovery": 14,
+        "damage": 48,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          4,
+          2,
+          7,
+          7
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": -5.2,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Swipe al tobillo",
+        "button": "a",
+        "startup": 5,
+        "active": 3,
+        "recovery": 8,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": -1.4,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            240,
+            "b"
+          ]
+        ]
+      },
+      "440": {
+        "name": "Barrido de pantalla",
+        "button": "b",
+        "startup": 9,
+        "active": 4,
+        "recovery": 18,
+        "damage": 49,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          4,
+          2,
+          9,
+          9
+        ],
+        "step": 2.4,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Toque movil",
+        "button": "x",
+        "startup": 4,
+        "active": 4,
+        "recovery": 8,
+        "damage": 23,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          1,
+          2,
+          4,
+          2,
+          4,
+          4
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": -0.7,
+        "dive": 0.0,
+        "chains": [
+          [
+            630,
+            "a"
+          ]
+        ]
+      },
+      "610": {
+        "name": "Codo de desplazamiento",
+        "button": "y",
+        "startup": 7,
+        "active": 5,
+        "recovery": 12,
+        "damage": 47,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          5,
+          2,
+          6,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": -1.2,
+        "dive": 0.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Patada cruzada",
+        "button": "a",
+        "startup": 5,
+        "active": 5,
+        "recovery": 10,
+        "damage": 28,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          1,
+          2,
+          2,
+          5,
+          2,
+          5,
+          5
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 1.5,
+        "dive": 0.0,
+        "chains": [
+          [
+            640,
+            "b"
+          ]
+        ]
+      },
+      "640": {
+        "name": "Circular aerea",
+        "button": "b",
+        "startup": 8,
+        "active": 4,
+        "recovery": 15,
+        "damage": 29,
+        "contacts": 2,
+        "contact_elements": [
+          4,
+          6
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          4,
+          2,
+          4,
+          7,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": -0.9,
+        "dive": 0.0,
+        "chains": []
+      }
+    }
+  },
+  "cesar": {
+    "buffer_variable": 28,
+    "moves": {
+      "200": {
+        "name": "Palma estricta",
+        "button": "x",
+        "startup": 8,
+        "active": 3,
+        "recovery": 13,
+        "damage": 38,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          3,
+          2,
+          6,
+          7
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "210": {
+        "name": "Baston de sentencia",
+        "button": "y",
+        "startup": 16,
+        "active": 5,
+        "recovery": 27,
+        "damage": 96,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          5,
+          5,
+          6,
+          5,
+          2,
+          13,
+          14
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "230": {
+        "name": "Puntapie de advertencia",
+        "button": "a",
+        "startup": 10,
+        "active": 3,
+        "recovery": 16,
+        "damage": 43,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          3,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "240": {
+        "name": "Talon de castigo",
+        "button": "b",
+        "startup": 17,
+        "active": 5,
+        "recovery": 26,
+        "damage": 85,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          5,
+          6,
+          6,
+          5,
+          2,
+          13,
+          13
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "400": {
+        "name": "Advertencia baja",
+        "button": "x",
+        "startup": 7,
+        "active": 3,
+        "recovery": 12,
+        "damage": 34,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          2,
+          3,
+          3,
+          2,
+          6,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": [
+          [
+            210,
+            "y"
+          ]
+        ]
+      },
+      "410": {
+        "name": "Baston desde cuclillas",
+        "button": "y",
+        "startup": 14,
+        "active": 5,
+        "recovery": 23,
+        "damage": 78,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          5,
+          5,
+          5,
+          2,
+          11,
+          12
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "430": {
+        "name": "Puntapie estricto",
+        "button": "a",
+        "startup": 9,
+        "active": 3,
+        "recovery": 14,
+        "damage": 37,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          7,
+          7
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "440": {
+        "name": "Barrido disciplinario",
+        "button": "b",
+        "startup": 15,
+        "active": 5,
+        "recovery": 28,
+        "damage": 79,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          5,
+          5,
+          5,
+          5,
+          2,
+          14,
+          14
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "600": {
+        "name": "Palma de emergencia",
+        "button": "x",
+        "startup": 8,
+        "active": 4,
+        "recovery": 12,
+        "damage": 36,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          2,
+          3,
+          3,
+          4,
+          2,
+          6,
+          6
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "610": {
+        "name": "Baston descendente",
+        "button": "y",
+        "startup": 13,
+        "active": 5,
+        "recovery": 23,
+        "damage": 79,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          4,
+          4,
+          5,
+          5,
+          2,
+          11,
+          12
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "630": {
+        "name": "Puntapie de apoyo",
+        "button": "a",
+        "startup": 10,
+        "active": 5,
+        "recovery": 16,
+        "damage": 40,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          3,
+          3,
+          4,
+          5,
+          2,
+          8,
+          8
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": false,
+        "air_x": 0.0,
+        "dive": 0.0,
+        "chains": []
+      },
+      "640": {
+        "name": "Castigo al aterrizar",
+        "button": "b",
+        "startup": 15,
+        "active": 5,
+        "recovery": 24,
+        "damage": 80,
+        "contacts": 1,
+        "contact_elements": [
+          4
+        ],
+        "animation_durations": [
+          5,
+          5,
+          5,
+          5,
+          2,
+          12,
+          12
+        ],
+        "step": 0.0,
+        "retreat": 0.0,
+        "launch": 0.0,
+        "fall": true,
+        "air_x": 0.0,
+        "dive": 1.2,
+        "chains": []
+      }
+    }
+  }
+}

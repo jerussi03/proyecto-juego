@@ -36,9 +36,31 @@ MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
 
-
 <#63ded7>:Identidad - Preparacion / trampas:</>
 Modulos: hasta tres iconos debajo de VIDA.
 Importar prepara modulos durante cuatro segundos.
-Angular gasta un modulo para duplicar el componente.
+Cada copia Angular gasta un modulo real; el temporizador solo conserva el stock.
 Refactor cruza al rival; Error planta una trampa de piso.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Entrada corta                        ^X
+Patada de separacion                 ^A
+Codo de refactor                     ^Y
+Extension de componente              ^B
+Agachado:
+Edicion baja                         ^X
+Paso de depuracion                   ^A
+Compilacion ascendente               ^Y
+Retirada de error                    ^B
+En el aire:
+Entrada en salto                     ^X
+Cruce de componente                  ^A
+Codo de integracion                  ^Y
+Descenso de deploy                   ^B
+
+Cadenas propias: conecta antes de continuar.
+Entrada corta > Codo de refactor (^Y)
+Paso de depuracion > Codo de refactor (^Y)
+Entrada en salto > Descenso de deploy (^B)
+Si el rival bloquea o esquiva, termina la recuperacion.

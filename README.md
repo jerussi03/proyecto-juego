@@ -2,7 +2,9 @@
 
 Juego de pelea del proyecto UTC. En Windows, ejecutar `TheKingOfUTc.exe` desde
 esta carpeta. Los movimientos e identidades están documentados en
-[IDENTIDADES-PERSONAJES.md](IDENTIDADES-PERSONAJES.md).
+[IDENTIDADES-PERSONAJES.md](IDENTIDADES-PERSONAJES.md). Los golpes de pie,
+agachados, aéreos y las cadenas de los doce personajes están en
+[GOLPES-PROPIOS.md](GOLPES-PROPIOS.md).
 
 El repositorio conserva el motor activo, personajes, escenarios, interfaz,
 materiales fuente, herramientas y configuración del proyecto. Las descargas

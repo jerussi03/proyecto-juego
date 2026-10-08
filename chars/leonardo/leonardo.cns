@@ -143,23 +143,18 @@ ctrl = 1
 type = S
 movetype = A
 physics = S
+anim = 200
 ctrl = 0
-anim = ifelse(var(20), 201, 200)
-velset = 0,0
+poweradd = 0
 juggle = 1
-poweradd = 12
 sprpriority = 2
+velset = 0,0
+; Toque rapido: startup 4, active 2, recovery 8.
 
-[State 200, Alternate next attack]
+[State 200, Reset normal buffer]
 type = VarSet
 trigger1 = Time = 0
-v = 20
-value = 1 - var(20)
-
-[State 200, Clear repeat buffer]
-type = VarSet
-trigger1 = Time = 0
-v = 24
+v = 28
 value = 0
 
 [State 200, Swing]
@@ -167,243 +162,269 @@ type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-[State 200, Contact]
+[State 200, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = S, NA
+attr = S,NA
 damage = 20,0
 animtype = Light
 guardflag = MA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 6,7
+pausetime = 5,7
 sparkno = 0
 sparkxy = -7,-68
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 8
-ground.hittime = 12
-ground.velocity = -3.2
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 12
+ground.hittime = 17
+ground.velocity = -3.0
+air.velocity = -3.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
-[State 200, Buffer another press]
-type = VarSet
-triggerall = AILevel = 0
-triggerall = Time >= 3
-trigger1 = command = "x"
-v = 24
-value = 1
-ignorehitpause = 1
-
-[State 200, Play buffered alternate]
-type = ChangeState
-trigger1 = var(24) = 1
-trigger1 = AnimElemTime(5) >= 0
-value = 200
-ctrl = 0
-
-[State 200, End]
+[State 200, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 210]
 type = S
 movetype = A
 physics = S
+anim = 210
 ctrl = 0
-anim = ifelse(var(21), 211, 210)
-velset = 0,0
+poweradd = 0
 juggle = 4
-poweradd = 30
 sprpriority = 2
+velset = 0,0
+; Codo elegante: startup 8, active 4, recovery 14.
 
-[State 210, Alternate next attack]
+[State 210, Reset normal buffer]
 type = VarSet
 trigger1 = Time = 0
-v = 21
-value = 1 - var(21)
-
-[State 210, Clear repeat buffer]
-type = VarSet
-trigger1 = Time = 0
-v = 24
+v = 28
 value = 0
+
+[State 210, Own retreat]
+type = VelSet
+trigger1 = AnimElemTime(6) >= 0
+x = -1.1
 
 [State 210, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,4
 
-[State 210, Contact]
+[State 210, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = S, NA
-damage = 58,0
+attr = S,NA
+damage = 57,0
 animtype = Heavy
 guardflag = MA
 hitflag = MAF
-priority = 3,Hit
-pausetime = 10,11
+priority = 4,Hit
+pausetime = 8,10
 sparkno = 2
-sparkxy = -7,-68
+sparkxy = -7,-78
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 14
-ground.hittime = 19
-ground.velocity = -5.8
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 18
+ground.hittime = 23
+ground.velocity = -5.0
+air.velocity = -5.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 30,8
+givepower = 15,8
 
-[State 210, Buffer another press]
-type = VarSet
-triggerall = AILevel = 0
-triggerall = Time >= 3
-trigger1 = command = "y"
-v = 24
-value = 1
-ignorehitpause = 1
-
-[State 210, Play buffered alternate]
-type = ChangeState
-trigger1 = var(24) = 1
-trigger1 = AnimElemTime(6) >= 0
-value = 210
-ctrl = 0
-
-[State 210, End]
+[State 210, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 230]
 type = S
 movetype = A
 physics = S
-ctrl = 0
 anim = 230
-velset = 0,0
+ctrl = 0
+poweradd = 0
 juggle = 1
-poweradd = 12
 sprpriority = 2
+velset = 0,0
+; Patada de toque: startup 5, active 3, recovery 8.
+
+[State 230, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
 
 [State 230, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-[State 230, Contact]
+[State 230, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = S, NA
-damage = 35,0
+attr = S,NA
+damage = 27,0
 animtype = Light
 guardflag = MA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 6,7
+pausetime = 5,7
 sparkno = 0
-sparkxy = -7,-68
+sparkxy = -7,-51
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 8
-ground.hittime = 12
-ground.velocity = -3.2
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 12
+ground.hittime = 17
+ground.velocity = -1.4
+air.velocity = -1.5,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
-[State 230, End]
+[State 230, Queue b chain]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 5
+triggerall = AnimElemTime(7) < 0
+trigger1 = command = "b"
+v = 28
+value = 240
+ignorehitpause = 1
+
+[State 230, Own confirmed chain]
+type = ChangeState
+triggerall = var(28) > 0
+triggerall = MoveHit
+trigger1 = AnimElemTime(5) >= 0
+value = var(28)
+ctrl = 0
+
+[State 230, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 240]
 type = S
 movetype = A
 physics = S
-ctrl = 0
 anim = 240
-velset = 0,0
+ctrl = 0
+poweradd = 0
 juggle = 4
-poweradd = 30
 sprpriority = 2
+velset = 0,0
+; Circular de swipe: startup 9, active 4, recovery 17.
+
+[State 240, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
+
+[State 240, Own approach]
+type = VelSet
+trigger1 = Time = [2,12]
+x = 1.3
+
+[State 240, Approach recovery]
+type = VelSet
+trigger1 = Time = 13
+x = 0
 
 [State 240, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,4
 
-[State 240, Contact]
+[State 240, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = S, NA
-damage = 62,0
+attr = S,NA
+damage = 30,0
 animtype = Heavy
 guardflag = MA
 hitflag = MAF
-priority = 3,Hit
-pausetime = 10,11
+priority = 4,Hit
+pausetime = 8,10
 sparkno = 2
-sparkxy = -7,-68
+sparkxy = -7,-69
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 14
-ground.hittime = 19
-ground.velocity = -5.8
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 17
+ground.hittime = 22
+ground.velocity = -0.8
+air.velocity = -1.5,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 30,8
+givepower = 15,8
 
-[State 240, End]
+[State 240, Physical contact 2]
+type = HitDef
+trigger1 = AnimElem = 6
+attr = S,NA
+damage = 30,0
+animtype = Heavy
+guardflag = MA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 8,10
+sparkno = 2
+sparkxy = -7,-69
+hitsound = 5,2
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 17
+ground.hittime = 22
+ground.velocity = -1.8
+air.velocity = -1.8,-3.5
+air.hittime = 22
+fall = 0
+fall.recover = 1
+getpower = 30,8
+givepower = 15,8
+
+[State 240, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 400]
 type = C
 movetype = A
 physics = C
+anim = 400
 ctrl = 0
-anim = ifelse(var(22), 401, 400)
-velset = 0,0
+poweradd = 0
 juggle = 1
-poweradd = 12
 sprpriority = 2
+velset = 0,0
+; Toque desde cuclillas: startup 4, active 3, recovery 7.
 
-[State 400, Alternate next attack]
+[State 400, Reset normal buffer]
 type = VarSet
 trigger1 = Time = 0
-v = 22
-value = 1 - var(22)
-
-[State 400, Clear repeat buffer]
-type = VarSet
-trigger1 = Time = 0
-v = 24
+v = 28
 value = 0
 
 [State 400, Swing]
@@ -411,411 +432,559 @@ type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-[State 400, Contact]
+[State 400, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = C, NA
-damage = 24,0
+attr = C,NA
+damage = 19,0
 animtype = Light
 guardflag = MA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 6,7
+pausetime = 5,7
 sparkno = 0
-sparkxy = -7,-45
+sparkxy = -7,-41
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 8
-ground.hittime = 12
-ground.velocity = -3.2
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 12
+ground.hittime = 17
+ground.velocity = -2.0
+air.velocity = -2.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
-[State 400, Buffer another press]
+[State 400, Queue a chain]
 type = VarSet
 triggerall = AILevel = 0
-triggerall = Time >= 3
-trigger1 = command = "x"
-v = 24
-value = 1
+triggerall = Time >= 5
+triggerall = AnimElemTime(7) < 0
+trigger1 = command = "a"
+v = 28
+value = 430
 ignorehitpause = 1
 
-[State 400, Play buffered alternate]
+[State 400, Own confirmed chain]
 type = ChangeState
-trigger1 = var(24) = 1
+triggerall = var(28) > 0
+triggerall = MoveHit
 trigger1 = AnimElemTime(5) >= 0
-value = 400
+value = var(28)
 ctrl = 0
 
-[State 400, End]
+[State 400, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 11
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 410]
 type = C
 movetype = A
 physics = C
-ctrl = 0
 anim = 410
-velset = 0,0
+ctrl = 0
+poweradd = 0
 juggle = 4
-poweradd = 30
 sprpriority = 2
+velset = 0,0
+; Codo ascendente: startup 8, active 4, recovery 14.
+
+[State 410, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
 
 [State 410, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,4
 
-[State 410, Contact]
+[State 410, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = C, NA
+attr = C,NA
 damage = 48,0
 animtype = Heavy
 guardflag = MA
 hitflag = MAF
-priority = 3,Hit
-pausetime = 10,11
+priority = 4,Hit
+pausetime = 8,10
 sparkno = 2
-sparkxy = -7,-45
+sparkxy = -7,-52
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 14
-ground.hittime = 19
-ground.velocity = -5.8
-air.velocity = -3,-4.5
-air.hittime = 18
-fall = 0
-fall.recover = 1
+ground.slidetime = 17
+ground.hittime = 22
+ground.velocity = -3.5,-5.2
+air.velocity = -3.5,-5.2
+air.hittime = 22
+fall = 1
+fall.recover = 0
+getpower = 30,8
+givepower = 15,8
 
-[State 410, End]
+[State 410, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 11
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 430]
 type = C
 movetype = A
 physics = C
-ctrl = 0
 anim = 430
-velset = 0,0
+ctrl = 0
+poweradd = 0
 juggle = 1
-poweradd = 12
 sprpriority = 2
+velset = 0,0
+; Swipe al tobillo: startup 5, active 3, recovery 8.
+
+[State 430, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
+
+[State 430, Own retreat]
+type = VelSet
+trigger1 = AnimElemTime(6) >= 0
+x = -1.4
 
 [State 430, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-[State 430, Contact]
+[State 430, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = C, NA
-damage = 28,0
+attr = C,NA
+damage = 23,0
 animtype = Light
 guardflag = L
 hitflag = MAF
 priority = 3,Hit
-pausetime = 6,7
+pausetime = 5,7
 sparkno = 0
-sparkxy = -7,-13
+sparkxy = -7,-16
 hitsound = 5,0
 guardsound = 6,0
 ground.type = Low
-ground.slidetime = 8
-ground.hittime = 12
-ground.velocity = -3.2
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 12
+ground.hittime = 17
+ground.velocity = -2.2
+air.velocity = -2.2,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
-[State 430, End]
+[State 430, Queue b chain]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 5
+triggerall = AnimElemTime(7) < 0
+trigger1 = command = "b"
+v = 28
+value = 240
+ignorehitpause = 1
+
+[State 430, Own confirmed chain]
+type = ChangeState
+triggerall = var(28) > 0
+triggerall = MoveHit
+trigger1 = AnimElemTime(5) >= 0
+value = var(28)
+ctrl = 0
+
+[State 430, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 11
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 440]
 type = C
 movetype = A
 physics = C
-ctrl = 0
 anim = 440
-velset = 0,0
+ctrl = 0
+poweradd = 0
 juggle = 4
-poweradd = 30
 sprpriority = 2
+velset = 0,0
+; Barrido de pantalla: startup 9, active 4, recovery 18.
+
+[State 440, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
+
+[State 440, Own approach]
+type = VelSet
+trigger1 = Time = [2,12]
+x = 2.4
+
+[State 440, Approach recovery]
+type = VelSet
+trigger1 = Time = 13
+x = 0
 
 [State 440, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,4
 
-[State 440, Contact]
+[State 440, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = C, NA
-damage = 60,0
+attr = C,NA
+damage = 49,0
 animtype = Heavy
 guardflag = L
 hitflag = MAF
-priority = 3,Hit
-pausetime = 10,11
+priority = 4,Hit
+pausetime = 8,10
 sparkno = 2
-sparkxy = -7,-13
+sparkxy = -7,-19
 hitsound = 5,2
 guardsound = 6,0
-ground.type = Trip
-ground.slidetime = 14
-ground.hittime = 19
-ground.velocity = -5.8,-3.8
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.type = Low
+ground.slidetime = 12
+ground.hittime = 17
+ground.velocity = -4.0
+air.velocity = -4.0,-3.5
+air.hittime = 22
 fall = 1
-fall.recover = 1
+fall.recover = 0
+getpower = 30,8
+givepower = 15,8
 
-[State 440, End]
+[State 440, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 11
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 600]
 type = A
 movetype = A
 physics = A
+anim = 600
 ctrl = 0
-anim = ifelse(var(23), 601, 600)
-
+poweradd = 0
 juggle = 1
-poweradd = 12
 sprpriority = 2
+; Toque movil: startup 4, active 4, recovery 8.
 
-[State 600, Alternate next attack]
+[State 600, Reset normal buffer]
 type = VarSet
 trigger1 = Time = 0
-v = 23
-value = 1 - var(23)
-
-[State 600, Clear repeat buffer]
-type = VarSet
-trigger1 = Time = 0
-v = 24
+v = 28
 value = 0
+
+[State 600, Own aerial line]
+type = VelAdd
+trigger1 = AnimElem = 4
+x = -0.7
 
 [State 600, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-[State 600, Contact]
+[State 600, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = A, NA
-damage = 30,0
+attr = A,NA
+damage = 23,0
 animtype = Light
 guardflag = HA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 6,7
+pausetime = 5,7
 sparkno = 0
-sparkxy = -7,-68
+sparkxy = -7,-76
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 8
-ground.hittime = 12
-ground.velocity = -3.2
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 12
+ground.hittime = 17
+ground.velocity = -3.0
+air.velocity = -3.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
-[State 600, Buffer another press]
+[State 600, Queue a chain]
 type = VarSet
 triggerall = AILevel = 0
-triggerall = Time >= 3
-trigger1 = command = "x"
-v = 24
-value = 1
+triggerall = Time >= 5
+triggerall = AnimElemTime(7) < 0
+trigger1 = command = "a"
+v = 28
+value = 630
 ignorehitpause = 1
 
-[State 600, Play buffered alternate]
+[State 600, Own confirmed chain]
 type = ChangeState
-trigger1 = var(24) = 1
+triggerall = var(28) > 0
+triggerall = MoveHit
 trigger1 = AnimElemTime(5) >= 0
-value = 600
+value = var(28)
 ctrl = 0
 
-[State 600, End]
+[State 600, Land safely]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 52
+ctrl = 0
+
+[State 600, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 50
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 610]
 type = A
 movetype = A
 physics = A
-ctrl = 0
 anim = 610
-
+ctrl = 0
+poweradd = 0
 juggle = 4
-poweradd = 30
 sprpriority = 2
+; Codo de desplazamiento: startup 7, active 5, recovery 12.
+
+[State 610, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
+
+[State 610, Own aerial line]
+type = VelAdd
+trigger1 = AnimElem = 4
+x = -1.2
 
 [State 610, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,4
 
-[State 610, Contact]
+[State 610, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = A, NA
-damage = 54,0
+attr = A,NA
+damage = 47,0
 animtype = Heavy
 guardflag = HA
 hitflag = MAF
-priority = 3,Hit
-pausetime = 10,11
+priority = 4,Hit
+pausetime = 8,10
 sparkno = 2
-sparkxy = -7,-68
+sparkxy = -7,-63
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 14
-ground.hittime = 19
-ground.velocity = -5.8
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 18
+ground.hittime = 23
+ground.velocity = -4.0
+air.velocity = -4.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 30,8
+givepower = 15,8
 
-[State 610, End]
+[State 610, Land safely]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 52
+ctrl = 0
+
+[State 610, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 50
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 630]
 type = A
 movetype = A
 physics = A
-ctrl = 0
 anim = 630
-
+ctrl = 0
+poweradd = 0
 juggle = 1
-poweradd = 12
 sprpriority = 2
+; Patada cruzada: startup 5, active 5, recovery 10.
+
+[State 630, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
+
+[State 630, Own aerial line]
+type = VelAdd
+trigger1 = AnimElem = 4
+x = 1.5
 
 [State 630, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-[State 630, Contact]
+[State 630, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = A, NA
-damage = 36,0
+attr = A,NA
+damage = 28,0
 animtype = Light
 guardflag = HA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 6,7
+pausetime = 5,7
 sparkno = 0
-sparkxy = -7,-68
+sparkxy = -7,-54
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 8
-ground.hittime = 12
-ground.velocity = -3.2
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 12
+ground.hittime = 17
+ground.velocity = -3.0
+air.velocity = -3.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
-[State 630, End]
+[State 630, Queue b chain]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 5
+triggerall = AnimElemTime(7) < 0
+trigger1 = command = "b"
+v = 28
+value = 640
+ignorehitpause = 1
+
+[State 630, Own confirmed chain]
+type = ChangeState
+triggerall = var(28) > 0
+triggerall = MoveHit
+trigger1 = AnimElemTime(5) >= 0
+value = var(28)
+ctrl = 0
+
+[State 630, Land safely]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 52
+ctrl = 0
+
+[State 630, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 50
 ctrl = 1
-
-
-; Active frame is element 4 in chava.air, including on whiff.
 [Statedef 640]
 type = A
 movetype = A
 physics = A
-ctrl = 0
 anim = 640
-
+ctrl = 0
+poweradd = 0
 juggle = 4
-poweradd = 30
 sprpriority = 2
+; Circular aerea: startup 8, active 4, recovery 15.
+
+[State 640, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
+
+[State 640, Own aerial line]
+type = VelAdd
+trigger1 = AnimElem = 4
+x = -0.9
 
 [State 640, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,4
 
-[State 640, Contact]
+[State 640, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = A, NA
-damage = 62,0
+attr = A,NA
+damage = 29,0
 animtype = Heavy
 guardflag = HA
 hitflag = MAF
-priority = 3,Hit
-pausetime = 10,11
+priority = 4,Hit
+pausetime = 8,10
 sparkno = 2
-sparkxy = -7,-68
+sparkxy = -7,-54
 hitsound = 5,2
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 14
-ground.hittime = 19
-ground.velocity = -5.8
-air.velocity = -3,-4.5
-air.hittime = 18
+ground.slidetime = 18
+ground.hittime = 23
+ground.velocity = -0.8
+air.velocity = -1.5,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 30,8
+givepower = 15,8
 
-[State 640, End]
+[State 640, Physical contact 2]
+type = HitDef
+trigger1 = AnimElem = 6
+attr = A,NA
+damage = 29,0
+animtype = Heavy
+guardflag = HA
+hitflag = MAF
+priority = 4,Hit
+pausetime = 8,10
+sparkno = 2
+sparkxy = -7,-54
+hitsound = 5,2
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 18
+ground.hittime = 23
+ground.velocity = -4.5
+air.velocity = -4.5,-3.5
+air.hittime = 22
+fall = 0
+fall.recover = 1
+getpower = 30,8
+givepower = 15,8
+
+[State 640, Land safely]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 52
+ctrl = 0
+
+[State 640, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 50
 ctrl = 1
-
-
-; The controller calls an AI tutor. Cost is charged exactly once on entry.
-
 [Statedef -2]
 
 ; BEGIN TEACHER SPECIALS

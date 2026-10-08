@@ -1,0 +1,675 @@
+{
+  "character": "alejandro",
+  "moves": {
+    "200": {
+      "name": "Entrada corta",
+      "startup": 4,
+      "active": 2,
+      "recovery": 8,
+      "damage": 22,
+      "band": [
+        -92,
+        -43
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 49,
+      "low": false,
+      "state": 200,
+      "button": "x",
+      "group": 200,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4
+      ],
+      "total": 16,
+      "contact_box": [
+        16,
+        -93,
+        49,
+        -42
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          210,
+          "y"
+        ]
+      ]
+    },
+    "210": {
+      "name": "Codo de refactor",
+      "startup": 8,
+      "active": 4,
+      "recovery": 14,
+      "damage": 61,
+      "band": [
+        -120,
+        -35
+      ],
+      "push": 5.0,
+      "stun": 23,
+      "step": 3.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 210,
+      "button": "y",
+      "group": 8770,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        3,
+        3,
+        4,
+        2,
+        7,
+        7
+      ],
+      "total": 28,
+      "contact_box": [
+        16,
+        -99,
+        53,
+        -34
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "230": {
+      "name": "Patada de separacion",
+      "startup": 6,
+      "active": 3,
+      "recovery": 12,
+      "damage": 33,
+      "band": [
+        -78,
+        -24
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": -1.5,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 230,
+      "button": "a",
+      "group": 230,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        3,
+        2,
+        6,
+        6
+      ],
+      "total": 23,
+      "contact_box": [
+        16,
+        -79,
+        65,
+        -23
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "240": {
+      "name": "Extension de componente",
+      "startup": 10,
+      "active": 4,
+      "recovery": 18,
+      "damage": 61,
+      "band": [
+        -108,
+        -29
+      ],
+      "push": 4.5,
+      "stun": 22,
+      "step": 1.2,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 240,
+      "button": "b",
+      "group": 240,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        4,
+        4,
+        2,
+        9,
+        9
+      ],
+      "total": 34,
+      "contact_box": [
+        16,
+        -103,
+        65,
+        -28
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "400": {
+      "name": "Edicion baja",
+      "startup": 4,
+      "active": 3,
+      "recovery": 8,
+      "damage": 20,
+      "band": [
+        -61,
+        -20
+      ],
+      "push": 2.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 400,
+      "button": "x",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        1,
+        1,
+        2,
+        3,
+        2,
+        4,
+        4
+      ],
+      "total": 17,
+      "contact_box": [
+        16,
+        -62,
+        68,
+        -19
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "410": {
+      "name": "Compilacion ascendente",
+      "startup": 9,
+      "active": 4,
+      "recovery": 17,
+      "damage": 51,
+      "band": [
+        -83,
+        -21
+      ],
+      "push": 3.5,
+      "stun": 22,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": -5.5,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 410,
+      "button": "y",
+      "group": 8771,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        3,
+        4,
+        2,
+        8,
+        9
+      ],
+      "total": 32,
+      "contact_box": [
+        16,
+        -75,
+        68,
+        -20
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "430": {
+      "name": "Paso de depuracion",
+      "startup": 5,
+      "active": 3,
+      "recovery": 9,
+      "damage": 25,
+      "band": [
+        -31,
+        -1
+      ],
+      "push": 2.2,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 430,
+      "button": "a",
+      "group": 430,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        5
+      ],
+      "total": 19,
+      "contact_box": [
+        16,
+        -32,
+        69,
+        0
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          210,
+          "y"
+        ]
+      ]
+    },
+    "440": {
+      "name": "Retirada de error",
+      "startup": 9,
+      "active": 4,
+      "recovery": 17,
+      "damage": 50,
+      "band": [
+        -36,
+        -1
+      ],
+      "push": 4.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": -2.0,
+      "launch": 0.0,
+      "fall": true,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": true,
+      "state": 440,
+      "button": "b",
+      "group": 440,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        3,
+        4,
+        2,
+        8,
+        9
+      ],
+      "total": 32,
+      "contact_box": [
+        16,
+        -37,
+        69,
+        0
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "600": {
+      "name": "Entrada en salto",
+      "startup": 5,
+      "active": 4,
+      "recovery": 8,
+      "damage": 28,
+      "band": [
+        -108,
+        -44
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 600,
+      "button": "x",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        1,
+        2,
+        2,
+        4,
+        2,
+        4,
+        4
+      ],
+      "total": 19,
+      "contact_box": [
+        16,
+        -86,
+        72,
+        -43
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": [
+        [
+          640,
+          "b"
+        ]
+      ]
+    },
+    "610": {
+      "name": "Codo de integracion",
+      "startup": 8,
+      "active": 5,
+      "recovery": 15,
+      "damage": 50,
+      "band": [
+        -100,
+        -25
+      ],
+      "push": 4.0,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 610,
+      "button": "y",
+      "group": 8772,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        3,
+        3,
+        5,
+        2,
+        7,
+        8
+      ],
+      "total": 30,
+      "contact_box": [
+        16,
+        -86,
+        72,
+        -24
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "630": {
+      "name": "Cruce de componente",
+      "startup": 6,
+      "active": 5,
+      "recovery": 10,
+      "damage": 31,
+      "band": [
+        -86,
+        -22
+      ],
+      "push": 3.0,
+      "stun": 17,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 1.5,
+      "dive": 0.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 630,
+      "button": "a",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        5,
+        2,
+        5,
+        5
+      ],
+      "total": 23,
+      "contact_box": [
+        16,
+        -84,
+        79,
+        -21
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    },
+    "640": {
+      "name": "Descenso de deploy",
+      "startup": 9,
+      "active": 5,
+      "recovery": 16,
+      "damage": 56,
+      "band": [
+        -100,
+        -8
+      ],
+      "push": 4.5,
+      "stun": 23,
+      "step": 0.0,
+      "retreat": 0.0,
+      "launch": 0.0,
+      "fall": false,
+      "multi": 1,
+      "air_x": 0.0,
+      "dive": 3.0,
+      "max_reach": 120,
+      "low": false,
+      "state": 640,
+      "button": "b",
+      "group": 8773,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5
+      ],
+      "durations": [
+        3,
+        3,
+        3,
+        5,
+        2,
+        8,
+        8
+      ],
+      "total": 32,
+      "contact_box": [
+        16,
+        -84,
+        79,
+        -7
+      ],
+      "contact_elements": [
+        4
+      ],
+      "chains": []
+    }
+  },
+  "normal_buffer": 28,
+  "contacts": [
+    4,
+    6
+  ],
+  "art_scale": "native",
+  "controls": "KOF x/a/y/b"
+}

@@ -2,30 +2,31 @@
 
 Uses the cast's existing original art at native scale. 44 = resource (0..3),
 45 = spent resource snapshot, 46 = prepared-mode ticks, 50 = hit latch.
+42 is local to Jaime's airborne route choice and never survives his special.
 """
 import re
 
 IDENTITIES = {
  'chan_kof': dict(role='Precision / crossfit',resource='Correcciones',walk=1.65,run=4.1,jump=-8.7,tempo=1.05,
-   notes=['Gana correcciones al conectar Examen SQL o punio fuerte.', 'Documentar prepara una correccion; Indice Cluster las gasta.', 'SQL es un golpe corto; Senderismo salta; Crossfit golpea alto.']),
+   notes=['Gana correcciones al conectar Examen SQL o punio fuerte.', 'Tras confirmar SQL, pulsa B para cancelar a Indice Cluster y gastar correcciones.', 'SQL es un golpe corto; Senderismo salta; Crossfit golpea alto.']),
  'felix': dict(role='Reparacion / contraataque',resource='Diagnosticos',walk=1.4,run=3.5,jump=-7.8,tempo=1.12,
-   notes=['Gana diagnosticos conectando Llave o Cable a Tierra.', 'Mantenimiento consume diagnosticos: +10 de vida por punto.', 'Reinicio espera un ataque y responde; no causa danio al fallar.']),
+   notes=['Gana diagnosticos conectando Llave o Cable a Tierra.', 'Reparacion baja cura mas con diagnosticos; Mantenimiento los consume.', 'Reinicio bloquea, responde sin teletransportarse y recupera vida al confirmar.']),
  'alejandro': dict(role='Preparacion / trampas',resource='Modulos',walk=1.8,run=4.6,jump=-8.6,tempo=.9,
-   notes=['Importar prepara modulos durante cuatro segundos.', 'Angular gasta un modulo para duplicar el componente.', 'Refactor cruza al rival; Error planta una trampa de piso.']),
+   notes=['Importar prepara modulos durante cuatro segundos.', 'Cada copia Angular gasta un modulo real; el temporizador solo conserva el stock.', 'Refactor cruza al rival; Error planta una trampa de piso.']),
  'daniela': dict(role='Presion / asistencia',resource='Requisitos',walk=1.7,run=4,jump=-8.1,tempo=1,
-   notes=['UML encadena tres golpes y acumula requisitos.', 'Documento prepara otro requisito; Victor los consume al acudir.', 'Revision es un contraataque; Cambio de Alcance es un agarre.']),
+   notes=['UML encadena tres golpes y acumula requisitos.', 'Documento prepara otro requisito; Victor los consume al acudir.', 'Revision intercepta golpes cuerpo a cuerpo con una llave; no refleja proyectiles.']),
  'gameros': dict(role='Rachas / gimnasio',resource='Racha',walk=1.95,run=5,jump=-9,tempo=.8,
-   notes=['Encadena golpes para ganar racha; recibir un golpe la rompe.', 'Modo Gym potencia ataques durante cinco segundos.', 'Boxeo, patada ascendente, moto y pedal tienen trayectorias propias.']),
+   notes=['Encadena golpes para ganar racha; recibir un golpe la rompe.', 'En Gym y con dos puntos de racha, confirma Arcade y pulsa B para encadenar Pedal.', 'Boxeo, patada ascendente, moto y pedal tienen trayectorias propias.']),
  'armando': dict(role='Rebotes / IoT',resource='Calibraciones',walk=1.75,run=4.3,jump=-9.2,tempo=.95,
-   notes=['Calibrar prepara rebotes extra y mejora el sensor.', 'Pingpong rebota; Clavada salta y golpea al caer.', 'Impresion planta un sensor; Rebote Conectado es una patada doble.']),
+   notes=['Calibrar prepara rebotes extra y activa a distancia el sensor instalado.', 'Pingpong rebota; Clavada salta y golpea al caer.', 'El sensor espera proximidad y eleva al rival; una trampa de Angular solo golpea bajo.']),
  'vladimir': dict(role='Agarres / retencion',resource='Asistencias',walk=1.5,run=3.6,jump=-7.8,tempo=1.15,
-   notes=['Invitacion es un agarre: no lanza objetos.', 'Gana asistencias con agarres o Pase de Lista.', 'Honores gasta asistencias en un pisoton de zona.']),
+   notes=['Invitacion es un agarre: no lanza objetos.', 'Gana asistencias con agarres o Pase de Lista.', 'Honores gasta asistencias: atrae al rival y le retira energia al conectar.']),
  'jaime': dict(role='Saltos / calculo',resource='Calculos',walk=1.85,run=4.8,jump=-9.4,tempo=.92,
-   notes=['Calculo Mental prepara hasta tres calculos.', 'Caballo salta en arco; Potencia consume calculos para elevar mas.', 'Bicicleta avanza; Derivada golpea bajo y retrocede.']),
+   notes=['Calculo Mental prepara hasta tres calculos.', 'Durante Caballo, mantener adelante o atras consume un calculo y corrige la ruta.', 'Potencia gasta calculos para lanzar mas alto; Bicicleta avanza y Derivada retrocede.']),
  'leonardo': dict(role='Evasion / patadas',resource='Bateria',walk=2.15,run=5.4,jump=-8.9,tempo=.78,
-   notes=['Modo Avion evade y carga bateria; contrarrestar tambien carga.', 'Push gasta bateria para una tercera patada.', 'Swipe cruza al rival; Scroll espera un golpe y contraataca.']),
+   notes=['Modo Avion evade y carga bateria; contrarrestar tambien carga.', 'Push gasta bateria para una tercera patada.', 'Swipe cruza corriendo; Scroll retrocede y vuelve con una patada, sin teletransporte.']),
  'cesar': dict(role='Resistencia / castigo',resource='Rigor',walk=1.15,run=2.9,jump=-7.2,tempo=1.28,
-   notes=['Recibir golpes aumenta Rigor: hasta tres puntos.', 'DELETE es un agarre que consume Rigor para aumentar el castigo.', 'Silla reduce danio al avanzar; Pastillas curan tras una pausa larga.']),
+   notes=['Recibir golpes aumenta Rigor: hasta tres puntos.', 'DELETE consume Rigor en un agarre; Silla usa un punto para reforzar su resistencia.', 'Pastillas curan tras una pausa larga; el baston castiga a distancia.']),
 }
 PROJECTILE_USERS={'alejandro','armando'}
 COUNTERS={'felix':1010,'daniela':1010,'leonardo':1030}
@@ -45,17 +46,38 @@ def build(id,p,state,ctl,hit,end,helper,projectile):
     def leap(n,vx,vy,land=30):
         return (ctl(n,'Takeoff','VelSet',f'x = {vx}\ny = {vy}','Time = 3')
           +ctl(n,'Airborne','StateTypeSet','statetype = A','Time = 3')
-          +ctl(n,'Arc gravity','VelAdd','y = 0.5',f'Time = [4,{land-1}]')
-          +ctl(n,'Landing position','PosSet','y = 0',f'Time >= {land}')
-          +ctl(n,'Landing brake','VelSet','x = 0\ny = 0',f'Time >= {land}')
-          +ctl(n,'Grounded','StateTypeSet','statetype = S',f'Time = {land}'))
+          +ctl(n,'Arc gravity','VelAdd','y = 0.5',f'Time = [4,{land-1}] && StateType = A')
+          +ctl(n,'Landing position','PosSet','y = 0',f'Time >= {land}\ntrigger2 = Time > 3 && Vel Y>0 && Pos Y+Vel Y>=0')
+          +ctl(n,'Landing brake','VelSet','x = 0\ny = 0',f'Time >= {land}\ntrigger2 = Time > 3 && Vel Y>0 && Pos Y+Vel Y>=0')
+          +ctl(n,'Grounded','StateTypeSet','statetype = S',f'Time >= {land}\ntrigger2 = Time > 3 && Pos Y>=0 && Vel Y>=0'))
     def counter(n):
-        return ctl(n,'Read incoming attack','HitOverride','attr = SCA,NA,SA,HA,NP,SP,HP\nslot = 0\nstateno = 1070\ntime = 1','Time = [3,23]')
+        # Daniela catches an arm to revise the student's work. A distant
+        # projectile cannot become a magical command throw on its owner.
+        attr='SCA,NA,SA,HA' if id=='daniela' else 'SCA,NA,SA,HA,NP,SP,HP'
+        return ctl(n,'Read incoming attack','HitOverride',f'attr = {attr}\nslot = 0\nstateno = 1070\ntime = 1','Time = [3,23]')
     def grab(n,damage):
-        return (ctl(n,'Command grab','HitDef',f'attr = S,ST\nhitflag = M-\npriority = 1,Miss\ndamage = {damage},0\npausetime = 0,0\nsparkno = -1\np2stateno = 1080\nfall = 1\ngetpower = 30,0','Time = 8')
+        return (ctl(n,'Command grab','HitDef',f'attr = S,ST\nhitflag = M-\nguardflag =\npriority = 1,Miss\ndamage = {damage},0\npausetime = 0,0\nsparkno = -1\np2stateno = 1080\nfall = 1\ngetpower = 30,0','Time = 8')
           +ctl(n,'Hold opponent','TargetBind','time = 1\npos = 32,-4','Time = [9,20] && NumTarget > 0')
           +ctl(n,'Release opponent','TargetState','value = 1081','Time = 21 && NumTarget > 0'))
     def trap(n,child,duration):
+        if id=='armando':
+            # IoT is an armed proximity sensor. Unlike Alejandro's immediate
+            # low trap, it remains harmless until a visitor or remote signal.
+            out=state(child,8703,kind='C',move='I')
+            out+=ctl(child,'Sensor rests on floor','PosSet','y = -12','1')
+            out+=ctl(child,'Sensor stays in the stage','ScreenBound','value = 0\nmovecamera = 0,0','1')
+            out+=ctl(child,'Sensor no push','PlayerPush','value = 0','1')
+            out+=ctl(child,'Sensor can be broken','HitOverride','attr = SCA,AA,AP,AT\nslot = 0\nstateno = 3021\ntime = 1','1')
+            out+=ctl(child,'Detect nearby visitor','ChangeState','value = 1051','Time >= 8 && Abs(P2Dist X)<46 && P2Dist Y > -85')
+            out+=ctl(child,'Remote calibration signal','ChangeState','value = 1051','Root,StateNo = 1040 && Root,Time = 24')
+            out+=ctl(child,'Sensor timeout','DestroySelf','',f'Time >= {duration}\ntrigger2 = RoundState != 2\ntrigger3 = Root,Life <= 0')
+            out+=state(1051,8750,kind='C')
+            out+=ctl(1051,'Active sensor no push','PlayerPush','value = 0','1')
+            out+=ctl(1051,'Active sensor stage bounds','ScreenBound','value = 0\nmovecamera = 0,0','1')
+            out+=hit(1051,'55+(Root,var(44))*9',trigger='Time = 0',projectile=True,fall=True,lift=True)
+            out+=ctl(1051,'Sensor contact cleanup','ChangeState','value = 3021','MoveContact')
+            out+=ctl(1051,'Sensor burst cleanup','DestroySelf','','Time >= 16\ntrigger2 = RoundState != 2\ntrigger3 = Root,Life <= 0')
+            return out
         return (state(child,8700 if id=='alejandro' else 8703,kind='C')
           +ctl(child,'Keep trap on floor','PosSet','y = -12','1')
           +ctl(child,'Trap does not move camera','ScreenBound','value = 0\nmovecamera = 0,0','1')
@@ -66,7 +88,9 @@ def build(id,p,state,ctl,hit,end,helper,projectile):
           +ctl(child,'Trap timeout','DestroySelf','',f'Time >= {duration}\ntrigger2 = RoundState != 2\ntrigger3 = Root,Life <= 0'))
 
     if id=='chan_kof':
-        out+=s(1000,8740,30,h(1000,55,8,velocity='-1.5',stun=25))
+        body=h(1000,55,8,velocity='-1.5',stun=25)
+        body+=ctl(1000,'Correct the confirmed query','ChangeState','value = 1030\nctrl = 0','Time >= 9 && MoveHit && var(44)>0 && command = "a"')
+        out+=s(1000,8740,30,body)
         out+=s(1010,8741,38,h(1010,88,24,fall=True,lift=True)+ctl(1010,'Crossfit brace','DefenceMulSet','value = .7','Time < 14'))
         out+=s(1020,8742,46,leap(1020,3.9,-5.5,28)+h(1020,78,16,fall=True))
         body=spend(1030)
@@ -75,12 +99,12 @@ def build(id,p,state,ctl,hit,end,helper,projectile):
     elif id=='felix':
         out+=s(1000,8740,35,move(1000,2.6,3,11)+h(1000,64,8,stun=27))
         out+=s(1010,8741,34,counter(1010),move='I')
-        out+=s(1020,8742,38,move(1020,3.3,4,16)+h(1020,65,12,low=True)+ctl(1020,'Repair on contact','LifeAdd','value = 12\nkill = 0','Time = 24 && MoveHit'),kind='C')
+        out+=s(1020,8742,38,move(1020,3.3,4,16)+h(1020,65,12,low=True)+ctl(1020,'Repair on contact','LifeAdd','value = 12+var(44)*4\nkill = 0','Time = 24 && MoveHit'),kind='C')
         out+=s(1030,8743,40,h(1030,52,10,low=True,velocity='-0.3',stun=38)+ctl(1030,'Grounded cable','VelSet','x = -1.8','Time = [20,30]'),kind='C')
     elif id=='alejandro':
         body=ctl(1000,'Clear confirm','VarSet','v = 43\nvalue = 0')+helper(1000,1005,trigger='Time = 8')
-        body+=helper(1000,1005,35,-84,'Time = 14 && (var(46)>0 || var(44)>0)',identity=1006)
-        body+=ctl(1000,'Consume imported module','VarSet','v = 44\nvalue = max(0,var(44)-1)','Time = 15')
+        body+=helper(1000,1005,35,-84,'Time = 14 && var(44)>0',identity=1006)
+        body+=ctl(1000,'Consume imported module','VarSet','v = 44\nvalue = max(0,var(44)-1)','Time = 15 && var(44)>0')
         out+=s(1000,8740,30,body)+projectile(1005,p)
         out+=s(1010,8741,36,ctl(1010,'Inject next to opponent','PosAdd','x = min(65,max(0,P2BodyDist X-24))','Time = 5')+h(1010,75,10,fall=True,lift=True))
         body=ctl(1020,'Refactor trail','AfterImage','time = 24\nlength = 6\ntimegap = 2\nframegap = 2\ntrans = add')
@@ -100,6 +124,7 @@ def build(id,p,state,ctl,hit,end,helper,projectile):
     elif id=='gameros':
         body=move(1000,'ifelse(var(46)>0,2.4,1.4)',2,12)
         for t in [6,12,18]: body+=h(1000,'17+var(44)*3+ifelse(var(46)>0,5,0)',t,velocity='-0.4',stun=22)
+        body+=ctl(1000,'Arcade gym follow-up','ChangeState','value = 1030\nctrl = 0','Time >= 19 && MoveHit && var(46)>0 && var(44)>=2 && command = "a"')
         out+=s(1000,8740,28,body)
         out+=s(1010,8741,42,leap(1010,1.8,-5.8,27)+h(1010,76,8,fall=True,lift=True))
         out+=s(1020,8742,36,move(1020,'ifelse(var(46)>0,9,7.4)',3,20)+h(1020,'80+var(44)*6',6,fall=True)+ctl(1020,'Ride through','PlayerPush','value = 0','Time < 21'))
@@ -113,12 +138,21 @@ def build(id,p,state,ctl,hit,end,helper,projectile):
         out+=s(1000,8740,34,move(1000,2.5,2,7)+grab(1000,78))
         out+=s(1010,8741,38,h(1010,73,12,velocity='2',fall=True,lift=True))
         out+=s(1020,8742,42,ctl(1020,'Door brace','DefenceMulSet','value = .5','Time = [4,24]')+h(1020,70,18,velocity='-7',stun=32))
-        body=spend(1030)+h(1030,'65+var(45)*14',16,low=True,fall=True)
+        body=spend(1030)+h(1030,'65+var(45)*14',16,low=True,fall=True,velocity='ifelse(var(45)>0,2,-4)',stun=34)
+        body+=ctl(1030,'Retain attendance energy','TargetPowerAdd','value = -50*var(45)','Time = 17 && MoveHit && NumTarget>0 && var(45)>0')
         body+=ctl(1030,'Attendance shake','EnvShake','time = 10\nfreq = 65\nampl = -4','Time = 16')
         out+=s(1030,8743,42,body)
     elif id=='jaime':
-        out+=s(1000,8740,42,leap(1000,2.5,-6,29)+h(1000,'64+var(44)*5',21,fall=True))
-        out+=s(1010,8741,35,spend(1010)+h(1010,'72+var(45)*15',10,fall=True,lift=True))
+        body=ctl(1000,'Reset knight route','VarSet','v = 42\nvalue = 0')+leap(1000,2.5,-6,29)
+        body+=ctl(1000,'Calculate an airborne square','VarSet','v = 42\nvalue = ifelse(command="holdback",-1,1)','Time = [10,17] && var(42)=0 && var(44)>0 && (command="holdfwd" || command="holdback")')
+        body+=ctl(1000,'Apply calculated knight route','VelSet','x = ifelse(var(42)<0,-3.8,5.2)','Time = [10,17] && Abs(var(42))=1')
+        body+=ctl(1000,'Pay for calculation','VarSet','v = 44\nvalue = max(0,var(44)-1)','Time = [10,17] && Abs(var(42))=1')
+        body+=ctl(1000,'Latch chosen route','VarSet','v = 42\nvalue = var(42)*2','Time = [10,17] && Abs(var(42))=1')
+        body+=h(1000,'64+var(44)*5',21,fall=True)
+        out+=s(1000,8740,42,body)
+        body=spend(1010)+h(1010,'72+var(45)*15',10,fall=True,lift=True)
+        body+=ctl(1010,'Calculated launch height','TargetVelSet','y = -7-var(45)*1.5','Time = 11 && MoveHit && NumTarget>0')
+        out+=s(1010,8741,35,body)
         out+=s(1020,8742,36,move(1020,6.4,3,20)+h(1020,76,7,fall=True))
         out+=s(1030,8743,37,h(1030,60,9,low=True,fall=True)+move(1030,-3,14,25),kind='C')
     elif id=='leonardo':
@@ -129,15 +163,19 @@ def build(id,p,state,ctl,hit,end,helper,projectile):
         out+=s(1000,8740,30,body)
         out+=s(1010,8741,38,leap(1010,2,-5.2,26)+h(1010,67,8,fall=True,lift=True)+ctl(1010,'Low evasion','NotHitBy','value = C,NA,SA\ntime = 1','Time = [3,9]'))
         body=ctl(1020,'Swipe trail','AfterImage','time = 20\nlength = 5\ntimegap = 2\nframegap = 2\ntrans = add')
-        body+=ctl(1020,'Pass through','PlayerPush','value = 0','Time < 16')
-        body+=ctl(1020,'Swipe step','PosAdd','x = min(150,max(0,P2BodyDist X+24))','Time = 7')
-        body+=ctl(1020,'Face opponent','Turn','','Time = 8 && P2Dist X < 0')+h(1020,63,11)
+        body+=ctl(1020,'Pass through','PlayerPush','value = 0','Time <= 18')
+        body+=ctl(1020,'Measured swipe stride','VelSet','x = min(12,max(3,(P2Dist X+24)/14))','Time = 3')
+        body+=ctl(1020,'Plant after swipe','VelSet','x = 0','Time = 17')
+        body+=ctl(1020,'Face opponent after crossing','Turn','','Time = 17 && P2Dist X < 0')+h(1020,63,18)
         out+=s(1020,8742,29,body)
         out+=s(1030,8743,34,counter(1030),move='I')
     elif id=='cesar':
         out+=s(1000,8740,50,h(1000,82,24,stun=28))
         out+=s(1010,8741,46,h(1010,100,18,fall=True,lift=True))
-        out+=s(1020,8742,48,move(1020,2.6,5,26)+ctl(1020,'Supported advance','DefenceMulSet','value = .55','Time = [5,28]')+h(1020,94,18,fall=True))
+        body=ctl(1020,'Remember rigor for support','VarSet','v = 45\nvalue = min(1,var(44))')
+        body+=ctl(1020,'Pay for supported guard','VarSet','v = 44\nvalue = max(0,var(44)-1)')
+        body+=move(1020,2.6,5,26)+ctl(1020,'Supported advance','DefenceMulSet','value = ifelse(var(45)>0,.35,.55)','Time = [5,28]')+h(1020,94,18,fall=True)
+        out+=s(1020,8742,48,body)
         out+=s(1030,8743,44,spend(1030)+move(1030,1.6,2,7)+grab(1030,'90+var(45)*20'))
 
     # Supports now have different uses, rather than all charging the same bar.
@@ -163,9 +201,15 @@ def build(id,p,state,ctl,hit,end,helper,projectile):
 
     if id in COUNTERS:
         body=ctl(1070,'Face attacker','Turn','','Time = 0 && P2Dist X < 0')
-        body+=ctl(1070,'Counter step','PosAdd','x = min(80,max(0,P2BodyDist X-22))')
         body+=ctl(1070,'Counter protection','NotHitBy','value = SCA\ntime = 1','Time < 12')
-        body+=h(1070,98 if id=='felix' else 90,12,fall=True,lift=True)
+        if id=='felix':
+            body+=move(1070,2,2,7)+h(1070,98,12,low=True,fall=True,velocity='-2',stun=32)
+            body+=ctl(1070,'Repair confirmed reboot','LifeAdd','value = 8+var(44)*4\nkill = 0','Time = 20 && MoveHit')
+        elif id=='daniela':
+            body+=move(1070,2.8,2,7)+grab(1070,90)
+        else:
+            body+=move(1070,-2.8,0,4)+move(1070,6.3,5,10)
+            body+=h(1070,90,12,fall=True,lift=True)
         body+=gain(1070,18)
         out+=s(1070,8745,35,body)
     if id in {'daniela','vladimir','cesar'}:
@@ -241,6 +285,9 @@ def actions(id):
                 out+=f'Clsn1: 1\nClsn1[0] = {box}\n'
             out+=f'{group},{i}, 0,0, {ticks}\n'
     out+='\n[Begin Action 8790]\n8703,0, 0,0, -1\n'
+    if id=='armando':
+        out+='\n[Begin Action 8750]\nClsn2Default: 1\nClsn2[0] = -18,-14,18,14\nClsn1Default: 1\nClsn1[0] = -60,-75,60,14\n'
+        for i in range(6): out+=f'8703,{i}, 0,0, 3\n'
     finishers={
       'chan_kof':[(8701,i) for i in [0,2,3,4,2,3,4,5]],
       'felix':[(120,i) for i in [0,1,2]]+[(200,i) for i in [1,2,3]]+[(410,i) for i in [2,3,4]],
@@ -272,10 +319,10 @@ def maximum(id,state,ctl,hit,end,helper):
     def jump(start,speed,up,land):
         return (ctl(n,'MAX2 leap','VelSet',f'x = {speed}\ny = {up}',f'Time = {start}')
           +ctl(n,'MAX2 airborne','StateTypeSet','statetype = A',f'Time = {start}')
-          +ctl(n,'MAX2 gravity','VelAdd','y = .5',f'Time = [{start+1},{land-1}]')
-          +ctl(n,'MAX2 land','PosSet','y = 0',f'Time = {land}')
-          +ctl(n,'MAX2 land stop','VelSet','x = 0\ny = 0',f'Time = {land}')
-          +ctl(n,'MAX2 grounded','StateTypeSet','statetype = S',f'Time = {land}'))
+          +ctl(n,'MAX2 gravity','VelAdd','y = .5',f'Time = [{start+1},{land-1}] && StateType = A')
+          +ctl(n,'MAX2 land','PosSet','y = 0',f'Time = {land}\ntrigger2 = Time > {start} && Time < {land} && Vel Y>0 && Pos Y+Vel Y>=0')
+          +ctl(n,'MAX2 land stop','VelSet','x = 0\ny = 0',f'Time = {land}\ntrigger2 = Time > {start} && Time < {land} && Vel Y>0 && Pos Y+Vel Y>=0')
+          +ctl(n,'MAX2 grounded','StateTypeSet','statetype = S',f'Time = {land}\ntrigger2 = Time > {start} && Time < {land} && Pos Y>=0 && Vel Y>=0'))
     if id=='chan_kof':
         out+=step(2.2,3,16)
         for t in [14,28]: out+=h('65+var(45)*7',t,velocity='-0.4',stun=32)

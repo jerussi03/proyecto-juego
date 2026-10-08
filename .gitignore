@@ -22,6 +22,11 @@ desktop.ini
 /chars/**/kof-input-qa.def
 /chars/**/identity-preview.cns
 /chars/**/identity-preview.def
+/chars/**/normal-qa.cns
+/chars/**/normal-qa.def
+# Derivados del atlas: el juego usa SFF y el constructor usa sheet.png.
+/chars/**/art/normal-v3/877*-*.png
+/chars/**/art/normal-v3/preview.png
 /chars/chava/chava-qa.cns
 /chars/chava/chava-qa.def
 /chars/hector/hector-qa.cns

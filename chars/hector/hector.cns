@@ -193,420 +193,528 @@ ctrl = 1
 type = S
 movetype = A
 physics = S
-ctrl = 0
 anim = 200
+ctrl = 0
+poweradd = 0
+juggle = 1
+sprpriority = 2
 velset = 0,0
-poweradd = 15
+; Ping inicial: startup 3, active 2, recovery 8.
 
+[State 200, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
 
 [State 200, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-
-[State 200, Contact]
+[State 200, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = S, NA
-damage = 24,0
-animtype = Medium
+attr = S,NA
+damage = 22,0
+animtype = Light
 guardflag = MA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 5,8
-sparkno = 2
-sparkxy = -8,-70
+pausetime = 5,7
+sparkno = 0
+sparkxy = -7,-68
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 12
-ground.hittime = 16
-ground.velocity = -3
-air.velocity = -2,-3
-air.hittime = 18
+ground.slidetime = 13
+ground.hittime = 18
+ground.velocity = -1.2
+air.velocity = -1.5,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
-
-[State 200, Clear combo buffer]
+[State 200, Queue x chain]
 type = VarSet
-trigger1 = Time = 0
-v = 20
-value = 0
-
-
-[State 200, Queue next ping]
-type = VarSet
-trigger1 = Time >= 3 && command = "x"
-v = 20
-value = 1
+triggerall = AILevel = 0
+triggerall = Time >= 5
+triggerall = AnimElemTime(7) < 0
+trigger1 = command = "x"
+v = 28
+value = 201
 ignorehitpause = 1
 
-
-[State 200, Ping Ping Pong]
+[State 200, Own confirmed chain]
 type = ChangeState
-trigger1 = var(20) && AnimElemTime(5) >= 0
-value = 201
+triggerall = var(28) > 0
+triggerall = MoveHit
+trigger1 = AnimElemTime(5) >= 0
+value = var(28)
 ctrl = 0
 
-
-[State 200, Finish]
+[State 200, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
-
-
 [Statedef 201]
 type = S
 movetype = A
 physics = S
-ctrl = 0
 anim = 201
+ctrl = 0
+poweradd = 0
+juggle = 1
+sprpriority = 2
 velset = 0,0
-poweradd = 15
+; Segundo Ping: startup 3, active 2, recovery 8.
 
+[State 201, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
+
+[State 201, Own approach]
+type = VelSet
+trigger1 = Time = [2,4]
+x = 1.0
+
+[State 201, Approach recovery]
+type = VelSet
+trigger1 = Time = 5
+x = 0
 
 [State 201, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-
-[State 201, Contact]
+[State 201, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = S, NA
+attr = S,NA
 damage = 24,0
-animtype = Medium
+animtype = Light
 guardflag = MA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 5,8
-sparkno = 2
-sparkxy = -8,-70
+pausetime = 5,7
+sparkno = 0
+sparkxy = -7,-68
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 12
-ground.hittime = 16
-ground.velocity = -3
-air.velocity = -2,-3
-air.hittime = 18
+ground.slidetime = 13
+ground.hittime = 18
+ground.velocity = -1.2
+air.velocity = -1.5,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
-
-[State 201, Clear combo buffer]
+[State 201, Queue x chain]
 type = VarSet
-trigger1 = Time = 0
-v = 20
-value = 0
-
-
-[State 201, Queue next ping]
-type = VarSet
-trigger1 = Time >= 3 && command = "x"
-v = 20
-value = 1
+triggerall = AILevel = 0
+triggerall = Time >= 5
+triggerall = AnimElemTime(7) < 0
+trigger1 = command = "x"
+v = 28
+value = 202
 ignorehitpause = 1
 
-
-[State 201, Ping Ping Pong]
+[State 201, Own confirmed chain]
 type = ChangeState
-trigger1 = var(20) && AnimElemTime(5) >= 0
-value = 202
+triggerall = var(28) > 0
+triggerall = MoveHit
+trigger1 = AnimElemTime(5) >= 0
+value = var(28)
 ctrl = 0
 
-
-[State 201, Finish]
+[State 201, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
-
-
 [Statedef 202]
 type = S
 movetype = A
 physics = S
-ctrl = 0
 anim = 202
+ctrl = 0
+poweradd = 0
+juggle = 4
+sprpriority = 2
 velset = 0,0
-poweradd = 15
+; Pong de cierre: startup 6, active 2, recovery 17.
 
+[State 202, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
 
 [State 202, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
-value = 0,0
+value = 0,4
 
-
-[State 202, Contact]
+[State 202, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = S, NA
-damage = 52,0
-animtype = Medium
+attr = S,NA
+damage = 46,0
+animtype = Heavy
 guardflag = MA
 hitflag = MAF
-priority = 3,Hit
-pausetime = 5,8
+priority = 4,Hit
+pausetime = 8,10
 sparkno = 2
-sparkxy = -8,-70
-hitsound = 5,0
+sparkxy = -7,-68
+hitsound = 5,2
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 12
-ground.hittime = 16
-ground.velocity = -6
-air.velocity = -2,-3
-air.hittime = 18
+ground.slidetime = 19
+ground.hittime = 24
+ground.velocity = -5.8
+air.velocity = -5.8,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 30,8
+givepower = 15,8
 
-
-[State 202, Finish]
+[State 202, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
-
-
 [Statedef 210]
 type = S
 movetype = A
 physics = S
-ctrl = 0
 anim = 210
+ctrl = 0
+poweradd = 0
+juggle = 4
+sprpriority = 2
 velset = 0,0
-poweradd = 15
+; Latigazo RJ45 corto: startup 12, active 4, recovery 20.
 
+[State 210, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
+
+[State 210, Own approach]
+type = VelSet
+trigger1 = Time = [2,15]
+x = 1.1
+
+[State 210, Approach recovery]
+type = VelSet
+trigger1 = Time = 16
+x = 0
 
 [State 210, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
-value = 0,0
+value = 0,4
 
-
-[State 210, Contact]
+[State 210, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = S, NA
+attr = S,NA
 damage = 72,0
 animtype = Heavy
 guardflag = MA
 hitflag = MAF
-priority = 3,Hit
-pausetime = 5,8
+priority = 4,Hit
+pausetime = 8,10
 sparkno = 2
-sparkxy = -8,-70
-hitsound = 5,0
+sparkxy = -7,-78
+hitsound = 5,2
 guardsound = 6,0
 ground.type = High
-ground.slidetime = 12
-ground.hittime = 16
-ground.velocity = -3
-air.velocity = -2,-3
-air.hittime = 18
+ground.slidetime = 18
+ground.hittime = 23
+ground.velocity = -6.0
+air.velocity = -6.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 30,8
+givepower = 15,8
 
-
-[State 210, Finish]
+[State 210, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
-
-
 [Statedef 230]
 type = S
 movetype = A
 physics = S
-ctrl = 0
 anim = 230
+ctrl = 0
+poweradd = 0
+juggle = 1
+sprpriority = 2
 velset = 0,0
-poweradd = 15
+; Puntapie de protocolo: startup 7, active 3, recovery 12.
 
+[State 230, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
 
 [State 230, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-
-[State 230, Contact]
+[State 230, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = S, NA
-damage = 40,0
-animtype = Medium
+attr = S,NA
+damage = 32,0
+animtype = Light
 guardflag = MA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 5,8
-sparkno = 2
-sparkxy = -8,-70
+pausetime = 5,7
+sparkno = 0
+sparkxy = -7,-51
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
 ground.slidetime = 12
-ground.hittime = 16
-ground.velocity = -6
-air.velocity = -2,-3
-air.hittime = 18
+ground.hittime = 17
+ground.velocity = -3.0
+air.velocity = -3.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
+[State 230, Queue y chain]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 5
+triggerall = AnimElemTime(7) < 0
+trigger1 = command = "y"
+v = 28
+value = 210
+ignorehitpause = 1
 
-[State 230, Finish]
+[State 230, Own confirmed chain]
+type = ChangeState
+triggerall = var(28) > 0
+triggerall = MoveHit
+trigger1 = AnimElemTime(5) >= 0
+value = var(28)
+ctrl = 0
+
+[State 230, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
-
-
 [Statedef 430]
 type = C
 movetype = A
 physics = C
-ctrl = 0
 anim = 430
+ctrl = 0
+poweradd = 0
+juggle = 1
+sprpriority = 2
 velset = 0,0
-poweradd = 15
+; Toque de capa fisica: startup 6, active 3, recovery 11.
 
+[State 430, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
 
 [State 430, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-
-[State 430, Contact]
+[State 430, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = C, NA
-damage = 30,0
-animtype = Medium
+attr = C,NA
+damage = 25,0
+animtype = Light
 guardflag = L
 hitflag = MAF
 priority = 3,Hit
-pausetime = 5,8
-sparkno = 2
-sparkxy = -8,-70
+pausetime = 5,7
+sparkno = 0
+sparkxy = -7,-16
 hitsound = 5,0
 guardsound = 6,0
 ground.type = Low
 ground.slidetime = 12
-ground.hittime = 16
-ground.velocity = -3
-air.velocity = -2,-3
-air.hittime = 18
+ground.hittime = 17
+ground.velocity = -2.2
+air.velocity = -2.2,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
-
-[State 430, Finish]
+[State 430, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 11
 ctrl = 1
-
-
 [Statedef 600]
 type = A
 movetype = A
 physics = A
-ctrl = 0
 anim = 600
-poweradd = 15
+ctrl = 0
+poweradd = 0
+juggle = 1
+sprpriority = 2
+; Ping en salto: startup 6, active 4, recovery 10.
 
+[State 600, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
 
 [State 600, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-
-[State 600, Contact]
+[State 600, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = A, NA
-damage = 26,0
-animtype = Medium
-guardflag = MA
+attr = A,NA
+damage = 28,0
+animtype = Light
+guardflag = HA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 5,8
-sparkno = 2
-sparkxy = -8,-70
+pausetime = 5,7
+sparkno = 0
+sparkxy = -7,-76
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
 ground.slidetime = 12
-ground.hittime = 16
-ground.velocity = -3
-air.velocity = -2,-3
-air.hittime = 18
+ground.hittime = 17
+ground.velocity = -3.0
+air.velocity = -3.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
+[State 600, Queue y chain]
+type = VarSet
+triggerall = AILevel = 0
+triggerall = Time >= 5
+triggerall = AnimElemTime(7) < 0
+trigger1 = command = "y"
+v = 28
+value = 610
+ignorehitpause = 1
 
-[State 600, Finish]
+[State 600, Own confirmed chain]
+type = ChangeState
+triggerall = var(28) > 0
+triggerall = MoveHit
+trigger1 = AnimElemTime(5) >= 0
+value = var(28)
+ctrl = 0
+
+[State 600, Land safely]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 52
+ctrl = 0
+
+[State 600, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 50
 ctrl = 1
-
-
 [Statedef 630]
 type = A
 movetype = A
 physics = A
-ctrl = 0
 anim = 630
-poweradd = 15
+ctrl = 0
+poweradd = 0
+juggle = 1
+sprpriority = 2
+; Patada de enlace: startup 7, active 5, recovery 10.
 
+[State 630, Reset normal buffer]
+type = VarSet
+trigger1 = Time = 0
+v = 28
+value = 0
 
 [State 630, Swing]
 type = PlaySnd
 trigger1 = AnimElem = 3
 value = 0,0
 
-
-[State 630, Contact]
+[State 630, Physical contact 1]
 type = HitDef
 trigger1 = AnimElem = 4
-attr = A, NA
-damage = 38,0
-animtype = Medium
-guardflag = MA
+attr = A,NA
+damage = 31,0
+animtype = Light
+guardflag = HA
 hitflag = MAF
 priority = 3,Hit
-pausetime = 5,8
-sparkno = 2
-sparkxy = -8,-70
+pausetime = 5,7
+sparkno = 0
+sparkxy = -7,-54
 hitsound = 5,0
 guardsound = 6,0
 ground.type = High
 ground.slidetime = 12
-ground.hittime = 16
-ground.velocity = -3
-air.velocity = -2,-3
-air.hittime = 18
+ground.hittime = 17
+ground.velocity = -3.0
+air.velocity = -3.0,-3.5
+air.hittime = 22
 fall = 0
 fall.recover = 1
+getpower = 15,8
+givepower = 15,8
 
+[State 630, Land safely]
+type = ChangeState
+trigger1 = Pos Y >= 0 && Vel Y > 0
+value = 52
+ctrl = 0
 
-[State 630, Finish]
+[State 630, Finish normal]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 50
 ctrl = 1
-
-
 [Statedef 700]
 type = S
 movetype = I

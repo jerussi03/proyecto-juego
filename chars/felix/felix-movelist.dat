@@ -36,9 +36,31 @@ MAX permite cancelar entre especiales distintos al conectar.
 Cada cancelacion de especial consume tiempo de MAX.
 Las direcciones se invierten al cambiar de lado.
 
-
 <#63ded7>:Identidad - Reparacion / contraataque:</>
 Diagnosticos: hasta tres iconos debajo de VIDA.
 Gana diagnosticos conectando Llave o Cable a Tierra.
-Mantenimiento consume diagnosticos: +10 de vida por punto.
-Reinicio espera un ataque y responde; no causa danio al fallar.
+Reparacion baja cura mas con diagnosticos; Mantenimiento los consume.
+Reinicio bloquea, responde sin teletransportarse y recupera vida al confirmar.
+
+<#63ded7>:Golpes propios:</>
+De pie:
+Toque de diagnostico                 ^X
+Puntapie de comprobacion             ^A
+Codo de reparacion                   ^Y
+Talon de soporte                     ^B
+Agachado:
+Ajuste bajo                          ^X
+Comprobacion al tobillo              ^A
+Gancho de herramienta                ^Y
+Cable rasante                        ^B
+En el aire:
+Toque de mantenimiento               ^X
+Patada de alcance                    ^A
+Codo de emergencia                   ^Y
+Talon descendente                    ^B
+
+Cadenas propias: conecta antes de continuar.
+Ajuste bajo > Codo de reparacion (^Y)
+Toque de diagnostico > Talon de soporte (^B)
+Patada de alcance > Codo de emergencia (^Y)
+Si el rival bloquea o esquiva, termina la recuperacion.
