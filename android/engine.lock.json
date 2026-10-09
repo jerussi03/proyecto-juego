@@ -1,0 +1,26 @@
+{
+  "engine_commit": "86ac412b156b524e2ec9aa47de4528acf47f175b",
+  "upstream_archive_url": "https://github.com/ikemen-engine/Ikemen-GO/releases/download/nightly/Ikemen_GO-dev-android.zip",
+  "upstream_asset_id": 618249093,
+  "upstream_archive_sha256": "762c9f52e149f62aeaa70ff0c7f64d0c736da385d28020e4493a4b42724b3c95",
+  "upstream_release_date": "2026-10-07",
+  "wrapper_commit": "dbc5cfb49b1fed1d4a732ff48b439dd684d54145",
+  "native_archive_url": "https://github.com/jerussi03/proyecto-juego/releases/download/android-v1.0.0/engine-android-arm64.zip",
+  "libraries": {
+    "libavcodec.so": "18f388565f63c4bbc08611d7b3c15f3bc98765bc3c190cc966fa446695a44dfe",
+    "libavdevice.so": "1d4a7f8f038507834022cb5d30d492b8c92da9d8edc23d081c812fda468125c0",
+    "libavfilter.so": "c827904a862cd6fdee30a99233e68dfe9dd1ada92d79c1ae294d358182a2c1f8",
+    "libavformat.so": "665a3d8083bbb2b83929fe365ef3267e2cc51eafb46640a64aa99cb863fa5de3",
+    "libavutil.so": "1fd01b23e60a1ecd9bac61152166721844e4b9d3356d36d9ce314eb7afb1bcc0",
+    "libmain.so": "62687c368b3be4c0306a2b3b68e66ebda03751e90248f3e60fb846f849b6ef64",
+    "libSDL2.so": "7d4b2e631d584f1ea486cc5bdba0f5e67390d3cc7dd64f76a64914c1c2b79c19",
+    "libswresample.so": "235aba64b1072aca65d0fe09e0fb76fe5d0d41503462d22ca73490693f74291f",
+    "libswscale.so": "244c932713821c3037d1f2417f0824150471992f9be07ecc7d09779ba9d07a90",
+    "libxmp.so": "267e9ff62a1eb22b1103d252ca09d39043d0d21d38f41d12011d747c0d11182e"
+  },
+  "native_archive_sha256": "d5dc0d2886a2c216617e3181ab5a4abbca2adf3da05c322738673fa7476992ea",
+  "source_url": "https://github.com/ikemen-engine/Ikemen-GO/archive/86ac412b156b524e2ec9aa47de4528acf47f175b.zip",
+  "source_sha256": "b8ab68170892c32d5de4bb841f782524cc9a9ae5fd61a0e709c6eb1bd2a3a266",
+  "ffmpeg_source_url": "https://github.com/jerussi03/proyecto-juego/releases/download/android-v1.0.0/src_ffmpeg.tar.gz",
+  "ffmpeg_source_sha256": "5c9c76382aa3a1c4aa90452824bb92a1e045607153eb4217411f65fb503f3b7f"
+}

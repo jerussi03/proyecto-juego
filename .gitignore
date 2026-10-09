@@ -33,3 +33,13 @@ desktop.ini
 /chars/hector/hector-qa.def
 /The_King_of_UTc*.png
 /Ikemen_GO*.png
+
+# Android: paquetes publicados en Releases, recursos generados y claves privadas.
+/dist/
+/android/.gradle/
+/android/.signing/
+/android/local.properties
+/android/build/
+/android/app/build/
+/android/app/src/main/assets/
+/android/app/src/main/jniLibs/

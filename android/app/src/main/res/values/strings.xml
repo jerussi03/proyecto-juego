@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">The King of UTc</string>
+    <string name="updating_files_title">Preparando The King of UTc</string>
+    <string name="updating_files_msg">Instalando personajes y escenarios…</string>
+    <string name="update_error_title">No se pudo preparar el juego</string>
+    <string name="update_error_msg">Comprueba que tengas espacio libre y vuelve a abrir el juego. Detalle: %1$s</string>
+    <string name="exit_str">Cerrar</string>
+</resources>

@@ -1,0 +1,6 @@
+# The pinned native archive includes this exact license text.
+/android/ENGINE-LICENSES.txt text eol=lf -whitespace
+/android/LICENSE-SDL.txt -whitespace
+/android/gradlew text eol=lf
+/android/gradlew.bat text eol=crlf
+/android/gradle/wrapper/gradle-wrapper.jar binary
