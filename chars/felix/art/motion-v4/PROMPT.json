@@ -1,0 +1,21 @@
+{
+  "generator": "image_gen (built-in)",
+  "prompt": "Create 24 discrete articulated fighting-game poses in six columns and four rows. Character identity authority: felix_soporte.jpeg and canonical idle/combat atlases. Preserve EXACTLY stocky older man, swept salt-and-pepper gray hair, royal blue short-sleeve T-shirt with robot UT chest mark, faded blue jeans, brown work boots. All figures face right in side-view pixel art. Keep the same face, head size, skeletal limb lengths, anatomy, clothing palette and outline thickness in every cell. All whole bodies are complete, isolated with transparent margins, no clipping, no overlap, no floor, shadows, labels or effects. Genuine transparent PNG alpha. Crouching and lying must bend the same anatomy rather than scale the figure. Row1: six-phase walk with opposite contacts and narrow passing poses. Row2: six-phase forward-leaning run. Row3: standing, lower, crouch, breathe, rise, standing. Row4: anticipation, crouch, takeoff, apex, descent, landing. Edit only row1 for the final refinement: columns1/4 opposite WIDE contacts, columns2/5 NARROW passing with support leg vertical under hip and opposite knee passing, columns3/6 swinging transition. Distinguish near leg in brighter blue and far leg in darker blue; column1 near leg leads, column4 far leg leads. Use local Terry KOF walk/run skeletal reference ONLY for poses, never its face or costume. Preserve rows2-4 from the initial generated atlas.",
+  "references": [
+    "felix_soporte.jpeg",
+    "art/felix-idle-walk-punch-uppercut.png",
+    "Local Terry KOF groups20/100, pose reference only"
+  ],
+  "columns": 6,
+  "rows": [
+    "six-phase walk with opposite contacts and narrow passing poses",
+    "six-phase forward-leaning run",
+    "standing, lower, crouch, breathe, rise, standing",
+    "anticipation, crouch, takeoff, apex, descent, landing"
+  ],
+  "registration": "One standing calibration for the complete atlas, no per-pose height stretching; extract connected body silhouettes across cell boundaries.",
+  "pose_reference": "Local chars/base-TerryEX-KOF02UM/Terry.sff groups20 and100; reference only, no imported art in this atlas",
+  "refinement_prompt": "Edit ONLY TOP ROW1 WALK CYCLE of image1. Preserve other THREE rows exactly. Same Felix identity from image2, same gray hair, blue robotUT T-shirt, blue jeans, brown boots, same pixel art style/anatomy/head size. Use image3 top row as skeletal reference for proper alternating feet. Six walking frames: column1 WIDE CONTACT near LEFT leg ahead rightward and far RIGHT leg back leftward; column2 NARROW PASSING near LEFT support leg vertical directly beneath hip, far RIGHT bent knee crosses in front of thigh, both boots overlap horizontally beneath pelvis; column3 right leg swinging ahead to nextcontact, left begins trailing. Column4 OPPOSITE WIDE CONTACT: RIGHT far leg reaches ahead to screen right and LEFT near leg reaches behind to screen left. Column5 OPPOSITE NARROW PASSING: right support leg vertical under hip, LEFT knee bends and passes, boots horizontally close beneath pelvis. Column6 left leg swings ahead, right begins trailing to loop into1. Differentiate near LEFT jeans leg with brighter blue and far RIGHT jeans leg with darker blue. Column1 bright leg in front; column4 DARK leg in front, so alternation is obvious. Do not repeat the same leg. Arms modest swinging while fighting guard maintained. Same face height allframes, feet samegroundline, proper legbend ratherthanscaling. Keep strict6columns4rows,24wholefigures,landscape1536x1024 actualtransparentalpha, NO GRADIENTS OR BACKGROUND, no shadow no labels no effects, isolate fullbodies in cells withoutclipping.",
+  "selected_generated_image": "exec-bd7d8d60-a15c-443e-8ce6-4be38620927e.png",
+  "transparent_background": true
+}

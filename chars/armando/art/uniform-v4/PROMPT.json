@@ -1,0 +1,12 @@
+{
+  "generator": "image_gen (built-in)",
+  "rows": [
+    "heavy attack",
+    "crouch punch",
+    "air hand",
+    "air kick",
+    "identity"
+  ],
+  "columns": 6,
+  "prompt": "Use case: identity-preserve. Asset: transparent pixel-art fighting game atlas for armando. Image1 is user's authoritative character design, image2 is canonical game idle/walk. Preserve EXACTLY image2 face, hair, clothing, colors and adult head/torso/limb proportions unchanged in every row. Subject: stocky adult man with short spiky black hair, CLEAR rectangular OPTICAL glasses through which eyes are visible (NO sunglasses), blue denim button shirt rolled sleeves, dark blue jeans, brown shoes, wristwatch and bracelet. Create EXACTLY30 separate fullbody poses,6columns x5rows,each fullyinsidecell with transparent gutters,no backgrounds,no text,no shadows,no effects. FacesRIGHT orthographic fighting-game side/threequarter. Same virtual standing body height180px in every cell; crouching reduces silhouette height without shrinking head/torso. Row1 pingpong red paddle forehand:0fightingguard,1armwithdraws,2windup,3full extensionrightCONTACT,4retract,5guard. Row2 crouched palm receive:0LOWcrouchguard,1withdrawarmwhilehipslow,2preparewhilelow,3fullextensionrightCONTACTwhilelow,4retractwhilelow,5LOWguard. Row3 airborne downward palm basketball dunk motion without ball:0airborneguardwithlegstucked,1armrises,2windup,3strikesdownward-rightCONTACT,4retract,5airborneguard. Row4 airborne horizontal kick:0airborneguardlegstucked,1kneecomesup,2legprepares,3fullyextendedrightCONTACT,4kneetucks,5airborneguard. Row5 IoT calibration,0standingguard,1holds small glowing blue sensor in left hand at waist,2uses right index finger to adjust sensor,3hands adjust sensor at chest,4outstretched right hand holding sensor outward,5return standingguard with sensor down. EXACTcostume/glasses/headsize throughout. Real pixel-art dark outlines and limited shading matched to image2. No newprops beyond requested signature. All30figureswhole and separate."
+}

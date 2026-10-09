@@ -893,6 +893,9 @@ Clsn2[1] = -26, -28, 28, 0
 5120,5, 0,0, 3
 
 ; Levantarse
+; UTC full standing recovery
+0,0, 0,0, 3
+
 [Begin Action 5121]
 Clsn2Default: 2
 Clsn2[0] = -24, -77, 22, -28

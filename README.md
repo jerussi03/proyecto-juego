@@ -6,7 +6,7 @@ esta carpeta. Los movimientos e identidades están documentados en
 agachados, aéreos y las cadenas de los doce personajes están en
 [GOLPES-PROPIOS.md](GOLPES-PROPIOS.md).
 
-La versión Android se descarga desde [Android v1.0.0](https://github.com/jerussi03/proyecto-juego/releases/tag/android-v1.0.0).
+La versión Android se descarga desde [Android v1.0.1](https://github.com/jerussi03/proyecto-juego/releases/tag/android-v1.0.1).
 Incluye los doce personajes UTC, nueve escenarios, historia y controles táctiles.
 Requiere Android 14 o superior, ARM64 y OpenGL ES 3.2. La instalación y la
 compilación están explicadas en [ANDROID.md](ANDROID.md). El APK se publica en

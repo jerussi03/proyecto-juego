@@ -27,159 +27,225 @@ Clsn2[1] = -20, -50, 20, 0
 ; 6
 
 [Begin Action 6]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-10,3, 0,0, 4
-
-; Agacharse
+; Registered UTC motion: low turn.
+Clsn2: 2
+Clsn2[0] = -18,-86,18,-39
+Clsn2[1] = -21,-39,21,0
+8902,2, 0,0, 4
 
 [Begin Action 10]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-10,0, 0,0, 3
-10,1, 0,0, 3
-10,2, 0,0, 3
-
-; Agachado
+; Registered UTC motion: lower into crouch.
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-49
+Clsn2[1] = -21,-49,21,0
+8902,0, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-102,18,-46
+Clsn2[1] = -21,-46,21,0
+8902,1, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-86,18,-39
+Clsn2[1] = -21,-39,21,0
+8902,2, 0,0, 3
 
 [Begin Action 11]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-10,2, 0,0, 14
-10,3, 0,0, 14
-
-; 12
+; Registered UTC motion: crouched breathing.
+Clsn2: 2
+Clsn2[0] = -18,-86,18,-39
+Clsn2[1] = -21,-39,21,0
+8902,2, 0,0, 12
+Clsn2: 2
+Clsn2[0] = -18,-87,18,-39
+Clsn2[1] = -21,-39,21,0
+8902,3, 0,0, 12
 
 [Begin Action 12]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-10,3, 0,0, 3
-10,4, 0,0, 3
-10,5, 0,0, 3
-
-; Caminar
+; Registered UTC motion: rise from crouch.
+Clsn2: 2
+Clsn2[0] = -18,-87,18,-39
+Clsn2[1] = -21,-39,21,0
+8902,3, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-105,18,-47
+Clsn2[1] = -21,-47,21,0
+8902,4, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-111,18,-50
+Clsn2[1] = -21,-50,21,0
+8902,5, 0,0, 3
 
 [Begin Action 20]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-20,0, 0,0, 5
-20,1, 0,0, 5
-20,2, 0,0, 5
-20,3, 0,0, 5
-20,4, 0,0, 5
-20,5, 0,0, 5
-20,6, 0,0, 5
-20,7, 0,0, 5
-
-; Retroceder
+; Registered UTC motion: walk, complete alternating stride.
+Clsn2: 2
+Clsn2[0] = -18,-114,18,-51
+Clsn2[1] = -21,-51,21,0
+8900,0, 0,0, 6
+Clsn2: 2
+Clsn2[0] = -18,-115,18,-52
+Clsn2[1] = -21,-52,21,0
+8900,1, 0,0, 6
+Clsn2: 2
+Clsn2[0] = -18,-115,18,-52
+Clsn2[1] = -21,-52,21,0
+8900,2, 0,0, 6
+Clsn2: 2
+Clsn2[0] = -18,-114,18,-51
+Clsn2[1] = -21,-51,21,0
+8900,3, 0,0, 6
+Clsn2: 2
+Clsn2[0] = -18,-117,18,-53
+Clsn2[1] = -21,-53,21,0
+8900,4, 0,0, 6
+Clsn2: 2
+Clsn2[0] = -18,-115,18,-52
+Clsn2[1] = -21,-52,21,0
+8900,5, 0,0, 6
 
 [Begin Action 21]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-20,7, 0,0, 6
-20,6, 0,0, 6
-20,5, 0,0, 6
-20,4, 0,0, 6
-20,3, 0,0, 6
-20,2, 0,0, 6
-20,1, 0,0, 6
-20,0, 0,0, 6
-
-; Correr
+; Registered UTC motion: backward steps.
+Clsn2: 2
+Clsn2[0] = -18,-115,18,-52
+Clsn2[1] = -21,-52,21,0
+8900,5, 0,0, 7
+Clsn2: 2
+Clsn2[0] = -18,-117,18,-53
+Clsn2[1] = -21,-53,21,0
+8900,4, 0,0, 7
+Clsn2: 2
+Clsn2[0] = -18,-114,18,-51
+Clsn2[1] = -21,-51,21,0
+8900,3, 0,0, 7
+Clsn2: 2
+Clsn2[0] = -18,-115,18,-52
+Clsn2[1] = -21,-52,21,0
+8900,2, 0,0, 7
+Clsn2: 2
+Clsn2[0] = -18,-115,18,-52
+Clsn2[1] = -21,-52,21,0
+8900,1, 0,0, 7
+Clsn2: 2
+Clsn2[0] = -18,-114,18,-51
+Clsn2[1] = -21,-51,21,0
+8900,0, 0,0, 7
 
 [Begin Action 100]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-100,0, 0,0, 3
-100,1, 0,0, 3
-100,2, 0,0, 3
-100,3, 0,0, 3
-100,4, 0,0, 3
-100,5, 0,0, 3
-100,6, 0,0, 3
-100,7, 0,0, 3
-
-; 40
+; Registered UTC motion: run, separate gait.
+Clsn2: 2
+Clsn2[0] = -18,-108,18,-49
+Clsn2[1] = -21,-49,21,0
+8901,0, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-109,18,-49
+Clsn2[1] = -21,-49,21,0
+8901,1, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-113,18,-51
+Clsn2[1] = -21,-51,21,0
+8901,2, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-114,18,-51
+Clsn2[1] = -21,-51,21,0
+8901,3, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-114,18,-51
+Clsn2[1] = -21,-51,21,0
+8901,4, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-111,18,-50
+Clsn2[1] = -21,-50,21,0
+8901,5, 0,0, 3
 
 [Begin Action 40]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-40,0, 0,0, 3
-40,1, 0,0, 2
-
-; Salto
+; Registered UTC motion: jump anticipation.
+Clsn2: 2
+Clsn2[0] = -18,-112,18,-50
+Clsn2[1] = -21,-50,21,0
+8903,0, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-92,18,-41
+Clsn2[1] = -21,-41,21,0
+8903,1, 0,0, 2
 
 [Begin Action 41]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-40,2, 0,0, 6
-40,3, 0,0, -1
-
-; Salto
+; Registered UTC motion: airborne rise and apex.
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-47
+Clsn2[1] = -21,-47,21,5
+8903,2, 0,0, 6
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-62
+Clsn2[1] = -21,-62,21,-23
+8903,3, 0,0, -1
 
 [Begin Action 42]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-40,2, 0,0, 6
-40,3, 0,0, -1
-
-; Salto
+; Registered UTC motion: airborne rise and apex.
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-47
+Clsn2[1] = -21,-47,21,5
+8903,2, 0,0, 6
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-62
+Clsn2[1] = -21,-62,21,-23
+8903,3, 0,0, -1
 
 [Begin Action 43]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-40,2, 0,0, 6
-40,3, 0,0, -1
-
-; 44
+; Registered UTC motion: airborne rise and apex.
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-47
+Clsn2[1] = -21,-47,21,5
+8903,2, 0,0, 6
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-62
+Clsn2[1] = -21,-62,21,-23
+8903,3, 0,0, -1
 
 [Begin Action 44]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-40,3, 0,0, 5
-40,4, 0,0, -1
-
-; 45
+; Registered UTC motion: airborne descent.
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-62
+Clsn2[1] = -21,-62,21,-23
+8903,3, 0,0, 4
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-52
+Clsn2[1] = -21,-52,21,-5
+8903,4, 0,0, -1
 
 [Begin Action 45]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-40,3, 0,0, 5
-40,4, 0,0, -1
-
-; 46
+; Registered UTC motion: airborne descent.
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-62
+Clsn2[1] = -21,-62,21,-23
+8903,3, 0,0, 4
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-52
+Clsn2[1] = -21,-52,21,-5
+8903,4, 0,0, -1
 
 [Begin Action 46]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-40,3, 0,0, 5
-40,4, 0,0, -1
-
-; Aterrizar
+; Registered UTC motion: airborne descent.
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-62
+Clsn2[1] = -21,-62,21,-23
+8903,3, 0,0, 4
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-52
+Clsn2[1] = -21,-52,21,-5
+8903,4, 0,0, -1
 
 [Begin Action 47]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-40,5, 0,0, 4
-10,4, 0,0, 3
+; Registered UTC motion: landing then stand.
+Clsn2: 2
+Clsn2[0] = -18,-102,18,-46
+Clsn2[1] = -21,-46,21,0
+8903,5, 0,0, 4
+Clsn2: 2
+Clsn2[0] = -18,-105,18,-47
+Clsn2[1] = -21,-47,21,0
+8902,4, 0,0, 3
+Clsn2: 2
+Clsn2[0] = -18,-110,18,-49
+Clsn2[1] = -21,-49,21,0
 0,0, 0,0, 2
-
-; 105
 
 [Begin Action 105]
 Clsn2Default: 2
@@ -192,100 +258,76 @@ Clsn2[1] = -25, -57, 26, -11
 ; 120
 
 [Begin Action 120]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-120,0, 0,0, 4
-
-; 130
+; UTC articulated reaction: standing guard.
+Clsn2: 1
+Clsn2[0] = -45,-100,39,0
+8913,0, 0,0, 4
 
 [Begin Action 130]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-120,0, 0,0, -1
-
-; 140
+; UTC articulated reaction: hold standing guard.
+Clsn2: 1
+Clsn2[0] = -45,-100,39,0
+8913,0, 0,0, -1
 
 [Begin Action 140]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-120,0, 0,0, 4
-
-; 150
+; UTC articulated reaction: standing guard.
+Clsn2: 1
+Clsn2[0] = -45,-100,39,0
+8913,0, 0,0, 4
 
 [Begin Action 150]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-120,0, 0,0, 4
-
-; 121
+; UTC articulated reaction: standing guard.
+Clsn2: 1
+Clsn2[0] = -45,-100,39,0
+8913,0, 0,0, 4
 
 [Begin Action 121]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-120,1, 0,0, 4
-
-; 131
+; UTC articulated reaction: crouching guard.
+Clsn2: 1
+Clsn2[0] = -41,-82,35,0
+8913,1, 0,0, 4
 
 [Begin Action 131]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-120,1, 0,0, -1
-
-; 141
+; UTC articulated reaction: hold crouching guard.
+Clsn2: 1
+Clsn2[0] = -41,-82,35,0
+8913,1, 0,0, -1
 
 [Begin Action 141]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-120,1, 0,0, 4
-
-; 151
+; UTC articulated reaction: crouching guard.
+Clsn2: 1
+Clsn2[0] = -41,-82,35,0
+8913,1, 0,0, 4
 
 [Begin Action 151]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-120,1, 0,0, 4
-
-; 122
+; UTC articulated reaction: crouching guard.
+Clsn2: 1
+Clsn2[0] = -41,-82,35,0
+8913,1, 0,0, 4
 
 [Begin Action 122]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-120,2, 0,0, 4
-
-; 132
+; UTC articulated reaction: air guard.
+Clsn2: 1
+Clsn2[0] = -38,-89,24,-4
+8913,2, 0,0, 4
 
 [Begin Action 132]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-120,2, 0,0, -1
-
-; 142
+; UTC articulated reaction: hold air guard.
+Clsn2: 1
+Clsn2[0] = -38,-89,24,-4
+8913,2, 0,0, -1
 
 [Begin Action 142]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-120,2, 0,0, 4
-
-; 152
+; UTC articulated reaction: air guard.
+Clsn2: 1
+Clsn2[0] = -38,-89,24,-4
+8913,2, 0,0, 4
 
 [Begin Action 152]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-120,2, 0,0, 4
-
-; 170
+; UTC articulated reaction: air guard.
+Clsn2: 1
+Clsn2[0] = -38,-89,24,-4
+8913,2, 0,0, 4
 
 [Begin Action 170]
 Clsn2Default: 2
@@ -350,40 +392,40 @@ Clsn2[1] = -20, -50, 20, 0
 [Begin Action 200]
 ; Toque de diagnostico; individual original normal.
 Clsn2: 2
-Clsn2[0] = -20,-110,20,-52
-Clsn2[1] = -23,-52,23,-3
+Clsn2[0] = -20,-107,20,-49
+Clsn2[1] = -23,-49,23,0
 Clsn1: 0
 200,0, 0,0, 2
 Clsn2: 2
-Clsn2[0] = -20,-107,20,-51
-Clsn2[1] = -23,-51,23,-3
+Clsn2[0] = -20,-104,20,-48
+Clsn2[1] = -23,-48,23,0
 Clsn1: 0
 200,1, 0,0, 2
 Clsn2: 2
-Clsn2[0] = -20,-106,20,-50
-Clsn2[1] = -23,-50,23,-2
+Clsn2[0] = -20,-104,20,-48
+Clsn2[1] = -23,-48,23,0
 Clsn1: 0
 200,2, 0,0, 2
 Clsn2: 3
-Clsn2[0] = -20,-105,20,-50
-Clsn2[1] = -23,-50,23,-3
+Clsn2[0] = -20,-102,20,-47
+Clsn2[1] = -23,-47,23,0
 Clsn2[2] = 16,-93,59,-42
 Clsn1: 1
 Clsn1[0] = 16,-93,59,-42
 200,3, 0,0, 3
 Clsn2: 2
-Clsn2[0] = -20,-107,20,-50
-Clsn2[1] = -23,-50,23,-2
+Clsn2[0] = -20,-105,20,-48
+Clsn2[1] = -23,-48,23,0
 Clsn1: 0
 200,4, 0,0, 2
 Clsn2: 2
-Clsn2[0] = -20,-107,20,-51
-Clsn2[1] = -23,-51,23,-3
+Clsn2[0] = -20,-104,20,-48
+Clsn2[1] = -23,-48,23,0
 Clsn1: 0
 200,5, 0,0, 5
 Clsn2: 2
-Clsn2[0] = -20,-107,20,-51
-Clsn2[1] = -23,-51,23,-3
+Clsn2[0] = -20,-104,20,-48
+Clsn2[1] = -23,-48,23,0
 Clsn1: 0
 200,5, 0,0, 5
 
@@ -510,8 +552,8 @@ Clsn1: 0
 [Begin Action 400]
 ; Ajuste bajo; individual original normal.
 Clsn2: 2
-Clsn2[0] = -20,-80,20,-37
-Clsn2[1] = -23,-37,23,0
+Clsn2[0] = -20,-84,20,-39
+Clsn2[1] = -23,-39,23,0
 Clsn1: 0
 8771,0, 0,0, 1
 Clsn2: 2
@@ -542,16 +584,16 @@ Clsn2[1] = -23,-37,23,0
 Clsn1: 0
 8771,4, 0,0, 5
 Clsn2: 2
-Clsn2[0] = -20,-78,20,-36
-Clsn2[1] = -23,-36,23,0
+Clsn2[0] = -20,-84,20,-39
+Clsn2[1] = -23,-39,23,0
 Clsn1: 0
 8771,5, 0,0, 5
 
 [Begin Action 410]
 ; Gancho de herramienta; individual original normal.
 Clsn2: 2
-Clsn2[0] = -20,-80,20,-37
-Clsn2[1] = -23,-37,23,0
+Clsn2[0] = -20,-84,20,-39
+Clsn2[1] = -23,-39,23,0
 Clsn1: 0
 8771,0, 0,0, 3
 Clsn2: 2
@@ -582,8 +624,8 @@ Clsn2[1] = -23,-37,23,0
 Clsn1: 0
 8771,4, 0,0, 8
 Clsn2: 2
-Clsn2[0] = -20,-78,20,-36
-Clsn2[1] = -23,-36,23,0
+Clsn2[0] = -20,-84,20,-39
+Clsn2[1] = -23,-39,23,0
 Clsn1: 0
 8771,5, 0,0, 9
 
@@ -828,424 +870,460 @@ Clsn1: 0
 8773,5, 0,0, 8
 
 [Begin Action 5000]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,0, 0,0, 4
-
-; 5005
+; UTC articulated reaction: standing head hit.
+Clsn2: 1
+Clsn2[0] = -32,-107,50,0
+8910,1, 0,0, 4
 
 [Begin Action 5005]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,0, 0,0, 5
+; UTC articulated reaction: standing head recovery.
+Clsn2: 1
+Clsn2[0] = -32,-107,50,0
+8910,1, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -26,-110,44,0
 0,1, 0,0, 4
-
-; 5010
 
 [Begin Action 5010]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,3, 0,0, 5
-
-; 5015
+; UTC articulated reaction: standing body hit.
+Clsn2: 1
+Clsn2[0] = -38,-90,35,0
+8910,3, 0,0, 5
 
 [Begin Action 5015]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,3, 0,0, 4
+; UTC articulated reaction: standing body recovery.
+Clsn2: 1
+Clsn2[0] = -38,-90,35,0
+8910,3, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -26,-110,44,0
 0,1, 0,0, 4
-
-; 5020
 
 [Begin Action 5020]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-5000,4, 0,0, 5
-
-; 5025
+; UTC articulated reaction: crouching hit.
+Clsn2: 1
+Clsn2[0] = -24,-92,44,0
+8910,4, 0,0, 5
 
 [Begin Action 5025]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-5000,4, 0,0, 4
-10,3, 0,0, 4
-
-; 5001
+; UTC articulated reaction: crouching hit recovery.
+Clsn2: 1
+Clsn2[0] = -24,-92,44,0
+8910,4, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -41,-82,35,0
+8913,1, 0,0, 4
 
 [Begin Action 5001]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,1, 0,0, 4
-
-; 5006
+; UTC articulated reaction: standing head hit.
+Clsn2: 1
+Clsn2[0] = -58,-109,48,0
+8910,2, 0,0, 4
 
 [Begin Action 5006]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,0, 0,0, 5
+; UTC articulated reaction: standing head recovery.
+Clsn2: 1
+Clsn2[0] = -32,-107,50,0
+8910,1, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -26,-110,44,0
 0,1, 0,0, 4
-
-; 5011
 
 [Begin Action 5011]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,3, 0,0, 5
-
-; 5016
+; UTC articulated reaction: standing body hit.
+Clsn2: 1
+Clsn2[0] = -38,-90,35,0
+8910,3, 0,0, 5
 
 [Begin Action 5016]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,3, 0,0, 4
+; UTC articulated reaction: standing body recovery.
+Clsn2: 1
+Clsn2[0] = -38,-90,35,0
+8910,3, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -26,-110,44,0
 0,1, 0,0, 4
-
-; 5021
 
 [Begin Action 5021]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-5000,4, 0,0, 5
-
-; 5026
+; UTC articulated reaction: crouching hit.
+Clsn2: 1
+Clsn2[0] = -24,-92,44,0
+8910,4, 0,0, 5
 
 [Begin Action 5026]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-5000,4, 0,0, 4
-10,3, 0,0, 4
-
-; 5002
+; UTC articulated reaction: crouching hit recovery.
+Clsn2: 1
+Clsn2[0] = -24,-92,44,0
+8910,4, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -41,-82,35,0
+8913,1, 0,0, 4
 
 [Begin Action 5002]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,2, 0,0, 4
-
-; 5007
+; UTC articulated reaction: standing head hit.
+Clsn2: 1
+Clsn2[0] = -58,-109,48,0
+8910,2, 0,0, 4
 
 [Begin Action 5007]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,0, 0,0, 5
+; UTC articulated reaction: standing head recovery.
+Clsn2: 1
+Clsn2[0] = -32,-107,50,0
+8910,1, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -26,-110,44,0
 0,1, 0,0, 4
-
-; 5012
 
 [Begin Action 5012]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,3, 0,0, 5
-
-; 5017
+; UTC articulated reaction: standing body hit.
+Clsn2: 1
+Clsn2[0] = -38,-90,35,0
+8910,3, 0,0, 5
 
 [Begin Action 5017]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,3, 0,0, 4
+; UTC articulated reaction: standing body recovery.
+Clsn2: 1
+Clsn2[0] = -38,-90,35,0
+8910,3, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -26,-110,44,0
 0,1, 0,0, 4
 
-; 5022
-
 [Begin Action 5022]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-5000,4, 0,0, 5
-
-; 5027
+; UTC articulated reaction: crouching hit.
+Clsn2: 1
+Clsn2[0] = -24,-92,44,0
+8910,4, 0,0, 5
 
 [Begin Action 5027]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-5000,4, 0,0, 4
-10,3, 0,0, 4
-
-; 5030
+; UTC articulated reaction: crouching hit recovery.
+Clsn2: 1
+Clsn2[0] = -24,-92,44,0
+8910,4, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -41,-82,35,0
+8913,1, 0,0, 4
 
 [Begin Action 5030]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-5050,0, 0,0, 5
-
-; 5035
+; UTC articulated reaction: air hit recoil.
+Clsn2: 1
+Clsn2[0] = -64,-88,47,-4
+8913,3, 0,0, 5
 
 [Begin Action 5035]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-5050,1, 0,0, 5
-
-; 5040
+; UTC articulated reaction: air hit transition.
+Clsn2: 1
+Clsn2[0] = -47,-86,50,-7
+8911,1, 0,0, 5
 
 [Begin Action 5040]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-40,3, 0,0, 4
-40,4, 0,0, -1
-
-; 5050
+; UTC articulated reaction: air hit into fall.
+Clsn2: 1
+Clsn2[0] = -37,-91,56,-1
+8911,0, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -47,-86,50,-7
+8911,1, 0,0, -1
 
 [Begin Action 5050]
-Clsn2Default: 1
-Clsn2[0] = -48, -75, 51, -13
-5050,0, 0,0, 5
-5050,1, 0,0, 5
-5050,2, 0,0, -1
-
-; 5051
+; UTC articulated reaction: backward knockdown.
+Clsn2: 1
+Clsn2[0] = -37,-91,56,-1
+8911,0, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -47,-86,50,-7
+8911,1, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -52,-81,52,-11
+8911,2, 0,0, -1
 
 [Begin Action 5051]
-Clsn2Default: 1
-Clsn2[0] = -48, -75, 51, -13
-5050,0, 0,0, 5
-5050,1, 0,0, 5
-5050,2, 0,0, -1
-
-; 5052
+; UTC articulated reaction: backward knockdown.
+Clsn2: 1
+Clsn2[0] = -37,-91,56,-1
+8911,0, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -47,-86,50,-7
+8911,1, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -52,-81,52,-11
+8911,2, 0,0, -1
 
 [Begin Action 5052]
-Clsn2Default: 1
-Clsn2[0] = -48, -75, 51, -13
-5050,0, 0,0, 5
-5050,1, 0,0, 5
-5050,2, 0,0, -1
-
-; 5060
+; UTC articulated reaction: backward knockdown.
+Clsn2: 1
+Clsn2[0] = -37,-91,56,-1
+8911,0, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -47,-86,50,-7
+8911,1, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -52,-81,52,-11
+8911,2, 0,0, -1
 
 [Begin Action 5060]
-Clsn2Default: 1
-Clsn2[0] = -53, -48, 53, -4
-5050,1, 0,0, 4
-5050,2, 0,0, -1
-
-; 5061
+; UTC articulated reaction: horizontal falling.
+Clsn2: 1
+Clsn2[0] = -47,-86,50,-7
+8911,1, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -52,-81,52,-11
+8911,2, 0,0, -1
 
 [Begin Action 5061]
-Clsn2Default: 1
-Clsn2[0] = -53, -48, 53, -4
-5050,1, 0,0, 4
-5050,2, 0,0, -1
-
-; 5062
+; UTC articulated reaction: horizontal falling.
+Clsn2: 1
+Clsn2[0] = -47,-86,50,-7
+8911,1, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -52,-81,52,-11
+8911,2, 0,0, -1
 
 [Begin Action 5062]
-Clsn2Default: 1
-Clsn2[0] = -53, -48, 53, -4
-5050,1, 0,0, 4
-5050,2, 0,0, -1
-
-; 5070
+; UTC articulated reaction: horizontal falling.
+Clsn2: 1
+Clsn2[0] = -47,-86,50,-7
+8911,1, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -52,-81,52,-11
+8911,2, 0,0, -1
 
 [Begin Action 5070]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-5050,0, 0,0, 4
-5050,1, 0,0, -1
-
-; 5080
+; UTC articulated reaction: fall transition.
+Clsn2: 1
+Clsn2[0] = -37,-91,56,-1
+8911,0, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -47,-86,50,-7
+8911,1, 0,0, -1
 
 [Begin Action 5080]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,4, 0,0, 4
-
-; 5090
+; UTC articulated reaction: trip on floor.
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, 4
 
 [Begin Action 5090]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-5050,0, 0,0, 5
-
-; 5100
+; UTC articulated reaction: trip airborne.
+Clsn2: 1
+Clsn2[0] = -37,-91,56,-1
+8911,0, 0,0, 5
 
 [Begin Action 5100]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,3, 0,0, 4
-5050,4, 0,0, 3
-
-; 5101
+; UTC articulated reaction: ground impact then settle.
+Clsn2: 1
+Clsn2[0] = -50,-51,69,0
+8911,3, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -44,-54,49,0
+8911,4, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, 3
 
 [Begin Action 5101]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,3, 0,0, 4
-5050,4, 0,0, 3
-
-; 5102
+; UTC articulated reaction: ground impact then settle.
+Clsn2: 1
+Clsn2[0] = -50,-51,69,0
+8911,3, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -44,-54,49,0
+8911,4, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, 3
 
 [Begin Action 5102]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,3, 0,0, 4
-5050,4, 0,0, 3
-
-; 5170
+; UTC articulated reaction: ground impact then settle.
+Clsn2: 1
+Clsn2[0] = -50,-51,69,0
+8911,3, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -44,-54,49,0
+8911,4, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, 3
 
 [Begin Action 5170]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,3, 0,0, 4
-5050,4, 0,0, 3
-
-; 5171
+; UTC articulated reaction: second impact.
+Clsn2: 1
+Clsn2[0] = -50,-51,69,0
+8911,3, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -44,-54,49,0
+8911,4, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, 3
 
 [Begin Action 5171]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,3, 0,0, 4
-5050,4, 0,0, 3
-
-; 5172
+; UTC articulated reaction: second impact.
+Clsn2: 1
+Clsn2[0] = -50,-51,69,0
+8911,3, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -44,-54,49,0
+8911,4, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, 3
 
 [Begin Action 5172]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,3, 0,0, 4
-5050,4, 0,0, 3
-
-; 5110
+; UTC articulated reaction: second impact.
+Clsn2: 1
+Clsn2[0] = -50,-51,69,0
+8911,3, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -44,-54,49,0
+8911,4, 0,0, 2
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, 3
 
 [Begin Action 5110]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,4, 0,0, -1
-
-; 5111
+; UTC articulated reaction: lying on the floor.
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, -1
 
 [Begin Action 5111]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,4, 0,0, -1
-
-; 5112
+; UTC articulated reaction: lying on the floor.
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, -1
 
 [Begin Action 5112]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,4, 0,0, -1
-
-; 5140
+; UTC articulated reaction: lying on the floor.
+Clsn2: 1
+Clsn2[0] = -56,-34,49,0
+8911,5, 0,0, -1
 
 [Begin Action 5140]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,4, 0,0, -1
-
-; 5150
+; UTC articulated reaction: defeated on side.
+Clsn2: 1
+Clsn2[0] = -50,-40,49,0
+8913,5, 0,0, -1
 
 [Begin Action 5150]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,4, 0,0, -1
-
-; 5151
+; UTC articulated reaction: defeated on back.
+Clsn2: 1
+Clsn2[0] = -61,-34,53,0
+8913,4, 0,0, -1
 
 [Begin Action 5151]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,4, 0,0, -1
-
-; 5152
+; UTC articulated reaction: defeated on back.
+Clsn2: 1
+Clsn2[0] = -61,-34,53,0
+8913,4, 0,0, -1
 
 [Begin Action 5152]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,4, 0,0, -1
-
-; Levantarse
+; UTC articulated reaction: defeated on back.
+Clsn2: 1
+Clsn2[0] = -61,-34,53,0
+8913,4, 0,0, -1
 
 [Begin Action 5120]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-5120,0, 0,0, 5
-5120,1, 0,0, 5
-5120,2, 0,0, 5
-5120,3, 0,0, 5
-5120,4, 0,0, 4
-5120,5, 0,0, 3
-
-; Levantarse
+; UTC articulated reaction: lying, roll, sit, kneel, rise, stand.
+Clsn2: 1
+Clsn2[0] = -47,-34,69,0
+8912,0, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -30,-57,66,0
+8912,1, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -39,-74,68,0
+8912,2, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -36,-80,46,0
+8912,3, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -24,-75,48,0
+8912,4, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -39,-97,35,0
+8912,5, 0,0, 3
+Clsn2: 1
+Clsn2[0] = -27,-110,46,0
+0,0, 0,0, 3
 
 [Begin Action 5121]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-5120,0, 0,0, 5
-5120,1, 0,0, 5
-5120,2, 0,0, 5
-5120,3, 0,0, 5
-5120,4, 0,0, 4
-5120,5, 0,0, 3
-
-; Levantarse
+; UTC articulated reaction: lying, roll, sit, kneel, rise, stand.
+Clsn2: 1
+Clsn2[0] = -47,-34,69,0
+8912,0, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -30,-57,66,0
+8912,1, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -39,-74,68,0
+8912,2, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -36,-80,46,0
+8912,3, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -24,-75,48,0
+8912,4, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -39,-97,35,0
+8912,5, 0,0, 3
+Clsn2: 1
+Clsn2[0] = -27,-110,46,0
+0,0, 0,0, 3
 
 [Begin Action 5122]
-Clsn2Default: 2
-Clsn2[0] = -21, -68, 19, -25
-Clsn2[1] = -23, -25, 25, 0
-5120,0, 0,0, 5
-5120,1, 0,0, 5
-5120,2, 0,0, 5
-5120,3, 0,0, 5
-5120,4, 0,0, 4
-5120,5, 0,0, 3
-
-; 5160
+; UTC articulated reaction: lying, roll, sit, kneel, rise, stand.
+Clsn2: 1
+Clsn2[0] = -47,-34,69,0
+8912,0, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -30,-57,66,0
+8912,1, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -39,-74,68,0
+8912,2, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -36,-80,46,0
+8912,3, 0,0, 5
+Clsn2: 1
+Clsn2[0] = -24,-75,48,0
+8912,4, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -39,-97,35,0
+8912,5, 0,0, 3
+Clsn2: 1
+Clsn2[0] = -27,-110,46,0
+0,0, 0,0, 3
 
 [Begin Action 5160]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,2, 0,0, 5
-
-; 5161
+; UTC articulated reaction: floor bounce.
+Clsn2: 1
+Clsn2[0] = -44,-54,49,0
+8911,4, 0,0, 5
 
 [Begin Action 5161]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,2, 0,0, 5
-
-; 5162
+; UTC articulated reaction: floor bounce.
+Clsn2: 1
+Clsn2[0] = -44,-54,49,0
+8911,4, 0,0, 5
 
 [Begin Action 5162]
-Clsn2Default: 1
-Clsn2[0] = -53, -26, 55, 0
-5050,2, 0,0, 5
-
-; 5200
+; UTC articulated reaction: floor bounce.
+Clsn2: 1
+Clsn2[0] = -44,-54,49,0
+8911,4, 0,0, 5
 
 [Begin Action 5200]
-Clsn2Default: 2
-Clsn2[0] = -20, -101, 22, -40
-Clsn2[1] = -25, -57, 26, -11
-5050,5, 0,0, 4
-5120,3, 0,0, 4
+; UTC articulated reaction: recover guard in the air.
+Clsn2: 1
+Clsn2[0] = -64,-88,47,-4
+8913,3, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -38,-89,24,-4
+8913,2, 0,0, 4
+Clsn2: 1
+Clsn2[0] = -35,-110,41,-23
 40,3, 0,0, 4
-
-; 5210
 
 [Begin Action 5210]
 Clsn2Default: 2
@@ -1257,13 +1335,16 @@ Clsn2[1] = -25, -57, 26, -11
 ; Aturdido
 
 [Begin Action 5300]
-Clsn2Default: 2
-Clsn2[0] = -18, -102, 18, -50
-Clsn2[1] = -20, -50, 20, 0
-5000,5, 0,0, 12
-120,3, 0,0, 12
-
-; Invocar IA
+; UTC articulated reaction: dizzy, unsteady guard.
+Clsn2: 1
+Clsn2[0] = -29,-109,31,0
+8910,5, 0,0, 12
+Clsn2: 1
+Clsn2[0] = -38,-90,35,0
+8910,3, 0,0, 12
+Clsn2: 1
+Clsn2[0] = -29,-109,31,0
+8910,5, 0,0, 12
 
 [Begin Action 3000]
 Clsn2Default: 2
@@ -1349,9 +1430,9 @@ Clsn1: 0
 Clsn2: 3
 Clsn2[0] = -20,-97,20,-45
 Clsn2[1] = -23,-45,23,0
-Clsn2[2] = 32,-93,62,-42
+Clsn2[2] = 16,-93,62,-42
 Clsn1: 1
-Clsn1[0] = 32,-93,62,-42
+Clsn1[0] = 16,-93,62,-42
 201,3, 0,0, 3
 Clsn2: 2
 Clsn2[0] = -20,-103,20,-47
@@ -1389,9 +1470,9 @@ Clsn1: 0
 Clsn2: 3
 Clsn2[0] = -20,-85,20,-39
 Clsn2[1] = -23,-39,23,0
-Clsn2[2] = 21,-87,51,-34
+Clsn2[2] = 16,-87,51,-34
 Clsn1: 1
-Clsn1[0] = 21,-87,51,-34
+Clsn1[0] = 16,-87,51,-34
 211,3, 0,0, 4
 Clsn2: 2
 Clsn2[0] = -20,-72,20,-33

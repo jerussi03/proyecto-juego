@@ -1,0 +1,7 @@
+{
+  "generator": "image_gen (built-in)",
+  "reference": "gameros_ingles.jpeg and canonical basics.png",
+  "rows": 1,
+  "columns": 6,
+  "prompt": "Use case: identity-preserve. Create a TRANSPARENT pixel-art fighting game sprite sheet with EXACTLY SIX separate COMPLETE full-body poses in ONE HORIZONTAL ROW for Gameros. Reference1 is the exact canonical game character (black hoodie, olivepants,blackwhite sneakers,curlyshoulderlengthblackhair); reference2 is his original design. Match exact face,outfit,adultbody proportions and pixel style in reference1. SIX equallyspaced columns,1row,each fullbodyfigure whole including bothlegsandfeet with wide transparent gutters; no effects,no backgrounds,no text,no shadows. Head and torso are identical size in all6; no chibi. Sequence of his gym/boxing focus skill:0standingfightingguard;1slightduck withkneesbentandhandsready;2standinghighguard withbothfistsshieldinghead;3standingbodytwist windup rearfistwithdrawn;4standingfullstraightpunch to RIGHT CONTACT;5standingfightingguard. Adult standing virtual crown-to-sole height200px in every cell, crouch is lower by bendingknees without shrinking head. Every figure side-threequarterviewfacingRIGHT. Just SIXFULLBODIES completewithoutamputations. No floating torsos. Keep hairstyle, hoodie drawnclosed, olive pants and white soles unchanged."
+}

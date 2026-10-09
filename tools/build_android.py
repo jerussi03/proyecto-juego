@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import secrets
 import shutil
 import subprocess
@@ -18,7 +19,54 @@ ROOT = Path(__file__).resolve().parents[1]
 ANDROID = ROOT / "android"
 WORK = ROOT / "scratch/android"
 DIST = ROOT / "dist"
-VERSION = "1.0.0"
+VERSION = "1.0.1"
+
+
+def diagnose_device(serial: str) -> None:
+    """Read installation requirements without installing or deleting device data."""
+    sdk = Path(os.environ.get("ANDROID_HOME", os.environ.get("ANDROID_SDK_ROOT", "")))
+    adb = sdk / "platform-tools/adb.exe"
+    if not adb.is_file():
+        raise RuntimeError("Define ANDROID_HOME con el Android SDK para consultar el teléfono por USB.")
+
+    def capture(arguments: list[str]) -> str:
+        return subprocess.check_output([str(adb), *arguments], text=True, encoding="utf-8").strip()
+
+    available = [line.split()[0] for line in capture(["devices"]).splitlines()[1:]
+                 if len(line.split()) >= 2 and line.split()[1] == "device"]
+    if serial == "auto":
+        if len(available) != 1:
+            raise RuntimeError("Conecta y autoriza un teléfono por USB; si hay varios, usa --check-device SERIAL.")
+        serial = available[0]
+    elif serial not in available:
+        raise RuntimeError("El dispositivo no está conectado o todavía no ha autorizado la depuración USB.")
+
+    def property_value(name: str) -> str:
+        return capture(["-s", serial, "shell", "getprop", name])
+
+    api = int(property_value("ro.build.version.sdk"))
+    abis = property_value("ro.product.cpu.abilist").split(",")
+    gles_property = property_value("ro.opengles.version")
+    gles = int(gles_property) if gles_property.isdecimal() else None
+    gradle = (ANDROID / "app/build.gradle").read_text(encoding="utf-8")
+    minimum_api = int(re.search(r"\bminSdk\s+(\d+)", gradle).group(1))
+    problems = []
+    if api < minimum_api:
+        problems.append(f"INSTALL_FAILED_OLDER_SDK: Android API {api}; el motor necesita API {minimum_api}.")
+    if "arm64-v8a" not in abis:
+        problems.append("INSTALL_FAILED_NO_MATCHING_ABIS: el sistema no admite aplicaciones ARM64.")
+    if gles is not None and gles < 0x00030002:
+        problems.append("El controlador anuncia OpenGL ES inferior a 3.2; el renderizador no es compatible.")
+    report = {
+        "serial": serial, "model": property_value("ro.product.model"),
+        "android": property_value("ro.build.version.release"), "api": api, "abis": abis,
+        "gles_advertised": f"{gles >> 16}.{gles & 0xffff}" if gles is not None else "unknown",
+        "problems": problems,
+        "note": "Estos datos no sustituyen la prueba de instalación ni comprueban la firma de una app anterior.",
+    }
+    print(json.dumps(report, ensure_ascii=False, indent=2))
+    if problems:
+        raise SystemExit(1)
 
 
 def sha256(path: Path) -> str:
@@ -140,7 +188,12 @@ def main() -> None:
     parser.add_argument("--engine-apk", type=Path, help="Use the pinned libraries in an existing official/game APK")
     parser.add_argument("--native-archive", type=Path, help="Use the release's engine-android-arm64.zip offline")
     parser.add_argument("--prepare-only", action="store_true", help="Prepare and verify inputs without Gradle")
+    parser.add_argument("--check-device", nargs="?", const="auto", metavar="SERIAL",
+                        help="Read a connected phone's Android/ABI/GLES requirements without installing anything")
     args = parser.parse_args()
+    if args.check_device is not None:
+        diagnose_device(args.check_device)
+        return
     WORK.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(exist_ok=True)
     lock = json.loads((ANDROID / "engine.lock.json").read_text(encoding="utf-8"))

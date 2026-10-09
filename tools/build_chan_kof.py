@@ -1,4 +1,9 @@
-"""Create a playable Chan KOF revision without replacing the original Chan."""
+"""Create Chan's base, then install her own moves and registered pose atlases.
+
+The final themed builder also reads motion-v4, uniform-v4 and reactions-v4.
+Those atlases keep her canonical jacket/glasses and supply genuine falls,
+floor impacts, lying/KO and a complete get-up rather than standing guards.
+"""
 from pathlib import Path
 import json
 import shutil

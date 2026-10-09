@@ -15,5 +15,9 @@
   "identity_role": "Reparacion / contraataque",
   "normal_frames": 24,
   "normal_art": "art/normal-v3/sheet.png",
-  "normal_moves": "art/normal-v3/moves.json"
+  "normal_moves": "art/normal-v3/moves.json",
+  "motion_frames": 24,
+  "motion_art": "art/motion-v4/sheet.png",
+  "reaction_frames": 24,
+  "reaction_art": "art/reactions-v4/sheet.png"
 }

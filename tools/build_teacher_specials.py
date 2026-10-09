@@ -202,27 +202,12 @@ def write_binary(path,packed):
 
 
 def upsert_sff(path, frames):
-    blob=bytearray(path.read_bytes())
-    tableoff,count=struct.unpack_from('<II',blob,36)
-    ldata=struct.unpack_from('<I',blob,52)[0]
-    entries=[bytearray(blob[tableoff+i*28:tableoff+(i+1)*28]) for i in range(count)]
-    present={struct.unpack_from('<HH',e):i for i,e in enumerate(entries)}
-    for key in frames:
-        if key not in present:
-            present[key]=len(entries)
-            entries.append(bytearray(struct.pack(HEADER,*key,0,0,0,0,0,0,0,0,0,0,0)))
-    tableoff=len(blob)
-    start=tableoff+len(entries)*28
-    payload=bytearray()
-    for key,(im,ax,ay) in frames.items():
-        stream=BytesIO(); im.save(stream,format='PNG')
-        raw=struct.pack('<I',im.width*im.height*4)+stream.getvalue()
-        entries[present[key]]=struct.pack(HEADER,*key,im.width,im.height,ax,ay,0,11,32,start+len(payload)-ldata,len(raw),0,0)
-        payload.extend(raw)
-    struct.pack_into('<II',blob,36,tableoff,len(entries))
-    struct.pack_into('<I',blob,56,start+len(payload)-ldata)
-    packed=blob+b''.join(entries)+payload
-    write_binary(path,packed)
+    # Old builds appended every replacement behind its obsolete PNG payload.
+    # Repacking preserves current manual sprite edits and keeps rebuilds stable.
+    from teacher_motion import read_sff, write_sff
+    sprites = read_sff(path)
+    sprites.update(frames)
+    write_sff(path, sprites)
 
 
 def actions(id):
@@ -297,30 +282,30 @@ def apply_character(id):
     backup=art/'before-specials'; backup.mkdir(parents=True,exist_ok=True)
     for file in [f'{id}.sff',f'{id}.air',f'{id}.cns',f'{id}.cmd','kof-extra.cns',f'{id}-movelist.dat']:
         if not (backup/file).exists(): shutil.copy2(folder/file,backup/file)
-    # Reuse the previous pre-install archive only when the full current SFF
-    # still matches our last output. This keeps repeat builds stable while
-    # preserving any later manual changes to normal poses or Victor's sprites.
     sff=folder/f'{id}.sff'
-    current=sff.read_bytes()
     record=art/'sff-install.json'
-    if record.exists():
-        previous=json.loads(record.read_text(encoding='utf-8'))
-        if hashlib.sha256(current).hexdigest()==previous['installed_hash']:
-            current=bytes.fromhex(previous['input_header'])+current[64:previous['input_size']]
-            write_binary(sff,current)
-    installation=dict(input_size=len(current),input_header=current[:64].hex())
+    installation=dict(format=2, packing='compact RGBA PNG SFF2')
     from teacher_identity import sprites as identity_sprites
     from teacher_animation import normal_sprites, legacy_combat_sprites
     frames=extract_sheet(sheet,id)
     frames.update(identity_sprites(ROOT,id))
     frames.update(legacy_combat_sprites(ROOT,id))
     frames.update(normal_sprites(ROOT,id))
+    from teacher_reactions import legacy_reaction_sprites
+    frames.update(legacy_reaction_sprites(ROOT,id))
+    from teacher_motion import motion_sprites, uniform_sprites, identity_sprites as registered_identity, apply_air as motion_air
+    frames.update(motion_sprites(ROOT,id))
+    frames.update(uniform_sprites(ROOT,id))
+    frames.update(registered_identity(ROOT,id))
+    if (8902,2) in frames:
+        for index in (0,5): frames[8771,index]=frames[8902,2]
+        frames[5000,4]=frames[8902,2]
+    from build_felix import reaction_sprites, reaction_air
+    frames.update(reaction_sprites(ROOT,id))
     upsert_sff(sff,frames)
     if id=='daniela':
         from victor_assist import sprites as victor_sprites
         upsert_sff(sff,victor_sprites())
-    installation['installed_hash']=hashlib.sha256(sff.read_bytes()).hexdigest()
-    record.write_text(json.dumps(installation,indent=2),encoding='utf-8')
     air=folder/f'{id}.air'
     air_text=clean_generated(air.read_text(encoding='utf-8'))
     # Recover old installs where removing Victor's previous AIR block also
@@ -370,6 +355,13 @@ def apply_character(id):
         state_path.write_text(apply_cns(state_path.read_text(encoding='utf-8'),id),encoding='utf-8')
     air_text=apply_air(air.read_text(encoding='utf-8'),id)
     air_text,extra_text=synchronize(air_text,(folder/'kof-extra.cns').read_text(encoding='utf-8'),id,sff)
+    from teacher_motion import read_sff, write_sff, register_grounded
+    installed_sprites=read_sff(sff)
+    air_text=motion_air(air_text,id,installed_sprites)
+    air_text=reaction_air(air_text,id,installed_sprites)
+    write_sff(sff,register_grounded(installed_sprites,air_text))
+    installation['installed_hash']=hashlib.sha256(sff.read_bytes()).hexdigest()
+    record.write_text(json.dumps(installation,indent=2),encoding='utf-8')
     air.write_text(air_text,encoding='utf-8')
     (folder/'kof-extra.cns').write_text(extra_text,encoding='utf-8')
     cmd.write_text(apply_cmd(cmd.read_text(encoding='utf-8'),id),encoding='utf-8')
@@ -397,6 +389,14 @@ def apply_character(id):
         data.update(special_frames=24,specials='art/specials/gameplay.json',limitations='Voices and some impact sounds share prototype resources; some normal actions reuse poses.')
         data.update(identity_frames=6,identity_art='art/identity-v2/preview.png',identity_role=p['role'])
         data.update(normal_frames=24,normal_art='art/normal-v3/sheet.png',normal_moves='art/normal-v3/moves.json',limitations='Original keyframe animations; prototype voices and some impact sounds are shared.')
+        if (8900,0) in frames:
+            data.update(motion_frames=24,motion_art='art/motion-v4/sheet.png')
+        if (8910,0) in frames:
+            data.update(reaction_frames=24,reaction_art='art/reactions-v4/sheet.png')
+        if (folder/'art/uniform-v4/sheet.png').exists():
+            data.update(normal_art='art/uniform-v4/sheet.png',identity_art='art/uniform-v4/sheet.png')
+        if (folder/'art/identity-v4/sheet.png').exists():
+            data.update(identity_art='art/identity-v4/sheet.png')
         if id=='daniela':data.update(victor_assist_frames=24,victor_assist='art/victor-assist/PROMPT.json')
         manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
     print(id, '54 themed frames; own normals, specials, resource and MAX2;',p['role'],flush=True)

@@ -1,0 +1,14 @@
+{
+  "tool": "image_gen built-in",
+  "source": "C:\\Users\\gjeru\\.codex\\generated_images\\01a11f8d-0d1c-7903-b5ff-c1a74c68b9fd\\exec-1030f0f1-b167-4dab-b97d-10d76c3bf334.png",
+  "canonical": "art/pose-0-0-0.png",
+  "prompt": "Use case: identity-preserve. Asset type: production 2D fighting game motion sprite atlas. Create EXACTLY 24 separated complete figures, 6 columns x 4 rows, 1536x1024 transparent RGBA canvas, no lettering or cell borders. Image1 is the exact canonical adult pixel-art character body/outfit/proportions. Image2 is identity reference from the original project. Preserve face, hair, anatomy, shirt color, trousers and shoes identically, no style drift. Crisp 16bit pixel art dark outlines matching image1, right-facing three-quarter side view. A rigid 180px virtual standing skeleton height and fixed head size must remain across ALL cells including crouches and jumps; do NOT enlarge crouched/tucked bodies to fill a cell. Each cell256x256 with generous transparent gutters, limbs fully inside cell, silhouette centered and grounded feet at y230. No shadow, floor, background, weapons, effects, extra props, motion streaks. ROW1 WALK cycle exactly these 6 DIFFERENT gait phases: 1 left foot forward right foot back contact; 2 left foot planted directly under hip, right knee moving forward, feet close together in passing pose; 3 right foot advances left trails with weight rising; 4 right foot forward left foot back contact; 5 right foot planted directly under hip, left knee moving forward, feet close together in passing pose; 6 left foot advances right trails. Alternate legs visibly, never six repeated spread-leg poses. Arms swing opposite legs. ROW2 RUN cycle 6 faster distinct forward-leaning phases with clear alternating foot contacts, single-leg passing, flight, opposite contact, passing, flight; same skeleton scale. ROW3 CROUCH six poses: 1 standing fighting idle, 2 half-squat midway down, 3 deep crouch low guard, 4 same deep crouch breathing, 5 half-squat midway up, 6 standing fighting idle exactly matching frame1. Head size never changes; lower hips by bending knees. ROW4 JUMP six poses: 1 crouch anticipation, 2 legs push off ground, 3 airborne tucked knees, 4 airborne tucked knees at apex, 5 legs extend before landing, 6 crouched landing. Preserve adult realistic proportions and full character visibility. CHARACTER: Jaime, mature man, short gray hair, pale lavender long-sleeve button-down shirt, black belt, navy formal trousers, black leather shoes. No tie, no glasses, no props. WALK precise measured strides; RUN nimble calculated steps.",
+  "frames": 24,
+  "rows": [
+    "walk",
+    "run",
+    "crouch",
+    "jump"
+  ],
+  "notes": "All rows have one anatomical scale. Walk columns 1 and4 are narrow passing poses; right-facing."
+}

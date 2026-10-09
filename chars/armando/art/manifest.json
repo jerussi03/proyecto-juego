@@ -18,9 +18,11 @@
   "special_frames": 24,
   "specials": "art/specials/gameplay.json",
   "identity_frames": 6,
-  "identity_art": "art/identity-v2/preview.png",
+  "identity_art": "art/uniform-v4/sheet.png",
   "identity_role": "Rebotes / IoT",
   "normal_frames": 24,
-  "normal_art": "art/normal-v3/sheet.png",
-  "normal_moves": "art/normal-v3/moves.json"
+  "normal_art": "art/uniform-v4/sheet.png",
+  "normal_moves": "art/normal-v3/moves.json",
+  "motion_frames": 24,
+  "motion_art": "art/motion-v4/sheet.png"
 }

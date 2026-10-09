@@ -77,7 +77,9 @@ public class SDLActivity extends Activity implements View.OnSystemUiVisibilityCh
         } catch (Exception e) {
             Log.e("SDL", "No se pudo configurar el motor antes de cargarlo", e);
         }
-        System.loadLibrary("main"); // match the Go shared lib name, usually libmain.so
+        // loadLibraries() loads SDL2 and main inside onCreate's error handler.
+        // Loading main here would abort the Activity class before that handler
+        // can report an incompatible native library to the player.
     }
     public static native void nativeOnSDLReady(String path);
     private static final String TAG = "SDL";

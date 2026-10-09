@@ -105,8 +105,8 @@
       "total": 34,
       "contact_box": [
         16,
-        -111,
-        47,
+        -113,
+        65,
         -34
       ],
       "contact_elements": [
@@ -268,7 +268,7 @@
       "contact_box": [
         16,
         -62,
-        73,
+        72,
         -19
       ],
       "contact_elements": [
@@ -327,7 +327,7 @@
       "contact_box": [
         16,
         -84,
-        74,
+        73,
         -20
       ],
       "contact_elements": [
@@ -494,7 +494,7 @@
       "contact_box": [
         16,
         -109,
-        49,
+        50,
         -43
       ],
       "contact_elements": [
@@ -548,7 +548,7 @@
       "contact_box": [
         16,
         -101,
-        49,
+        53,
         -24
       ],
       "contact_elements": [
@@ -602,8 +602,8 @@
       "contact_box": [
         16,
         -87,
-        74,
-        -21
+        78,
+        -37
       ],
       "contact_elements": [
         4
@@ -656,8 +656,8 @@
       "contact_box": [
         16,
         -101,
-        74,
-        -21
+        78,
+        -37
       ],
       "contact_elements": [
         4

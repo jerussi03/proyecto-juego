@@ -22,6 +22,125 @@ SHEETS = [ART / 'felix-idle-walk-punch-uppercut.png',
 HEADER = '<HHHHhhHBBIIHH'
 
 
+def reaction_sprites(root, name, existing=None):
+    """Register articulated hit/fall/get-up poses without changing gameplay.
+
+    Chan and Felix originally used standing guard frames for the entire hit
+    animation range, including the indefinitely held floor/KO sprite. Their
+    third atlas contains real floor silhouettes and a complete recovery.
+    One standing calibration is shared by all 24 poses; low or horizontal
+    bodies are never stretched back to the height of a standing fighter.
+    """
+    from teacher_motion import extract_atlas, read_sff, standing_height
+    path = root / 'chars' / name / 'art/reactions-v4/sheet.png'
+    if not path.exists():
+        return {}
+    existing = existing or read_sff(root / 'chars' / name / f'{name}.sff')
+    height = standing_height(existing)
+    rows, metrics = extract_atlas(path, 4, height)
+    frames = {}
+    for row, poses in enumerate(rows):
+        for index, (image, ax, ay) in enumerate(poses):
+            if row == 1 and index < 3 or row == 3 and index in (2, 3):
+                # Common fall states move the character origin. Keep the
+                # airborne center of mass above that origin; floor poses use
+                # their actual bottom edge, so they lie on the stage surface.
+                box = image.getchannel('A').getbbox()
+                ay = round((box[1] + box[3]) / 2 + height * .42)
+            frames[8910 + row, index] = (image, ax, ay)
+    for index, source in enumerate((1, 2, 2, 3, 4, 5)):
+        frames[5000, index] = frames[8910, source]
+    for index, source in enumerate((0, 1, 2, 3, 5, 4)):
+        frames[5050, index] = frames[8911, source]
+    for index in range(6):
+        frames[5120, index] = frames[8912, index]
+    metrics['families'] = {'8910': 'hit and dizzy', '8911': 'fall and impact',
+                           '8912': 'get up', '8913': 'defense and KO'}
+    metrics['registered'] = {f'{g},{n}': {'size': list(image.size), 'axis': [ax, ay]}
+                             for (g, n), (image, ax, ay) in frames.items()}
+    (path.parent / 'registration.json').write_text(json.dumps(metrics, indent=2), encoding='utf-8')
+    return frames
+
+
+def reaction_air(text, name, frames):
+    """Replace only common reaction actions, retaining standard state IDs."""
+    if (8910, 0) not in frames:
+        return text
+
+    def action(number, sequence, label):
+        out = f'[Begin Action {number}]\n; UTC articulated reaction: {label}.\n'
+        for group, index, ticks in sequence:
+            image, ax, ay = frames[group, index]
+            x0, y0, x1, y1 = image.getchannel('A').getbbox()
+            out += f'Clsn2: 1\nClsn2[0] = {x0-ax},{y0-ay},{x1-ax},{y1-ay}\n'
+            out += f'{group},{index}, 0,0, {ticks}\n'
+        return out + '\n'
+
+    plans = {}
+    idle_box = frames[0, 0][0].getchannel('A').point(lambda a: 255 if a >= 100 else 0).getbbox()
+    idle_height = idle_box[3] - idle_box[1]
+    recovery_finish = ([(0, 0, 3)] if
+                       frames[8912, 5][0].getchannel('A').point(
+                           lambda a: 255 if a >= 100 else 0).getbbox()[3] < idle_height * .95 else [])
+    for strength in range(3):
+        plans[5000 + strength] = ([(8910, 1 if strength == 0 else 2, 4)], 'standing head hit')
+        plans[5005 + strength] = ([(8910, 1, 5), (0, 1, 4)], 'standing head recovery')
+        plans[5010 + strength] = ([(8910, 3, 5)], 'standing body hit')
+        plans[5015 + strength] = ([(8910, 3, 4), (0, 1, 4)], 'standing body recovery')
+        plans[5020 + strength] = ([(8910, 4, 5)], 'crouching hit')
+        plans[5025 + strength] = ([(8910, 4, 4), (8913, 1, 4)], 'crouching hit recovery')
+        plans[5050 + strength] = ([(8911, 0, 5), (8911, 1, 5), (8911, 2, -1)], 'backward knockdown')
+        plans[5060 + strength] = ([(8911, 1, 4), (8911, 2, -1)], 'horizontal falling')
+        plans[5100 + strength] = ([(8911, 3, 2), (8911, 4, 2), (8911, 5, 3)], 'ground impact then settle')
+        plans[5110 + strength] = ([(8911, 5, -1)], 'lying on the floor')
+        plans[5120 + strength] = ([(8912, i, t) for i, t in enumerate((5, 5, 5, 5, 4, 3))] + recovery_finish,
+                                   'lying, roll, sit, kneel, rise, stand')
+        plans[5150 + strength] = ([(8913, 4, -1)], 'defeated on back')
+        plans[5160 + strength] = ([(8911, 4, 5)], 'floor bounce')
+        plans[5170 + strength] = ([(8911, 3, 2), (8911, 4, 2), (8911, 5, 3)], 'second impact')
+    plans.update({
+        5030: ([(8913, 3, 5)], 'air hit recoil'),
+        5035: ([(8911, 1, 5)], 'air hit transition'),
+        5040: ([(8911, 0, 4), (8911, 1, -1)], 'air hit into fall'),
+        5070: ([(8911, 0, 4), (8911, 1, -1)], 'fall transition'),
+        5080: ([(8911, 5, 4)], 'trip on floor'),
+        5090: ([(8911, 0, 5)], 'trip airborne'),
+        5140: ([(8913, 5, -1)], 'defeated on side'),
+        5200: ([(8913, 3, 4), (8913, 2, 4), (40, 3, 4)], 'recover guard in the air'),
+        5300: ([(8910, 5, 12), (8910, 3, 12), (8910, 5, 12)], 'dizzy, unsteady guard'),
+    })
+    for number in (120, 140, 150):
+        plans[number] = ([(8913, 0, 4)], 'standing guard')
+    plans[130] = ([(8913, 0, -1)], 'hold standing guard')
+    for number in (121, 141, 151):
+        plans[number] = ([(8913, 1, 4)], 'crouching guard')
+    plans[131] = ([(8913, 1, -1)], 'hold crouching guard')
+    for number in (122, 142, 152):
+        plans[number] = ([(8913, 2, 4)], 'air guard')
+    plans[132] = ([(8913, 2, -1)], 'hold air guard')
+    for number, (sequence, label) in plans.items():
+        block = action(number, sequence, label)
+        pattern = rf'(?ims)^\[Begin Action {number}\].*?(?=^\[Begin Action |\Z)'
+        text = re.sub(pattern, lambda _: block, text) if re.search(pattern, text) else text.rstrip() + '\n\n' + block
+    return text.rstrip() + '\n'
+
+
+def install_reactions(name='felix'):
+    """Apply just reaction art to an existing fighter, keeping its moves intact."""
+    from teacher_motion import read_sff, write_sff
+    folder = ROOT / 'chars' / name
+    path = folder / f'{name}.sff'
+    frames = read_sff(path)
+    reaction = reaction_sprites(ROOT, name, frames)
+    if not reaction:
+        return False
+    frames.update(reaction)
+    write_sff(path, frames)
+    air = folder / f'{name}.air'
+    air.write_text(reaction_air(air.read_text(encoding='utf-8'), name, frames), encoding='utf-8')
+    return True
+
+
 def load_frames():
     frames = []
     for path in SHEETS:

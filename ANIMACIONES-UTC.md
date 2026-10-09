@@ -92,25 +92,40 @@ La primera revisión de especiales añadió ocho movimientos temáticos por prof
 con 24 cuadros adicionales de efectos y poses para cada uno de los diez maestros.
 Incluyen los rebotes de pingpong de Armando, la moto de Gameros, el ajedrez y la
 bicicleta de Jaime, la silla de César, UML, SQL, Angular, soporte y apps móviles.
-Las voces y algunos sonidos de impacto siguen compartidos. Chan y Félix todavía
-necesitan animaciones propias de caída y victoria; agarres y carrera reutilizan
-poses. La guía histórica de esa revisión, con prompts y referencias, está en
+Las voces y algunos sonidos de impacto siguen compartidos. Chan y Félix ya tienen
+caída hacia atrás, impacto, pose en el suelo, levantada, guardia y KO propios.
+Las ocho secuencias legacy de caída/levantada también se recalibraron juntas para
+conservar la escala hasta ponerse de pie. La guía histórica de esa revisión, con prompts y referencias, está en
 [ESPECIALES-MAESTROS.md](ESPECIALES-MAESTROS.md). La lógica vigente y las diferencias
 entre los repertorios se documentan en
 [IDENTIDADES-PERSONAJES.md](IDENTIDADES-PERSONAJES.md).
 
 ## Comprobación de la revisión actual
 
-**La validación final está pendiente de completar y registrar.** Los resultados
-anteriores de combates, comandos e historia corresponden a sus revisiones y no
-certifican las animaciones ni las mecánicas recién modificadas.
+La revisión registra atlas de seis fases para caminar, correr, agacharse y saltar
+en diez maestros, con postura y ropa basadas en los JPEG originales. Chan y Félix
+tienen esas cuatro familias además de atlas propios de reacciones; César conserva
+el bastón durante sus ciclos. La pose de salto usa un origen aéreo estable; las
+figuras agachadas conservan su escala. Las posiciones de los pies se alinearon por
+sus ejes de dibujo. Los prompts, hojas transparentes y métricas se guardan en
+`chars/<personaje>/art/*-v4/`; las vistas previas y la captura de QA quedan en
+`scratch/`.
 
-`tools/test_teacher_normals.py` comprueba los doce repertorios, sus contactos
-visibles, recuperación, guardia y cadenas permitidas o prohibidas. Las mecánicas
-especiales se prueban con `tools/test_teacher_specials.py`; los sprites, estados y
-comandos se validan con `tools/test_kof_controls.py`. Los informes y las capturas
-se generan bajo `scratch/`, con configuraciones aisladas que no se cargan en una
-partida normal ni se publican con los archivos necesarios del juego.
+La comprobación del motor actual se completó en una copia aislada del juego: los
+doce luchadores ejecutaron caminar en ambos sentidos, correr, agacharse y volver
+a erguirse, saltar y aterrizar, tres tipos de guardia, caída por golpe, impacto,
+permanencia en el suelo, levantada con control y KO. Los 120 escenarios pasaron.
+El combate real de las ocho secuencias especiales se comprobó en los diez
+profesores. `tools/test_teacher_motion.py` revisa además el contenido AIR/SFF y
+dibujó tiras de revisión a escala de juego. Estas pruebas verifican los archivos
+y el motor de Windows; el APK se comprueba por separado en un emulador Android.
+
+`tools/test_teacher_normals.py --run` comprobó golpes, contactos, guardia y cadenas
+en los doce personajes: 960 escenarios, sin fallos. Las mecánicas especiales se
+ejercitaron en el motor para los diez profesores; los sprites, estados y comandos
+se validaron con `tools/test_kof_controls.py`. El detalle de movimiento está en
+`scratch/teacher-motion-runtime/results.json`; los informes e imágenes no se
+incluyen en el juego publicado.
 
 Los scripts de integración `tools/test_utc_roster.py`, `tools/utc_selector_qa.lua`
 y `tools/utc_companion_qa.lua` permiten revisar combates, selector y acompañante.

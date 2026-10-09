@@ -1,0 +1,16 @@
+{
+  "prompt": "Use case: identity-preserve. Asset type: transparent pixel-art fighting-game animation atlas, replacing inconsistent Chan normal attacks. Image1 is the authoritative teacher Chan design supplied by the user; image2 is her existing canonical idle/walk sprite atlas. Preserve EXACTLY her black open jacket with rolled sleeves over a black blouse, transparent rectangular optical glasses (NOT sunglasses), gold necklace and wrist bracelet, long black hair, blue jeans, black-and-white sneakers, same face and adult body proportions as image2. Create one atlas of 30 COMPLETE separate full-body poses arranged in exactly 6 columns x 5 rows on an actual transparent background. Consistent pixel art with crisp black outlines, limited colors, same size head/torso/limbs in EVERY pose; no perspective scaling, no redesign. Keep every figure inside its own equal cell, generous clear gutters, no cast shadows, no effects, no labels or lines. Every figure faces right in side/three-quarter game view. A standing pose would have exactly the same 180px crown-to-sole height in all cells; crouching/tucked legs reduces silhouette height but head, torso and limb sizes never change. Row1: heavy crossfit palm/punch, six stages: 0 neutral fighting guard,1 retract arm windup,2 twist windup,3 fully extended palm to right CONTACT,4 retract extended arm,5 return guard. Row2: crouching palm:0 low guard,1 retract arm,2 preparation low,3 full extended palm to right CONTACT while hips stay low,4 retract,5 low guard. Row3: airborne elbow hammer:0 tucked jumping guard,1 arm rises,2 elbow above shoulder preparing,3 elbow/forearm strikes downward-right CONTACT,4 retract,5 tucked jumping guard. Row4: airborne trail-hiking kick:0 tucked jumping guard,1 knee raises,2 bent leg prepares,3 fully extended leg to right CONTACT,4 retract knee,5 tucked guard. Row5: crossfit kettlebell sequence:0 normal guard,1 squat grip black kettlebell on ground,2 stand with kettlebell hanging at thigh,3 hold kettlebell by chest,4 press kettlebell overhead with one arm,5 kettlebell thrust forward at chest level CONTACT. Kettlebell does not change body scale. Use image2 anatomy and clothing unchanged; all skin faces have identical warm tone, frames have aligned meaningful physical actions. 30 silhouettes only, no duplicate or missing cells.",
+  "references": [
+    "chan_basededatos.jpeg",
+    "art/chan-idle-walk-punch-uppercut.png"
+  ],
+  "generator": "image_gen (built-in)",
+  "rows": [
+    "heavy palm",
+    "crouch palm",
+    "air elbow",
+    "air kick",
+    "crossfit kettlebell"
+  ],
+  "columns": 6
+}

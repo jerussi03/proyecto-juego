@@ -1,0 +1,21 @@
+{
+  "generator": "image_gen (built-in)",
+  "prompt": "Create 24 discrete articulated fighting-game poses in six columns and four rows. Character identity authority: chan_basededatos.jpeg and canonical idle/combat atlases. Preserve EXACTLY long loose black hair, transparent rectangular optical glasses, open black jacket with lapels over black top, blue jeans, black and white lace sneakers, gold necklace and bracelet. All figures face right in side-view pixel art. Keep the same face, head size, skeletal limb lengths, anatomy, clothing palette and outline thickness in every cell. All whole bodies are complete, isolated with transparent margins, no clipping, no overlap, no floor, shadows, labels or effects. Genuine transparent PNG alpha. Crouching and lying must bend the same anatomy rather than scale the figure. Row1: six-phase walk with opposite contacts and narrow passing poses. Row2: six-phase forward-leaning run. Row3: standing, lower, crouch, breathe, rise, standing. Row4: anticipation, crouch, takeoff, apex, descent, landing. Edit only row1 for the final refinement: columns1/4 opposite WIDE contacts, columns2/5 NARROW passing with support leg vertical under hip and opposite knee passing, columns3/6 swinging transition. Distinguish near leg in brighter blue and far leg in darker blue; column1 near leg leads, column4 far leg leads. Use local Terry KOF walk/run skeletal reference ONLY for poses, never its face or costume. Preserve rows2-4 from the initial generated atlas.",
+  "references": [
+    "chan_basededatos.jpeg",
+    "art/chan-idle-walk-punch-uppercut.png",
+    "Local Terry KOF groups20/100, pose reference only"
+  ],
+  "columns": 6,
+  "rows": [
+    "six-phase walk with opposite contacts and narrow passing poses",
+    "six-phase forward-leaning run",
+    "standing, lower, crouch, breathe, rise, standing",
+    "anticipation, crouch, takeoff, apex, descent, landing"
+  ],
+  "registration": "One standing calibration for the complete atlas, no per-pose height stretching; extract connected body silhouettes across cell boundaries.",
+  "pose_reference": "Local chars/base-TerryEX-KOF02UM/Terry.sff groups20 and100; reference only, no imported art in this atlas",
+  "refinement_prompt": "Edit ONLY ROW 1 (the 6 WALK frames) of image1. Rows2-4 keep unchanged. Keep character Chan precisely from image2: long black hair, transparent rectangular glasses, black jacket lapels, black top, gold bracelet on near LEFT wrist, necklace, dark blue jeans, black white sneakers, same anatomy/head size. Image3 row1 is POSE reference. The goal is TWO unmistakable opposite steps in one six-frame loop. Render near LEFT leg in brighter blue foreground, far RIGHT leg in darker blue behind torso. Frame1: bright NEAR LEFT leg forward to screen right, dark FAR RIGHT leg stretched back to screen left. Gold-bracelet left arm swings back behind hip, far right fist forward near chest. Frame2: LEFT bright support leg almost VERTICAL UNDER HIP; dark RIGHT knee bent and passing in front, feet CLOSE together directly beneath pelvis, not a wide stance. Frame3: RIGHT dark leg extends ahead to screen right while LEFT bright leg begins trailing left; GOLD-BRACELET LEFT HAND NOW MOVES FORWARD to chest, far right arm sweeps behind. Frame4: opposite full CONTACT: DARK RIGHT LEG extends far ahead toward screen right, BRIGHT LEFT LEG extends far behind to screen left. GOLD-BRACELET LEFT ARM MUST BE FORWARD near chest; RIGHT ARM behind hip. This MUST differ from frame1 in front leg color and arm positions. Frame5: DARK RIGHT support leg nearly vertical under hip, BRIGHT LEFT knee passes forward with feet close under pelvis, gold-bracelet left hand still forward. Frame6: BRIGHT LEFT leg swings ahead while RIGHT dark leg trails, arms pass back towards frame1. Clear foreground-vs-background limb layering is crucial. Both support feet land at same ground line, head size unchanged, no scaling. STRICT 6 columns x4 rows, each fully isolated body within cell, real transparent alpha no gradient or dark rectangle, no labels no effects no shadows. Same outline and pixel shading style, perfect costume consistency. Do not merely repeat six nearly identical wide stances.",
+  "selected_generated_image": "exec-633acae6-ca3e-4ed0-a4c4-93383998d28a.png",
+  "transparent_background": true
+}
